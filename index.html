@@ -14,23 +14,6 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-        <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"><script>
-
-$(document).ready(function(){
-    $("html body").animate({ backgroundColor: "#b5b5b0" }, 5000);
-});
-</script>
-        <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-30794080-1', 'denisstritar.com');
-  ga('send', 'pageview');
-
-</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -41,9 +24,13 @@ $(document).ready(function(){
         <p>Soon...123</p>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+        </script>
+        <script>
+	        $(document).ready(function(){
+    $("html body").animate({ backgroundColor: "#b5b5b0" }, 5000);
+});
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -52,7 +39,7 @@ $(document).ready(function(){
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            ga('create', 'UA-30794080-1', 'denisstritar.com');
         </script>
     </body>
 </html>
