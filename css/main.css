@@ -3,12 +3,9 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-body {
+body{
 
 }
-
 
 .color1{
     background: yellow;
@@ -16,12 +13,12 @@ body {
 
 .color2{
     background: red;
-    color: white;
+
 }
 
 .color3{
     background: blue;
-    color: white;
+
 }
 
 .color4{
