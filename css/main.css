@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'TisaPro';
+  src: url('../fonts/TisaPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/TisaPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/TisaPro-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/TisaPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/TisaPro-Regular.svg#1c75379f9eaf2b315da3fa7da3f76cdf') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
 html, body {
 	height: 100%;
 }
@@ -29,6 +42,11 @@ body {
 	height: 167px;
 	background-image: url(../img/logo.png);
 	background-size: 120px 167px;
+		  -o-transition: background-image .5s ease-in;
+	  -ms-transition: background-image .5s ease-in;
+	  -moz-transition: background-image .5s ease-in;
+	  -webkit-transition: background-image .5s ease-in;
+	  transition: background-image .5s ease-in;
 }
 
 .logo:hover{
