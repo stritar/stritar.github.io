@@ -1,0 +1,31 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #F2F2F2;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	background: -o-radial-gradient(50% 137%, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.00) 77%, rgba(0,0,0,0.06) 100%);
+	background: -moz-radial-gradient(50% 137%, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.00) 77%, rgba(0,0,0,0.06) 100%);
+	background: -ms-radial-gradient(50% 137%, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.00) 77%, rgba(0,0,0,0.06) 100%);
+	background: radial-gradient(50% 137%, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.00) 77%, rgba(0,0,0,0.06) 100%);
+	margin: 0 auto;
+    min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
+    width: 100%;
+		
+}
+
+.logo{
+	margin-top: -120px;
+	margin-left: -120px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 120px;
+	height: 120px;
+	background: red;
+}
