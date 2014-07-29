@@ -6,7 +6,7 @@
     <defs></defs>
 
         <g class="svg-menu-toggle" sketch:type="MSLayerGroup">
-            <circle id="Round" fill="#3B3B41" sketch:type="MSShapeGroup" cx="21" cy="21" r="21"></circle>
+            <circle class="round" fill="#3B3B41" sketch:type="MSShapeGroup" cx="21" cy="21" r="21"></circle>
             <rect class="bar" fill="#F2F2F2" sketch:type="MSShapeGroup" x="12" y="26" width="18" height="4"></rect>
             <rect class="bar" fill="#F2F2F2" sketch:type="MSShapeGroup" x="12" y="19" width="18" height="4"></rect>
             <rect class="bar" fill="#F2F2F2" sketch:type="MSShapeGroup" x="12" y="12" width="18" height="4"></rect>
@@ -20,14 +20,19 @@
   pointer-events: all;
   cursor: pointer;
 }
+
+.svg-menu-toggle .round {
+    transition: fill .4s ease-in-out;
+}
+
 .svg-menu-toggle .bar {
   -webkit-transform: rotate(0) translateY(0) translateX(0);
   transform: rotate(0) translateY(0) translateX(0);
   opacity: 1;
   -webkit-transform-origin: 20px 10px;
   transform-origin: 20px 10px;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
-  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
 }
 .svg-menu-toggle .bar:nth-of-type(1) {
   -webkit-transform-origin: 20px 10px;
@@ -41,13 +46,21 @@
 .svg-menu-toggle:hover .bar:nth-of-type(1) {
   -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
   transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+  fill:#3B3B41;
 }
 .svg-menu-toggle:hover .bar:nth-of-type(2) {
   opacity: 0;
 }
 .svg-menu-toggle:hover .bar:nth-of-type(3) {
-  -webkit-transform: rotate(45deg) translateY(6px) translateX(0px);
+  -webkit-transform: rotate(45deg) translateY(6px) translateX(0px) ;
   transform: rotate(45deg) translateY(6px) translateX(0px);
+  fill:#3B3B41;
+ 
+}
+    
+.svg-menu-toggle:hover .round {
+  fill:#F2F2F2;
+ 
 }
 
 .inline-svg {
