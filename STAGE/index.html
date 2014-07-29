@@ -12,17 +12,57 @@
       
   </head>
   <body>
-      <div class="sidr">sddsdsad</div>
-      <section class="intro">
-          <a id="right-menu" href="#right-menu">dsdsdsd</a>
-      </section>
-      <section class="drop">
-          dsadasdasd dfsdfsd dsf sdf
-      </section>
+        <div class="container">
+            <div id="sidebar">
+                <ul>
+                    <li><a class="primary_menu" href="#">ABOUT ME</a></li>
+                    <li><a class="primary_menu" href="#">LATEST WORK</a></li>
+                    <li><a class="primary_menu" href="#">DOWNLOAD</a></li>
+                    <li><a class="primary_menu" href="#">CONTACT</a></li>
+                    <br>
+                    <li><a class="secondary_menu" href="#">Curriculum Vitae</a></li>
+                    <li><a class="secondary_menu" href="#">Behance</a></li>
+                    <li><a class="secondary_menu" href="#">Society6</a></li>
+                    <li><a class="secondary_menu" href="#">Dribbble</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="swipe-area"></div>
+                <a href="#" data-toggle=".container" id="sidebar-toggle"></a>
+                <div class="content">
+
+                </div>
+            </div>
+        </div>      
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
     <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script>
+            $(document).ready(function() {
+              $("[data-toggle]").click(function() {
+                var toggle_el = $(this).data("toggle");
+                $(toggle_el).toggleClass("open-sidebar");
+              });
+
+            });
+
+            $(".swipe-area").swipe({
+                swipeStatus:function(event, phase, direction, distance, duration, fingers)
+                    {
+                        if (phase=="move" && direction =="left") {
+                             $(".container").addClass("open-sidebar");
+                             return false;
+                        }
+                        if (phase=="move" && direction =="right") {
+                             $(".container").removeClass("open-sidebar");
+                             return false;
+                        }
+                    }
+            });
+    </script>
     <script>
         $(window).load(function(){
           $("#a").sticky({ topSpacing: 0 });

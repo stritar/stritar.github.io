@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Menu</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
-    
-      
-      
+
   </head>
   <body>
 <div class="container">
@@ -33,7 +33,6 @@
         </div>
     </div>
 </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script>
             $(document).ready(function() {
               $("[data-toggle]").click(function() {
@@ -46,11 +45,11 @@
             $(".swipe-area").swipe({
                 swipeStatus:function(event, phase, direction, distance, duration, fingers)
                     {
-                        if (phase=="move" && direction =="right") {
+                        if (phase=="move" && direction =="left") {
                              $(".container").addClass("open-sidebar");
                              return false;
                         }
-                        if (phase=="move" && direction =="left") {
+                        if (phase=="move" && direction =="right") {
                              $(".container").removeClass("open-sidebar");
                              return false;
                         }

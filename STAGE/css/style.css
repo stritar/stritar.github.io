@@ -68,13 +68,100 @@ body, html {
     background-color: #F2F2F2;
 }
 
-#a {
+/*MENU*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow:hidden;
+    font-family: helvetica;
+    font-weight: 100;
+}
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    right: 0;
+    -webkit-transition:  right 0.4s ease-in-out;
+    -moz-transition:  right 0.4s ease-in-out;
+    -ms-transition:  right 0.4s ease-in-out;
+    -o-transition:  right 0.4s ease-in-out;
+    transition:  right 0.4s ease-in-out;
+}
+.container.open-sidebar {
+    right: 260px;
+}
+ 
+.swipe-area {
+    position: absolute;
+    width: 50px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+}
+#sidebar {
+    background: #3B3B41;
+    position: absolute;
+    width: 260px; 
+    height: 100%;
+    right: -260px;
+}
+#sidebar ul {
+    margin: 38px 0 0 48px;
+    padding: 0;
+    list-style: none;
+}
+#sidebar ul li {
+    margin:0;
+}
+#sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #F2F2F2;
+}
+
+.primary_menu {
+    margin: 16px 0 0 0;
+    font-family: 'EffraHeavy';
+    font-size: 16px;
+}
+
+.secondary_menu {
+    margin: 8px 0 0 0;
+    font-family: 'TisaProRegular';
+    font-size: 14px;
+}
+
+.main-content {
     width: 100%;
     height: 100%;
-    background-image: -o-radial-gradient(50% 75%, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.00) 60%, rgba(0,0,0,0.06) 76%);
-    background-image: -moz-radial-gradient(50% 75%, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.00) 60%, rgba(0,0,0,0.06) 76%);
-    background-image: -ms-radial-gradient(50% 75%, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.00) 60%, rgba(0,0,0,0.06) 76%);
-    background-image: radial-gradient(50% 75%, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.00) 60%, rgba(0,0,0,0.06) 76%);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+.main-content .content{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-left: 60px;
+    width: 100%;
+}
+
+.main-content #sidebar-toggle {
+    background: url(../img/sprite.png) no-repeat 0px -237px;
+    background-size: 278px 989px;
+    display: block;
+    width:42px;
+    height: 42px;
+    margin: 20px;
+    position: relative;
+    float: right;
+}
+
+.main-content #sidebar-toggle .bar:last-child{
+     margin-bottom: 0;   
 }
 
 section.intro {
