@@ -335,19 +335,25 @@ body, html {
 
 section {
     margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 @media (max-width: 768px) {
 
     section {
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
   }
 
 
+.icons p {
+    margin-top: 20px;
+}
+
 .icon-1 {
-    margin:0 auto;
+    margin:25px auto;
     display: block;
     width: 128px;
     height: 128px;
@@ -356,7 +362,7 @@ section {
 }
 
 .icon-2 {
-    margin:0 auto;
+    margin:25px auto;
     display: block;
     width: 128px;
     height: 128px;
@@ -365,7 +371,7 @@ section {
 }
 
 .icon-3 {
-    margin:0 auto;
+    margin:25px auto;
     display: block;
     width: 128px;
     height: 128px;
@@ -374,7 +380,7 @@ section {
 }
 
 .icon-4 {
-    margin:0 auto;
+    margin:25px auto;
     display: block;
     width: 128px;
     height: 128px;
