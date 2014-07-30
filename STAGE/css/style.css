@@ -229,12 +229,33 @@ body, html {
     height: 100%;
 }
 
-.test {
-    height: 3000px;
+.logo-intro{
     margin: 0 auto;
-    width: 1440px;
+    display: block;
+    width: 140px;
+    height: 195px;
+    background: url(../img/sprite.png) 0 0;
+    background-size: 278px 989px;
+    margin-top: -98px;
+    margin-left: -70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
-.test2 {
-    background: blue;
+@media (max-width: 768px) {
+    .logo-intro{
+        margin: 0 auto;
+        display: block;
+        width: 100px;
+        height: 139px;
+        background: url(../img/sprite.png) -140px 0;
+        background-size: 278px 989px;
+        margin-top: -98px;
+        margin-left: -70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
 }
+
+  }
