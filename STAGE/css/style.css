@@ -77,7 +77,7 @@ body, html {
     font-weight: 100;
     overflow-x: hidden;
 }
-.container {
+.container-side {
     position: relative;
     height: 100%;
     width: 100%;
@@ -90,7 +90,7 @@ body, html {
     -o-transition:  right 0.4s ease-in-out;
     transition:  right 0.4s ease-in-out;
 }
-.container.open-sidebar {
+.container-side.open-sidebar {
     right: 260px;
 }
  
@@ -231,6 +231,10 @@ body, html {
 
 .test {
     height: 3000px;
-    width: 900px;
-    background: red;
+    margin: 0 auto;
+    width: 1440px;
+}
+
+.test2 {
+    background: blue;
 }
