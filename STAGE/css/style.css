@@ -259,3 +259,16 @@ body, html {
 }
 
   }
+
+.down-arrow {
+    margin: 0 auto;
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) 0 -279px;
+    background-size: 278px 989px;
+    margin-left: -21px;
+    position: absolute;
+    bottom:20px;
+    left: 50%; 
+}
