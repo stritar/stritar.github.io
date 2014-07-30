@@ -71,6 +71,8 @@ h2 {
 @media (max-width: 768px) {
 
 h2 {
+    
+    font-family: EffraHeavy-Regular;
     font-size: 45px;
     line-height: 45px;
 }
