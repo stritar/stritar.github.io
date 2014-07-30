@@ -60,6 +60,24 @@
   font-weight:  400;
 }
 
+h2 {
+    font-family: EffraHeavy-Regular;
+    font-size: 80px;
+    color: #3B3B41;
+    line-height: 70px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+h2 {
+    font-size: 45px;
+    line-height: 45px;
+}
+
+  }
+
+
 /*FONTS BASE*/
 
 
@@ -272,3 +290,20 @@ body, html {
     bottom:20px;
     left: 50%; 
 }
+
+.down-arrow:hover {
+    background: url(../img/sprite.png) -42px -279px;
+    background-size: 278px 989px;
+}
+
+section {
+    margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+
+    section {
+    margin-top: 50px;
+}
+
+  }
