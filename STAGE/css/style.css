@@ -161,17 +161,60 @@ body, html {
 }
 
 
-
-
 .main-content #sidebar-toggle .bar:last-child{
      margin-bottom: 0;   
 }
 
-section.intro {
-    width: 100%;
-    height: 100%;
+<!--SVG HAMBURGER-->
+.svg-menu-toggle {
+  fill: #fff;
+  pointer-events: all;
+  cursor: pointer;
 }
 
-.drop {
-    height: 2000px;
+.svg-menu-toggle .round {
+    transition: fill .4s ease-in-out;
+}
+
+.svg-menu-toggle .bar {
+  -webkit-transform: rotate(0) translateY(0) translateX(0);
+  transform: rotate(0) translateY(0) translateX(0);
+  opacity: 1;
+  -webkit-transform-origin: 20px 10px;
+  transform-origin: 20px 10px;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+}
+.svg-menu-toggle .bar:nth-of-type(1) {
+  -webkit-transform-origin: 20px 10px;
+  transform-origin: 20px 10px;
+}
+.svg-menu-toggle .bar:nth-of-type(3) {
+  -webkit-transform-origin: 20px 20px;
+  transform-origin: 20px 20px;
+}
+
+.svg-menu-toggle:hover .bar:nth-of-type(1) {
+  -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+  transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+  fill:#3B3B41;
+}
+.svg-menu-toggle:hover .bar:nth-of-type(2) {
+  opacity: 0;
+}
+.svg-menu-toggle:hover .bar:nth-of-type(3) {
+  -webkit-transform: rotate(45deg) translateY(6px) translateX(0px) ;
+  transform: rotate(45deg) translateY(6px) translateX(0px);
+  fill:#3B3B41;
+ 
+}
+    
+.active:hover .round {
+  fill:#F2F2F2;
+ 
+}
+
+.inline-svg {
+  display: block;
+  margin: 0 auto;
 }
