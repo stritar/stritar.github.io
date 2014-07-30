@@ -344,3 +344,40 @@ section {
 }
 
   }
+
+
+.icon-1 {
+    margin:0 auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    background: url(../img/sprite.png) 0 -447px;
+    background-size: 278px 989px;
+}
+
+.icon-2 {
+    margin:0 auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    background: url(../img/sprite.png) 0 -575px;
+    background-size: 278px 989px;
+}
+
+.icon-3 {
+    margin:0 auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    background: url(../img/sprite.png) 0 -703px;
+    background-size: 278px 989px;
+}
+
+.icon-4 {
+    margin:0 auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    background: url(../img/sprite.png) 0 -831px;
+    background-size: 278px 989px;
+}
