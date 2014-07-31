@@ -404,7 +404,13 @@ section {
 }
 
 
-
+.gridtest {
+    display: block;
+    width 100%;
+    height: 200px;
+    margin: 20px auto;
+    background: red;
+}
 
 .icon-1 {
 
