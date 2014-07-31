@@ -38,11 +38,11 @@
 
 @font-face {
   font-family: 'TisaPro-Italic';
-  src: url('../fonts/TisaPro-Italic.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/TisaPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/TisaPro-Italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/TisaPro-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/TisaPro-Italic.svg#f7fb7fd15311a2a526a966bbc4e3840b') format('svg'); /* Legacy iOS */
+  src: url('http://www.denisstritar.com/STAGE/fonts/TisaPro-Italic.eot'); /* IE9 Compat Modes */
+  src: url('http://www.denisstritar.com/STAGE/fonts/TisaPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('http://www.denisstritar.com/STAGE/fonts/TisaPro-Italic.woff') format('woff'), /* Modern Browsers */
+       url('http://www.denisstritar.com/STAGE/fonts/TisaPro-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('http://www.denisstritar.com/STAGE/fonts/TisaPro-Italic.svg#f7fb7fd15311a2a526a966bbc4e3840b') format('svg'); /* Legacy iOS */
        
   font-style:   italic;
   font-weight:  400;
