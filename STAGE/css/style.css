@@ -403,14 +403,7 @@ section {
     height: 128px;
 }
 
-@media (max-width: 768px) {
-    .my_icons {
-    margin:20px auto 20px auto;
-    display: block;
-    width: 128px;
-    height: 128px;
-    }
-}
+
 
 
 .icon-1 {
@@ -418,6 +411,7 @@ section {
     background: url(../img/sprite.png) 0 -447px;
     background-size: 278px 989px;
 }
+
 
 .icon-2 {
 
