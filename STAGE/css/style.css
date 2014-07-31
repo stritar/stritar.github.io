@@ -25,39 +25,45 @@
 }
 
 @font-face {
-  font-family: 'TisaPro-Bold';
-  src: url('../fonts/TisaPro-Bold.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/TisaPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/TisaPro-Bold.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/TisaPro-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/TisaPro-Bold.svg#4caee0dc85eea26155563f2547b3cab2') format('svg'); /* Legacy iOS */
-       
-  font-style:   normal;
-  font-weight:  700;
+    font-family: 'tisaproregular';
+    src: url('../fonts/tisapro-regular-webfont.eot');
+    src: url('../fonts/tisapro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-regular-webfont.woff') format('woff'),
+         url('../fonts/tisapro-regular-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-regular-webfont.svg#tisaproregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-@font-face {
-  font-family: 'TisaPro-Italic';
-  src: url('../STAGE/fonts/TisaPro-Italic.eot'); /* IE9 Compat Modes */
-  src: url('../STAGE/fonts/TisaPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../STAGE/fonts/TisaPro-Italic.woff') format('woff'), /* Modern Browsers */
-       url('../STAGE/fonts/TisaPro-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../STAGE/fonts/TisaPro-Italic.svg#f7fb7fd15311a2a526a966bbc4e3840b') format('svg'); /* Legacy iOS */
-       
-  font-style:   italic;
-  font-weight:  400;
-}
+
+
 
 @font-face {
-  font-family: 'TisaPro-Regular';
-  src: url('../fonts/TisaPro-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/TisaPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/TisaPro-Regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/TisaPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/TisaPro-Regular.svg#1c75379f9eaf2b315da3fa7da3f76cdf') format('svg'); /* Legacy iOS */
-       
-  font-style:   normal;
-  font-weight:  400;
+    font-family: 'tisaprobold';
+    src: url('../fonts/tisapro-bold-webfont.eot');
+    src: url('../fonts/tisapro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-bold-webfont.woff') format('woff'),
+         url('../fonts/tisapro-bold-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-bold-webfont.svg#tisaprobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'tisaproitalic';
+    src: url('../fonts/tisapro-italic-webfont.eot');
+    src: url('../fonts/tisapro-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-italic-webfont.woff') format('woff'),
+         url('../fonts/tisapro-italic-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-italic-webfont.svg#tisaproitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 h2 {
@@ -96,7 +102,7 @@ h2:after {
 }
 
 h3 {
-    font-family: 'TisaPro-Italic';
+    font-family: 'tisaproitalic';
     font-size: 30px;
     color: #3B3B41;
     line-height: 42px;
