@@ -336,55 +336,55 @@ body, html {
 
 section {
     margin-top: 150px;
-    margin-bottom: 150px;
+    padding-bottom: 150px;
 }
 
 @media (max-width: 768px) {
 
     section {
     margin-top: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
   }
 
-
-.icons p {
-    margin-top: 20px;
-}
-
-.icon-1 {
-    margin:25px auto;
+.my_icons {
+    margin:100px auto 20px auto;
     display: block;
     width: 128px;
     height: 128px;
+}
+
+@media (max-width: 768px) {
+    .my_icons {
+    margin:50px auto 20px auto;
+    display: block;
+    width: 128px;
+    height: 128px;
+    }
+}
+
+
+.icon-1 {
+
     background: url(../img/sprite.png) 0 -447px;
     background-size: 278px 989px;
 }
 
 .icon-2 {
-    margin:25px auto;
-    display: block;
-    width: 128px;
-    height: 128px;
+
     background: url(../img/sprite.png) 0 -575px;
     background-size: 278px 989px;
 }
 
 .icon-3 {
-    margin:25px auto;
-    display: block;
-    width: 128px;
-    height: 128px;
+
     background: url(../img/sprite.png) 0 -703px;
     background-size: 278px 989px;
 }
 
 .icon-4 {
-    margin:25px auto;
-    display: block;
-    width: 128px;
-    height: 128px;
+
     background: url(../img/sprite.png) 0 -831px;
     background-size: 278px 989px;
 }
