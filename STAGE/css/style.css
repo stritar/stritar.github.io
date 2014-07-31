@@ -133,6 +133,7 @@ h2:after {
     content:"";
     background: url(../img/sprite.png) -140px -139px;
     background-size: 278px 989px;
+    font-weight: normal;
 }
 
 @media (max-width: 768px) {
@@ -142,11 +143,12 @@ h2:after {
 }
 
 h3 {
-    font-family: 'tisaproitalicmedium';
+    font-family: 'tisaproitalic';
     font-size: 30px;
     color: #3B3B41;
     line-height: 42px;
     text-align: center;
+    font-weight: normal;
 }
 
 p {
