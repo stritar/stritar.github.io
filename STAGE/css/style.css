@@ -142,7 +142,7 @@ h2:after {
 }
 
 h3 {
-    font-family: 'tisaproitalicbold';
+    font-family: 'tisaproitalicmedium';
     font-size: 30px;
     color: #3B3B41;
     line-height: 42px;
@@ -150,7 +150,7 @@ h3 {
 }
 
 p {
-    font-family: 'TisaPro-Regular';
+    font-family: 'tisaproregular';
     font-size: 16px;
     color: #3B3B41;
     line-height: 26px;
