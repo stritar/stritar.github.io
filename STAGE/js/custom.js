@@ -4,3 +4,4 @@ $('.').toggle(function() { // this refer to the just clicked button.
 }, function() {
     $(this).removeClass("active-toggle");
 });
+
