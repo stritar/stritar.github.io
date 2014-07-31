@@ -36,7 +36,47 @@
 
 }
 
+@font-face {
+    font-family: 'tisaproitalicmedium';
+    src: url('../fonts/tisapro-mediumitalic-webfont.eot');
+    src: url('../fonts/tisapro-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/tisapro-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-mediumitalic-webfont.svg#tisaproitalicmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+
+
+
+@font-face {
+    font-family: 'tisapromedium';
+    src: url('../fonts/tisapro-medium-webfont.eot');
+    src: url('../fonts/tisapro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-medium-webfont.woff') format('woff'),
+         url('../fonts/tisapro-medium-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-medium-webfont.svg#tisapromedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'tisaproitalicbold';
+    src: url('../fonts/tisapro-bolditalic-webfont.eot');
+    src: url('../fonts/tisapro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tisapro-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/tisapro-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/tisapro-bolditalic-webfont.svg#tisaproitalicbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 @font-face {
@@ -102,7 +142,7 @@ h2:after {
 }
 
 h3 {
-    font-family: 'tisaproitalic';
+    font-family: 'tisaproitalicbold';
     font-size: 30px;
     color: #3B3B41;
     line-height: 42px;
