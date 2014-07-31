@@ -183,14 +183,13 @@ body, html {
 }
 
 .nav-base {
-    display: none;
-    position: fixed;
-   top: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 60px;
     border-top: 1px solid #000;
-    background: red;
+    background: rgba(242 , 242 , 242 ,0.9);
     z-index: 10;
+    padding: 20px;r
 }
 
 .logo-small {
@@ -199,9 +198,18 @@ body, html {
     height: 42px;
     background: url(../img/sprite.png) 0 -195px;
     background-size: 278px 989px;
-    position: fixed;
-    margin: 20px 0 0 20px;
+    position: relative;
+    float: left;
 }
+
+#sidebar-toggle {
+    display: block;
+    width:42px;
+    height: 42px;
+    position: relative;
+    float: right;
+}
+
 
 .container-side {
     position: relative;
@@ -277,14 +285,6 @@ body, html {
 
 
 
-.main-content #sidebar-toggle {
-    display: block;
-    width:42px;
-    height: 42px;
-    margin: 20px;
-    position: relative;
-    float: right;
-}
 
 
 .main-content #sidebar-toggle .bar:last-child{
@@ -451,3 +451,30 @@ section {
     background: url(../img/sprite.png) 0 -831px;
     background-size: 278px 989px;
 }
+
+.my-proj {
+    display: block;
+    width: 100%;
+    height: 406px;
+}
+
+.proj-1 {
+    background: url(../img/proj/dummy.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.proj-2 {
+    background: url(../img/proj/dummy.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.proj-3 {
+    background: url(../img/proj/dummy.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.proj-4 {
+    background: url(../img/proj/dummy.jpg) no-repeat;
+    background-size: 100%;
+}
+
