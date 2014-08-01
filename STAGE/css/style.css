@@ -425,6 +425,16 @@ section {
     height: 128px;
 }
 
+@media (max-width: 768px) {
+
+    .my-icons {
+    margin:20px auto 10px auto;
+    display: block;
+    width: 94px;
+    height: 94px;
+}
+}
+
 
 
 .icon-1 {
@@ -433,6 +443,15 @@ section {
     background-size: 278px 989px;
 }
 
+@media (max-width: 768px) {
+
+    .icon-1 {
+
+    background: url(../img/sprite.png) -157px -464px;
+    background-size: 278px 989px;
+}
+
+  }
 
 .icon-2 {
 
@@ -440,16 +459,41 @@ section {
     background-size: 278px 989px;
 }
 
+@media (max-width: 768px) {
+
+    .icon-2 {
+
+    background: url(../img/sprite.png) -157px -592px;
+    background-size: 278px 989px;
+}
+}
 .icon-3 {
 
     background: url(../img/sprite.png) 0 -703px;
     background-size: 278px 989px;
 }
+    
+@media (max-width: 768px) {
 
+    .icon-3 {
+
+    background: url(../img/sprite.png) -157px -720px;
+    background-size: 278px 989px;
+}
+}
 .icon-4 {
 
     background: url(../img/sprite.png) 0 -831px;
     background-size: 278px 989px;
+}
+    
+@media (max-width: 768px) {
+
+    .icon-4 {
+
+    background: url(../img/sprite.png) -157px -848px;
+    background-size: 278px 989px;
+}
 }
 
 .proj-holder {
