@@ -573,6 +573,8 @@ input {
     background: #F2F2F2;
     color: #3B3B41;
     border-bottom: 2px solid #3B3B41;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 textarea:focus, input:focus{
