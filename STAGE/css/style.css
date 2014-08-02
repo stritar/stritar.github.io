@@ -166,6 +166,13 @@ p.afterh3 {
 
 /*FONTS BASE*/
 
+.trans {
+    -webkit-transition: .15s ease-in-out;
+    -moz-transition: .15s ease-in-out;
+    -ms-transition: .15s ease-in-out;
+    -o-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
 
 body, html {
     height: 100%;
@@ -508,10 +515,15 @@ section {
 }
 
 .proj-overlay {
+    opacity: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(59, 59, 65, 0.8);
+}
+
+.proj-overlay:hover {
+    opacity: 1;
 }
 
 .proj-info {
