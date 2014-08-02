@@ -499,38 +499,52 @@ section {
 .proj-holder {
     max-width: 100%;
     max-height: 100%;
-      text-align: center;
-}
-
-.proj-info {
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    background: rgba(59, 59, 65, 0.8);
-}
-
-.proj-icon {
-    top:50%;
-    position: relative;
-    display: block;
-    margin: -42px auto 0 auto;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -84px -195px;
-    background-size: 278px 989px;
-}
-.proj-title {
-  
-    margin: 0 auto;
-    font-family: 'EffraHeavy-Regular';
-    font-size: 20px;
-    color: #F2F2F2;
-    line-height: 26px;
+    text-align: center;
 }
 
 .my-proj img {
 
   width: 100%;
+}
+
+.proj-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(59, 59, 65, 0.8);
+}
+
+.proj-info {
+    top:50%;
+    margin-top: -42px;
+    width: 100%;
+    position: absolute;
+    height: 30px;
+}
+
+.proj-icon {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -84px -195px;
+    background-size: 278px 989px;
+    margin: 0 auto;
+}
+
+.proj-title {
+    margin-top: 5px;
+    display: block;
+    font-family: 'EffraHeavy-Regular';
+    font-size: 20px;
+    color: #F2F2F2;
+}
+
+.proj-label {
+    margin-top: 2px;
+    display: block;
+    font-family: 'Effra-Regular';
+    font-size: 14px;
+    color: #F2F2F2;
 }
 
 .row-gut {
