@@ -564,3 +564,33 @@ section {
   padding-left:0px;
 }
 
+input {
+   
+    border: 0px;
+    font-size: 30px;
+    font-family: 'Effra-Regular';
+    padding-top: 50px;
+    background: #F2F2F2;
+    color: #3B3B41;
+    border-bottom: 2px solid #3B3B41;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+::-webkit-input-placeholder {
+   color: #3B3B41;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #3B3B41;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #3B3B41;  
+}
+
+:-ms-input-placeholder {  
+   color: #3B3B41;  
+}
