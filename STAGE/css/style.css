@@ -596,3 +596,16 @@ textarea:focus, input:focus{
 :-ms-input-placeholder {  
    color: #3B3B41;  
 }
+
+.btn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 40px;
+    font-family: 'Effra-Regular';
+    color: #F2F2F2;
+    font-size: 30px;
+    background: #3B3B41;;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-top: 40px;
+}
