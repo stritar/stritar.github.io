@@ -132,7 +132,7 @@ h2:after {
     margin: 40px auto;
     content:"";
     background: url(../img/sprite.png) -140px -139px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
     font-weight: normal;
 }
 
@@ -204,7 +204,7 @@ body, html {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) 0 -195px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
     position: relative;
     float: left;
 }
@@ -368,7 +368,7 @@ body, html {
     width: 140px;
     height: 195px;
     background: url(../img/sprite.png) 0 0;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
     margin-top: -98px;
     margin-left: -70px;
     position: absolute;
@@ -383,7 +383,7 @@ body, html {
         width: 100px;
         height: 139px;
         background: url(../img/sprite.png) -140px 0;
-        background-size: 278px 989px;
+        background-size: 491px 989px;
         margin-top: -70px;
         margin-left: -50px;
         position: absolute;
@@ -398,7 +398,7 @@ body, html {
         width: 200px;
         height: 279px;
         background: url(../img/sprite.png) -154px -168px;
-        background-size: 278px 989px;
+        background-size: 491px 989px;
         margin-top: -70px;
         margin-left: -50px;
         position: absolute;
@@ -414,7 +414,7 @@ body, html {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) 0 -279px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
     margin-left: -21px;
     position: absolute;
     bottom:20px;
@@ -423,7 +423,7 @@ body, html {
 
 .down-arrow:hover {
     background: url(../img/sprite.png) -42px -279px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 
 section {
@@ -462,7 +462,7 @@ section {
 .icon-1 {
 
     background: url(../img/sprite.png) 0 -447px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 
 @media (max-width: 768px) {
@@ -470,7 +470,7 @@ section {
     .icon-1 {
 
     background: url(../img/sprite.png) -157px -464px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 
   }
@@ -478,7 +478,7 @@ section {
 .icon-2 {
 
     background: url(../img/sprite.png) 0 -575px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 
 @media (max-width: 768px) {
@@ -486,13 +486,13 @@ section {
     .icon-2 {
 
     background: url(../img/sprite.png) -157px -592px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 }
 .icon-3 {
 
     background: url(../img/sprite.png) 0 -703px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
     
 @media (max-width: 768px) {
@@ -500,13 +500,13 @@ section {
     .icon-3 {
 
     background: url(../img/sprite.png) -157px -720px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 }
 .icon-4 {
 
     background: url(../img/sprite.png) 0 -831px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
     
 @media (max-width: 768px) {
@@ -514,7 +514,7 @@ section {
     .icon-4 {
 
     background: url(../img/sprite.png) -157px -848px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
 }
 }
 
@@ -554,7 +554,7 @@ section {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -84px -195px;
-    background-size: 278px 989px;
+    background-size: 491px 989px;
     margin: 0 auto;
 }
 
