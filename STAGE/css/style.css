@@ -395,8 +395,8 @@ body, html {
     .logo-intro{
         margin: 0 auto;
         display: block;
-        width: 100px;
-        height: 139px;
+        width: 200px;
+        height: 279px;
         background: url(../img/sprite.png) -154px -168px;
         background-size: 278px 989px;
         margin-top: -70px;
