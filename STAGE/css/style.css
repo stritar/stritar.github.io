@@ -390,6 +390,21 @@ body, html {
         top: 50%;
         left: 50%;
 }
+    
+@media (min-width: 1440px) {
+    .logo-intro{
+        margin: 0 auto;
+        display: block;
+        width: 100px;
+        height: 139px;
+        background: url(../img/sprite.png) -154px -168px;
+        background-size: 278px 989px;
+        margin-top: -70px;
+        margin-left: -50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+}
 
   }
 
