@@ -390,7 +390,9 @@ body, html {
         top: 50%;
         left: 50%;
 }
-    
+
+  }
+
 @media (min-width: 1200px) {
     .logo-intro{
         display: none;
@@ -406,8 +408,8 @@ body, html {
         top: 50%;
         left: 50%;
 }
+}
 
-  }
 
 .down-arrow {
     margin: 0 auto;
