@@ -106,73 +106,9 @@
 
 }
 
-h2 {
-    font-family: 'EffraHeavy-Regular';
-    font-size: 80px;
-    color: #3B3B41;
-    line-height: 70px;
-    text-align: center;
-}
 
-@media (max-width: 768px) {
+/*GLOBALS*/
 
-h2 {
-    
-    font-size: 45px;
-    line-height: 45px;
-}
-
-  }
-
-h2:after {
-    display: block;
-    width: 8px;
-    height: 8px;
-    background: red;
-    margin: 40px auto;
-    content:"";
-    background: url(../img/sprite.png) -140px -139px;
-    background-size: 491px 989px;
-    font-weight: normal;
-}
-
-@media (max-width: 768px) {
-    h2:after {
-        margin: 20px auto;
-    }
-}
-
-h3 {
-    font-family: 'tisaproitalicbold';
-    font-size: 30px;
-    color: #3B3B41;
-    line-height: 42px;
-    text-align: center;
-    font-weight: normal;
-}
-
-
-p {
-    font-family: 'tisaproregular';
-    font-size: 16px;
-    color: #3B3B41;
-    line-height: 26px;
-    text-align: center;
-}
-
-p.afterh3 {
-    margin-top: 30px;
-}
-
-/*FONTS BASE*/
-
-.trans {
-    -webkit-transition: .15s ease-in-out;
-    -moz-transition: .15s ease-in-out;
-    -ms-transition: .15s ease-in-out;
-    -o-transition: .15s ease-in-out;
-    transition: .15s ease-in-out;
-}
 
 body, html {
     height: 100%;
@@ -188,6 +124,117 @@ body, html {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
+
+.trans {
+    -webkit-transition: .15s ease-in-out;
+    -moz-transition: .15s ease-in-out;
+    -ms-transition: .15s ease-in-out;
+    -o-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+
+/*FONTS BASE*/
+
+
+h2 {
+    font-family: 'EffraHeavy-Regular';
+    font-size: 120px;
+    line-height: 110px;
+    color: #3B3B41;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 80px;
+        line-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 45px;
+        line-height: 35px;
+    }
+}
+
+
+
+
+
+h2:after {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: red;
+    margin: 60px auto;
+    content:"";
+    background: url(../img/sprite.png) -140px -147px;
+    background-size: 491px 989px;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    h2:after {
+        width: 8px;
+        height: 8px;
+        margin: 40px auto;
+        font-size: 80px;
+        background: url(../img/sprite.png) -140px -139px;
+        background-size: 491px 989px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2:after {
+        width: 8px;
+        height: 8px;
+        margin: 30px auto 20px auto;
+        font-size: 80px;
+        background: url(../img/sprite.png) -140px -139px;
+        background-size: 491px 989px;
+    }
+}
+
+h3 {
+    font-family: 'tisaproitalicbold';
+    font-size: 50px;
+    line-height: 64px;
+    color: #3B3B41;
+    text-align: center;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
+
+p {
+    font-family: 'tisaproregular';
+    font-size: 25px;
+    line-height: 41px;
+    color: #3B3B41;
+    text-align: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    p {
+    font-size: 16px;
+    line-height: 26px;
+    }
+}
+
+
+
+
+
+
+
 
 .nav-base {
     position: absolute;
@@ -213,7 +260,7 @@ body, html {
     display: block;
     width: 42px;
     height: 42px;
-    background: url(../img/sprite.png) -42px -195px;
+    background: url(../img/sprite.png) -r42px -195px;
     background-size: 491px 989px;
     position: relative;
     float: left;
@@ -453,12 +500,17 @@ section {
 
   }
 
+.icon-stage {
+    margin-top: 40px;
+}
+
 .my-icons {
-    margin:40px auto 20px auto;
+    margin:20px auto 20px auto;
     display: block;
     width: 128px;
     height: 128px;
 }
+
 
 @media (max-width: 768px) {
 
@@ -632,8 +684,13 @@ textarea:focus, input:focus{
     font-family: 'Effra-Regular';
     color: #F2F2F2;
     font-size: 30px;
-    background: #3B3B41;;
+    background: #3B3B41;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     margin-top: 40px;
+}
+
+.btn:hover {
+    color: #F2F2F2;
+    background: #D44120;
 }
