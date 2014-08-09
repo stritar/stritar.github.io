@@ -190,7 +190,7 @@ h2:after {
     h2:after {
         width: 8px;
         height: 8px;
-        margin: 30px auto 20px auto;
+        margin: 30px auto 10px auto;
         font-size: 80px;
         background: url(../img/sprite.png) -140px -139px;
         background-size: 491px 989px;
@@ -501,27 +501,21 @@ section {
   }
 
 .icon-stage {
-    margin-top: 40px;
+    margin-top: 20px;
+}
+
+.icon-stage p {
+    font-size: 20px;
+    font-family: 'Effra-Regular';
+    line-height: 0;
 }
 
 .my-icons {
-    margin:20px auto 20px auto;
+    margin:20px auto 0px auto;
     display: block;
-    width: 128px;
-    height: 128px;
+    width: 150px;
+    height: 150px;
 }
-
-
-@media (max-width: 768px) {
-
-    .my-icons {
-    margin:20px auto 10px auto;
-    display: block;
-    width: 94px;
-    height: 94px;
-}
-}
-
 
 
 .icon-1 {
@@ -530,58 +524,33 @@ section {
     background-size: 491px 989px;
 }
 
-@media (max-width: 768px) {
 
-    .icon-1 {
 
-    background: url(../img/sprite.png) -157px -464px;
+.icon-2 {
+
+    background: url(../img/sprite.png) 0 -597px;
     background-size: 491px 989px;
+}
+
+
+.icon-3 {
+
+    background: url(../img/sprite.png) 0 -747px;
+    background-size: 491px 989px;
+}
+
+
+@media (max-width: 480px) {
+
+.icon-holder {
+    margin-top:80px;
 }
 
   }
 
-.icon-2 {
 
-    background: url(../img/sprite.png) 0 -575px;
-    background-size: 491px 989px;
-}
 
-@media (max-width: 768px) {
 
-    .icon-2 {
-
-    background: url(../img/sprite.png) -157px -592px;
-    background-size: 491px 989px;
-}
-}
-.icon-3 {
-
-    background: url(../img/sprite.png) 0 -703px;
-    background-size: 491px 989px;
-}
-    
-@media (max-width: 768px) {
-
-    .icon-3 {
-
-    background: url(../img/sprite.png) -157px -720px;
-    background-size: 491px 989px;
-}
-}
-.icon-4 {
-
-    background: url(../img/sprite.png) 0 -831px;
-    background-size: 491px 989px;
-}
-    
-@media (max-width: 768px) {
-
-    .icon-4 {
-
-    background: url(../img/sprite.png) -157px -848px;
-    background-size: 491px 989px;
-}
-}
 
 .proj-holder {
     max-width: 100%;

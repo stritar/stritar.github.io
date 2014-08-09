@@ -71,12 +71,11 @@ $(document).scroll(function () {
                         </div>
                     </div>
                     <div class="row icon-stage">
-                        <div class="col-lg-12">
+                        <div class="col-lg-8 col-lg-offset-2">
                             <div class="row">
-                                <div class="row-gut col-lg-3 col-sm-3 col-xs-6"><span class="icon-1 my-icons"></span><p>Classical music</p></div>
-                                <div class="row-gut col-lg-3 col-sm-3 col-xs-6"><span class="icon-2 my-icons"></span><p>Quantum physics</p></div>
-                                <div class="row-gut col-lg-3 col-sm-3 col-xs-6"><span class="icon-3 my-icons"></span><p>Long walks</p></div>
-                                <div class="row-gut col-lg-3 col-sm-3 col-xs-6"><span class="icon-4 my-icons"></span><p>Urban decay</p></div>
+                                <div class="col-sm-4"><span class="icon-1 my-icons"></span><p>Classical music</p></div>
+                                <div class="col-sm-4 icon-holder"><span class="icon-2 my-icons"></span><p>Quantum physics</p></div>
+                                <div class="col-sm-4 icon-holder"><span class="icon-3 my-icons"></span><p>Long walks</p></div>
                             </div>
                         </div>
                     </div>
@@ -231,5 +230,9 @@ $(document).scroll(function () {
           $("#a").sticky({ topSpacing: 0 });
         });
     </script>
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init();
+	</script>
   </body>
 </html>
