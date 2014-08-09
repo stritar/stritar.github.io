@@ -134,6 +134,7 @@ body, html {
 }
 
 
+
 /*FONTS BASE*/
 
 
@@ -549,6 +550,29 @@ section {
   }
 
 
+
+.container-fluid {
+    padding: 0px;
+}
+
+@media (max-width: 768px) {
+    body { 
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.proj-1 {
+
+    height: 600px;
+    background: blue;
+}
+
+.proj-2 {
+
+    height: 600px;
+    background: green;
+}
 
 
 
