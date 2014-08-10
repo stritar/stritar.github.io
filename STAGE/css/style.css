@@ -324,13 +324,13 @@ p {
 
 .primary_menu {
     margin: 16px 0 0 0;
-    font-family: 'EffraHeavy';
+    font-family: 'EffraHeavy-Regular';
     font-size: 16px;
 }
 
 .secondary_menu {
     margin: 8px 0 0 0;
-    font-family: 'TisaProRegular';
+    font-family: 'tisaproregular';
     font-size: 14px;
 }
 
@@ -488,15 +488,15 @@ p {
 }
 
 section {
-    margin-top: 150px;
-    padding-bottom: 150px;
+    margin-top: 300px;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 768px) {
 
     section {
-    margin-top: 50px;
-    padding-bottom: 50px;
+    margin-top: 150px;
+    padding-bottom: 25px;
 }
 
   }
@@ -564,11 +564,6 @@ section {
 }
 
 
-.proj-holder a {
-    width: 100%;
-    height: auto;
-}
-
 a.proj-link img {
     width: 100%;
     height: auto;
@@ -582,13 +577,13 @@ a.proj-link img {
     height: auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .proj-info {
         opacity: 1;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .proj-info img {
         opacity: 0;
     }
@@ -605,7 +600,7 @@ a.proj-link img {
     background: rgba(211,65,31,0.85);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .info-plate {
         background: rgba(242,242,242,0.7);
     }
@@ -627,7 +622,7 @@ a.proj-link img {
     margin-left: -150px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .project-name {
         font-size: 20px;
         color: #D44120;
@@ -640,7 +635,7 @@ a.proj-link img {
     text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .project-name span {
         font-size: 12px;
     }
@@ -656,7 +651,7 @@ a.proj-link img {
     margin-bottom: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .arrow {
     margin: 0 auto;
     display: block;
