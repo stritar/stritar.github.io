@@ -156,7 +156,7 @@ h2 {
 @media (max-width: 480px) {
     h2 {
         font-size: 45px;
-        line-height: 35px;
+        line-height: 40px;
     }
 }
 
@@ -598,6 +598,8 @@ a.proj-link img {
     width: 100%;
     height: 100%;
     background: rgba(211,65,31,0.85);
+
+ 
 }
 
 @media (max-width: 768px) {
@@ -687,13 +689,51 @@ input {
    
     border: 0px;
     font-size: 30px;
-    font-family: 'Effra-Regular';
+    font-family: 'EffraHeavy-Regular';
     padding-top: 50px;
     background: #F2F2F2;
-    color: #3B3B41;
-    border-bottom: 2px solid #3B3B41;
+    color: #D44120;
+    border-bottom: 3px solid #3B3B41;
     -webkit-appearance: none;
     border-radius: 0;
+}
+
+input:focus {
+    
+    border-color: #D44120 ;   
+}
+
+button {
+    margin: 40px auto 0 auto;
+    display: block;
+    width: 420px;
+    height: 90px;
+    background: #3B3B41;
+    border: 0;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    font-size: 30px;
+    font-family: 'EffraHeavy-Regular';
+    color: #F2F2F2;
+    line-height: 35px;
+}
+
+@media (max-width: 768px) {
+    button {
+    width: 280px;
+    height: 60px;
+    font-size: 25px;
+    }
+}
+
+
+button:hover {
+    background: #D44120;
+}
+
+button:active {
+    background: #e15535;
 }
 
 textarea:focus, input:focus{
@@ -716,20 +756,76 @@ textarea:focus, input:focus{
    color: #3B3B41;  
 }
 
-.btn {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 40px;
-    font-family: 'Effra-Regular';
-    color: #F2F2F2;
-    font-size: 30px;
-    background: #3B3B41;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    margin-top: 40px;
+.social-networks {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 250px;
+    height: 80px;
 }
 
-.btn:hover {
-    color: #F2F2F2;
-    background: #D44120;
+
+.icons li {
+    display: inline;
+    float: left;
+}
+
+.icons a {
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin-right: 20px;
+}
+
+.beh {
+    background: url(../img/sprite.png) -0px -321px;
+    background-size: 491px 989px;
+}
+
+.s6 {
+    background: url(../img/sprite.png) -0px -363px;
+    background-size: 491px 989px;
+}
+
+.drib {
+    background: url(../img/sprite.png) -0px -405px;
+    background-size: 491px 989px;
+}
+
+.beh-hover {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -42px -321px;
+    background-size: 491px 989px;
+    opacity:0;
+}
+
+.beh-hover:hover {
+    opacity:1;   
+}
+
+.s6-hover {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -42px -363px;
+    background-size: 491px 989px;
+    opacity:0;
+}
+
+.s6-hover:hover {
+    opacity:1;   
+}
+
+.drib-hover {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -42px -405px;
+    background-size: 491px 989px;
+    opacity:0;
+}
+
+.drib-hover:hover {
+    opacity:1;   
 }
