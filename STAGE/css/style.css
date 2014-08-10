@@ -829,3 +829,11 @@ textarea:focus, input:focus{
 .drib-hover:hover {
     opacity:1;   
 }
+
+footer p {
+    font-family: 'Effra-Regular';
+    font-size: 16px;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 10px;
+}
