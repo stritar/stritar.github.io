@@ -602,18 +602,18 @@ a.proj-link img {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(242,242,242,0.7);
+    background: rgba(211,65,31,0.85);
 }
 
 @media (max-width: 480px) {
     .info-plate {
-        background: rgba(242,242,242,0.8);
+        background: rgba(242,242,242,0.7);
     }
 }
 
 
 .project-name {
-    color: #3B3B3B;
+    color: #F2F2F2;
     display: block;
     position: absolute;
     font-size: 30px;
@@ -630,6 +630,7 @@ a.proj-link img {
 @media (max-width: 480px) {
     .project-name {
         font-size: 20px;
+        color: #D44120;
     }
 }
 
@@ -654,6 +655,20 @@ a.proj-link img {
     background-size: 491px 989px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 480px) {
+    .arrow {
+    margin: 0 auto;
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -84px -237px;
+    background-size: 491px 989px;
+    margin-bottom: 10px;
+        
+    }
+}
+
 
 .project-type {
     color: #F2F2F2;
