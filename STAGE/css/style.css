@@ -605,6 +605,13 @@ a.proj-link img {
     background: rgba(242,242,242,0.7);
 }
 
+@media (max-width: 480px) {
+    .info-plate {
+        background: rgba(242,242,242,0.8);
+    }
+}
+
+
 .project-name {
     color: #3B3B3B;
     display: block;
