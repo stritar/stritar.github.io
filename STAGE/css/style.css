@@ -144,19 +144,24 @@ h2 {
     line-height: 110px;
     color: #3B3B41;
     text-align: center;
+    width:1200px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    h2 {
+        font-size: 80px;
+        line-height: 70px;
+        width:700px;
+    }
 }
 
 @media (max-width: 768px) {
     h2 {
-        font-size: 80px;
-        line-height: 70px;
-    }
-}
-
-@media (max-width: 480px) {
-    h2 {
         font-size: 45px;
         line-height: 40px;
+        width:280px;
     }
 }
 
@@ -176,7 +181,7 @@ h2:after {
     font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
     h2:after {
         width: 8px;
         height: 8px;
@@ -187,11 +192,11 @@ h2:after {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     h2:after {
         width: 8px;
         height: 8px;
-        margin: 30px auto 10px auto;
+        margin: 30px auto 20px auto;
         font-size: 80px;
         background: url(../img/sprite.png) -140px -139px;
         background-size: 491px 989px;
@@ -205,14 +210,29 @@ h3 {
     color: #3B3B41;
     text-align: center;
     font-weight: normal;
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    h3 {
+        font-size: 30px;
+        line-height: 42px;
+        width: 750px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
     h3 {
         font-size: 30px;
         line-height: 42px;
+        width: auto;
+        margin: 0 20px 0 20px;
     }
 }
+
 
 p {
     font-family: 'tisaproregular';
@@ -220,17 +240,29 @@ p {
     line-height: 41px;
     color: #3B3B41;
     text-align: center;
-    margin-top: 40px;
+    display: block;
+    width: 1100px;
+    margin: 40px auto 0 auto;
 }
+
+@media (max-width: 1440px) {
+    p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 700px;
+    margin: 30px auto 0 auto;
+    }
+}
+
 
 @media (max-width: 768px) {
     p {
     font-size: 16px;
     line-height: 26px;
+    width: auto;
+    margin: 30px 20px 0 20px;
     }
 }
-
-
 
 
 
@@ -451,7 +483,7 @@ p {
 
   }
 
-@media (min-width: 1600px) {
+@media (min-width: 1440px) {
     .logo-intro{
         display: none;
         margin: 0 auto;
@@ -492,7 +524,7 @@ section {
     padding-bottom: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
 
     section {
     margin-top: 150px;
@@ -500,6 +532,17 @@ section {
 }
 
   }
+
+
+@media (max-width: 768px) {
+
+    section {
+    margin-top: 75px;
+    padding-bottom: 12px;
+}
+
+  }
+
 
 .icon-stage {
     margin-top: 20px;
