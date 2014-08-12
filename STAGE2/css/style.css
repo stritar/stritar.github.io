@@ -70,11 +70,9 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body,
 html {
     height: 100%;
-    background-color: #F2F2F2;
 }
 body,
 html {
@@ -82,8 +80,9 @@ html {
     margin: 0;
     font-family: helvetica;
     font-weight: 100;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+}
+body {
+    background-color: #F2F2F2;
 }
 .trans {
     -webkit-transition: .25s ease-out;
@@ -92,7 +91,6 @@ html {
     -o-transition: .25s ease-out;
     transition: .25s ease-out;
 }
-
 h2 {
     font-family: 'EffraHeavy-Regular';
     font-size: 120px;
@@ -201,23 +199,10 @@ p {
         margin: 30px 20px 0 20px;
     }
 }
-.nav-base {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border-top: 1px solid #000;
-    background: rgba(242, 242, 242, 0.9);
-    z-index: 10;
-    padding: 20px;
-    r
-}
-
-
 .intro {
     width: 100%;
     height: 100%;
 }
-
 .logo-intro {
     margin: 0 auto;
     display: block;
@@ -230,7 +215,6 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 1;
 }
 @media (max-width: 768px) {
     .logo-intro {
@@ -279,8 +263,23 @@ p {
     background: url(../img/sprite.png) -42px -279px;
     background-size: 491px 989px;
 }
+video {
+    position: absolute;
+    top: 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+}
+.back-col {
+    background-color: #F2F2F2;
+}
 section {
-    margin-top: 300px;
+    padding-top: 300px;
     padding-bottom: 50px;
 }
 @media (max-width: 1440px) {
