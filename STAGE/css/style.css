@@ -874,9 +874,10 @@ textarea:focus, input:focus{
 }
 
 footer p {
+    width: 280px;
+    display: block;
     font-family: 'Effra-Regular';
-    font-size: 16px;
-    margin: 0;
-    line-height: 1;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin: 0 auto;
+    line-height: 1.8;
 }
