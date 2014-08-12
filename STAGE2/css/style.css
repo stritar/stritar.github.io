@@ -1,122 +1,83 @@
-/*FONTS BASE*/
-
 @font-face {
-  font-family: 'Effra-Regular';
-  src: url('../fonts/Effra-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/Effra-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/Effra-Regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/Effra-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/Effra-Regular.svg#9415985da0ffc35466232532a260e2fc') format('svg'); /* Legacy iOS */
-       
-  font-style:   normal;
-  font-weight:  400;
+    font-family: 'Effra-Regular';
+    src: url('../fonts/Effra-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/Effra-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/Effra-Regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/Effra-Regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/Effra-Regular.svg#9415985da0ffc35466232532a260e2fc') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 400;
 }
-
 @font-face {
-  font-family: 'EffraHeavy-Regular';
-  src: url('../fonts/EffraHeavy-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/EffraHeavy-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/EffraHeavy-Regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/EffraHeavy-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/EffraHeavy-Regular.svg#dce01ffeba0589c2b8b38deab731206a') format('svg'); /* Legacy iOS */
-       
-  font-style:   normal;
-  font-weight:  400;
+    font-family: 'EffraHeavy-Regular';
+    src: url('../fonts/EffraHeavy-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/EffraHeavy-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/EffraHeavy-Regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/EffraHeavy-Regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/EffraHeavy-Regular.svg#dce01ffeba0589c2b8b38deab731206a') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 400;
 }
-
 @font-face {
     font-family: 'tisaproregular';
     src: url('../fonts/tisapro-regular-webfont.eot');
-    src: url('../fonts/tisapro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-regular-webfont.woff') format('woff'),
-         url('../fonts/tisapro-regular-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-regular-webfont.svg#tisaproregular') format('svg');
+    src: url('../fonts/tisapro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-regular-webfont.woff') format('woff'), url('../fonts/tisapro-regular-webfont.ttf') format('truetype'), url('../fonts/tisapro-regular-webfont.svg#tisaproregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 @font-face {
     font-family: 'tisaproitalicmedium';
     src: url('../fonts/tisapro-mediumitalic-webfont.eot');
-    src: url('../fonts/tisapro-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-mediumitalic-webfont.woff') format('woff'),
-         url('../fonts/tisapro-mediumitalic-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-mediumitalic-webfont.svg#tisaproitalicmedium') format('svg');
+    src: url('../fonts/tisapro-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-mediumitalic-webfont.woff') format('woff'), url('../fonts/tisapro-mediumitalic-webfont.ttf') format('truetype'), url('../fonts/tisapro-mediumitalic-webfont.svg#tisaproitalicmedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
 @font-face {
     font-family: 'tisapromedium';
     src: url('../fonts/tisapro-medium-webfont.eot');
-    src: url('../fonts/tisapro-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-medium-webfont.woff') format('woff'),
-         url('../fonts/tisapro-medium-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-medium-webfont.svg#tisapromedium') format('svg');
+    src: url('../fonts/tisapro-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-medium-webfont.woff') format('woff'), url('../fonts/tisapro-medium-webfont.ttf') format('truetype'), url('../fonts/tisapro-medium-webfont.svg#tisapromedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
 @font-face {
     font-family: 'tisaproitalicbold';
     src: url('../fonts/tisapro-bolditalic-webfont.eot');
-    src: url('../fonts/tisapro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-bolditalic-webfont.woff') format('woff'),
-         url('../fonts/tisapro-bolditalic-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-bolditalic-webfont.svg#tisaproitalicbold') format('svg');
+    src: url('../fonts/tisapro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-bolditalic-webfont.woff') format('woff'), url('../fonts/tisapro-bolditalic-webfont.ttf') format('truetype'), url('../fonts/tisapro-bolditalic-webfont.svg#tisaproitalicbold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
 @font-face {
     font-family: 'tisaprobold';
     src: url('../fonts/tisapro-bold-webfont.eot');
-    src: url('../fonts/tisapro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-bold-webfont.woff') format('woff'),
-         url('../fonts/tisapro-bold-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-bold-webfont.svg#tisaprobold') format('svg');
+    src: url('../fonts/tisapro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-bold-webfont.woff') format('woff'), url('../fonts/tisapro-bold-webfont.ttf') format('truetype'), url('../fonts/tisapro-bold-webfont.svg#tisaprobold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
 @font-face {
     font-family: 'tisaproitalic';
     src: url('../fonts/tisapro-italic-webfont.eot');
-    src: url('../fonts/tisapro-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tisapro-italic-webfont.woff') format('woff'),
-         url('../fonts/tisapro-italic-webfont.ttf') format('truetype'),
-         url('../fonts/tisapro-italic-webfont.svg#tisaproitalic') format('svg');
+    src: url('../fonts/tisapro-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-italic-webfont.woff') format('woff'), url('../fonts/tisapro-italic-webfont.ttf') format('truetype'), url('../fonts/tisapro-italic-webfont.svg#tisaproitalic') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
-
-/*GLOBALS*/
-
-
-body, html {
+body,
+html {
     height: 100%;
     background-color: #F2F2F2;
 }
-
-
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: helvetica;
@@ -124,7 +85,6 @@ body, html {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
-
 .trans {
     -webkit-transition: .25s ease-out;
     -moz-transition: .25s ease-out;
@@ -133,54 +93,41 @@ body, html {
     transition: .25s ease-out;
 }
 
-
-
-/*FONTS BASE*/
-
-
 h2 {
     font-family: 'EffraHeavy-Regular';
     font-size: 120px;
     line-height: 110px;
     color: #3B3B41;
     text-align: center;
-    width:1200px;
+    width: 1200px;
     display: block;
     margin: 0 auto;
 }
-
 @media (max-width: 1440px) {
     h2 {
         font-size: 80px;
         line-height: 70px;
-        width:700px;
+        width: 700px;
     }
 }
-
 @media (max-width: 768px) {
     h2 {
         font-size: 45px;
         line-height: 40px;
-        width:280px;
+        width: 280px;
     }
 }
-
-
-
-
-
 h2:after {
     display: block;
     width: 12px;
     height: 12px;
     background: red;
     margin: 60px auto;
-    content:"";
+    content: "";
     background: url(../img/sprite.png) -140px -147px;
     background-size: 491px 989px;
     font-weight: normal;
 }
-
 @media (max-width: 1440px) {
     h2:after {
         width: 8px;
@@ -191,7 +138,6 @@ h2:after {
         background-size: 491px 989px;
     }
 }
-
 @media (max-width: 768px) {
     h2:after {
         width: 8px;
@@ -202,7 +148,6 @@ h2:after {
         background-size: 491px 989px;
     }
 }
-
 h3 {
     font-family: 'tisaproitalicbold';
     font-size: 50px;
@@ -214,7 +159,6 @@ h3 {
     width: 1200px;
     margin: 0 auto;
 }
-
 @media (max-width: 1440px) {
     h3 {
         font-size: 30px;
@@ -223,7 +167,6 @@ h3 {
         margin: 0 auto;
     }
 }
-
 @media (max-width: 768px) {
     h3 {
         font-size: 30px;
@@ -232,8 +175,6 @@ h3 {
         margin: 0 20px 0 20px;
     }
 }
-
-
 p {
     font-family: 'tisaproregular';
     font-size: 25px;
@@ -244,227 +185,40 @@ p {
     width: 1100px;
     margin: 40px auto 0 auto;
 }
-
 @media (max-width: 1440px) {
     p {
-    font-size: 16px;
-    line-height: 26px;
-    width: 700px;
-    margin: 30px auto 0 auto;
+        font-size: 16px;
+        line-height: 26px;
+        width: 700px;
+        margin: 30px auto 0 auto;
     }
 }
-
-
 @media (max-width: 768px) {
     p {
-    font-size: 16px;
-    line-height: 26px;
-    width: auto;
-    margin: 30px 20px 0 20px;
+        font-size: 16px;
+        line-height: 26px;
+        width: auto;
+        margin: 30px 20px 0 20px;
     }
 }
-
-
-
 .nav-base {
     position: absolute;
     top: 0;
     width: 100%;
     border-top: 1px solid #000;
-    background: rgba(242 , 242 , 242 ,0.9);
+    background: rgba(242, 242, 242, 0.9);
     z-index: 10;
-    padding: 20px;r
+    padding: 20px;
+    r
 }
 
-.logo-small {
-    display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) 0 -195px;
-    background-size: 491px 989px;
-    position: relative;
-    float: left;
-}
-
-.logo-small:hover {
-    display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -r42px -195px;
-    background-size: 491px 989px;
-    position: relative;
-    float: left;
-}
-
-#sidebar-toggle {
-    display: block;
-    width:42px;
-    height: 42px;
-    position: relative;
-    float: right;
-}
-
-
-.container-side {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin:0;
-    padding: 0;
-    right: 0;
-    -webkit-transition:  right 0.4s ease-in-out;
-    -moz-transition:  right 0.4s ease-in-out;
-    -ms-transition:  right 0.4s ease-in-out;
-    -o-transition:  right 0.4s ease-in-out;
-    transition:  right 0.4s ease-in-out;
-}
-.container-side.open-sidebar {
-    right: 260px;
-}
- 
-.swipe-area {
-    position: absolute;
-    width: 50px;
-    right: 0;
-    top: 0;
-    height: 100%;
-    z-index: 0;
-}
-#sidebar {
-    background: #3B3B41;
-    position: absolute;
-    width: 260px; 
-    height: 100%;
-    right: -260px;
-}
-#sidebar ul {
-    margin: 38px 0 0 48px;
-    padding: 0;
-    list-style: none;
-}
-#sidebar ul li {
-    margin:0;
-}
-#sidebar ul li a {
-    display: block;
-    text-decoration: none;
-    color: #F2F2F2;
-}
-
-.primary_menu {
-    margin: 16px 0 0 0;
-    font-family: 'EffraHeavy-Regular';
-    font-size: 16px;
-}
-
-.secondary_menu {
-    margin: 8px 0 0 0;
-    font-family: 'tisaproregular';
-    font-size: 14px;
-}
-
-.main-content {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    position: relative;
-}
-.main-content .content{
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding-left: 60px;
-    width: 100%;
-}
-
-
-
-
-
-.main-content #sidebar-toggle .bar:last-child{
-     margin-bottom: 0;   
-}
-
-<!--SVG HAMBURGER-->
-.svg-menu-toggle {
-  fill: #fff;
-  pointer-events: all;
-  cursor: pointer;
-}
-
-.svg-menu-toggle .round {
-    transition: fill .4s ease-in-out;
-}
-
-.svg-menu-toggle .bar {
-  -webkit-transform: rotate(0) translateY(0) translateX(0);
-  transform: rotate(0) translateY(0) translateX(0);
-  opacity: 1;
-  -webkit-transform-origin: 20px 10px;
-  transform-origin: 20px 10px;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
-  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
-}
-.svg-menu-toggle .bar:nth-of-type(1) {
-  -webkit-transform-origin: 20px 10px;
-  transform-origin: 20px 10px;
-}
-.svg-menu-toggle .bar:nth-of-type(3) {
-  -webkit-transform-origin: 20px 20px;
-  transform-origin: 20px 20px;
-}
-
-.svg-menu-toggle:hover .bar:nth-of-type(1) {
-  -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
-  transform: rotate(-45deg) translateY(-10px) translateX(-8px);
-  fill:#3B3B41;
-}
-.svg-menu-toggle:hover .bar:nth-of-type(2) {
-  opacity: 0;
-}
-.svg-menu-toggle:hover .bar:nth-of-type(3) {
-  -webkit-transform: rotate(45deg) translateY(6px) translateX(0px) ;
-  transform: rotate(45deg) translateY(6px) translateX(0px);
-  fill:#3B3B41;
- 
-}
-    
-.svg-menu-toggle:hover .round {
-  fill:#F2F2F2;
- 
-}
-
-.inline-svg {
-  display: block;
-  margin: 0 auto;
-}
 
 .intro {
     width: 100%;
     height: 100%;
 }
 
-.video-holder {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-
-video {
-    box-shadow: none;
-    width: 100%;
-    z-index: 0;
-    position: fixed; right: 0; bottom: 0;
-min-width: 100%; min-height: 100%;
-width: auto; height: auto; z-index: -100;
-
-
-}
-
-.logo-intro{
+.logo-intro {
     margin: 0 auto;
     display: block;
     width: 140px;
@@ -478,9 +232,8 @@ width: auto; height: auto; z-index: -100;
     left: 50%;
     z-index: 1;
 }
-
 @media (max-width: 768px) {
-    .logo-intro{
+    .logo-intro {
         margin: 0 auto;
         display: block;
         width: 100px;
@@ -492,12 +245,10 @@ width: auto; height: auto; z-index: -100;
         position: absolute;
         top: 50%;
         left: 50%;
+    }
 }
-
-  }
-
 @media (min-width: 1440px) {
-    .logo-intro{
+    .logo-intro {
         display: none;
         margin: 0 auto;
         display: block;
@@ -510,10 +261,8 @@ width: auto; height: auto; z-index: -100;
         position: absolute;
         top: 50%;
         left: 50%;
+    }
 }
-}
-
-
 .down-arrow {
     margin: 0 auto;
     display: block;
@@ -523,148 +272,103 @@ width: auto; height: auto; z-index: -100;
     background-size: 491px 989px;
     margin-left: -21px;
     position: absolute;
-    bottom:20px;
-    left: 50%; 
+    bottom: 20px;
+    left: 50%;
 }
-
 .down-arrow:hover {
     background: url(../img/sprite.png) -42px -279px;
     background-size: 491px 989px;
 }
-
 section {
     margin-top: 300px;
     padding-bottom: 50px;
 }
-
 @media (max-width: 1440px) {
-
     section {
-    margin-top: 150px;
-    padding-bottom: 25px;
+        margin-top: 150px;
+        padding-bottom: 25px;
+    }
 }
-
-  }
-
-
 @media (max-width: 768px) {
-
     section {
-    margin-top: 75px;
-    padding-bottom: 12px;
+        margin-top: 75px;
+        padding-bottom: 12px;
+    }
 }
-
-  }
-
-
 .icon-stage {
     margin-top: 20px;
 }
-
 .icon-stage p {
     font-size: 20px;
     font-family: 'Effra-Regular';
     line-height: 0;
 }
-
 .my-icons {
-    margin:20px auto 0px auto;
+    margin: 20px auto 0px auto;
     display: block;
     width: 150px;
     height: 150px;
 }
-
-
 .icon-1 {
-
     background: url(../img/sprite.png) 0 -447px;
     background-size: 491px 989px;
 }
-
-
-
 .icon-2 {
-
     background: url(../img/sprite.png) 0 -597px;
     background-size: 491px 989px;
 }
-
-
 .icon-3 {
-
     background: url(../img/sprite.png) 0 -747px;
     background-size: 491px 989px;
 }
-
-
 @media (max-width: 480px) {
-
-.icon-holder {
-    margin-top:80px;
+    .icon-holder {
+        margin-top: 80px;
+    }
 }
-
-  }
-
-
-
 .container-fluid {
     padding: 0px;
-    
 }
-
 @media (max-width: 768px) {
-    body { 
+    body {
         padding-left: 0px;
         padding-right: 0px;
     }
 }
-
-
 a.proj-link img {
     width: 100%;
     height: auto;
 }
-
-
 .proj-info {
     opacity: 0;
     position: absolute;
     width: 100%;
     height: auto;
 }
-
 @media (max-width: 768px) {
     .proj-info {
         opacity: 1;
     }
 }
-
 @media (max-width: 768px) {
     .proj-info img {
         opacity: 0;
     }
 }
-
 .proj-info:hover {
     opacity: 1;
 }
-
 .info-plate {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(211,65,31,0.85);
-
- 
+    background: rgba(211, 65, 31, 0.85);
 }
-
 @media (max-width: 768px) {
     .info-plate {
-        background: rgba(242,242,242,0.7);
+        background: rgba(242, 242, 242, 0.7);
     }
 }
-
-
 .project-name {
     color: #F2F2F2;
     display: block;
@@ -674,31 +378,26 @@ a.proj-link img {
     line-height: 1;
     width: 300px;
     height: 50px;
-    top:50%;
+    top: 50%;
     left: 50%;
     margin-top: -35px;
     margin-left: -150px;
 }
-
 @media (max-width: 768px) {
     .project-name {
         font-size: 20px;
         color: #D44120;
     }
 }
-
-
 .project-name span {
     font-size: 14px;
     text-transform: uppercase;
 }
-
 @media (max-width: 768px) {
     .project-name span {
         font-size: 12px;
     }
 }
-
 .arrow {
     margin: 0 auto;
     display: block;
@@ -708,21 +407,17 @@ a.proj-link img {
     background-size: 491px 989px;
     margin-bottom: 10px;
 }
-
 @media (max-width: 768px) {
     .arrow {
-    margin: 0 auto;
-    display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -84px -237px;
-    background-size: 491px 989px;
-    margin-bottom: 10px;
-        
+        margin: 0 auto;
+        display: block;
+        width: 42px;
+        height: 42px;
+        background: url(../img/sprite.png) -84px -237px;
+        background-size: 491px 989px;
+        margin-bottom: 10px;
     }
 }
-
-
 .project-type {
     color: #F2F2F2;
     display: block;
@@ -730,19 +425,16 @@ a.proj-link img {
     font-family: 'EffraHeavy-Regular';
     width: 300px;
     height: 50px;
-    top:50%;
+    top: 50%;
     left: 50%;
     margin-top: -25px;
     margin-left: -150px;
 }
-
 .row-gut {
-  padding-right:0px;
-  padding-left:0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
-
 input {
-   
     border: 0px;
     font-size: 30px;
     font-family: 'EffraHeavy-Regular';
@@ -753,12 +445,9 @@ input {
     -webkit-appearance: none;
     border-radius: 0;
 }
-
 input:focus {
-    
-    border-color: #D44120 ;   
+    border-color: #D44120;
 }
-
 button {
     margin: 40px auto 0 auto;
     display: block;
@@ -774,118 +463,98 @@ button {
     color: #F2F2F2;
     line-height: 35px;
 }
-
 @media (max-width: 768px) {
     button {
-    width: 280px;
-    height: 60px;
-    font-size: 25px;
+        width: 280px;
+        height: 60px;
+        font-size: 25px;
     }
 }
-
-
 button:hover {
     background: #D44120;
 }
-
 button:active {
     background: #e15535;
 }
-
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
     outline: 0;
 }
-
 ::-webkit-input-placeholder {
-   color: #3B3B41;
+    color: #3B3B41;
 }
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #3B3B41;  
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #3B3B41;
 }
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #3B3B41;  
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #3B3B41;
 }
-
-:-ms-input-placeholder {  
-   color: #3B3B41;  
+:-ms-input-placeholder {
+    color: #3B3B41;
 }
-
 .social-networks {
     display: block;
     margin: 0 auto 20px auto;
     width: 250px;
     height: 80px;
 }
-
-
 .icons li {
     display: inline;
     float: left;
 }
-
 .icons a {
     display: block;
     width: 42px;
     height: 42px;
     margin-right: 20px;
 }
-
 .beh {
     background: url(../img/sprite.png) -0px -321px;
     background-size: 491px 989px;
 }
-
 .s6 {
     background: url(../img/sprite.png) -0px -363px;
     background-size: 491px 989px;
 }
-
 .drib {
     background: url(../img/sprite.png) -0px -405px;
     background-size: 491px 989px;
 }
-
 .beh-hover {
     display: block;
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -321px;
     background-size: 491px 989px;
-    opacity:0;
+    opacity: 0;
 }
-
 .beh-hover:hover {
-    opacity:1;   
+    opacity: 1;
 }
-
 .s6-hover {
     display: block;
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -363px;
     background-size: 491px 989px;
-    opacity:0;
+    opacity: 0;
 }
-
 .s6-hover:hover {
-    opacity:1;   
+    opacity: 1;
 }
-
 .drib-hover {
     display: block;
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -405px;
     background-size: 491px 989px;
-    opacity:0;
+    opacity: 0;
 }
-
 .drib-hover:hover {
-    opacity:1;   
+    opacity: 1;
 }
-
 footer p {
     width: 280px;
     display: block;
