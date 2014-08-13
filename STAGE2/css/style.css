@@ -70,17 +70,6 @@
     font-weight: normal;
     font-style: normal;
 }
-video {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -20;
-}
 nav.menu {
     position: fixed;
     z-index: 20;
@@ -271,6 +260,24 @@ p {
         margin: 30px 20px 0 20px;
     }
 }
+.back-col {
+    padding-top: 150px;
+    background: #F2F2F2;
+    display: block;
+    z-index: 10;
+    width: 100%;
+}
+video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
 .intro {
     width: 100%;
     height: 100%;
@@ -336,14 +343,6 @@ p {
 .down-arrow:hover {
     background: url(../img/sprite.png) -42px -279px;
     background-size: 491px 989px;
-}
-.back-col {
-    padding-top: 150px;
-    position: relative;
-    background: #F2F2F2;
-    display: block;
-    z-index: 10;
-    width: 100%;
 }
 section {
     padding-top: 300px;
