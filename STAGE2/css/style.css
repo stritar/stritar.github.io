@@ -73,13 +73,10 @@
 body,
 html {
     height: 100%;
-}
-body,
-html {
-    height: 100%;
     margin: 0;
     font-family: helvetica;
     font-weight: 100;
+    overflow-x: hidden;
 }
 body {
     background-color: #F2F2F2;
@@ -202,6 +199,7 @@ p {
 .intro {
     width: 100%;
     height: 100%;
+    z-index: -10;
 }
 .logo-intro {
     margin: 0 auto;
@@ -276,7 +274,12 @@ video {
     z-index: -10;
 }
 .back-col {
-    background-color: #F2F2F2;
+    padding-top: 150px;
+    position: relative;
+    background: #F2F2F2;
+    display: block;
+    z-index: 10;
+    width: 100%;
 }
 section {
     padding-top: 300px;
