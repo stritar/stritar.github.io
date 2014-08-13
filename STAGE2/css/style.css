@@ -70,6 +70,81 @@
     font-weight: normal;
     font-style: normal;
 }
+video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -20;
+}
+nav.menu {
+    position: fixed;
+    z-index: 20;
+    background-color: #67b5d1;
+    overflow: hidden;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+nav.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav.menu a {
+    font-weight: 300;
+    color: #fff;
+}
+button.close-menu {
+    background-color: #3184a1;
+    color: #fff;
+}
+button.close-menu:focus {
+    outline: none
+}
+nav.push-menu-right {
+    top: 0;
+    width: 300px;
+    height: 100%;
+}
+nav.push-menu-right li {
+    display: block;
+    text-align: center;
+    border-bottom: solid 1px #3184a1;
+    border-top: solid 1px #b5dbe9;
+}
+nav.push-menu-right li:first-child {
+    border-top: none
+}
+nav.push-menu-right li:last-child {
+    border-bottom: none
+}
+nav.push-menu-right a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+}
+nav.push-menu-right button.close-menu {
+    margin: 10px 0;
+    padding: 10px 30px;
+    background-color: #3184a1;
+    color: #fff;
+}
+nav.push-menu-right {
+    right: -300px
+}
+body.pmr-open nav.push-menu-right {
+    right: 0
+}
+body.pmr-open #wrapper {
+    left: -300px
+}
 body,
 html {
     height: 100%;
@@ -261,18 +336,6 @@ p {
 .down-arrow:hover {
     background: url(../img/sprite.png) -42px -279px;
     background-size: 491px 989px;
-}
-video {
-    position: absolute;
-    top: 0;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -20;
 }
 .back-col {
     padding-top: 150px;

@@ -14,16 +14,28 @@
 </head>
 
 <body>
+    <nav class="menu push-menu-right">
+        <ul>
+            <li>
+                <button class="close-menu">Close &rarr;</button>
+            </li>
+            <li><a href="#">Broccoli</a>
+            </li>
+            <li><a href="#">Tomato</a>
+            </li>
+            <li><a href="#">Cucumber</a>
+            </li>
+            <li><a href="#">Kale</a>
+            </li>
+            <li><a href="#">Celery</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /push menu right -->
+
     <div class="intro">
         <span class="logo-intro"></span>
         <a href="#" class="down-arrow"></a>
-    </div>
-
-    <div class="video-holder">
-        <video autoplay loop poster="video/hk.jpg" id="bgvid">
-            <source src="video/hk.webm" type="video/webm">
-                <source src="video/hk.mp4" type="video/mp4">
-        </video>
     </div>
 
     <div class="back-col">
@@ -175,7 +187,32 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/classie.js"></script>
+        <script src="js/nav.js"></script>
+        <script src="js/jquery.videobackground.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('dl').toggle();
+                $('h2').bind('click', function (event) {
+                    event.preventDefault();
+                    $(this).next('dl').slideToggle(500, function () {
+                        $('.video-background').videobackground('resize');
+                    });
+                });
+                $('body').prepend('<div class="video-background"></div>');
+                $('.video-background').videobackground({
+                    videoSource: [['video/hk.mp4', 'video/mp4'],
+      ['video/hk.webm', 'video/webm'],
+      ['video/hk.ogv', 'video/ogg']],
+                    controlPosition: '#main',
+                    poster: 'video/hk.jpg',
+                    loadedCallback: function () {
+                        $(this).videobackground('mute');
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
