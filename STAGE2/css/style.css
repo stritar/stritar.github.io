@@ -70,6 +70,15 @@
     font-weight: normal;
     font-style: normal;
 }
+.scroller {
+    overflow-y: scroll;
+}
+.scroller {
+    -webkit-overflow-scrolling: touch;
+}
+.scroller > * {
+    -webkit-transform: translateZ(0px);
+}
 nav.menu {
     position: fixed;
     z-index: 20;
