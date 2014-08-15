@@ -190,11 +190,15 @@ html {
     margin: 0;
     font-family: helvetica;
     font-weight: 100;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling-y: touch;
 }
 body {
     background-color: #F2F2F2;
+}
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 .trans {
     -webkit-transition: .25s ease-out;
