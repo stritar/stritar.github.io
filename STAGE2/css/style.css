@@ -191,7 +191,7 @@ html {
     font-family: helvetica;
     font-weight: 100;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling-y: touch;
 }
 body {
     background-color: #F2F2F2;
