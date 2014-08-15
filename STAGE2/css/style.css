@@ -72,9 +72,6 @@
     font-weight: normal;
     font-style: normal;
 }
-h1 {
-    dsd
-}
 h2 {
     font-family: 'EffraHeavy-Regular';
     font-size: 120px;
@@ -206,18 +203,18 @@ body {
     transition: .25s ease-out;
 }
 section {
-    padding-top: 300px;
+    padding-top: 200px;
     padding-bottom: 50px;
 }
 @media (max-width: 1440px) {
     section {
-        padding-top: 150px;
+        padding-top: 100px;
         padding-bottom: 25px;
     }
 }
 @media (max-width: 768px) {
     section {
-        padding-top: 75px;
+        padding-top: 50px;
         padding-bottom: 12px;
     }
 }
@@ -354,7 +351,14 @@ a.proj-link img {
     display: block;
     width: 100%;
     height: auto;
-    background: red;
+}
+@media (max-width: 768px) {
+    .proj-info {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 .proj-info:hover {
     opacity: 1;
@@ -363,7 +367,16 @@ a.proj-link img {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(211, 65, 31, 0.85);
+    background: rgba(211, 65, 31, 1);
+}
+@media (max-width: 768px) {
+    .info-plate {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45%;
+        background: rgba(211, 65, 31, 1);
+    }
 }
 .project-name {
     color: #F2F2F2;
@@ -379,9 +392,31 @@ a.proj-link img {
     margin-top: -35px;
     margin-left: -150px;
 }
-.project-name span {
+@media (max-width: 768px) {
+    .project-name {
+        color: #F2F2F2;
+        display: block;
+        position: absolute;
+        font-size: 18px;
+        font-family: 'EffraHeavy-Regular';
+        line-height: 1;
+        width: 300px;
+        height: 50px;
+        top: 45%;
+        left: 50%;
+        margin-top: -35px;
+        margin-left: -150px;
+    }
+}
+.proj-label {
     font-size: 14px;
     text-transform: uppercase;
+}
+@media (max-width: 768px) {
+    .proj-label {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
 }
 .arrow {
     margin: 0 auto;
@@ -391,6 +426,15 @@ a.proj-link img {
     background: url(../img/sprite.png) -84px -195px;
     background-size: 491px 989px;
     margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .arrow {
+        display: block;
+        width: 42px;
+        height: 42px;
+        background: url(../img/sprite.png) -84px -195px;
+        background-size: 491px 989px;
+    }
 }
 .project-type {
     color: #F2F2F2;
