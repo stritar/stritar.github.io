@@ -347,119 +347,37 @@ button:active {
 .proj-thumbs {
     margin-top: 40px;
 }
-a.proj-link img {
+.proj-link {
+    position: absolute;
+    display: block;
     width: 100%;
     height: auto;
 }
-.proj-info {
+a .proj-image {
+    width: 100%;
+    height: auto;
+}
+a img:hover {
     opacity: 0;
-    display: block;
+}
+.desat {
     width: 100%;
     height: auto;
 }
-@media (max-width: 768px) {
-    .proj-info {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-}
-.proj-info:hover {
-    opacity: 1;
-}
-.info-plate {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(211, 65, 31, 1);
-}
-@media (max-width: 768px) {
-    .info-plate {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 80px;
-        background: rgba(211, 65, 31, 1);
-    }
-}
-.project-name {
-    color: #F2F2F2;
-    display: block;
-    position: absolute;
-    font-size: 30px;
-    font-family: 'EffraHeavy-Regular';
-    line-height: 1;
-    width: 300px;
-    height: 50px;
+.proj-info-circle {
+    z-index: 0;
     top: 50%;
     left: 50%;
-    margin-top: -35px;
+    margin-top: -150px;
     margin-left: -150px;
-}
-@media (max-width: 768px) {
-    .project-name {
-        color: #F2F2F2;
-        display: block;
-        position: absolute;
-        font-size: 20px;
-        font-family: 'EffraHeavy-Regular';
-        line-height: 1;
-        text-align: left;
-        width: 100%;
-        height: 100%;
-        top: 20px;
-        left: 40px;
-        margin-top: 0;
-        margin-left: 0;
-    }
-}
-.proj-label {
-    font-size: 14px;
-    text-transform: uppercase;
-}
-@media (max-width: 768px) {
-    .proj-label {
-        font-size: 12px;
-        text-transform: uppercase;
-    }
-}
-.arrow {
-    margin: 0 auto;
-    display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -84px -195px;
-    background-size: 491px 989px;
-    margin-bottom: 10px;
-}
-@media (max-width: 768px) {
-    .arrow {
-        margin: 0 auto;
-        display: block;
-        position: absolute;
-        width: 42px;
-        height: 42px;
-        background: url(../img/sprite.png) -84px -195px;
-        background-size: 491px 989px;
-        margin-bottom: 10px;
-        right: 80px;
-    }
-}
-.project-type {
-    color: #F2F2F2;
-    display: block;
     position: absolute;
-    font-family: 'EffraHeavy-Regular';
+    display: block;
     width: 300px;
-    height: 50px;
-    top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -150px;
+    height: 300px;
+    background: rgba(212, 65, 32, 0.9);
+    -moz-border-radius: 300px;
+    -webkit-border-radius: 300px;
+    border-radius: 300px;
 }
-.row-gut {
-    padding-right: 0px;
-    padding-left: 0px;
-}
+.proj-info-circle:hover {}
 /*PROJECTS-END*/
