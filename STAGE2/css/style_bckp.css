@@ -625,7 +625,7 @@ input:focus {
 .drib-hover:hover {
     opacity: 1;
 }
-footer p {
+small.p {
     width: 280px;
     display: block;
     font-family: 'Effra-Regular';
