@@ -432,6 +432,17 @@ a .proj-image {
     }
 }
 @media (max-width: 768px) {
+    .proj-name,
+    .proj-type {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        font-family: 'EffraHeavy-Regular';
+        color: #F2F2F2;
+        width: 280px;
+    }
+}
+@media (max-width: 768px) {
     .proj-name {
         display: block;
         font-size: 25px;
