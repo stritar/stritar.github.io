@@ -187,6 +187,13 @@ p {
 
 /*GLOBALS*/
 
+.toggle-menu {
+    width: 100px;
+    position: fixed;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+}
 body,
 html {
     height: 100%;
