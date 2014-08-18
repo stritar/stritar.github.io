@@ -348,7 +348,6 @@ button:active {
     margin-top: 40px;
 }
 .proj-link {
-    position: absolute;
     display: block;
     width: 100%;
     height: auto;
@@ -357,27 +356,42 @@ a .proj-image {
     width: 100%;
     height: auto;
 }
-a img:hover {
-    opacity: 0;
-}
-.desat {
-    width: 100%;
-    height: auto;
-}
-.proj-info-circle {
-    z-index: 0;
+.info-details {
     top: 50%;
     left: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
+    margin-top: -100px;
+    margin-left: -140px;
     position: absolute;
-    display: block;
-    width: 300px;
-    height: 300px;
-    background: rgba(212, 65, 32, 0.9);
-    -moz-border-radius: 300px;
-    -webkit-border-radius: 300px;
-    border-radius: 300px;
+    width: 280px;
+    height: 200px;
+    background: green;
 }
-.proj-info-circle:hover {}
+.proj-info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(211, 65, 31, 1);
+}
+.proj-arrow {
+    display: block;
+    margin: 0 auto;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -84px -195px;
+    background-size: 491px 989px;
+}
+.proj-name,
+.proj-type {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-family: 'EffraHeavy-Regular';
+    color: #F2F2F2;
+    width: 280px;
+    line-height: 1.5;
+}
+.proj-name {
+    font-size: 20px;
+    text-align: center;
+}
 /*PROJECTS-END*/
