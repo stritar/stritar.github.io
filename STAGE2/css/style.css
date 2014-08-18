@@ -72,6 +72,10 @@
     font-weight: normal;
     font-style: normal;
 }
+h1 {
+    margin: 0;
+    padding: 0;
+}
 h2 {
     font-family: 'EffraHeavy-Regular';
     font-size: 120px;
@@ -520,7 +524,7 @@ button:active {
 
 .social-networks {
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
     width: 250px;
     height: 80px;
 }
@@ -583,7 +587,7 @@ footer p {
     width: 280px;
     display: block;
     font-family: 'Effra-Regular';
-    font-size: 14px;
+    font-size: 12px;
     margin: 0 auto;
     line-height: 1.8;
 }
