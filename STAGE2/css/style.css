@@ -456,6 +456,13 @@ a .proj-image {
     }
 }
 @media (max-width: 768px) {
+    .dl-info {
+        opacity: 1;
+        height: 82px;
+        bottom: 0;
+    }
+}
+@media (max-width: 768px) {
     .info-details {
         top: 0;
         left: 0;
