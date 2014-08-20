@@ -86,7 +86,7 @@ h2 {
     display: block;
     margin: 0 auto;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     h2 {
         font-size: 80px;
         line-height: 70px;
@@ -110,7 +110,7 @@ h2:after {
     background-size: 491px 989px;
     font-weight: normal;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     h2:after {
         width: 8px;
         height: 8px;
@@ -141,7 +141,7 @@ h3 {
     width: 1200px;
     margin: 0 auto;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     h3 {
         font-size: 30px;
         line-height: 42px;
@@ -167,7 +167,7 @@ p {
     width: 1100px;
     margin: 40px auto 0 auto;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     p {
         font-size: 16px;
         line-height: 26px;
@@ -273,7 +273,7 @@ section {
     padding-top: 80px;
     padding-bottom: 80px;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     section {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -289,7 +289,7 @@ section {
     margin-top: 160px;
     margin-bottom: 160px;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
     section {
         margin-top: 80px;
         margin-bottom: 80px;
@@ -343,7 +343,7 @@ section {
         left: 50%;
     }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
     .logo-intro {
         display: none;
         margin: 0 auto;
