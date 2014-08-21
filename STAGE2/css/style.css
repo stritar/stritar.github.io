@@ -274,6 +274,9 @@ p {
     margin-left: 20px;
     margin-right: 20px;
 }
+.dot-holder-1 {
+    display: none;
+}
 /*MENU-END*/
 
 /*GLOBALS*/
