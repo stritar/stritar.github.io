@@ -258,11 +258,13 @@ p {
     margin-top: 100px;
 }
 .menu-link-dot {
+    margin-top: 6px;
     display: block;
     width: 8px;
     height: 8px;
     background: url(../img/sprite.png) -126px -195px;
     background-size: 491px 989px;
+    float: left;
 }
 /*MENU-END*/
 
