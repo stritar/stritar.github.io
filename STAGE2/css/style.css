@@ -199,6 +199,10 @@ p {
     background: url(../img/sprite.png) 0px -195px;
     background-size: 491px 989px;
 }
+.logo-small:hover {
+    background: url(../img/sprite.png) -42px -195px;
+    background-size: 491px 989px;
+}
 .toggle-menu {
     display: block;
     width: 42px;
