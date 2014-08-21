@@ -253,18 +253,26 @@ p {
     font-size: 16px;
     margin-bottom: 20px;
 }
+.menu-secondary {
+    font-family: 'tisaproregular';
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+}
 .menu-link-holder {
     display: block;
     margin-top: 100px;
 }
 .menu-link-dot {
-    margin-top: 6px;
     display: block;
+    margin-top: 6px;
     width: 8px;
     height: 8px;
     background: url(../img/sprite.png) -126px -195px;
     background-size: 491px 989px;
     float: left;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 /*MENU-END*/
 

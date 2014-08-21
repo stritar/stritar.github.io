@@ -18,14 +18,14 @@
     <!-- Right menu element-->
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
-            <a class="menu-primary" href="#"><span class="menu-link-dot"></span>Link One</a>
-        <a class="menu-primary" href="#"><span class="menu-link-dot"></span>Link Two</a>
-        <a class="menu-primary" href="#"><span class="menu-link-dot"></span>Link Three</a>
-        <a class="menu-primary" href="#"><span class="menu-link-dot"></span>Link Four</a>
-        <a class="menu-secondary" href="#"><span class="menu-link-dot"></span>Link Secondary One</a>
-        <a class="menu-secondary" href="#"><span class="menu-link-dot"></span>Link Secondary Two</a>
-        <a class="menu-secondary" href="#"><span class="menu-link-dot"></span>Link Secondary Three</a>
-        <a class="menu-secondary" href="#"><span class="menu-link-dot"></span>Link Secondary Four</a>
+            <a class="menu-primary" href="#">Link One</a>
+        <a class="menu-primary" href="#">Link Two</a>
+        <a class="menu-primary" href="#">Link Three</a>
+        <a class="menu-primary" href="#">Link Four</a>
+        <a class="menu-secondary" href="#">Link Secondary One</a>
+        <a class="menu-secondary" href="#">Link Secondary Two</a>
+        <a class="menu-secondary" href="#">Link Secondary Three</a>
+        <a class="menu-secondary" href="#">Link Secondary Four</a>
         </span>
     </nav>
 
@@ -221,6 +221,11 @@
     <script>
         jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
+        });
+    </script>
+    <script>
+        $('.test1').click(function () {
+            $(this).next('.test-hidden').toggle();
         });
     </script>
 </body>
