@@ -257,6 +257,13 @@ p {
     display: block;
     margin-top: 100px;
 }
+.menu-link-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: url(../img/sprite.png) -140px 0;
+    background-size: 491px 989px;
+}
 /*MENU-END*/
 
 /*GLOBALS*/
