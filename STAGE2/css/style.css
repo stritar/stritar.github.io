@@ -261,7 +261,7 @@ p {
     display: block;
     width: 8px;
     height: 8px;
-    background: url(../img/sprite.png) -140px 0;
+    background: url(../img/sprite.png) -126px -195px;
     background-size: 491px 989px;
 }
 /*MENU-END*/
