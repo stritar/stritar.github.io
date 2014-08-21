@@ -187,6 +187,13 @@ p {
 
 /* MENU */
 
+.logo-small {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -126px -195px;
+    background-size: 491px 989px;
+}
 .toggle-menu {
     display: block;
     width: 42px;
