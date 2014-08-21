@@ -590,26 +590,26 @@ input {
 :-ms-input-placeholder {
     color: #3B3B41;
 }
-button {
+button.contact {
     margin: 60px auto 0 auto;
     display: block;
-    width: 420px;
-    height: 90px;
+    width: 360px;
+    height: 80px;
     background: #3B3B41;
     border: 0;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     border-radius: 60px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'EffraHeavy-Regular';
     color: #F2F2F2;
     line-height: 35px;
 }
 @media (max-width: 768px) {
-    button {
+    button.contact {
         margin: 35px auto 0 auto;
         display: block;
-        width: 280px;
+        width: 260px;
         height: 60px;
         background: #3B3B41;
         border: 0;
@@ -622,10 +622,10 @@ button {
         line-height: 35px;
     }
 }
-button:hover {
+button.contact:hover {
     background: #D44120;
 }
-button:active {
+button.contact:active {
     background: #e15535;
 }
 /*CONTACT-END*/
