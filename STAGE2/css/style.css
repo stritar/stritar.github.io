@@ -242,6 +242,12 @@ p {
     display: block;
     margin: 0 auto;
 }
+.menu-primary {
+    font-family: 'EffraHeavy-Regular';
+    font-size: 16px;
+    text-transform: uppercase;
+    
+}
 /*MENU-END*/
 
 /*GLOBALS*/
@@ -250,7 +256,7 @@ body,
 html {
     height: 100%;
     margin: 0;
-    font-family: helvetica;
+    font-family: helvetica, arial, sans-serif;
     font-weight: 100;
 }
 body {
