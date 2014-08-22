@@ -226,6 +226,17 @@
         });
     </script>
     <script type="text/javascript">
+        $('.toggle-menu').click(function () {
+            $('body').toggleClass('no-scroll');
+        });
+        $('.toggle-menu').click(function () {
+            $('section').toggleClass('opacity trans');
+        });
+        $('.toggle-menu').click(function () {
+            $('.intro').toggleClass('opacity trans');
+        });
+    </script>
+    <script type="text/javascript">
         document.querySelector(".svg-menu-toggle").addEventListener("click", function () {
             this.classList.toggle("active");
         });
@@ -250,6 +261,7 @@
 
         setInterval(update, 1000);
     </script>
+
 </body>
 
 </html>

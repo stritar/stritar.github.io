@@ -3,6 +3,7 @@
 .cbp-spmenu {
     background: #3B3B41;
     position: fixed;
+    overflow-x: scroll;
 }
 .cbp-spmenu a {
     display: block;
