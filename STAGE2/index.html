@@ -226,6 +226,11 @@
         });
     </script>
     <script>
+        document.querySelector("#nav-toggle").addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    </script>
+    <script>
         $('.menu-primary').click(function () {
             $(this).next('.dot-holder-1').toggle();
         });
