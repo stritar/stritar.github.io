@@ -248,7 +248,8 @@
     </script>
     <script type="text/javascript">
         function update() {
-            if ($(window).scrollTop() > $(window).height()) {
+            var bottomLimit = 0;
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - bottomLimit) {
                 $('.logo-small').animate({
                     "top": '0px'
                 }, 300);
