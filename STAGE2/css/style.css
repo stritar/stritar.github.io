@@ -107,7 +107,7 @@ h2:after {
     margin: 60px auto;
     content: "";
     background: url(../img/sprite.png) -140px -147px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     font-weight: normal;
 }
 @media (max-width: 1600px) {
@@ -117,7 +117,7 @@ h2:after {
         margin: 40px auto;
         font-size: 80px;
         background: url(../img/sprite.png) -140px -139px;
-        background-size: 491px 989px;
+        background-size: 418px 494px;
     }
 }
 @media (max-width: 768px) {
@@ -127,7 +127,7 @@ h2:after {
         margin: 30px auto 20px auto;
         font-size: 80px;
         background: url(../img/sprite.png) -140px -139px;
-        background-size: 491px 989px;
+        background-size: 418px 494px;
     }
 }
 h3 {
@@ -200,14 +200,14 @@ p {
     padding: 0;
     left: 0;
     background: url(../img/sprite.png) 0px -195px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 .logo-small span {
     display: block;
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -84px -279px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     opacity: 0;
 }
 .logo-small span:hover {
@@ -295,7 +295,7 @@ p {
     width: 8px;
     height: 8px;
     background: url(../img/sprite.png) -126px -195px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     float: left;
     margin-left: 20px;
     margin-right: 20px;
@@ -382,7 +382,7 @@ section {
     width: 140px;
     height: 195px;
     background: url(../img/sprite.png) 0 0;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     margin-top: -98px;
     margin-left: -70px;
     position: absolute;
@@ -396,7 +396,7 @@ section {
         width: 100px;
         height: 139px;
         background: url(../img/sprite.png) -140px 0;
-        background-size: 491px 989px;
+        background-size: 418px 494px;
         margin-top: -70px;
         margin-left: -50px;
         position: absolute;
@@ -412,7 +412,7 @@ section {
         width: 200px;
         height: 279px;
         background: url(../img/sprite.png) -154px -168px;
-        background-size: 491px 989px;
+        background-size: 418px 494px;
         margin-top: -140px;
         margin-left: -100px;
         position: absolute;
@@ -426,7 +426,7 @@ section {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) 0 -279px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     margin-left: -21px;
     position: absolute;
     bottom: 40px;
@@ -434,7 +434,7 @@ section {
 }
 .down-arrow:hover {
     background: url(../img/sprite.png) -42px -279px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 /*INTRO-END*/
 
@@ -487,7 +487,7 @@ a .proj-image {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -84px -195px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 .proj-name,
 .proj-type {
@@ -541,7 +541,7 @@ a .proj-image {
         width: 42px;
         height: 42px;
         background: url(../img/sprite.png) -84px -195px;
-        background-size: 491px 989px;
+        background-size: 418px 494px;
     }
 }
 @media (max-width: 768px) {
@@ -676,22 +676,22 @@ button.contact:active {
 }
 .beh {
     background: url(../img/sprite.png) -0px -321px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 .s6 {
     background: url(../img/sprite.png) -0px -363px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 .drib {
     background: url(../img/sprite.png) -0px -405px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
 }
 .beh-hover {
     display: block;
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -321px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     opacity: 0;
 }
 .beh-hover:hover {
@@ -702,7 +702,7 @@ button.contact:active {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -363px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     opacity: 0;
 }
 .s6-hover:hover {
@@ -713,7 +713,7 @@ button.contact:active {
     width: 42px;
     height: 42px;
     background: url(../img/sprite.png) -42px -405px;
-    background-size: 491px 989px;
+    background-size: 418px 494px;
     opacity: 0;
 }
 .drib-hover:hover {
