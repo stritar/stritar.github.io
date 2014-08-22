@@ -486,7 +486,7 @@ a .proj-image {
     margin: 42px auto 0 auto;
     width: 42px;
     height: 42px;
-    background: url(../img/sprite.png) -84px -195px;
+    background: url(../img/sprite.png) -84px -205px;
     background-size: 400px 480px;
 }
 .proj-name,
@@ -540,7 +540,7 @@ a .proj-image {
         margin: 20px 20px 0 0;
         width: 42px;
         height: 42px;
-        background: url(../img/sprite.png) -84px -195px;
+        background: url(../img/sprite.png) -84px -205px;
         background-size: 400px 480px;
     }
 }
