@@ -190,9 +190,6 @@ p {
 .no-scroll {
     overflow: hidden;
 }
-.opacity {
-    opacity: 0.5;
-}
 .logo-small {
     display: block;
     width: 42px;
