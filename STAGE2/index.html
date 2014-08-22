@@ -235,7 +235,11 @@
             this.classList.toggle("active");
         });
     </script>
-
+    <script type="text/javascript">
+        $('html').click(function () {
+            $('.svg-menu-toggle.active').toggleClass('.svg-menu-toggle')
+        })
+    </script>
     <script type="text/javascript">
         $('.menu-primary').click(function () {
             $(this).next('.dot-holder-1').toggle();
