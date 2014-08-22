@@ -289,6 +289,9 @@ p {
     display: block;
     margin-top: 100px;
 }
+nav a:active {
+    color: red;
+}
 .menu-link-dot {
     display: block;
     margin-top: 6px;
