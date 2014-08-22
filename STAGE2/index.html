@@ -216,26 +216,26 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jPushMenu.js"></script>
-    <script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jPushMenu.js"></script>
+    <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
         });
     </script>
-    <script>
+    <script type="text/javascript">
         document.querySelector(".svg-menu-toggle").addEventListener("click", function () {
             this.classList.toggle("active");
         });
     </script>
-    <script>
+    <script type="text/javascript">
         $('.menu-primary').click(function () {
             $(this).next('.dot-holder-1').toggle();
         });
     </script>
-    <script>
+    <script type="text/javascript">
         function update() {
             if ($(window).scrollTop() > $(window).height()) {
                 $('.logo-small').animate({
