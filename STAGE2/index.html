@@ -19,7 +19,7 @@
     <!-- Right menu element-->
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
-        <a id="nav1" class="menu-primary" href="#Aboutme">About me</a>
+        <a  class="menu-primary" href="#Aboutme">About me</a>
         <a class="menu-primary" href="#Latestwork">Latest work</a>
         <a class="menu-primary" href="#Download">Download</a>
         <a class="menu-primary" href="#Contactme">Contact me</a>
@@ -51,8 +51,8 @@
     <div class="intro" id="Home">
         <h1>
         <span class="logo-intro" alt="Denis Stritar"></span>
-    </h1>
-        <a href="#Aboutme" class="down-arrow"></a>
+         </h1>
+        <a href="#Aboutme" class="down-arrow"><span class="trans"></span></a>
     </div>
     <section id="Aboutme">
 
@@ -222,6 +222,7 @@
     <script type="text/javascript" src="js/jPushMenu.js"></script>
     <script type="text/javascript" src="js/smooth-scroll.js"></script>
     <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/nav-state.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
@@ -283,17 +284,7 @@
             $("body").removeClass("no-scroll");
         });
     </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#nav1').click(function () {
-                if ($(this).hasClass('active:before')) {
-                    $(this).removeClass('active:before');
-                } else {
-                    $(this).addClass('active:before');
-                } //
-            });
-        });
-    </script>
+
 
 </body>
 

@@ -299,7 +299,8 @@ nav a:before {
     margin-left: 20px;
     margin-right: 20px;
 }
-nav a.active {
+nav a:hover::before,
+nav a:active::before {
     display: block;
     content: "";
     margin-top: 6px;
@@ -440,9 +441,16 @@ section {
     bottom: 40px;
     left: 50%;
 }
-.down-arrow:hover {
+.down-arrow span {
+    display: block;
+    width: 42px;
+    height: 42px;
     background: url(../img/sprite.png) -42px -279px;
     background-size: 400px 480px;
+    opacity: 0;
+}
+.down-arrow span:hover {
+    opacity: 1;
 }
 /*INTRO-END*/
 
