@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Denis Stritar</title>
 
-<link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
+    <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/style.css" rel="stylesheet">
@@ -232,8 +232,23 @@
         });
     </script>
     <script type="text/javascript">
-        document.querySelector(".svg-menu-toggle").addEventListener("click", function () {
-            this.classList.toggle("active");
+        $(document).ready(function ($) {
+            var nav = 'close';
+            $('.svg-menu-toggle').click(function () {
+                if (nav == 'close') {
+                    $(this).attr("class", "svg-menu-toggle active");
+                    nav = 'open';
+                } else {
+                    $(this).attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('body').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
         });
     </script>
     <script type="text/javascript">
