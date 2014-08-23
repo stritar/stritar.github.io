@@ -110,16 +110,6 @@ h2:after {
     background-size: 400px 480px;
     font-weight: normal;
 }
-@media (max-width: 1600px) {
-    h2:after {
-        width: 8px;
-        height: 8px;
-        margin: 40px auto;
-        font-size: 80px;
-        background: url(../img/sprite.png) -140px -139px;
-        background-size: 400px 480px;
-    }
-}
 @media (max-width: 768px) {
     h2:after {
         width: 8px;
