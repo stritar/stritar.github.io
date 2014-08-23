@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Denis Stritar</title>
 
-<link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
+    <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/style.css" rel="stylesheet">
@@ -19,14 +19,14 @@
     <!-- Right menu element-->
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
-            <a class="menu-primary" href="#Aboutme">About me</a>
+        <a id="nav1" class="menu-primary" href="#Aboutme">About me</a>
         <a class="menu-primary" href="#Latestwork">Latest work</a>
         <a class="menu-primary" href="#Download">Download</a>
         <a class="menu-primary" href="#Contactme">Contact me</a>
-        <a class="menu-secondary" href="#">Curriculum Vitae</a>
-        <a class="menu-secondary" href="#">Behance</a>
-        <a class="menu-secondary" href="#">Society6</a>
-        <a class="menu-secondary" href="#">Dribbble</a>
+        <a class="menu-secondary" href="#" target="_blank">Curriculum Vitae</a>
+        <a class="menu-secondary" href="https://www.behance.net/denisstritar" target="_blank">Behance</a>
+        <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Society6</a>
+        <a class="menu-secondary" href="https://dribbble.com/StritarD" target="_blank">Dribbble</a>
         </span>
     </nav>
 
@@ -221,6 +221,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jPushMenu.js"></script>
     <script type="text/javascript" src="js/smooth-scroll.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
@@ -232,8 +233,29 @@
         });
     </script>
     <script type="text/javascript">
-        document.querySelector(".svg-menu-toggle").addEventListener("click", function () {
-            this.classList.toggle("active");
+        $(document).ready(function ($) {
+            var nav = 'close';
+            $('.svg-menu-toggle').click(function () {
+                if (nav == 'close') {
+                    $(this).attr("class", "svg-menu-toggle active");
+                    nav = 'open';
+                } else {
+                    $(this).attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('body').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('a').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
         });
     </script>
     <script type="text/javascript">
@@ -256,9 +278,20 @@
 
         setInterval(update, 1000);
     </script>
-    <script>
+    <script type="text/javascript">
         $("html,a").click(function () {
             $("body").removeClass("no-scroll");
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nav1').click(function () {
+                if ($(this).hasClass('active:before')) {
+                    $(this).removeClass('active:before');
+                } else {
+                    $(this).addClass('active:before');
+                } //
+            });
         });
     </script>
 

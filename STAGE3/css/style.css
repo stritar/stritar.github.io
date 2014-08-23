@@ -289,22 +289,27 @@ p {
     display: block;
     margin-top: 100px;
 }
-nav a:active {
-    color: red;
-}
-.menu-link-dot {
+nav a:before {
     display: block;
+    content: "";
     margin-top: 6px;
     width: 8px;
     height: 8px;
-    background: url(../img/sprite.png) -126px -195px;
-    background-size: 400px 480px;
     float: left;
     margin-left: 20px;
     margin-right: 20px;
 }
-.dot-holder-1 {
-    display: none;
+nav a.active {
+    display: block;
+    content: "";
+    margin-top: 6px;
+    width: 8px;
+    height: 8px;
+    background: url(../img/sprite.png) -126px -196px;
+    background-size: 400px 480px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 /*MENU-END*/
 
