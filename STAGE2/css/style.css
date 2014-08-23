@@ -289,9 +289,6 @@ p {
     display: block;
     margin-top: 100px;
 }
-nav a:active {
-    color: red;
-}
 nav a:before {
     display: block;
     content: "";
@@ -302,8 +299,7 @@ nav a:before {
     margin-left: 20px;
     margin-right: 20px;
 }
-nav a:hover:before,
-nav a.active:before {
+nav a.active {
     display: block;
     content: "";
     margin-top: 6px;
