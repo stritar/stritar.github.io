@@ -19,7 +19,7 @@
     <!-- Right menu element-->
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
-            <a class="menu-primary" href="#Aboutme">About me</a>
+        <a id="nav1" class="menu-primary" href="#Aboutme">About me</a>
         <a class="menu-primary" href="#Latestwork">Latest work</a>
         <a class="menu-primary" href="#Download">Download</a>
         <a class="menu-primary" href="#Contactme">Contact me</a>
@@ -277,9 +277,20 @@
 
         setInterval(update, 1000);
     </script>
-    <script>
+    <script type="text/javascript">
         $("html,a").click(function () {
             $("body").removeClass("no-scroll");
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nav1').click(function () {
+                if ($(this).hasClass('active:before')) {
+                    $(this).removeClass('active:before');
+                } else {
+                    $(this).addClass('active:before');
+                } //
+            });
         });
     </script>
 
