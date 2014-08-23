@@ -249,6 +249,12 @@
                     nav = 'close';
                 }
             });
+            $('a').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
         });
     </script>
     <script type="text/javascript">
