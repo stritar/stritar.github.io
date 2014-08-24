@@ -355,6 +355,10 @@ body {
 .container-fluid {
     padding: 0px;
 }
+button,
+a::-moz-focus-inner {
+    border: 0;
+}
 /*GLOBALS-END*/
 
 /*INTRO*/
