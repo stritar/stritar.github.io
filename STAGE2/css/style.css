@@ -180,7 +180,7 @@ p {
 .no-scroll {
     overflow: hidden;
 }
-.logo-small {
+#logo-small {
     display: block;
     width: 42px;
     height: 42px;
@@ -191,8 +191,9 @@ p {
     left: 0;
     background: url(../img/sprite.png) 0px -203px;
     background-size: 400px 480px;
+    opacity: 0;
 }
-.logo-small span {
+#logo-small span {
     display: block;
     width: 42px;
     height: 42px;
@@ -200,7 +201,7 @@ p {
     background-size: 400px 480px;
     opacity: 0;
 }
-.logo-small span:hover {
+#logo-small span:hover {
     opacity: 1;
 }
 .toggle-menu {
@@ -220,26 +221,33 @@ p {
 }
 .svg-menu-toggle .round {
     transition: fill .4s ease-in-out;
+    -webkit-transition: fill .4s ease-in-out;
+    -moz-transition: fill .4s ease-in-out;
 }
 .svg-menu-toggle .bar {
     -webkit-transform: rotate(0) translateY(0) translateX(0);
     transform: rotate(0) translateY(0) translateX(0);
     opacity: 1;
     -webkit-transform-origin: 20px 10px;
+    -moz-transform-origin: 20px 10px;
     transform-origin: 20px 10px;
     -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+    -moz-transition: -moz-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
     transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
 }
 .svg-menu-toggle .bar:nth-of-type(1) {
     -webkit-transform-origin: 20px 10px;
+    -moz-transform-origin: 20px 10px;
     transform-origin: 20px 10px;
 }
 .svg-menu-toggle .bar:nth-of-type(3) {
     -webkit-transform-origin: 20px 20px;
+    -moz-transform-origin: 20px 20px;
     transform-origin: 20px 20px;
 }
 .svg-menu-toggle.active .bar:nth-of-type(1) {
     -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+    -moz-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
     transform: rotate(-45deg) translateY(-10px) translateX(-8px);
     fill: #3B3B41;
 }
@@ -248,6 +256,7 @@ p {
 }
 .svg-menu-toggle.active .bar:nth-of-type(3) {
     -webkit-transform: rotate(45deg) translateY(6px) translateX(0px);
+    -moz-transform: rotate(45deg) translateY(6px) translateX(0px);
     transform: rotate(45deg) translateY(6px) translateX(0px);
     fill: #3B3B41;
 }
@@ -355,8 +364,12 @@ body {
 .container-fluid {
     padding: 0px;
 }
-button,
-a::-moz-focus-inner {
+a:hover,
+a:active,
+a:focus {
+    outline: 0;
+}
+input::-moz-focus-inner {
     border: 0;
 }
 /*GLOBALS-END*/

@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <title>Denis Stritar</title>
 
     <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
     <link rel="stylesheet" href="css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -34,7 +34,7 @@
     </nav>
 
 
-    <a href="#Home" class="logo-small "><span class="trans"></span></a>
+    <a href="#Home" id="logo-small"><span class="trans"></span></a>
     <div class="toggle-menu menu-right push-body">
 
         <svg class="inline-svg" width="42px" height="42px" viewBox="0 0 42 42" enable-background="new 0 0 32 22.5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
@@ -268,19 +268,25 @@
         });
     </script>
     <script type="text/javascript">
-        function update() {
-            if ($(window).scrollTop() > $(window).height()) {
-                $('.logo-small').animate({
-                    "top": '0px'
-                }, 300);
-            } else {
-                $('.logo-small').animate({
-                    "top": '-90px'
-                }, 300);
-            }
-        }
+        $(function () {
 
-        setInterval(update, 1000);
+            // Do our DOM lookups beforehand
+            var wyp = $("#Aboutme");
+
+            wyp.waypoint({
+                handler: function (event) {
+                    if ($("#logo-small").css('opacity') == '1')
+                        $("#logo-small").animate({
+                            'opacity': 0
+                        })
+                    else
+                        $("#logo-small").animate({
+                            'opacity': 1
+                        })
+                }
+            });
+
+        });
     </script>
     <script type="text/javascript">
         $("html,a").click(function () {
