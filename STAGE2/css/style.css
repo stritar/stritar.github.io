@@ -334,18 +334,21 @@ body {
     transition: .25s ease-out;
 }
 .section-content {
-    margin-top: 250px;
+    margin-top: 200px;
+    padding-top: 250;
     margin-bottom: 250px;
 }
 @media (max-width: 1600px) {
     .section-content {
-        margin-top: 200px;
-        margin-bottom: 200px;
+        margin-top: 100px;
+        padding-top: 50px;
+        margin-bottom: 150px;
     }
 }
 @media (max-width: 768px) {
     .section-content {
-        margin-top: 50px;
+        margin-top: 25px;
+        padding-top: 25px;
         margin-bottom: 50px;
     }
 }
