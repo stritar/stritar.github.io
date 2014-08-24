@@ -1,40 +1,21 @@
-$(document).ready(function () {
-    // Make navbtn active::before when page is scrolled down to slide
-    $(‘#Home′).waypoint(function (down) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NavHome′).addClass(‘active::before’); // add the class to the newly clicked link
-    });
+$(function () {
+    var sections = $("section");
+    var navigation_links = $("nav a");
 
-    $(‘#Aboutme′).waypoint(function (down) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NaveAbout′).addClass(‘active::before’); // add the class to the newly clicked link
-    });
+    sections.waypoint({
+        handler: function (event, direction) {
 
-    $(‘#Latestwork′).waypoint(function (down) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NavLatest′).addClass(‘active::before’); // add the class to the newly clicked link
-    });
-});
-$(document).ready(function () {
-    // Make navbtn active::before when page is scrolled up to slide
-    $(‘#Home′).waypoint(function (up) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NavHome′).addClass(‘active::before’); // add the class to the newly clicked link
-    }, {
-        offset: -1
-    });
+            var active_section;
+            active_section = $(this);
+            if (direction === "up") active_section = active_section.prev();
 
-    $(‘#Aboutme′).waypoint(function (up) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NaveAbout′).addClass(‘active::before’); // add the class to the newly clicked link
-    }, {
-        offset: -1
-    });
+            var active_link = $('nav a[href="#' + active_section.attr("id") + '"]');
+            navigation_links.removeClass("selected");
+            active_link.addClass("selected");
 
-    $(‘#Latestwork′).waypoint(function (up) {
-        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
-        $(‘#main a.NavLatest′).addClass(‘active::before’); // add the class to the newly clicked link
-    }, {
-        offset: -1
-    });
+        },
+        offset: '80%'
+    })
+
+
 });
