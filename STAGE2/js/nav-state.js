@@ -3,7 +3,7 @@ $(function () {
     var navigation_links = $("nav a");
 
     sections.waypoint({
-        handler: function (event, direction) {
+        handler: function (direction) {
 
             var active_section;
             active_section = $(this);
@@ -14,7 +14,7 @@ $(function () {
             active_link.addClass("selected");
 
         },
-        offset: '80%'
+        offset: '25%'
     })
 
 
