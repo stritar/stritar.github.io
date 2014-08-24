@@ -1,39 +1,39 @@
 $(document).ready(function () {
-    // Make navbtn active when page is scrolled down to slide
-    $(‘#slide1′).waypoint(function (down) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn1′).addClass(‘active’); // add the class to the newly clicked link
+    // Make navbtn active::before when page is scrolled down to slide
+    $(‘#Home′).waypoint(function (down) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NavHome′).addClass(‘active::before’); // add the class to the newly clicked link
     });
 
-    $(‘#slide2′).waypoint(function (down) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn2′).addClass(‘active’); // add the class to the newly clicked link
+    $(‘#Aboutme′).waypoint(function (down) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NaveAbout′).addClass(‘active::before’); // add the class to the newly clicked link
     });
 
-    $(‘#slide3′).waypoint(function (down) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn3′).addClass(‘active’); // add the class to the newly clicked link
+    $(‘#Latestwork′).waypoint(function (down) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NavLatest′).addClass(‘active::before’); // add the class to the newly clicked link
     });
 });
 $(document).ready(function () {
-    // Make navbtn active when page is scrolled up to slide
-    $(‘#slide1′).waypoint(function (up) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn1′).addClass(‘active’); // add the class to the newly clicked link
+    // Make navbtn active::before when page is scrolled up to slide
+    $(‘#Home′).waypoint(function (up) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NavHome′).addClass(‘active::before’); // add the class to the newly clicked link
     }, {
         offset: -1
     });
 
-    $(‘#slide2′).waypoint(function (up) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn2′).addClass(‘active’); // add the class to the newly clicked link
+    $(‘#Aboutme′).waypoint(function (up) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NaveAbout′).addClass(‘active::before’); // add the class to the newly clicked link
     }, {
         offset: -1
     });
 
-    $(‘#slide3′).waypoint(function (up) {
-        $(‘#main.active’).removeClass(‘active’); // remove the class from the currently selected
-        $(‘#main a.navbtn3′).addClass(‘active’); // add the class to the newly clicked link
+    $(‘#Latestwork′).waypoint(function (up) {
+        $(‘#main.active::before’).removeClass(‘active::before’); // remove the class from the currently selected
+        $(‘#main a.NavLatest′).addClass(‘active::before’); // add the class to the newly clicked link
     }, {
         offset: -1
     });

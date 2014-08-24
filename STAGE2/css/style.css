@@ -294,7 +294,7 @@ nav a:before {
     margin-right: 20px;
 }
 nav a:hover::before,
-nav a:active::before {
+nav a.active::before {
     display: block;
     content: "";
     margin-top: 6px;
