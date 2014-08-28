@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="11px" viewBox="0 0 13 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>UI/Icons/Contact_Address</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="UI-Elements" sketch:type="MSArtboardGroup" transform="translate(-96.000000, -101.000000)" fill="#656565">
+            <g id="UI/Icons/Contact_Address" sketch:type="MSLayerGroup" transform="translate(95.000000, 95.000000)">
+                <path d="M1.13207265,6.5 C1.30434269,6.20097556 1.62783585,6 1.99850233,6 L13.0014977,6 C13.3717004,6 13.6951733,6.20120219 13.8676008,6.5 L1.13207265,6.5 Z M1,7.61384624 L1,16.0044225 C1,16.5542648 1.44748943,17 1.99850233,17 L13.0014977,17 C13.5529553,17 14,16.555163 14,16.0044225 L14,7.61384624 L8.25996625,12.6159133 C7.83421844,12.9869249 7.15975152,12.9816701 6.74003375,12.6159133 L1,7.61384624 Z" id="Rectangle-11" sketch:type="MSShapeGroup"></path>
+                <path d="M1,6 L7,12 L8,12 L14,6 L1,6 Z" id="Rectangle" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

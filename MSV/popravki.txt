@@ -1,0 +1,12 @@
+- 5 artiklov na indexu
+
+- IOS parallax (da se zapelje dol MSV / hamburger na pdolagi)
+
+- Articles / subpages med title pa paragrafom vec prostora (glej sketch)
+
+- Quote style 
+font-family: PetalaPro-Italic;
+font-size: 18px;
+color: #D8340F;
+line-height: 29px;
+/* Lorem amet,  sit  am: */

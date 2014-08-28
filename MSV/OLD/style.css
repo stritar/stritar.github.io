@@ -1,0 +1,38 @@
+body {
+	background-image: url(pattern.png);
+}
+
+#container {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -300px;
+}
+
+#container img {
+	display: block;
+	width: 524px;
+	margin: 0 auto;
+}
+
+h1 {
+font-family: "adelle",serif;
+font-style: normal;
+font-weight: 700;
+	font-size: 40px;
+	color: white;
+	text-align: center;
+}
+
+
+p {
+	font-family: "lft-etica",sans-serif;
+font-style: normal;
+font-weight: 300;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>UI/Icons/FB_footer_normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="UI-Elements" sketch:type="MSArtboardGroup" transform="translate(-133.000000, -25.000000)" fill="#656565">
+            <g id="UI/Icons/FB_footer_normal" sketch:type="MSLayerGroup" transform="translate(133.000000, 25.000000)">
+                <path d="M15,30 C23.2842712,30 30,23.2842712 30,15 C30,6.71572875 23.2842712,0 15,0 C6.71572875,0 0,6.71572875 0,15 C0,23.2842712 6.71572875,30 15,30 Z M16.1781017,22.9068421 L16.1781017,16.1071711 L18.5301695,16.1071711 L18.8822373,13.4571711 L16.1781017,13.4571711 L16.1781017,11.7652632 C16.1781017,10.9980263 16.3976271,10.4751974 17.5314576,10.4751974 L18.9775593,10.4745395 L18.9775593,8.10440789 C18.727322,8.07217105 17.8690169,8 16.8703051,8 C14.7854237,8 13.3580339,9.23493421 13.3580339,11.5028947 L13.3580339,13.4571711 L11,13.4571711 L11,16.1071711 L13.3580339,16.1071711 L13.3580339,22.9068421 L16.1781017,22.9068421 Z" id="UI/Icons/FB_footer" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

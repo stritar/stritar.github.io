@@ -1,0 +1,3 @@
+DB:        		msvicsi_prod
+DBUser:        	msvicsi_prod
+DBPass:        	M782X8SR4W
