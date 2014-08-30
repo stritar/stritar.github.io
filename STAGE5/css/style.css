@@ -107,9 +107,9 @@ h2:after {
     h2:after {
         width: 8px;
         height: 8px;
-        margin: 30px auto 20px auto;
+        margin: 22px auto;
         font-size: 80px;
-        background: url(../img/sprite.png) -140px -139px;
+        background: url(../img/sprite.png) -116px -90px;
         background-size: 246px 302px;
     }
 }
@@ -133,7 +133,7 @@ p {
     text-align: center;
     display: block;
     max-width: 750px;
-    margin: 35px auto 0 auto;
+    margin: 35px auto -35px auto;
 }
 /*FONTS-END*/
 
@@ -172,7 +172,9 @@ body {
 @media (max-width: 768px) {
     .section-text {
         padding-top: 70px;
-        padding-bottom: 70px
+        padding-bottom: 70px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 .container-fluid {
@@ -367,7 +369,7 @@ nav a:hover:before,
     height: 100%;
     display: block;
     position: relative;
-    background: #F2F2F2;
+    background: #e1e1e1;
     background-image: -o-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
     background-image: -moz-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
     background-image: -ms-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
