@@ -504,8 +504,8 @@ nav a:hover:before,
         display: block;
         width: auto;
         z-index: 1000;
-        margin: 10px auto 10px auto;
-        padding-top: -10px;
+        margin: 0px auto 10px auto;
+        padding-top: 40px;
         padding-left: 20px;
         padding-right: 20px;
         top: 0;
@@ -589,14 +589,23 @@ nav a:hover:before,
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(212, 65, 32, 0.80);
+        background-color: rgba(59, 59, 65, 0.80);
+    }
+}
+@media (max-width: 1024px) {
+    .dl-img-dimmer {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(212, 65, 32, 0.80);
     }
 }
 .proj-pic {
     width: 100%;
     height: 600px;
 }
-@media (max-width: 320px) {
+@media (max-width: 480px) {
     .proj-pic {
         width: 100%;
         height: 200px;
