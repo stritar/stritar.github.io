@@ -706,6 +706,10 @@ input:focus,
 textarea:focus {
     outline: none;
 }
+#submit {
+    margin-top: 20px;
+    padding-top: 5px;
+}
 input {
     width: 500px;
     display: block;
