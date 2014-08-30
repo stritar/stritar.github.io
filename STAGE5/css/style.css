@@ -160,6 +160,9 @@ html {
     margin: 0;
     font-family: helvetica, arial, sans-serif;
     font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 body {
     background-color: #F2F2F2;
