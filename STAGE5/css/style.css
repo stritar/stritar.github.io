@@ -502,12 +502,19 @@ nav a:hover:before,
     .title-middle {
         position: relative;
         display: block;
-        width: 320px;
+        width: auto;
         z-index: 1000;
         margin: 10px auto 10px auto;
+        padding-left: 20px;
+        padding-right: 20px;
         top: 0;
         left: 0;
         color: inherit;
+    }
+}
+@media (max-width: 1024px) {
+    .title-middle br {
+        display: none;
     }
 }
 .proj-thumbs {
