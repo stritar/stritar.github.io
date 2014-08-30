@@ -161,6 +161,13 @@ p {
         margin: 35px auto 0 auto;
     }
 }
+p a {
+    color: #D44120;
+}
+p a:hover {
+    color: #e36144;
+    text-decoration: none;
+}
 /*FONTS-END*/
 
 /*GLOBALS*/
@@ -695,10 +702,10 @@ input {
 @media (max-width: 768px) {
     input {
         width: 100%;
+        padding-top: 50px;
         display: block;
         margin: 0;
         font-size: 20px;
-        padding-top: 30px;
     }
 }
 ::-webkit-input-placeholder {
@@ -721,7 +728,7 @@ input {
 
 .social-networks {
     display: block;
-    margin: 80px auto 0 auto;
+    margin: 0 auto 0 auto;
     width: 250px;
     height: 80px;
 }
@@ -731,27 +738,27 @@ input {
 }
 .icons a {
     display: block;
-    width: 42px;
-    height: 42px;
-    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
 }
 .beh {
-    background: url(../img/sprite.png) -0px -321px;
+    background: url(../img/sprite.png) -0px -202px;
     background-size: 246px 302px;
 }
 .s6 {
-    background: url(../img/sprite.png) -0px -363px;
+    background: url(../img/sprite.png) -48px -202px;
     background-size: 246px 302px;
 }
 .drib {
-    background: url(../img/sprite.png) -0px -405px;
+    background: url(../img/sprite.png) -96px -202px;
     background-size: 246px 302px;
 }
 .beh-hover {
     display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -42px -321px;
+    width: 48px;
+    height: 48px;
+    background: url(../img/sprite.png) -0px -250px;
     background-size: 246px 302px;
     opacity: 0;
 }
@@ -760,9 +767,9 @@ input {
 }
 .s6-hover {
     display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -42px -363px;
+    width: 48px;
+    height: 48px;
+    background: url(../img/sprite.png) -48px -250px;
     background-size: 246px 302px;
     opacity: 0;
 }
@@ -771,9 +778,9 @@ input {
 }
 .drib-hover {
     display: block;
-    width: 42px;
-    height: 42px;
-    background: url(../img/sprite.png) -42px -405px;
+    width: 48px;
+    height: 48px;
+    background: url(../img/sprite.png) -96px -250px;
     background-size: 246px 302px;
     opacity: 0;
 }
@@ -781,11 +788,8 @@ input {
     opacity: 1;
 }
 footer p {
-    width: 280px;
-    display: block;
-    font-family: 'Effra-Regular';
-    font-size: 12px;
-    margin: 0 auto;
-    line-height: 1.8;
+    margin-top: -10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /*FOOTER-END*/
