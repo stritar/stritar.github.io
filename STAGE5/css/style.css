@@ -792,4 +792,16 @@ footer p {
     padding-left: 20px;
     padding-right: 20px;
 }
+.footer-logo {
+    margin: 40px auto 20px auto;
+    display: block;
+    width: 60px;
+    height: 59px;
+    background: url(../img/sprite.png) -181px 0;
+    background-size: 246px 302px;
+}
+.copy-txt {
+    font-family: 'EffraHeavy-Regular';
+    padding-bottom: 20px;
+}
 /*FOOTER-END*/
