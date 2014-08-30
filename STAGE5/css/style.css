@@ -233,6 +233,16 @@ input::-moz-focus-inner {
     border: 3px solid #D44120;
     color: #D44120;
 }
+.cta {
+    background-color: #3B3B41;
+    border: 3px solid #3B3B41;
+    color: #F2F2F2;
+}
+.cta:hover {
+    background-color: #D44120;
+    border: 3px solid #D44120;
+    color: #F2F2F2;
+}
 /*GLOBALS-END*/
 
 /* MENU */
