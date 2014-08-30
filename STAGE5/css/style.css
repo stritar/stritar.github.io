@@ -519,7 +519,7 @@ button {
         z-index: 1000;
         position: absolute;
         margin-left: -300px;
-        top: 46.5%;
+        top: 45%;
         left: 50%;
         color: #F2F2F2;
         font-size: 40px;
@@ -639,6 +639,12 @@ button {
 .proj-pic {
     width: 100%;
     height: 600px;
+}
+@media (max-width: 1280px) {
+    .proj-pic {
+        width: 100%;
+        height: 400px;
+    }
 }
 @media (max-width: 480px) {
     .proj-pic {
