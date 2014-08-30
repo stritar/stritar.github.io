@@ -16,6 +16,21 @@
     font-weight: 400;
 }
 @font-face {
+    font-family: 'Effra Medium';
+    src: url('../EffraMedium-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../EffraMedium-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../EffraMedium-Regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('../EffraMedium-Regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../EffraMedium-Regular.svg#e332a233840b29d4ea7482959e8158cc') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
     font-family: 'EffraHeavy-Regular';
     src: url('../fonts/EffraHeavy-Regular.eot');
     /* IE9 Compat Modes */
@@ -97,7 +112,7 @@ h2:after {
     display: block;
     width: 12px;
     height: 12px;
-    margin: 40px auto;
+    margin: 32px auto;
     content: "";
     background: url(../img/sprite.png) -116px -90px;
     background-size: 246px 302px;
@@ -197,6 +212,14 @@ a:focus {
 }
 input::-moz-focus-inner {
     border: 0;
+}
+.btn {
+    display: block;
+    width: 240px;
+    height: 60px;
+    border-radius: 40px;
+    border: 3px solid #3B3B41;
+    font-family: 'Effra Medium';
 }
 /*GLOBALS-END*/
 
