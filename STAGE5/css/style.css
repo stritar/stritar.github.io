@@ -788,12 +788,14 @@ input {
     opacity: 1;
 }
 footer p {
+    font-size: 14px;
+    line-height: 22px;
     margin-top: -10px;
     padding-left: 20px;
     padding-right: 20px;
 }
 .footer-logo {
-    margin: 40px auto 20px auto;
+    margin: 20px auto 20px auto;
     display: block;
     width: 60px;
     height: 59px;
