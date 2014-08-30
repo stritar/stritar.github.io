@@ -384,7 +384,7 @@ nav a:hover:before,
     height: 100%;
     display: block;
     position: relative;
-    background: grey;
+    background: #F2F2F2;
 }
 .logo-intro {
     margin: 0 auto;
@@ -418,10 +418,26 @@ nav a:hover:before,
     margin-left: -250px;
     bottom: 30%;
 }
+@media (max-width: 500px) {
+    .intro-buttons {
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+        bottom: 25%;
+    }
+}
 .intro-buttons a {
     position: relative;
     float: left;
     margin: 0 5px;
+}
+@media (max-width: 500px) {
+    .intro-buttons a {
+        margin: 10px auto;
+        float: none;
+    }
 }
 .down-arrow {
     margin: 0 auto;
