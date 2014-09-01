@@ -1,5 +1,5 @@
 <?php
-
+  error_page 405 = $uri;
 $EmailFrom = "chriscoyier@gmail.com";
 $EmailTo = "denis.stritar@gmail.com";
 $Subject = "Nice & Simple Contact Form by CSS-Tricks";
