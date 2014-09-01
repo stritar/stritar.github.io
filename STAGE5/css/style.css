@@ -161,10 +161,17 @@ p {
         margin: 35px auto 0 auto;
     }
 }
-p a {
+p,
+h3 a {
     color: #D44120;
+    -webkit-transition: .25s ease-out;
+    -moz-transition: .25s ease-out;
+    -ms-transition: .25s ease-out;
+    -o-transition: .25s ease-out;
+    transition: .25s ease-out;
 }
-p a:hover {
+p,
+h3 a:hover {
     color: #e36144;
     text-decoration: none;
 }
