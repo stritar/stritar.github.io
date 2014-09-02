@@ -516,7 +516,7 @@ button {
 .title-middle:after {
     display: none;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     .title-middle {
         display: block;
         width: 600px;
@@ -644,7 +644,7 @@ button {
     width: 100%;
     height: 600px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     .proj-pic {
         width: 100%;
         height: 400px;
