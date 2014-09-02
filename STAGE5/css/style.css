@@ -262,6 +262,9 @@ a:focus {
     border: 3px solid #D44120;
     color: #F2F2F2;
 }
+:-moz-any-link:focus {
+    outline: none;
+}
 /*GLOBALS-END*/
 
 /* MENU */
@@ -413,11 +416,11 @@ nav a:hover:before,
     height: 100%;
     display: block;
     position: relative;
-    background: #e1e1e1;
-    background-image: -o-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
-    background-image: -moz-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
-    background-image: -ms-radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
-    background-image: radial-gradient(49% 157%, rgba(255, 255, 255, 0.00) 54%, rgba(0, 0, 0, 0.11) 100%);
+    background: url(../img/back-temp.jpg)no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .logo-intro {
     margin: 0 auto;
@@ -453,7 +456,7 @@ button {
     width: 500px;
     left: 50%;
     margin-left: -250px;
-    bottom: 30%;
+    bottom: 15%;
 }
 @media (max-width: 500px) {
     .intro-buttons {
