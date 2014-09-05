@@ -211,7 +211,11 @@ section {
 }
 .section-text {
     padding-top: 140px;
-    padding-bottom: 140px
+    padding-bottom: 140px;
+}
+.section-last {
+    padding-top: 140px;
+    padding-bottom: 0px;
 }
 .section-text a {
     margin: 70px auto 0 auto;
