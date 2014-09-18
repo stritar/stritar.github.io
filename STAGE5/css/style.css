@@ -537,7 +537,7 @@ h4.hello-text {
         display: block;
     }
 }
-@media (max-width: 340px) {
+@media (max-width: 480px) {
     h4.hello-text {
         font-family: 'tisaproitalicbold';
         position: absolute;
