@@ -55,6 +55,7 @@
         <h1>
         <span class="logo-intro" alt="Denis Stritar"></span>
          </h1>
+        <div class="fade-out"></div>
         <div class="intro-holder">
             <h4 class="hello-text">But I must explain to you how all this mistaken idea of denouncing pleasure</h4>
             <div class="intro-buttons">
@@ -278,23 +279,15 @@
          // 	console.log('delta Y: ' + deltaY);
          // });
 
-        $('.section-back').colorScroll({
+        $('.fade-out').colorScroll({
             colors: [{
-                color: '#a2e9ff',
-                position: 500
+                    color: 'rgba(242 ,242 ,242 ,0)',
+                    position: '0%'
    }, {
-                color: '#9aff61',
-                position: 1000
-   }, {
-                color: '#aaff9e',
-                position: 4000
-   }, {
-                color: '#ffa378',
-                position: 2000
-   }, {
-                color: '#92b3ff',
-                position: '60%'
-   }]
+                    color: 'rgba(242 ,242 ,242 ,1)',
+                    position: '20%'
+   }
+                    ]
         });
 
         $('body').colorScroll();
