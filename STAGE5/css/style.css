@@ -465,33 +465,15 @@ button {
     margin: 0;
     padding: 0;
 }
+.intro-holder {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+}
 .intro-buttons {
     display: block;
-    position: absolute;
     width: 500px;
-    left: 50%;
-    margin-left: -250px;
-    top: 59%;
-}
-@media (max-width: 1600px) {
-    .intro-buttons {
-        display: block;
-        position: absolute;
-        width: 500px;
-        left: 50%;
-        margin-left: -250px;
-        top: 69%;
-    }
-}
-@media (max-width: 500px) {
-    .intro-buttons {
-        display: block;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        margin-left: 0;
-        bottom: 25%;
-    }
+    margin: 80px auto;
 }
 .intro-buttons a {
     position: relative;
@@ -505,60 +487,14 @@ button {
     }
 }
 h4.hello-text {
+    margin: 0 auto;
     font-family: 'tisaproitalicbold';
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-left: -500px;
     width: 1000px !important;
     font-size: 60px;
     line-height: 75px;
     color: #3B3B41;
     text-align: center;
     display: block;
-}
-@media (max-width: 1040px) {
-    h4.hello-text {
-        font-family: 'tisaproitalicbold';
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        margin-left: -350px;
-        width: 700px !important;
-        font-size: 40px;
-        line-height: 50px;
-        color: #3B3B41;
-        text-align: center;
-        display: block;
-    }
-}
-@media (max-width: 768px) {
-    h4.hello-text {
-        font-family: 'tisaproitalicbold';
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        margin-left: -250px;
-        width: 500px !important;
-        font-size: 30px;
-        line-height: 40px;
-        color: #3B3B41;
-        text-align: center;
-        display: block;
-    }
-}
-@media (max-width: 480px) {
-    h4.hello-text {
-        font-family: 'tisaproitalicbold';
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        margin-left: -250px;
-        width: 500px !important;
-        font-size: 30px;
-        line-height: 40px;
-        text-align: center;
-    }
 }
 .down-arrow {
     margin: 0 auto;
