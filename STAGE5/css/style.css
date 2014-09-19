@@ -96,7 +96,7 @@ h2 {
 h2:after {
     display: block;
     width: 12px;
-    height: 12px;
+    height: 8px;
     margin: 32px auto;
     content: "";
     background: url(../img/sprite.png) -116px -90px;

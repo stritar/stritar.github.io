@@ -204,6 +204,12 @@
     <script type="text/javascript" src="js/waypoints.min.js"></script>
     <script type="text/javascript" src="js/nav-state.js"></script>
     <script type="text/javascript" src="js/uilang.js"></script>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="js/jquery.colorscroll.js"></script>
+
+
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
@@ -265,6 +271,33 @@
             });
 
         });
+    </script>
+    <script type="text/javascript">
+        // $('.box').on('mousewheel', function(event, delta, deltaX, deltaY) {
+         // 	console.log('delta X: ' + deltaX);
+         // 	console.log('delta Y: ' + deltaY);
+         // });
+
+        $('.section-back').colorScroll({
+            colors: [{
+                color: '#a2e9ff',
+                position: 500
+   }, {
+                color: '#9aff61',
+                position: 1000
+   }, {
+                color: '#aaff9e',
+                position: 4000
+   }, {
+                color: '#ffa378',
+                position: 2000
+   }, {
+                color: '#92b3ff',
+                position: '60%'
+   }]
+        });
+
+        $('body').colorScroll();
     </script>
     <script type="text/javascript">
         $("html,a").click(function () {
