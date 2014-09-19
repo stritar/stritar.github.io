@@ -471,7 +471,7 @@ button {
     width: 500px;
     left: 50%;
     margin-left: -250px;
-    bottom: 30%;
+    top: 60%;
 }
 @media (max-width: 500px) {
     .intro-buttons {
