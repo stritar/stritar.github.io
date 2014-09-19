@@ -572,7 +572,7 @@ h4.hello-text {
         line-height: 23px;
         color: #3B3B41;
         text-align: center;
-        display: block;
+        display: none;
     }
 }
 .down-arrow {
