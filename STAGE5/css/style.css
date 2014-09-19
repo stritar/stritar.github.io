@@ -473,6 +473,16 @@ button {
     margin-left: -250px;
     top: 59%;
 }
+@media (max-width: 1400px) {
+    .intro-buttons {
+        display: block;
+        position: absolute;
+        width: 500px;
+        left: 50%;
+        margin-left: -250px;
+        top: 69%;
+    }
+}
 @media (max-width: 500px) {
     .intro-buttons {
         display: block;
@@ -547,9 +557,7 @@ h4.hello-text {
         width: 500px !important;
         font-size: 30px;
         line-height: 40px;
-        color: red;
         text-align: center;
-        display: none;
     }
 }
 .down-arrow {
