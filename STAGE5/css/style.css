@@ -563,7 +563,7 @@ h4.hello-text {
         display: block;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     h4.hello-text {
         margin: 0 auto;
         font-family: 'tisaproitalicbold';
