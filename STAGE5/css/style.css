@@ -431,7 +431,7 @@ nav a:hover:before,
     height: 100%;
     display: block;
     position: relative;
-    background: url(../img/back-temp.jpg)no-repeat center center;
+    background:url(../img/back-temp.jpg)no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -612,6 +612,17 @@ h4.hello-text {
 }
 .down-arrow span:hover {
     opacity: 1;
+}
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
 }
 /*INTRO-END*/
 
