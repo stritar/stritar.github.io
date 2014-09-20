@@ -14,7 +14,7 @@ $(function () {
             active_link.addClass("selected");
 
         },
-        offset: '25%'
+        offset: '50%'
     })
 
 
