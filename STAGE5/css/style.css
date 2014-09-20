@@ -431,7 +431,7 @@ nav a:hover:before,
     height: 100%;
     display: block;
     position: relative;
-    background:url(../img/back-temp.jpg)no-repeat center center;
+    background: url(../img/back-temp.jpg)no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -637,6 +637,7 @@ video#bgvid {
     top: 44%;
     left: 50%;
     color: #F2F2F2;
+    pointer-events: none;
 }
 .title-middle:after {
     display: none;
