@@ -870,7 +870,7 @@ video#bgvid {
     display: block;
     margin: 0 auto;
     width: 250px;
-    padding-top: 40px;
+    padding-top: 20px;
     height: 80px;
 }
 .icons li {
@@ -935,7 +935,7 @@ footer p {
     padding-right: 20px;
 }
 .footer-logo {
-    margin: 50px auto 20px auto;
+    margin: 20px auto 0 auto;
     display: block;
     width: 60px;
     height: 59px;
