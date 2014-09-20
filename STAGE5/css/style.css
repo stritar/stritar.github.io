@@ -293,6 +293,7 @@ a:focus {
     background: url(../img/sprite.png) -126px -160px;
     background-size: 246px 302px;
     opacity: 0;
+    -webkit-transform: translateZ(0);
 }
 #logo-small span {
     display: block;
@@ -316,6 +317,7 @@ a:focus {
     right: 0;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+    -webkit-transform: translateZ(0);
 }
 .svg-menu-toggle {
     fill: #fff;
@@ -444,6 +446,7 @@ nav a:hover:before,
     background-size: cover;
     z-index: -100;
     position: fixed;
+    -webkit-transform: translateZ(0);
 }
 .intro {
     width: 100%;
@@ -629,6 +632,7 @@ video#bgvid {
     height: auto;
     z-index: -100;
     background-size: cover;
+    -webkit-transform: translateZ(0);
 }
 @media (max-width: 1014px) {
     video#bgvid {
@@ -790,6 +794,7 @@ video#bgvid {
     height: 600px;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+    -webkit-transform: translateZ(0);
 }
 @media (max-width: 1440px) {
     .proj-pic {
