@@ -457,26 +457,13 @@ nav a:hover:before,
 .logo-intro {
     margin: 0 auto;
     display: block;
-    width: 116px;
-    height: 160px;
-    background: url(../img/sprite.png) 0 0;
+    width: 65px;
+    height: 90px;
+    background: url(../img/sprite.png) -116px 0;
     background-size: 246px 302px;
     position: absolute;
     top: 20px;
     left: 20px;
-}
-@media (max-width: 768px) {
-    .logo-intro {
-        margin: 0 auto;
-        display: block;
-        width: 65px;
-        height: 90px;
-        background: url(../img/sprite.png) -116px 0;
-        background-size: 246px 302px;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
 }
 button {
     margin: 0;
@@ -944,7 +931,7 @@ footer p {
     padding-right: 20px;
 }
 .footer-logo {
-    margin: 20px auto 0 auto;
+    margin: 80px auto -25px auto;
     display: block;
     width: 60px;
     height: 59px;
