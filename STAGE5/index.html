@@ -66,9 +66,9 @@
         <a href="#Aboutme" class="down-arrow"><span class="trans"></span></a>
         <div class="intro-back">
             <video autoplay loop poster="polina.jpg" id="bgvid">
-                <source src="video/hk.webm" type="video/webm"></source>
-                <source src="video/hk.mp4" / type="video/mp4"></source>
-                <source src="video/hk.ogg" type="video/ogg"></source>
+                <source src="video/hk.webm" type="video/webm">
+                    <source src="video/hk.mp4" / type="video/mp4">
+                        <source src="video/ogv.mp4" / type="video/ogg">
             </video>
         </div>
     </section>
@@ -214,6 +214,12 @@
 
     <script src="jquery-mousewheel/jquery.mousewheel.js"></script>
     <script src="js/jquery.colorscroll.js"></script>
+    <script>
+        $(function () {
+            // Helper function to Fill and Center the HTML5 Video
+            jQuery('video, object').maximage('maxcover');
+        });
+    </script>
 
 
     <script type="text/javascript">
