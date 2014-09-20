@@ -626,6 +626,19 @@ video#bgvid {
     z-index: -100;
     background-size: cover;
 }
+@media (max-width: 1014px) {
+    video#bgvid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        display: none;
+    }
+}
 /*INTRO-END*/
 
 /*PROJECTS*/
@@ -771,17 +784,23 @@ video#bgvid {
 .proj-pic {
     width: 100%;
     height: 600px;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
 }
 @media (max-width: 1440px) {
     .proj-pic {
         width: 100%;
         height: 400px;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 }
 @media (max-width: 480px) {
     .proj-pic {
         width: 100%;
         height: 200px;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 }
 .proj1 {
