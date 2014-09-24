@@ -286,7 +286,7 @@ a:focus {
     width: 42px;
     height: 42px;
     position: fixed;
-    z-index: 1000;
+    z-index: 999000;
     margin: 20px 0 0 20px;
     padding: 0;
     left: 0;
