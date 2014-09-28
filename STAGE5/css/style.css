@@ -141,9 +141,9 @@ h3 {
 }
 p {
     font-family: 'tisaproregular';
-    font-size: 16px;
-    line-height: 26px;
-    color: #3B3B41;
+    font-size: 18px;
+    line-height: 30px;
+    color: #53535c;
     text-align: center;
     display: block;
     max-width: 750px;
@@ -172,6 +172,10 @@ h3 a {
 }
 p a,
 h3 a:hover {
+    color: #e36144;
+    text-decoration: none;
+}
+h3 a:focus {
     color: #e36144;
     text-decoration: none;
 }
