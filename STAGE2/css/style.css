@@ -95,9 +95,9 @@ h2 {
 }
 @media (max-width: 768px) {
     h2 {
-        font-size: 45px;
-        line-height: 40px;
-        width: 280px;
+        font-size: 10px;
+        line-height: 28px;
+        width: 80px;
     }
 }
 h2:after {

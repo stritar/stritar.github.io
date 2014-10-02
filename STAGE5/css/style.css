@@ -88,8 +88,8 @@ h2 {
 }
 @media (max-width: 768px) {
     h2 {
-        font-size: 45px;
-        line-height: 40px;
+        font-size: 40px;
+        line-height: 38px;
         width: 280px;
     }
 }
@@ -128,13 +128,13 @@ h3 {
 @media (max-width: 768px) {
     h3 {
         font-family: 'tisaproitalicbold';
-        font-size: 30px;
-        line-height: 42px;
+        font-size: 19px;
+        line-height: 31px;
         color: #3B3B41;
         text-align: center;
         font-weight: normal;
         display: block;
-        max-width: 500px;
+        max-width: 350px;
         margin: 0 auto;
         margin-top: -5px;
     }
@@ -941,6 +941,16 @@ footer p {
     height: 59px;
     background: url(../img/sprite.png) -181px 0;
     background-size: 246px 302px;
+}
+@media (max-width: 768px) {
+    .footer-logo {
+        margin: 50px auto -24px auto;
+        display: block;
+        width: 60px;
+        height: 59px;
+        background: url(../img/sprite.png) -181px 0;
+        background-size: 246px 302px;
+    }
 }
 .copy-txt {
     font-family: 'EffraHeavy-Regular';
