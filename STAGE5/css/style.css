@@ -140,7 +140,7 @@ h3 {
     }
 }
 p {
-    font-family: 'tisaproregular';
+    font-family: 'Campton Light';
     font-size: 18px;
     line-height: 30px;
     color: #53535c;
@@ -151,7 +151,7 @@ p {
 }
 @media (max-width: 768px) {
     p {
-        font-family: 'tisaproregular';
+        font-family: 'Campton Light';
         font-size: 16px;
         line-height: 26px;
         color: #3B3B41;
@@ -251,9 +251,9 @@ a:focus {
     height: 60px;
     border-radius: 40px;
     border: 3px solid #3B3B41;
-    font-family: 'Campton Light';
+    font-family: 'Campton ExtraBold';
     font-size: 20px;
-    padding-top: 12px;
+    padding-top: 14px;
     color: #3B3B41;
     -webkit-transition: .25s ease-out;
     -moz-transition: .25s ease-out;
@@ -384,13 +384,13 @@ a:focus {
     padding: 0;
 }
 .menu-primary {
-    font-family: 'Campton Light';
+    font-family: 'Campton ExtraBold';
     text-transform: uppercase;
     font-size: 18px;
     margin-bottom: 16px;
 }
 .menu-secondary {
-    font-family: 'tisaproregular';
+    font-family: 'Campton Light';
     font-size: 12px;
     margin-bottom: 14px;
     text-transform: capitalize;
@@ -417,7 +417,7 @@ nav a:hover:before,
 .selected:before {
     display: block;
     content: "";
-    margin-top: 6px;
+    margin-top: 5px;
     width: 8px;
     height: 8px;
     background: url(../img/sprite.png) -116px -98px;
@@ -648,7 +648,7 @@ video#bgvid {
     z-index: 1000;
     position: absolute;
     margin-left: -300px;
-    top: 44%;
+    top: 45%;
     left: 50%;
     color: #F2F2F2;
     pointer-events: none;
@@ -663,7 +663,7 @@ video#bgvid {
         z-index: 1000;
         position: absolute;
         margin-left: -300px;
-        top: 45%;
+        top: 45.5%;
         left: 50%;
         color: #F2F2F2;
         font-size: 40px;
