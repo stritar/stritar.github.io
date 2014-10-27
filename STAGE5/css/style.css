@@ -13,7 +13,8 @@
     url('../fonts/Campton-Light.svg#cb0076bde307d1c9b973c30a403bd200') format('svg');
     /* Legacy iOS */
     font-style: normal;
-    font-weight: 200;
+    font-weight: normal;
+    /*font-weight: 200;*/
 }
 @font-face {
     font-family: 'Campton ExtraBold';
@@ -28,7 +29,8 @@
     url('../fonts/Campton-ExtraBold.svg#156f804e1152db5438ed7d3941e6befb') format('svg');
     /* Legacy iOS */
     font-style: normal;
-    font-weight: 700;
+    font-weight: normal;
+    /*font-weight: 700;*/
 }
 @font-face {
     font-family: 'tisaproregular';
