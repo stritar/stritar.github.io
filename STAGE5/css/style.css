@@ -461,9 +461,9 @@ nav a:hover:before,
 .logo-intro {
     margin: 0 auto;
     display: block;
-    width: 65px;
+    width: 69px;
     height: 90px;
-    background: url(../img/sprite.png) -116px 0;
+    background: url(../img/sprite.png) -115px 0;
     background-size: 246px 302px;
     position: absolute;
     top: 20px;
@@ -940,9 +940,9 @@ footer p {
 .footer-logo {
     margin: 100px auto -24px auto;
     display: block;
-    width: 60px;
-    height: 59px;
-    background: url(../img/sprite.png) -181px 0;
+    width: 62px;
+    height: 62px;
+    background: url(../img/sprite.png) -184px 0;
     background-size: 246px 302px;
 }
 @media (max-width: 768px) {
