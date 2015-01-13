@@ -807,6 +807,13 @@ video#bgvid {
     }
 }
 .proj1 {
+    background: url(../img/proj/proj1.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.projTemp {
     background: url(../img/proj/dummy-image-1.jpg) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
