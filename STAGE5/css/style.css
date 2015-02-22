@@ -973,6 +973,16 @@ video#bgvid {
     background-size: 246px 302px;
 }
 
+.proj-arrow-dl {
+    top: 50%;
+    display: block;
+    margin: 50px auto 0 auto;
+    width: 42px;
+    height: 42px;
+    background: url(../img/sprite.png) -184px -250px;
+    background-size: 246px 302px;
+}
+
 .proj-name,
 .proj-type {
     position: absolute;
@@ -1122,3 +1132,64 @@ footer p {
     padding-bottom: 40px;
 }
 /*FOOTER-END*/
+
+#download-universal {
+    display: block;
+    width: 320px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.dl-logo {
+    margin: 60px auto -24px auto;
+    display: block;
+    width: 62px;
+    height: 62px;
+    background: url(../img/sprite.png) -184px 0;
+    background-size: 246px 302px;
+}
+
+#download-universal h1 {
+    font-family: 'Campton ExtraBold';
+    font-size: 28px;
+    color: #3B3B41;
+    line-height: 38px;
+    text-align: center;
+    margin-top: 55px;
+    padding: 0;
+}
+
+#download-universal p {
+    font-family: 'Campton Light';
+    font-size: 18px;
+    color: #3B3B41;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.download {
+    display: block;
+    margin: 60px auto 20px auto;
+    width: 120px;
+    height: 120px;
+    background: url(../img/dl.png) 0 0;
+    background-size: 120px 240px;
+}
+
+.download span {
+    display: block;
+    margin: 60px auto 20px auto;
+    width: 120px;
+    height: 120px;
+    background: url(../img/dl.png) 0 -120px;
+    background-size: 120px 240px;
+    opacity: 0;
+}
+
+.download span:hover {
+    opacity: 1;
+}
+
+.dl-body {
+    height: 0;
+}
