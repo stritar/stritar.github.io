@@ -1140,13 +1140,27 @@ footer p {
     margin: 0 auto;
 }
 
-.dl-logo {
-    margin: 60px auto -24px auto;
+a.dl-logo {
+    margin: 60px auto 0 auto;
     display: block;
     width: 62px;
     height: 62px;
-    background: url(../img/sprite.png) -184px 0;
+    background: url(../img/sprite.png) -184px -0;
     background-size: 246px 302px;
+}
+
+a.dl-logo span {
+    margin: 60px auto 0 auto;
+    display: block;
+    width: 62px;
+    height: 62px;
+    background: url(../img/sprite.png) -184px -62px;
+    background-size: 246px 302px;
+    opacity: 0;
+}
+
+a.dl-logo span:hover {
+    opacity: 1;
 }
 
 #download-universal h1 {
@@ -1155,7 +1169,6 @@ footer p {
     color: #3B3B41;
     line-height: 38px;
     text-align: center;
-    margin-top: 55px;
     padding: 0;
 }
 
@@ -1169,7 +1182,7 @@ footer p {
 
 .download {
     display: block;
-    margin: 60px auto 20px auto;
+    margin: 100px auto 20px auto;
     width: 120px;
     height: 120px;
     background: url(../img/dl.png) 0 0;
