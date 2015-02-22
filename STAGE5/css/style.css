@@ -1137,7 +1137,7 @@ footer p {
     display: block;
     width: 320px;
     height: 500px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
 }
 
 a.dl-logo {
