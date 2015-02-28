@@ -62,14 +62,16 @@
             strokeWidth: 2
         });
         var aLoop = function (r) {
-            var newR = r === 50 ? 100 : 50
+            var newR = r === 50 ? 100 : 50;
             myCircle.animate({
                 r: r
             }, 1500, function () {
-                aLoop(newR)
-            })
+                //Callback
+                aLoop(newR);
+            });
         }
         myCircle.drag()
+        aLoop(50);
     </script>
 
 </body>
