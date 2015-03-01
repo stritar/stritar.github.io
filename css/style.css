@@ -1265,7 +1265,45 @@ a.dl-logo span:hover {
     margin: 0 auto;
 }
 
-h1.cv_text {
+@media (max-width: 480px) {
+    .cv-logo {
+        background: url(../img/cv_spirte.png) 0px -150px;
+        background-size: 1000px 800px;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    .cv-holder #cv_h1 {
+        font-family: 'Campton ExtraBold';
+        font-size: 25px;
+        color: #3B3B41;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0;
+        margin-top: 15px;
+    }
+    .cv-holder #cv_h2 {
+        font-family: 'Campton Light';
+        font-size: 16px;
+        color: #3B3B41;
+        line-height: 33px;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+    .cv-holder {
+        position: absolute;
+        top: 0;
+        margin-top: 20px;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+    }
+}
+
+#cv_h1 {
     font-family: 'Campton ExtraBold';
     font-size: 48px;
     color: #3B3B41;
@@ -1276,7 +1314,7 @@ h1.cv_text {
     margin-top: 35px;
 }
 
-h2.cv_text {
+#cv_h2 {
     font-family: 'Campton Light';
     font-size: 22px;
     color: #3B3B41;
@@ -1286,7 +1324,7 @@ h2.cv_text {
     width: 100%;
 }
 
-h2.cv_text:after {
+#cv_h2:after {
     display: none;
 }
 
