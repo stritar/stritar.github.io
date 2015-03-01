@@ -1217,14 +1217,117 @@ a.dl-logo span:hover {
 }
 /* CV START */
 
-#TESTONE {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: dash 5s linear forwards;
+.cv-bgimg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-image: url(../img/cv_back.jpg);
+    background-size: cover;
+    -webkit-transform: translateZ(0);
 }
 
-@keyframes dash {
-    to {
-        stroke-dashoffset: 0;
+@media (max-width: 480px) {
+    .cv-bgimg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        background-image: url(../img/cv_back_small.jpg);
+        background-size: cover;
+        -webkit-transform: translateZ(0);
+    }
+}
+
+.cv-holder {
+    position: absolute;
+    top: 50%;
+    margin-top: -300px;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+}
+
+.cv-logo {
+    background: url(../img/cv_spirte.png) 0px 0px;
+    background-size: 1000px 800px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+h1.cv_text {
+    font-family: 'Campton ExtraBold';
+    font-size: 28px;
+    color: #3B3B41;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 20px;
+}
+
+h2.cv_text {
+    font-family: 'Campton Light';
+    font-size: 16px;
+    color: #3B3B41;
+    line-height: 20px;
+    text-align: center;
+    padding: 0;
+}
+
+h2.cv_text:after {
+    display: none;
+}
+
+.intro-buttons-cv {
+    display: block;
+    width: 520px;
+    margin: 50px auto;
+}
+
+@media (max-width: 1440px) {
+    .intro-buttons-cv {
+        display: block;
+        width: 520px;
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-buttons-cv {
+        display: block;
+        width: 520px;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-buttons-cv {
+        display: block;
+        width: auto;
+        margin: 40px auto;
+    }
+}
+
+.intro-buttons-cv a {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+}
+
+@media (max-width: 480px) {
+    .intro-buttons-cv a {
+        margin: 10px auto;
+        float: none;
     }
 }
