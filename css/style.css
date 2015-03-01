@@ -1394,6 +1394,7 @@ a.dl-logo span:hover {
     text-align: center;
     padding: 0;
     width: 100%;
+    margin-top: 40px;
     text-transform: uppercase;
 }
 
@@ -1447,11 +1448,14 @@ a.dl-logo span:hover {
     }
 }
 
-.cv-sect {
-    padding-top: 150px;
-    padding-bottom: 150px;
-    height: 900px;
+.cv-sect-1 {
+    padding: 100px 0;
     background: #F2F2F2;
+}
+
+.cv-sect-2 {
+    padding: 100px 0;
+    background: #EAEAEA;
 }
 
 .over-line {
@@ -1501,4 +1505,11 @@ a.dl-logo span:hover {
     margin: 0 auto -10px auto;
     background: url(../img/cv_spirte.png)0 -230px;
     background-size: 1000px 800px;
+}
+
+.over-line svg {
+    margin-top: 55px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
