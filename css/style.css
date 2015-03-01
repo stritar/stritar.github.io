@@ -1513,3 +1513,11 @@ a.dl-logo span:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.progress-text {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: #3B3B41;
+    margin-top: 10px;
+}
