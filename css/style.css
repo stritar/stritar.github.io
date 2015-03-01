@@ -1312,6 +1312,44 @@ a.dl-logo span:hover {
     }
 }
 
+@media (max-width: 480px) {
+    .cv-logo {
+        background: url(../img/cv_spirte.png) 0px -150px;
+        background-size: 1000px 800px;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    .cv-holder #cv_h1 {
+        font-family: 'Campton ExtraBold';
+        font-size: 25px;
+        color: #3B3B41;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0;
+        margin-top: 15px;
+    }
+    .cv-holder #cv_h2 {
+        font-family: 'Campton Light';
+        font-size: 16px;
+        color: #3B3B41;
+        line-height: 33px;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+    .cv-holder {
+        position: absolute;
+        top: 0;
+        margin-top: 20px;
+        left: 0;
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
 #cv_h1 {
     font-family: 'Campton ExtraBold';
     font-size: 48px;
@@ -1335,6 +1373,35 @@ a.dl-logo span:hover {
 
 #cv_h2:after {
     display: none;
+}
+
+.cv_h3 {
+    font-family: 'Campton ExtraBold';
+    font-size: 48px;
+    color: #3B3B41;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 35px;
+}
+
+.cv_h4_soft {
+    font-family: 'Campton Light';
+    font-size: 28px;
+    color: #3B3B41;
+    line-height: 33px;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.cv-svg-icon {
+    width: 66px;
+    height: 66px;
+    display: block;
+    margin: 0 auto;
 }
 
 .intro-buttons-cv {
@@ -1380,12 +1447,58 @@ a.dl-logo span:hover {
     }
 }
 
-.sect-1 {
+.cv-sect {
+    padding-top: 150px;
+    padding-bottom: 150px;
     height: 900px;
     background: #F2F2F2;
 }
 
-.sect-2 {
-    height: 1300px;
-    background: #EAEAEA;
+.over-line {
+    overflow: hidden;
+    display: block;
+    width: 800px;
+    margin: 80px auto;
+}
+
+@media (max-width: 768px) {
+    .over-line {
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        margin: 40px auto;
+    }
+    .over-line .over-box {
+        width: 100%;
+        float: none;
+        padding-bottom: 40px;
+    }
+}
+
+.over-box {
+    width: 50%;
+    float: left;
+}
+
+.over-box p {
+    text-align: center;
+    font-family: 'Campton Light';
+    font-size: 22px;
+    color: #3B3B41;
+}
+
+.over-icon {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 0 auto -10px auto;
+}
+
+.icon-temp {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 0 auto -10px auto;
+    background: url(../img/cv_spirte.png)0 -230px;
+    background-size: 1000px 800px;
 }
