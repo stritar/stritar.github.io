@@ -1283,11 +1283,22 @@ a.dl-logo span:hover {
 
 .cv-holder {
     position: absolute;
-    top: 50%;
+    top: 55%;
     margin-top: -300px;
     left: 50%;
     margin-left: -300px;
     width: 600px;
+}
+
+@media (max-width: 1300px) {
+    .cv-holder {
+        position: absolute;
+        top: 60%;
+        margin-top: -300px;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+    }
 }
 
 .cv-logo {
