@@ -1301,6 +1301,17 @@ a.dl-logo span:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .cv-holder {
+        position: absolute;
+        top: 50%;
+        margin-top: -300px;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+    }
+}
+
 .cv-logo {
     background: url(../img/cv_spirte.png) 0px 0px;
     background-size: 1000px 800px;
