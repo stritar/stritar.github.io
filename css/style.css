@@ -1577,7 +1577,7 @@ a.dl-logo span:hover {
 }
 
 .col h6 {
-    font-family: Campton-Light;
+    font-family: 'Campton Light';
     font-size: 22px;
     color: #3B3B41;
     line-height: 10px;
@@ -1599,4 +1599,17 @@ a.dl-logo span:hover {
     display: block;
     width: 286px;
     margin: 40px auto 20px auto;
+}
+
+h2.cv-title {
+    font-family: 'Campton ExtraBold';
+    font-size: 48px;
+    color: #3B3B41;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+h2.cv-title:after {
+    display: none;
 }
