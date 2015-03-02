@@ -1506,66 +1506,83 @@ a.dl-logo span:hover {
     background: #EAEAEA;
 }
 
-.over-line {
-    overflow: hidden;
+.cv-container {
     display: block;
-    width: 800px;
-    margin: 80px auto;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .over-line {
-        overflow: hidden;
-        display: block;
-        width: 100%;
-        margin: 40px auto;
-    }
-    .over-line .over-box {
-        width: 100%;
-        float: none;
-        padding-bottom: 40px;
-    }
+.cv-cont-2 {
+    margin-top: 80px;
 }
 
-.over-box {
-    width: 50%;
+.col {
+    display: block;
+    width: 400px;
     float: left;
 }
 
-.over-box p {
-    text-align: center;
-    font-family: 'Campton Light';
-    font-size: 22px;
-    color: #3B3B41;
+@media (max-width: 1300px) {
+    .cv-container {
+        display: block;
+        width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .col {
+        display: block;
+        width: 300px;
+        float: left;
+    }
+    .cv-cont-2 {
+        margin-top: 60px;
+    }
 }
 
-.over-icon {
-    width: 64px;
-    height: 64px;
-    display: block;
-    margin: 0 auto -10px auto;
+@media (max-width: 900px) {
+    .cv-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .col {
+        margin-bottom: 30px;
+        display: block;
+        width: 100%;
+    }
+    .cv-cont-2 {
+        margin-top: 40px;
+    }
 }
 
-.icon-temp {
-    width: 64px;
-    height: 64px;
+.icon-over-1 {
     display: block;
-    margin: 0 auto -10px auto;
-    background: url(../img/cv_spirte.png)0 -230px;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) 0px -230px;
     background-size: 1000px 800px;
 }
 
-.over-line svg {
-    margin-top: 55px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.col h5 {
+    padding-top: 20px;
+    font-family: 'Campton ExtraBold';
+    font-size: 22px;
+    margin: 0;
+    color: #3B3B41;
+    line-height: 31px;
+    text-align: center;
 }
 
-.progress-text {
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
+.col p {
+    font-family: 'Campton Light';
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    font-size: 16px;
     color: #3B3B41;
-    margin-top: 10px;
+    line-height: 23px;
+    text-align: center;
 }
