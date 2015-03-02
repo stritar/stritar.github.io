@@ -1574,6 +1574,7 @@ a.dl-logo span:hover {
     color: #3B3B41;
     line-height: 31px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .col h6 {
