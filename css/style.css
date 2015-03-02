@@ -1570,7 +1570,7 @@ a.dl-logo span:hover {
     padding-top: 20px;
     font-family: 'Campton ExtraBold';
     font-size: 22px;
-    margin: 0;
+    margin: 10px 0 10px 0;
     color: #3B3B41;
     line-height: 31px;
     text-align: center;
@@ -1592,7 +1592,7 @@ a.dl-logo span:hover {
     width: 250px;
     font-size: 16px;
     color: #3B3B41;
-    line-height: 23px;
+    line-height: 27px;
     text-align: center;
 }
 
