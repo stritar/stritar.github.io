@@ -549,8 +549,10 @@ nav a:hover:before,
 }
 
 .arrow-away {
+    position: absolute;
     margin-right: 4px;
-    float: right;
+    right: 10px;
+    top: 15px;
     display: block;
     width: 26px;
     height: 26px;
@@ -560,7 +562,6 @@ nav a:hover:before,
 
 .arrow-away-hover {
     opacity: 0;
-    position: absolute;
     margin-right: 4px;
     display: block;
     width: 26px;
