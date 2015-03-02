@@ -1293,7 +1293,7 @@ a.dl-logo span:hover {
 @media (max-width: 1300px) {
     .cv-holder {
         position: absolute;
-        top: 70%;
+        top: 64%;
         margin-top: -300px;
         left: 50%;
         margin-left: -300px;
