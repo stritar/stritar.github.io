@@ -1576,6 +1576,14 @@ a.dl-logo span:hover {
     text-align: center;
 }
 
+.col h6 {
+    font-family: Campton-Light;
+    font-size: 22px;
+    color: #3B3B41;
+    line-height: 10px;
+    text-align: center;
+}
+
 .col p {
     font-family: 'Campton Light';
     display: block;
@@ -1585,4 +1593,10 @@ a.dl-logo span:hover {
     color: #3B3B41;
     line-height: 23px;
     text-align: center;
+}
+
+.col svg {
+    display: block;
+    width: 286px;
+    margin: 40px auto 20px auto;
 }
