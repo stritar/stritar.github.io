@@ -1404,9 +1404,9 @@ a.dl-logo span:hover {
         position: absolute;
         top: 0;
         margin-top: 20px;
-        left: 50%;
-        margin-left: -300px;
-        width: 600px;
+        left: 0%;
+        margin-left: 0px;
+        width: 100%;
     }
 }
 
@@ -1468,6 +1468,17 @@ a.dl-logo span:hover {
 .cv-sect-2 {
     padding: 140px 0;
     background: #ECECEC;
+}
+
+@media (max-width: 480px) {
+    .cv-sect-1 {
+        padding: 70px 0;
+        background: #F2F2F2;
+    }
+    .cv-sect-2 {
+        padding: 70px 0;
+        background: #ECECEC;
+    }
 }
 
 .cv-container {
