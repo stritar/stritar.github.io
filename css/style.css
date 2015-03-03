@@ -1322,82 +1322,6 @@ a.dl-logo span:hover {
     margin: 0 auto;
 }
 
-@media (max-width: 480px) {
-    .cv-logo {
-        background: url(../img/cv_spirte.png) 0px -150px;
-        background-size: 1000px 800px;
-        display: block;
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
-    }
-    .cv-holder #cv_h1 {
-        font-family: 'Campton ExtraBold';
-        font-size: 25px;
-        color: #3B3B41;
-        line-height: 30px;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 0;
-        margin-top: 15px;
-    }
-    .cv-holder #cv_h2 {
-        font-family: 'Campton Light';
-        font-size: 16px;
-        color: #3B3B41;
-        line-height: 33px;
-        text-align: center;
-        padding: 0;
-        width: 100%;
-    }
-    .cv-holder {
-        position: absolute;
-        top: 0;
-        margin-top: 20px;
-        left: 50%;
-        margin-left: -300px;
-        width: 600px;
-    }
-}
-
-@media (max-width: 480px) {
-    .cv-logo {
-        background: url(../img/cv_spirte.png) 0px -150px;
-        background-size: 1000px 800px;
-        display: block;
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
-    }
-    .cv-holder #cv_h1 {
-        font-family: 'Campton ExtraBold';
-        font-size: 25px;
-        color: #3B3B41;
-        line-height: 30px;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 0;
-        margin-top: 15px;
-    }
-    .cv-holder #cv_h2 {
-        font-family: 'Campton Light';
-        font-size: 16px;
-        color: #3B3B41;
-        line-height: 33px;
-        text-align: center;
-        padding: 0;
-        width: 100%;
-    }
-    .cv-holder {
-        position: absolute;
-        top: 0;
-        margin-top: 20px;
-        left: 0;
-        margin-left: 0px;
-        width: 100%;
-    }
-}
-
 #cv_h1 {
     font-family: 'Campton ExtraBold';
     font-size: 48px;
@@ -1410,13 +1334,14 @@ a.dl-logo span:hover {
 }
 
 #cv_h2 {
-    font-family: 'Campton Light';
-    font-size: 22px;
+    font-family: 'Campton ExtraBold';
+    font-size: 20px;
     color: #3B3B41;
-    line-height: 33px;
+    line-height: 20px;
     text-align: center;
     padding: 0;
     width: 100%;
+    text-transform: uppercase;
 }
 
 #cv_h2:after {
@@ -1444,6 +1369,45 @@ a.dl-logo span:hover {
     width: 100%;
     margin-top: 40px;
     text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .cv-logo {
+        background: url(../img/cv_spirte.png) 0px -150px;
+        background-size: 1000px 800px;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    .cv-holder #cv_h1 {
+        font-family: 'Campton ExtraBold';
+        font-size: 25px;
+        color: #3B3B41;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0;
+        margin-top: 15px;
+    }
+    #cv_h2 {
+        font-family: 'Campton ExtraBold';
+        font-size: 16px;
+        color: #3B3B41;
+        line-height: 23px;
+        text-align: center;
+        padding: 10px 0 0 0;
+        width: 280px;
+        text-transform: uppercase;
+    }
+    .cv-holder {
+        position: absolute;
+        top: 0;
+        margin-top: 20px;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+    }
 }
 
 .cv-svg-icon {
@@ -1497,13 +1461,13 @@ a.dl-logo span:hover {
 }
 
 .cv-sect-1 {
-    padding: 100px 0;
+    padding: 140px 0;
     background: #F2F2F2;
 }
 
 .cv-sect-2 {
-    padding: 100px 0;
-    background: #EAEAEA;
+    padding: 140px 0;
+    background: #ECECEC;
 }
 
 .cv-container {
@@ -1511,6 +1475,10 @@ a.dl-logo span:hover {
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+}
+
+.cv-container-start {
+    padding-top: 100px;
 }
 
 .cv-cont-2 {
@@ -1538,6 +1506,14 @@ a.dl-logo span:hover {
     .cv-cont-2 {
         margin-top: 60px;
     }
+    .col h6 {
+        font-family: 'Campton Light';
+        font-size: 18px;
+        color: #3B3B41;
+        line-height: 2px;
+        text-align: left;
+        padding-left: 27px !important;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1555,12 +1531,21 @@ a.dl-logo span:hover {
     .cv-cont-2 {
         margin-top: 40px;
     }
+    .col h6 {
+        font-family: 'Campton Light';
+        font-size: 18px;
+        color: #3B3B41;
+        line-height: 2px;
+        text-align: center !important;
+        padding-left: 0px !important;
+        width: 100%;
+    }
 }
 
 .icon-over-1 {
     display: block;
-    width: 128px;
-    height: 128px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto;
     background: url(../img/cv_spirte.png) 0px -230px;
     background-size: 1000px 800px;
@@ -1570,7 +1555,7 @@ a.dl-logo span:hover {
     padding-top: 20px;
     font-family: 'Campton ExtraBold';
     font-size: 22px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 2px 0;
     color: #3B3B41;
     line-height: 31px;
     text-align: center;
@@ -1579,38 +1564,39 @@ a.dl-logo span:hover {
 
 .col h6 {
     font-family: 'Campton Light';
-    font-size: 22px;
+    font-size: 18px;
     color: #3B3B41;
-    line-height: 10px;
-    text-align: center;
+    line-height: 2px;
+    text-align: left;
+    padding-left: 78px;
 }
 
 .col p {
     font-family: 'Campton Light';
     display: block;
     margin: 0 auto;
-    width: 250px;
-    font-size: 16px;
+    width: 300px;
+    font-size: 18px;
     color: #3B3B41;
-    line-height: 27px;
+    line-height: 31px;
     text-align: center;
+}
+
+@media (max-width: 320px) {
+    .col p {
+        font-family: 'Campton Light';
+        display: block;
+        margin: 0 auto;
+        width: 280px;
+        font-size: 16px;
+        color: #3B3B41;
+        line-height: 28px;
+        text-align: center;
+    }
 }
 
 .col svg {
     display: block;
     width: 286px;
     margin: 40px auto 20px auto;
-}
-
-h2.cv-title {
-    font-family: 'Campton ExtraBold';
-    font-size: 48px;
-    color: #3B3B41;
-    line-height: 70px;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-
-h2.cv-title:after {
-    display: none;
 }
