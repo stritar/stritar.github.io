@@ -1337,10 +1337,10 @@ a.dl-logo span:hover {
     font-family: 'Campton ExtraBold';
     font-size: 20px;
     color: #3B3B41;
-    line-height: 20px;
+    line-height: 30px;
     text-align: center;
     padding: 0;
-    width: 100%;
+    width: 500px;
     text-transform: uppercase;
 }
 
@@ -1392,7 +1392,7 @@ a.dl-logo span:hover {
     }
     #cv_h2 {
         font-family: 'Campton ExtraBold';
-        font-size: 16px;
+        font-size: 19px;
         color: #3B3B41;
         line-height: 23px;
         text-align: center;
