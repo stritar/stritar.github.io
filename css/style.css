@@ -1566,6 +1566,51 @@ a.dl-logo span:hover {
     background-size: 1000px 800px;
 }
 
+.icon-over-2 {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -120px -230px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-3 {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -240px -230px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-4 {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) 0px -350px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-5 {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -120px -350px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-6 {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -240px -350px;
+    background-size: 1000px 800px;
+}
+
 .col h5 {
     padding-top: 20px;
     font-family: 'Campton ExtraBold';
