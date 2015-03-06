@@ -1466,22 +1466,22 @@ a.dl-logo span:hover {
 
 .cv-sect-1 {
     padding: 140px 0;
-    background: #F5F5F5;
+    background: #F2F2F2;
 }
 
 .cv-sect-2 {
     padding: 140px 0;
-    background: #F2F2F2;
+    background: #F5F5F5;
 }
 
 @media (max-width: 480px) {
     .cv-sect-1 {
         padding: 70px 0;
-        background: #F5F5F5;
+        background: #F2F2F2;
     }
     .cv-sect-2 {
         padding: 70px 0;
-        background: #F2F2F2;
+        background: #F5F5F5;
     }
 }
 
