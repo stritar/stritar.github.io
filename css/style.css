@@ -1466,22 +1466,22 @@ a.dl-logo span:hover {
 
 .cv-sect-1 {
     padding: 140px 0;
-    background: #F2F2F2;
+    background: #F5F5F5;
 }
 
 .cv-sect-2 {
     padding: 140px 0;
-    background: #ECECEC;
+    background: #F2F2F2;
 }
 
 @media (max-width: 480px) {
     .cv-sect-1 {
         padding: 70px 0;
-        background: #F2F2F2;
+        background: #F5F5F5;
     }
     .cv-sect-2 {
         padding: 70px 0;
-        background: #ECECEC;
+        background: #F2F2F2;
     }
 }
 
@@ -1568,54 +1568,54 @@ a.dl-logo span:hover {
 
 .icon-over-2 {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
-    background: url(../img/cv_spirte.png) -120px -230px;
+    background: url(../img/cv_spirte.png) -160px -230px;
     background-size: 1000px 800px;
 }
 
 .icon-over-3 {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
-    background: url(../img/cv_spirte.png) -240px -230px;
+    background: url(../img/cv_spirte.png) -320px -230px;
     background-size: 1000px 800px;
 }
 
 .icon-over-4 {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
-    background: url(../img/cv_spirte.png) 0px -350px;
+    background: url(../img/cv_spirte.png) 0px -390px;
     background-size: 1000px 800px;
 }
 
 .icon-over-5 {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
-    background: url(../img/cv_spirte.png) -120px -350px;
+    background: url(../img/cv_spirte.png) -160px -390px;
     background-size: 1000px 800px;
 }
 
 .icon-over-6 {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
-    background: url(../img/cv_spirte.png) -240px -350px;
+    background: url(../img/cv_spirte.png) -320px -390px;
     background-size: 1000px 800px;
 }
 
 .col h5 {
-    padding-top: 20px;
+    padding-top: 15px;
     font-family: 'Campton ExtraBold';
     font-size: 22px;
-    margin: 10px 0 2px 0;
+    margin: 0px 0 2px 0;
     color: #3B3B41;
     line-height: 31px;
     text-align: center;
@@ -1635,7 +1635,7 @@ a.dl-logo span:hover {
     font-family: 'Campton Light';
     display: block;
     margin: 0 auto;
-    width: 300px;
+    width: 260px;
     font-size: 16px;
     color: #3B3B41;
     line-height: 25px;
