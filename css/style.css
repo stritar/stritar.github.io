@@ -1660,7 +1660,7 @@ a.dl-logo span:hover {
 .col svg {
     display: block;
     width: 286px;
-    margin: 10px auto 22px auto;
+    margin: 15px auto 22px auto;
 }
 
 .col svg:nth-child(2) {
