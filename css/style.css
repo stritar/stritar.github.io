@@ -1424,14 +1424,14 @@ a.dl-logo span:hover {
 .intro-buttons-cv {
     display: block;
     width: 520px;
-    margin: 50px auto;
+    margin: 32px auto;
 }
 
 @media (max-width: 1440px) {
     .intro-buttons-cv {
         display: block;
         width: 520px;
-        margin: 50px auto;
+        margin: 32px auto;
     }
 }
 
@@ -1447,7 +1447,7 @@ a.dl-logo span:hover {
     .intro-buttons-cv {
         display: block;
         width: auto;
-        margin: 40px auto;
+        margin: 10px auto;
     }
 }
 
