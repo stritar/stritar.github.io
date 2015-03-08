@@ -1739,7 +1739,7 @@ a.dl-logo span:hover {
     width: 600px;
     height: 212px;
     background: url(../img/Process.png);
-    background-size: 600px 208px;
+    background-size: 600px 212px;
 }
 
 @media (max-width: 600px) {
