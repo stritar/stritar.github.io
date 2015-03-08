@@ -210,6 +210,33 @@ h3 a:focus {
     color: #e36144;
     text-decoration: none;
 }
+
+ul.fave-things {
+    list-style-type: none;
+    max-width: 750px;
+    margin: 30px auto 0 auto;
+    font-family: 'Campton Light';
+    font-size: 18px;
+    line-height: 31px;
+    color: #3B3B41;
+    text-align: left;
+    padding: 0;
+}
+
+ul.fave-things a {
+    font-family: 'Campton ExtraBold';
+    color: #D44120;
+}
+
+.quote {
+    font-family: 'tisaproitalicbold';
+    font-size: 20px;
+    text-align: left;
+}
+
+.quote span {
+    font-size: 15px;
+}
 /*FONTS-END*/
 /*GLOBALS*/
 
@@ -267,6 +294,10 @@ section {
 
 .section-text a {
     margin: 70px auto 0 auto;
+}
+
+.contact-btn {
+    margin: 30px auto 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -1602,6 +1633,33 @@ a.dl-logo span:hover {
     background-size: 1000px 800px;
 }
 
+.icon-over-7 {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) 0px -550px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-8 {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -160px -550px;
+    background-size: 1000px 800px;
+}
+
+.icon-over-9 {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    background: url(../img/cv_spirte.png) -320px -550px;
+    background-size: 1000px 800px;
+}
+
 .col h5 {
     padding-top: 25px;
     font-family: 'Campton ExtraBold';
@@ -1673,4 +1731,28 @@ a.dl-logo span:hover {
     display: block;
     width: 286px;
     margin: 40px auto 22px auto;
+}
+
+.process-watch {
+    margin: 80px auto 40px auto;
+    display: block;
+    width: 600px;
+    height: 208px;
+    background: url(../img/Process.png);
+    background-size: 600px 208px;
+}
+
+@media (max-width: 600px) {
+    .process-watch {
+        margin: 20px auto;
+        display: block;
+        width: 218px;
+        height: 618px;
+        background: url(../img/Process_mob.png);
+        background-size: 218px 618px;
+    }
+}
+
+.section-end-cv {
+    background: #F8F8F8 !important;
 }
