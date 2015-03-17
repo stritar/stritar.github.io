@@ -242,6 +242,20 @@ ul.fave-things a {
     }
 }
 
+@media (max-width: 480px) {
+    ul.fave-things {
+        list-style-type: none;
+        max-width: 280px;
+        margin: 30px auto 0 auto;
+        font-family: 'Campton Light';
+        font-size: 18px;
+        line-height: 31px;
+        color: #3B3B41;
+        text-align: left;
+        padding: 0;
+    }
+}
+
 .quote {
     font-family: 'tisaproitalicbold';
     font-size: 20px;
