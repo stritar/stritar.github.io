@@ -1320,7 +1320,7 @@ a.dl-logo span:hover {
     width: auto;
     height: auto;
     z-index: -100;
-    background-image: url(../img/cv_back_2.jpg);
+    background-image: url(../img/cv_back.jpg);
     background-size: cover;
     -webkit-transform: translateZ(0);
 }
@@ -1335,7 +1335,7 @@ a.dl-logo span:hover {
         width: auto;
         height: auto;
         z-index: -100;
-        background-image: url(../img/cv_back_2_small.jpg);
+        background-image: url(../img/cv_back_small.jpg);
         background-size: cover;
         -webkit-transform: translateZ(0);
     }
