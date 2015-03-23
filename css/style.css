@@ -245,7 +245,7 @@ ul.fave-things a {
 @media (max-width: 480px) {
     ul.fave-things {
         list-style-type: none;
-        max-width: 280px;
+        max-width: 350px;
         margin: 30px auto 0 auto;
         font-family: 'Campton Light';
         font-size: 18px;
