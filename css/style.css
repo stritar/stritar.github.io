@@ -171,7 +171,7 @@ p {
     font-size: 18px;
     line-height: 31px;
     color: #3B3B41;
-    text-align: left;
+    text-align: center;
     display: block;
     max-width: 750px;
     margin: 35px auto 0 auto;
@@ -183,7 +183,7 @@ p {
         font-size: 16px;
         line-height: 31px;
         color: #3B3B41;
-        text-align: left;
+        text-align: center;
         display: block;
         max-width: 350px;
         margin: 35px auto 0 auto;
