@@ -219,7 +219,7 @@ ul.fave-things {
     font-size: 18px;
     line-height: 31px;
     color: #3B3B41;
-    text-align: left;
+    text-align: center;
     padding: 0;
 }
 
@@ -237,7 +237,7 @@ ul.fave-things a {
         font-size: 18px;
         line-height: 31px;
         color: #3B3B41;
-        text-align: left;
+        text-align: center;
         padding: 0;
     }
 }
@@ -251,7 +251,7 @@ ul.fave-things a {
         font-size: 18px;
         line-height: 31px;
         color: #3B3B41;
-        text-align: left;
+        text-align: center;
         padding: 0;
     }
 }
