@@ -194,3 +194,29 @@ small {
         background-size: 600px 600px;
     }
 }
+
+.load-more {
+    margin-top: 30px;
+    width: 100%;
+    float: left;
+}
+
+.button {
+    margin: 0 auto;
+    display: block;
+    max-width: 547px;
+    min-width: 252px;
+    height: 37px;
+    background: #EA4E4E;
+    text-align: center;
+    font-family: 'SuperGroteskPro-Bold';
+    font-size: 14px;
+    color: #F6F6F6;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-top: 23px
+}
+
+.button:hover {
+    background: #e63030;
+}
