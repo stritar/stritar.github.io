@@ -208,6 +208,10 @@ small {
     height: 200px;
 }
 
+.twitter-share-button {
+    margin-top: 2px;
+}
+
 @media (max-width: 840px) {
     .video-holder {
         display: block;
