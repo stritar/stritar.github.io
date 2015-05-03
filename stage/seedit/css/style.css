@@ -158,6 +158,27 @@ small {
     }
 }
 
+@media (max-width: 900px) {
+    .gallery-holder {
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 587px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 639px) {
+    .gallery-holder {
+        padding: 10px 0;
+        width: 252px;
+        text-align: left;
+    }
+    .gallery-item {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
     #header {
         width: 100%;
