@@ -204,6 +204,7 @@ small {
 
 .social-networks {
     border-top: 1px solid #EEEEEE;
+    height: 200px;
 }
 
 @media (max-width: 840px) {
