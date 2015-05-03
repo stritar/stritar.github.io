@@ -195,6 +195,46 @@ small {
     }
 }
 
+.video-holder {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.social-networks {
+    border-top: 1px solid #EEEEEE;
+}
+
+@media (max-width: 840px) {
+    .video-holder {
+        display: block;
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .video-holder {
+        display: block;
+        width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 440px) {
+    .video-holder {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+    }
+}
+
+.video-placeholder {
+    width: 100%;
+    height: auto;
+}
+
 .load-more {
     margin-top: 30px;
     width: 100%;
