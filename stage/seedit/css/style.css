@@ -269,11 +269,11 @@ submit {
 button {
     width: 280px;
     display: block;
-    height: 60px;
+    height: 50px;
     background: #EA4E4E;
     text-align: center;
     font-family: 'SuperGroteskPro-Bold';
-    font-size: 16px;
+    font-size: 14px;
     color: #F6F6F6;
     text-transform: uppercase;
     text-decoration: none;
