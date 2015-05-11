@@ -260,23 +260,26 @@ small {
     text-align: center;
 }
 
-.load-more .button {
-    margin: 0 auto;
+input,
+button,
+submit {
+    border: none;
+}
+
+button {
+    width: 280px;
     display: block;
-    max-width: 547px;
-    min-width: 252px;
-    height: 37px;
+    height: 60px;
     background: #EA4E4E;
     text-align: center;
     font-family: 'SuperGroteskPro-Bold';
-    font-size: 14px;
+    font-size: 16px;
     color: #F6F6F6;
     text-transform: uppercase;
     text-decoration: none;
-    padding-top: 23px
 }
 
-.button:hover {
+button:hover {
     background: #e63030;
 }
 
@@ -414,4 +417,31 @@ footer a:hover {
 .pagination-sm > li:last-child > span {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+label {
+    font-family: 'SuperGroteskPro';
+    font-size: 19px;
+    color: #3B3B3B;
+    line-height: 1.2;
+    color: #3B3B3B;
+    width: 100%;
+    display: block;
+}
+
+input,
+textarea {
+    max-width: 600px;
+    height: 40px;
+    width: 100%;
+    font-family: 'SuperGroteskPro';
+    font-size: 19px;
+    color: #3B3B3B;
+    margin: 5px 0 20px 0;
+    border: 1px solid #EEEEEE;
+    background-color: #fff;
+}
+
+textarea {
+    height: 100px;
 }
