@@ -56,7 +56,7 @@ body {
     margin: 0 auto
 }
 
-h1 {
+h1, .h1 {
     font-family: 'SuperGroteskPro-Bold';
     font-size: 30px;
     color: #EA4E4E;
@@ -64,7 +64,7 @@ h1 {
     text-transform: uppercase;
 }
 
-h2 {
+h2, .h2 {
     font-family: 'SuperGroteskPro-Bold';
     font-size: 19px;
     color: #EA4E4E;
@@ -72,7 +72,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+h3, .h3 {
     font-family: 'SuperGroteskPro-Bold';
     font-size: 14px;
     color: #3B3B3B;
@@ -213,6 +213,27 @@ small {
     margin: 0 auto;
     text-align: left;
 }
+.comment-list {
+    margin: 60px auto;
+    padding: 20px 0;
+    border-top: 1px solid #EEEEEE;
+}
+.comment-item {
+    overflow: hidden;
+    margin: 10px 0;
+    padding: 15px 15px 5px;
+    box-shadow: 0px 0px 3px #ddd;
+    background: #fafafa;
+}
+.comment-item p {
+    font-size: 17px;
+    line-height: 1.4em;
+}
+.comment-item-footer {
+    text-align: right;
+    font-size: .8em;
+    color: #888;
+}
 
 .social-networks {
     border-top: 1px solid #EEEEEE;
@@ -266,22 +287,30 @@ submit {
     border: none;
 }
 
-button {
-    width: 280px;
-    display: block;
+.btn-default {
+    font-family: 'SuperGroteskPro-Bold';
+    display: inline-block;
     height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
     background: #EA4E4E;
     text-align: center;
-    font-family: 'SuperGroteskPro-Bold';
     font-size: 14px;
     color: #F6F6F6;
     text-transform: uppercase;
     text-decoration: none;
+    vertical-align: middle;
 }
-
-button:hover {
+.btn-default:hover {
     background: #e63030;
 }
+
+button.btn-default {
+    width: 280px;
+    display: block;
+}
+
+
 
 footer {
     margin-top: 35px;
