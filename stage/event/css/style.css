@@ -1,0 +1,41 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+.left-container {
+    float: left;
+    width: 45%;
+    height: 100%;
+    background: yellow;
+}
+
+.right-container {
+    float: left;
+    width: 55%;
+    height: 100%;
+    background: blue;
+}
+
+@media (max-width: 768px) {
+    .left-container {
+        float: none;
+        width: 100%;
+        height: 300px;
+        background: yellow;
+    }
+    .right-container {
+        float: none;
+        width: 100%;
+        height: 100%;
+        background: blue;
+    }
+}
