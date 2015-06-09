@@ -5,3 +5,70 @@ html {
     width: 100%;
     height: 100%;
 }
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-back {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    background: url(../img/back-temp.jpg)no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -100;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    -webkit-transform: translateZ(0);
+}
+
+@media (max-width: 1014px) {
+    video#bgvid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        display: none;
+    }
+}
+
+.index-nav {
+    position: absolute;
+    margin: 20px 20px 0 20px;
+}
+
+.nav-logo {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url(../img/sprite.png) 0 0;
+    background-size: 300px 300px;
+}
