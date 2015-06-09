@@ -1,3 +1,5 @@
+/*BASE*/
+
 body,
 html {
     padding: 0;
@@ -10,6 +12,50 @@ html {
     width: 100%;
     height: 100%;
 }
+/*FONTS*/
+
+@font-face {
+    font-family: 'AkkuratPro-Bold';
+    src: url('../fonts/AkkuratPro-Bold.eot');
+    /* IE9 Compat Modes */
+    
+    src: url('../fonts/AkkuratPro-Bold.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    
+    url('../fonts/AkkuratPro-Bold.woff') format('woff'),
+    /* Modern Browsers */
+    
+    url('../fonts/AkkuratPro-Bold.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    
+    url('../fonts/AkkuratPro-Bold.svg#8e4ac6878de559e681f53263f7ebda33') format('svg');
+    /* Legacy iOS */
+    
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'AkkuratPro-Regular';
+    src: url('../fonts/AkkuratPro-Regular.eot');
+    /* IE9 Compat Modes */
+    
+    src: url('../fonts/AkkuratPro-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    
+    url('../fonts/AkkuratPro-Regular.woff') format('woff'),
+    /* Modern Browsers */
+    
+    url('../fonts/AkkuratPro-Regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    
+    url('../fonts/AkkuratPro-Regular.svg#3478686034630b6bbb8f4a5751bfe071') format('svg');
+    /* Legacy iOS */
+    
+    font-style: normal;
+    font-weight: 400;
+}
+/*INTRO-INDEX*/
 
 .intro-back {
     width: 100%;
@@ -60,8 +106,11 @@ video#bgvid {
     }
 }
 
-.index-nav {
+.content-holder {
     position: absolute;
+}
+
+.index-nav {
     margin: 20px 20px 0 20px;
 }
 
@@ -71,4 +120,14 @@ video#bgvid {
     height: 60px;
     background: url(../img/sprite.png) 0 0;
     background-size: 300px 300px;
+}
+
+h1 {
+    font-family: 'AkkuratPro-Regular';
+    font-size: 50px;
+    color: white;
+}
+
+h2 {
+    color: white;
 }
