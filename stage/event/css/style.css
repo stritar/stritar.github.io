@@ -55,6 +55,20 @@ html {
     font-style: normal;
     font-weight: 400;
 }
+
+nav a {
+    font-family: 'AkkuratPro-Bold';
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    color: #7EBEE8;
+}
 /*INTRO-INDEX*/
 
 .intro-back {
@@ -108,10 +122,12 @@ video#bgvid {
 
 .content-holder {
     position: absolute;
+    width: 100%;
 }
 
 .index-nav {
-    margin: 20px 20px 0 20px;
+    margin: 40px 0;
+    width: 100%;
 }
 
 .nav-logo {
@@ -120,14 +136,20 @@ video#bgvid {
     height: 60px;
     background: url(../img/sprite.png) 0 0;
     background-size: 300px 300px;
+    float: left;
+    margin-left: 40px;
 }
 
-h1 {
-    font-family: 'AkkuratPro-Regular';
-    font-size: 50px;
-    color: white;
+.links-pages {
+    margin-left: 20px;
+    padding-top: 20px;
+    float: left;
+    display: block;
 }
 
-h2 {
-    color: white;
+.links-lang {
+    padding-top: 20px;
+    float: right;
+    display: block;
+    margin-right: 40px;
 }
