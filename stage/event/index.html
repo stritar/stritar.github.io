@@ -28,15 +28,18 @@
 </head>
 
 <body>
-    <div class="mobile">
-        <a href="#">About us</a>
-        <a href="#">Event marketing</a>
-        <a href="#">Show production</a>
-        <a href="#">Artist management</a>
-        <a href="#">Gallery & references</a>
-        <a href="#">Contact</a>
-        <a href="#">DE</a>
-    </div>
+
+    <nav class="mobile">
+        <button>Toggle</button>
+        <div>
+            <a href="#">Mobile 1</a>
+            <a href="#">Mobile 2</a>
+            <a href="#">Mobile 3</a>
+            <a href="#">Mobile 4</a>
+        </div>
+    </nav>
+
+
     <div id="container" class="intro">
         <div class="content-holder">
             <nav class="index-nav">
@@ -67,6 +70,11 @@
             </div>
         </div>
 </body>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('button').click(function () {
+        $(this).toggleClass('expanded').siblings('div').slideToggle();
+    });
+</script>
 
 </html>

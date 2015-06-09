@@ -83,6 +83,43 @@ nav a:hover {
 }
 /*INTRO-INDEX*/
 /*Mobile nav*/
+
+.mobile {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.mobile div {
+    display: none;
+}
+
+.mobile button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 0;
+    text-indent: 200%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8) url("http://i.imgur.com/vKRaKDX.png") center no-repeat;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-size: 80%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.mobile button.expanded {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-color: transparent;
+    border: 0;
+}
 /**/
 
 .intro-back {
@@ -120,29 +157,6 @@ video#bgvid {
     -webkit-transform: translateZ(0);
 }
 
-.mobile {
-    visibility: hidden;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-}
-
-.mobile a {
-    display: block;
-    width: 100%;
-    height: 55px;
-    border-bottom: 1px solid #1b1b1d;
-    color: #FFFFFF;
-    background: #232326;
-    font-family: 'AkkuratPro-Bold';
-    font-size: 16px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    line-height: 1;
-    padding-top: 40px;
-}
-
 @media (max-width: 1014px) {
     video#bgvid {
         position: fixed;
@@ -157,9 +171,6 @@ video#bgvid {
     }
     .desktop {
         visibility: hidden;
-    }
-    .mobile {
-        visibility: visible;
     }
 }
 
