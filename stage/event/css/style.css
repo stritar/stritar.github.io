@@ -56,28 +56,6 @@ html {
     font-weight: 400;
 }
 
-nav a {
-    font-family: 'AkkuratPro-Bold';
-    font-size: 14px;
-    color: #FFFFFF;
-    line-height: 17px;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-@media (max-width: 1100px) {
-    nav a {
-        font-family: 'AkkuratPro-Bold';
-        font-size: 12px;
-        color: #FFFFFF;
-        line-height: 17px;
-        text-transform: uppercase;
-        text-decoration: none;
-        margin-right: 15px;
-    }
-}
-
 nav a:hover {
     color: #7EBEE8;
 }
@@ -89,22 +67,31 @@ nav a:hover {
 }
 
 .nav-logo {
-    display: block;
     width: 60px;
     height: 60px;
     background: url(../img/sprite.png) 0 0;
     background-size: 300px 300px;
     float: left;
-    margin-left: 40px;
+    margin: 40px 80px 0 40px;
 }
 
 nav a {
+    display: block;
+    float: left;
+    margin-top: 40px;
+    padding-top: 23px;
+    height: 37px;
     font-family: 'AkkuratPro-Bold';
     font-size: 14px;
     color: #FFFFFF;
     line-height: 17px;
     text-transform: uppercase;
     text-decoration: none;
+    margin-right: 40px;
+}
+
+.aux-links {
+    float: right;
     margin-right: 20px;
 }
 
