@@ -75,11 +75,15 @@ nav a:hover {
     margin: 40px 80px 0 40px;
 }
 
+nav {
+    z-index: 999;
+}
+
 nav a {
     display: block;
     float: left;
     margin-top: 40px;
-    padding-top: 33px;
+    padding-top: 23px;
     height: 37px;
     font-family: 'AkkuratPro-Bold';
     font-size: 14px;
@@ -98,7 +102,7 @@ nav a {
 @media (max-width: 1220px) {
     nav a {
         font-family: 'AkkuratPro-Bold';
-        font-size: 18px;
+        font-size: 12px;
         color: #FFFFFF;
         line-height: 17px;
         text-transform: uppercase;
@@ -186,6 +190,38 @@ nav a {
     height: 100%;
     display: block;
     position: relative;
+}
+
+.intro-content {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -300px;
+}
+
+.subtle-logo {
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+
+.subtle-logo-img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 100px auto 0 auto;
+    background: url(../img/sprite.png) -72px -60px;
+    background-size: 300px 300px;
+}
+
+.main-links {
+    width: 400px;
+    height: 100%;
+    background: yellow;
+    float: left;
 }
 
 video#bgvid {
