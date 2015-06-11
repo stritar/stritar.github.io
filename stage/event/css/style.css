@@ -189,6 +189,11 @@ nav a {
     display: none;
 }
 
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
 .mobile button {
     position: absolute;
     top: 30px;
