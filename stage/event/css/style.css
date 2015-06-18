@@ -347,6 +347,21 @@ footer {
     margin: 40px auto;
 }
 
+@media (max-width: 640px) {
+    .foot-index {
+        width: 280px;
+        height: 100px;
+        margin: 10px auto;
+    }
+    .foot-index-logo {
+        display: none !important;
+    }
+    .foot-index ul li,
+    a {
+        font-size: 14px !important;
+    }
+}
+
 .foot-index-logo {
     display: block;
     width: 30px;
