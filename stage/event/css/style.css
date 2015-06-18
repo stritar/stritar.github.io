@@ -164,11 +164,8 @@ nav a {
     }
     footer {
         width: 100%;
-        display: block;
         position: relative !important;
-        bottom: 0;
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+        margin-top: 80px !important;
     }
 }
 
