@@ -163,11 +163,6 @@ nav a {
         margin-top: 0 !important;
         margin-left: 0 !important;
     }
-    footer {
-        width: 100%;
-        position: relative !important;
-        margin-top: 80px !important;
-    }
 }
 
 @media (max-width: 1220px) {
@@ -399,6 +394,11 @@ footer span {
     }
     footer span:nth-child(1) {
         margin-top: 30px;
+    }
+    footer {
+        width: 280px;
+        position: relative !important;
+        margin: 80px auto 30px auto;
     }
 }
 /*CONTENT*/
