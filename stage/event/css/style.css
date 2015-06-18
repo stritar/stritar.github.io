@@ -332,3 +332,58 @@ video#bgvid {
         -webkit-transform: translateZ(0);
     }
 }
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.foot-index {
+    width: 450px;
+    height: 100px;
+    margin: 40px auto;
+}
+
+.foot-index-logo {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 34px;
+    float: left;
+    background: url(../img/sprite.png) -0 -163px;
+    background-size: 300px 300px;
+}
+
+.foot-index ul {
+    margin-top: 8px;
+    display: block;
+    float: left;
+    list-style-type: none;
+}
+
+.foot-index ul li,
+a {
+    font-family: 'AkkuratPro-Regular';
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.imprint {
+    margin-left: 25px;
+}
+
+.imprint:before {
+    margin-left: -5px;
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(../img/sprite.png) -30px -170px;
+    background-size: 300px 300px;
+    width: 20px;
+    height: 20px;
+}
