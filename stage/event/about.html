@@ -15,7 +15,7 @@
 
 
     <link rel="stylesheet" href="css/style.css" rel="stylesheet">
-
+    <meta name="format-detection" content="telephone=no">
 
     <link rel="shortcut icon" href="img/favicon.ico" type="favicon.ico">
     <link rel="icon" href="img/favicon.ico" type="favicon.ico">
@@ -28,14 +28,50 @@
 </head>
 
 <body>
-    <div class="left-side-main"></div>
-    <div class="right-side-main"></div>
 
+    <div class="left-side-main"></div>
+    <div class="right-side-main">
+        <header class="header basic">
+            <a href="#" class="nav-logo"></a>
+
+            <nav class="desktop">
+                <a href="about.html">About us</a>
+                <a href="marketing.html">Event marekting</a>
+                <a href="production">Show production</a>
+                <a href="management">Artist management</a>
+                <a href="gallery">Gallery & references</a>
+                <span class="aux-links">
+                    <a href="contact">Contact</a>
+                    <a href="/de/index.html">DE</a>
+                </span>
+            </nav>
+
+            <nav class="mobile">
+                <button>Menu</button>
+                <div>
+                    <a href="#">About us</a>
+                    <a href="#">Event marekting</a>
+                    <a href="#">Show production</a>
+                    <a href="#">Artist management</a>
+                    <a href="#">Gallery & references</a>
+                    <br>
+                    <a href="#">Contact</a>
+                    <a href="#">DE</a>
+                </div>
+            </nav>
+        </header>
+    </div>
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
     $('button').click(function () {
         $(this).toggleClass('expanded').siblings('div').slideToggle();
+    });
+</script>
+<script type="text/javascript">
+    $(function () { // $(document).ready shorthand
+        $.fx.speeds.xslow = 1500;
+        $('#container').fadeIn('xslow');
     });
 </script>
 
