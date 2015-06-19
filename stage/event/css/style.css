@@ -351,6 +351,21 @@ footer span {
     margin: 0 10px 0 10px;
 }
 
+@media (max-width: 640px) {
+    footer {
+        margin-top: 80px;
+        position: relative;
+    }
+    footer span {
+        display: block;
+        margin: 20px 0;
+    }
+    .footer-index {
+        display: block;
+        width: 280px;
+    }
+}
+
 .tel:before {
     margin-bottom: -3px;
     margin-right: 7px;
