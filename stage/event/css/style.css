@@ -66,7 +66,6 @@ button:focus {
 .index-header {
     float: left;
     width: 100%;
-    padding: 40px;
 }
 
 @media (max-width: 768px) {
@@ -80,6 +79,7 @@ button:focus {
     display: block;
     width: 60px;
     height: 60px;
+    margin: 40px;
     background: url(../img/sprite.png) 0 0;
     background-size: 300px 300px;
 }
