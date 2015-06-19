@@ -6,6 +6,11 @@ html {
     margin: 0;
     width: 100%;
     height: 100%;
+    font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 input:focus,
@@ -14,7 +19,6 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-/*FONTS*/
 
 @font-face {
     font-family: 'AkkuratPro-Bold';
@@ -57,10 +61,14 @@ button:focus {
     font-style: normal;
     font-weight: 400;
 }
+/*NAVIGATION - INDEX*/
 
-nav a:hover {
-    color: #7EBEE8;
+.index-header {
+    width: 100%;
+    height: 50px;
+    background: red;
 }
+/*NAVIGATION INDEX END*/
 
 #container {
     display: none;
@@ -145,17 +153,17 @@ footer {
     display: block;
     width: 100%;
     bottom: 0;
-    font-family: 'AkkuratPro-Bold';
+    font-family: 'AkkuratPro-Regular';
     font-size: 12px;
-    color: #FFFFFF;
+    color: #B6B6B6;
     line-height: 17px;
-    margin-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 footer a {
-    font-family: 'AkkuratPro-Bold';
+    font-family: 'AkkuratPro-Regular';
     font-size: 12px;
-    color: #FFFFFF;
+    color: #B6B6B6;
     line-height: 17px;
     text-decoration: none;
 }
@@ -207,7 +215,7 @@ footer span {
     }
     footer span {
         display: block;
-        margin: 20px 0;
+        margin: 15px 0;
     }
     .footer-index {
         padding-top: 60px;
