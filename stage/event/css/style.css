@@ -319,6 +319,7 @@ button:focus {
     margin: 0;
     padding-top: 28px;
     border-bottom: 1px solid #1b1b1d;
+    z-index: 400;
 }
 
 .mobile-basic a {
@@ -335,7 +336,6 @@ button:focus {
 @media (max-width: 1024px) {
     .mobile {
         display: block;
-        z-index: 400;
     }
     .desktop {
         display: none;
