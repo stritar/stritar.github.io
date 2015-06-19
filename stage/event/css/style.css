@@ -335,6 +335,7 @@ button:focus {
 @media (max-width: 1024px) {
     .mobile {
         display: block;
+        z-index: 400;
     }
     .desktop {
         display: none;
@@ -347,7 +348,7 @@ button:focus {
         float: left;
         margin: 20px 20px;
         position: fixed;
-        z-index: 9999;
+        z-index: 300;
     }
 }
 
