@@ -363,6 +363,8 @@ footer span {
     .footer-index {
         display: block;
         width: 280px;
+        margin: 0 auto;
+        overflow: hidden;
     }
 }
 
