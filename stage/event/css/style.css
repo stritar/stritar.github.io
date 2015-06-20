@@ -83,6 +83,7 @@ button:focus {
     margin: 40px;
     background: url(../img/sprite.png) 0 0;
     background-size: 300px 300px;
+    z-index: 9999;
 }
 
 @media (max-width: 980px) {
