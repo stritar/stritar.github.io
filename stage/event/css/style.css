@@ -99,7 +99,6 @@ button:focus {
 /*NAVIGATION INDEX END*/
 
 #container {
-    display: none;
     width: 100%;
     height: 100%;
 }
@@ -109,7 +108,7 @@ button:focus {
     width: 100%;
     height: 100%;
     display: block;
-    position: relative;
+    overflow: auto;
     background: url(../img/back-temp.png)no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -258,6 +257,30 @@ nav a {
         display: block;
     }
 }
+/*index-content*/
+
+.index-content {
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -300px;
+    position: absolute;
+    display: block;
+    width: 600px;
+    height: 400px;
+    background: red;
+}
+
+@media (max-width: 980px) {
+    .index-content {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: relative;
+        overflow: hidden;
+    }
+}
 /*FOOTER*/
 
 footer {
@@ -318,9 +341,10 @@ footer span {
     background-size: 300px 300px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 980px) {
     footer {
         position: relative;
+        overflow: hidden;
     }
     footer span {
         display: block;
