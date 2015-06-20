@@ -454,6 +454,7 @@ footer span {
     width: 30%;
     height: 100%;
     position: fixed;
+    background: blue;
 }
 
 .right-side {
@@ -586,6 +587,7 @@ a.selected {
 section {
     margin: 60px 0 60px 140px;
     width: 800px;
+    ;
 }
 
 @media (max-width: 1200px) {
@@ -683,4 +685,50 @@ p {
     color: #7EBEE8;
     line-height: 2px;
     text-decoration: none;
+}
+/*footer base*/
+
+.footer-base {
+    float: left;
+    display: block !important;
+    width: 100%!important;
+    position: relative;
+}
+
+.footer-base p,
+.footer-base a {
+    color: #3B3B41 !important;
+}
+
+.footer-base .tel:before {
+    margin-bottom: -3px;
+    margin-right: 7px;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/sprite.png) -30px -184px;
+    background-size: 300px 300px;
+}
+
+.footer-base .mail:before {
+    margin-bottom: -2px;
+    margin-right: 7px;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background: url(../img/sprite.png) -30px -239px;
+    background-size: 300px 300px;
+}
+
+.footer-base .dl:before {
+    margin-bottom: -4px;
+    margin-right: 7px;
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 22px;
+    background: url(../img/sprite.png) -30px -207px;
+    background-size: 300px 300px;
 }
