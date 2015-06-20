@@ -267,7 +267,6 @@ nav a {
     display: block;
     width: 600px;
     height: 400px;
-    background: red;
 }
 
 @media (max-width: 980px) {
@@ -280,6 +279,56 @@ nav a {
         position: relative;
         overflow: hidden;
     }
+}
+
+.logo-left {
+    margin-top: 100px;
+    display: block;
+    width: 180px;
+    height: 180px;
+    float: left;
+    background: url(../img/sprite.png) -72px -60px;
+    background-size: 300px 300px;
+}
+
+.links-right {
+    display: block;
+    float: left;
+    width: 420px;
+    margin-top: 70px;
+}
+
+.links-right a {
+    padding-left: 40px;
+    display: block;
+    font-family: 'AkkuratPro-Bold';
+    font-size: 24px;
+    color: #C9C9C9;
+    line-height: 17px;
+    text-decoration: none;
+    margin: 30px 0 30px 0;
+}
+
+.links-right a:after {
+    content: "more";
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 17px;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+.links-right a:nth-child(1) {
+    color: #FF5D40;
+}
+
+.links-right a:nth-child(2) {
+    color: #F9B120;
+}
+
+.links-right a:nth-child(3) {
+    color: #A1C544;
 }
 /*FOOTER*/
 
