@@ -95,7 +95,6 @@ button:focus {
         margin: 20px;
         background: url(../img/sprite.png) 0 0;
         background-size: 300px 300px;
-        z-index: 9999;
     }
 }
 /*NAVIGATION INDEX END*/
@@ -302,7 +301,7 @@ nav a:hover {
     display: block;
     float: left;
     width: 420px;
-    margin-top: 70px;
+    margin-top: 78px;
 }
 
 @media (max-width: 980px) {
@@ -519,11 +518,11 @@ footer span {
 }
 
 .base-nav a:hover {
-    color: #7EBEE8 !important;
+    color: #A5C9D6 !important;
 }
 
 a.selected {
-    color: #7EBEE8 !important;
+    color: #A5C9D6 !important;
 }
 
 @media (max-width: 1600px) {
