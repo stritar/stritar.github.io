@@ -28,8 +28,10 @@
 </head>
 
 <body>
-    <div class="left-side"></div>
-    <dic class="right-side"></dic>
+    <div id="container">
+        <div class="left-side"></div>
+        <dic class="right-side"></dic>
+    </div>
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -39,7 +41,7 @@
 </script>
 <script type="text/javascript">
     $(function () { // $(document).ready shorthand
-        $.fx.speeds.xslow = 1800;
+        $.fx.speeds.xslow = 900;
         $('#container').fadeIn('xslow');
     });
 </script>
