@@ -822,3 +822,38 @@ p {
 .management-col-overlay {
     background: #A1C544;
 }
+/*GALLERY*/
+
+img.gallery {
+    display: block;
+    width: 600px;
+    height: auto;
+}
+
+p.gallery-text {
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+    img.gallery {
+        display: block;
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+    }
+    p.gallery-text {
+        text-align: center;
+        margin-top: -15px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    img.gallery {
+        display: block;
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+}
