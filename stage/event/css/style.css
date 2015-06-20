@@ -457,6 +457,17 @@ footer span {
     background: blue;
 }
 
+@media (max-width: 1200px) {
+    .left-overlay {
+        display: block;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: #FFFFFF;
+    }
+}
+
 .right-side {
     display: block;
     float: right;
