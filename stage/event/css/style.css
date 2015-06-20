@@ -441,3 +441,20 @@ footer span {
         margin: 0 auto 7px auto;
     }
 }
+/*BASE*/
+
+.left-side {
+    display: block;
+    float: left;
+    width: 30%;
+    height: 100%;
+    background: red;
+}
+
+.right-side {
+    display: block;
+    float: right;
+    width: 70%;
+    height: 100%;
+    background: blue;
+}
