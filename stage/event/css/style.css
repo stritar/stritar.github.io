@@ -222,6 +222,7 @@ nav a {
 }
 
 .mobile button {
+    text-indent: -9999px;
     display: block;
     position: absolute;
     top: 30px;
@@ -246,9 +247,9 @@ nav a {
     width: 100%;
     text-align: center;
     background: #3B3B41;
-    height: 40px;
+    height: 30px;
     margin: 0;
-    padding: 27px 0 0 0;
+    padding: 16px 0 0 0;
     border-bottom: 1px solid #37373D;
 }
 
