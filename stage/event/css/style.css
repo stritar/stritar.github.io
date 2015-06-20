@@ -456,10 +456,9 @@ footer span {
     float: right;
     width: 70%;
     height: 100%;
-    background: blue;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .left-side {
         display: block;
         width: 100%;
@@ -477,5 +476,47 @@ footer span {
         display: block;
         width: 100%;
         height: 200px;
+    }
+}
+/*BASE NAV*/
+
+.base-header {
+    width: 100%;
+    display: block;
+    height: 100px;
+}
+
+@media (max-width: 1200px) {
+    .base-header {
+        width: 100%;
+        top: 0;
+        position: fixed;
+        height: 100px;
+    }
+}
+
+.base-nav a {
+    color: #3B3B41 !important;
+}
+
+.base-nav a:hover {
+    color: #7EBEE8 !important;
+}
+
+a.selected {
+    color: #7EBEE8 !important;
+}
+
+@media (max-width: 1600px) {
+    .base-nav a {
+        font-size: 11px;
+        margin-right: 14px;
+        font-family: 'AkkuratPro-Bold';
+    }
+}
+
+@media (max-width: 1200px) {
+    .base-nav a {
+        display: none;
     }
 }
