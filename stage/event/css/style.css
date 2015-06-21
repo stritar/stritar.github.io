@@ -645,13 +645,20 @@ a.selected {
 section {
     margin: 60px 0 60px 140px;
     width: 800px;
-    ;
+}
+
+@media (max-width: 1400px) {
+    section {
+        margin: 60px 0 60px 140px;
+        width: 600px;
+    }
 }
 
 @media (max-width: 1200px) {
     section {
-        margin: 20px 0px 20px 0px;
+        margin: 20px auto 20px auto;
         width: 100%;
+        max-width: 600px;
     }
 }
 
@@ -659,7 +666,7 @@ h1 {
     font-family: 'AkkuratPro-BoldItalic';
     font-size: 40px;
     color: #3B3B41;
-    line-height: 70px;
+    line-height: 90px;
     font-weight: 700;
 }
 
@@ -667,7 +674,7 @@ h2 {
     font-family: AkkuratPro-Bold;
     font-size: 24px;
     color: #3B3B41;
-    line-height: 29px;
+    line-height: 10px;
     text-transform: uppercase;
 }
 
@@ -681,15 +688,15 @@ h3 {
 h4 {
     font-family: AkkuratPro-Bold;
     font-size: 14px;
-    color: #3B3B41;
+    color: #6A6A70;
     line-height: 2px;
 }
 
 p {
     font-family: AkkuratPro-Regular;
     font-size: 16px;
-    color: #3B3B41;
-    line-height: 26.7px;
+    color: #6A6A70;
+    line-height: 23px;
 }
 
 @media (max-width: 1200px) {
@@ -824,36 +831,37 @@ p {
 }
 /*GALLERY*/
 
-img.gallery {
+.gallery {
+    width: 800px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1400px) {
+    .gallery {
+        width: 600px;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+}
+
+.gallery span {
     display: block;
-    width: 600px;
+    width: 180px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.gallery span img {
+    display: block;
+    width: 100%;
     height: auto;
 }
 
-p.gallery-text {
-    margin-top: 2px;
-    margin-bottom: 30px;
-}
-
-@media (max-width: 1200px) {
-    img.gallery {
-        display: block;
-        width: 60%;
-        height: auto;
-        margin: 0 auto;
-    }
-    p.gallery-text {
-        text-align: center;
-        margin-top: -15px;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 640px) {
-    img.gallery {
-        display: block;
-        width: 90%;
-        height: auto;
-        margin: 20px auto;
-    }
+.gallery span p {
+    font-size: 11px;
+    margin-top: 15px;
+    line-height: 0;
 }
