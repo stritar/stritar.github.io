@@ -719,8 +719,8 @@ p {
 
 .team-member {
     display: block;
-    width: 250px;
-    height: 300px;
+    width: 210px;
+    height: 250px;
     float: left;
     margin-left: 20px;
 }
@@ -729,7 +729,7 @@ p {
     .team-member {
         display: block;
         width: 250px;
-        height: 300px;
+        height: 250px;
         margin: 0 auto;
         float: none;
         text-align: center;
