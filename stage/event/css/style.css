@@ -674,7 +674,7 @@ h2 {
     font-family: AkkuratPro-Bold;
     font-size: 24px;
     color: #3B3B41;
-    line-height: 10px;
+    line-height: 30px;
     text-transform: uppercase;
 }
 
@@ -842,6 +842,30 @@ p {
         width: 600px;
         overflow: hidden;
         margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 640px) {
+    .gallery {
+        width: 400px;
+        overflow: hidden;
+        margin: 0 20px 50px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        width: 280px !important;
+        overflow: hidden;
+        margin: 0 auto 50px auto;
+    }
+    .gallery span {
+        display: block;
+        width: 100% !important;
+        height: auto;
+        overflow: hidden;
+        float: none !important;
+        margin: 0 auto 20px auto !important;
     }
 }
 
