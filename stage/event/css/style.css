@@ -760,6 +760,9 @@ p {
 /*footer base*/
 
 .footer-base {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #EAEAEA;
     float: left;
     display: block !important;
     width: 100%!important;
@@ -768,7 +771,7 @@ p {
 
 .footer-base p,
 .footer-base a {
-    color: #3B3B41 !important;
+    color: #C9C9C9 !important;
 }
 
 .footer-base .tel:before {
