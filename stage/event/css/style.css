@@ -776,7 +776,7 @@ h1 {
     font-family: 'AkkuratPro-BoldItalic';
     font-size: 40px;
     color: #3B3B41;
-    line-height: 30px;
+    line-height: 40px;
     font-weight: 700;
 }
 
@@ -820,7 +820,7 @@ quote {
     font-family: 'AmasisMTStd-Light';
     font-size: 45px;
     color: #6A6A70;
-    line-height: 18px;
+    line-height: 40px;
     display: block;
     margin-bottom: 50px;
 }
@@ -830,7 +830,7 @@ quote {
         font-family: 'AmasisMTStd-Light';
         font-size: 35px;
         color: #6A6A70;
-        line-height: 16px;
+        line-height: 40px;
         display: block;
         margin-bottom: 30px;
     }
