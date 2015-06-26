@@ -83,23 +83,23 @@ button:focus {
 }
 
 @font-face {
-    font-family: 'Akkurat-LightItalic';
-    src: url('../fonts/Akkurat-LightItalic.eot');
+    font-family: 'AmasisMTStd-Light';
+    src: url('../fonts/AmasisMTStd-Light.eot');
     /* IE9 Compat Modes */
     
-    src: url('../fonts/Akkurat-LightItalic.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/AmasisMTStd-Light.eot?#iefix') format('embedded-opentype'),
     /* IE6-IE8 */
     
-    url('../fonts/Akkurat-LightItalic.woff') format('woff'),
+    url('../fonts/AmasisMTStd-Light.woff') format('woff'),
     /* Modern Browsers */
     
-    url('../fonts/Akkurat-LightItalic.ttf') format('truetype'),
+    url('../fonts/AmasisMTStd-Light.ttf') format('truetype'),
     /* Safari, Android, iOS */
     
-    url('../fonts/Akkurat-LightItalic.svg#f7245738dc754a382cf7b919e84b0652') format('svg');
+    url('../fonts/AmasisMTStd-Light.svg#c05082944b9b68ba60144b96561e478f') format('svg');
     /* Legacy iOS */
     
-    font-style: italic;
+    font-style: normal;
     font-weight: 200;
 }
 /*NAVIGATION - INDEX*/
@@ -816,8 +816,8 @@ b {
 }
 
 quote {
-    font-family: 'Akkurat-LightItalic';
-    font-size: 40px;
+    font-family: 'AmasisMTStd-Light';
+    font-size: 45px;
     color: #6A6A70;
     line-height: 18px;
     display: block;
@@ -826,12 +826,12 @@ quote {
 
 @media (max-width: 768px) {
     quote {
-        font-family: 'Akkurat-LightItalic';
-        font-size: 16px;
+        font-family: 'AmasisMTStd-Light';
+        font-size: 35px;
         color: #6A6A70;
         line-height: 16px;
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 }
 
