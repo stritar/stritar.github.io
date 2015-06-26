@@ -471,7 +471,7 @@ footer {
 footer p {
     color: #303030 !important;
     font-family: 'AkkuratPro-Regular';
-    font-size: 16px;
+    font-size: 14px;
     line-height: 17px;
 }
 
@@ -903,6 +903,7 @@ quote {
 .footer-base p,
 .footer-base a {
     color: #6A6A70 !important;
+    line-height: 27px;
 }
 
 .footer-base .tel:before {
