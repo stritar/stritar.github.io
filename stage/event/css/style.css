@@ -650,7 +650,7 @@ a.selected-management {
     color: #A1C544 !important;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1450px) {
     .base-nav a {
         font-size: 11px;
         margin-right: 14px;
@@ -658,7 +658,16 @@ a.selected-management {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 980px) {
+    .base-nav a {
+        font-size: 11px;
+        margin-right: 14px;
+        font-family: 'AkkuratPro-Bold';
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
     .base-nav a {
         display: none;
     }
@@ -712,7 +721,7 @@ a.selected-management {
     border-bottom: 1px solid #37373D;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .mobile-base {
         display: block;
     }
