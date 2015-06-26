@@ -263,7 +263,7 @@ video#bgvid {
 nav a {
     display: block;
     float: left;
-    font-family: 'AkkuratPro-Regular';
+    font-family: 'AkkuratPro-Bold';
     font-size: 14px;
     color: #FFFFFF;
     line-height: 17px;
@@ -457,7 +457,7 @@ footer {
 footer p {
     color: #C9C9C9 !important;
     font-family: 'AkkuratPro-Regular';
-    font-size: 12px;
+    font-size: 16px;
     line-height: 17px;
 }
 
