@@ -819,7 +819,7 @@ quote {
     font-family: 'Akkurat-LightItalic';
     font-size: 40px;
     color: #6A6A70;
-    line-height: 23px;
+    line-height: 18px;
     display: block;
     margin-bottom: 50px;
 }
@@ -827,22 +827,12 @@ quote {
 @media (max-width: 768px) {
     quote {
         font-family: 'Akkurat-LightItalic';
-        font-size: 40px;
+        font-size: 16px;
         color: #6A6A70;
-        line-height: 23px;
+        line-height: 16px;
         display: block;
         margin-bottom: 50px;
     }
-}
-
-quote:before {
-    content: "“";
-    font-size: 60px;
-}
-
-quote:after {
-    content: "”";
-    font-size: 60px;
 }
 
 @media (max-width: 1200px) {
