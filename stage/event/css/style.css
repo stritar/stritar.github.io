@@ -123,7 +123,7 @@ button:focus {
     height: 60px;
     margin: 40px;
     background: url(../img/sprite.png) 0 0;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
     position: relative;
     z-index: 9999 !important;
 }
@@ -135,7 +135,7 @@ button:focus {
     height: 60px;
     margin: 40px;
     background: url(../img/sprite.png) -70px 0;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
     position: relative;
     z-index: 9999 !important;
 }
@@ -147,7 +147,7 @@ button:focus {
     height: 60px;
     margin: 40px;
     background: url(../img/sprite.png) -130px 0;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
     position: relative;
     z-index: 9999 !important;
 }
@@ -159,7 +159,7 @@ button:focus {
     height: 60px;
     margin: 40px;
     background: url(../img/sprite.png) -190px 0;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
     position: relative;
     z-index: 9999 !important;
 }
@@ -172,7 +172,7 @@ button:focus {
         height: 60px;
         margin: 20px;
         background: url(../img/sprite.png) 0 0;
-        background-size: 300px 300px;
+        background-size: 300px 350px;
     }
     .logo-marketing {
         display: block;
@@ -181,7 +181,7 @@ button:focus {
         height: 60px;
         margin: 20px;
         background: url(../img/sprite.png) -70px 0;
-        background-size: 300px 300px;
+        background-size: 300px 350px;
     }
     .logo-production {
         display: block;
@@ -190,7 +190,7 @@ button:focus {
         height: 60px;
         margin: 20px;
         background: url(../img/sprite.png) -130px 0;
-        background-size: 300px 300px;
+        background-size: 300px 350px;
     }
     .logo-management {
         display: block;
@@ -199,7 +199,7 @@ button:focus {
         height: 60px;
         margin: 20px;
         background: url(../img/sprite.png) -190px 0;
-        background-size: 300px 300px;
+        background-size: 300px 350px;
     }
 }
 /*NAVIGATION INDEX END*/
@@ -355,12 +355,12 @@ nav a:hover {
     height: 22px;
     outline: none;
     background: url(../img/sprite.png) -5px -134px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .mobile button.expanded {
     background: url(../img/sprite.png) -43px -97px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .mobile a {
@@ -381,6 +381,17 @@ nav a:hover {
     }
 }
 /*index-content*/
+
+.index-content span {
+    display: block;
+    font-size: 1px;
+    background: url(../img/sprite.png) -10px -290px;
+    background-size: 300px 350px;
+    background-repeat: no-repeat;
+    width: 281px;
+    height: 58px;
+    margin: 0 auto -10px auto;
+}
 
 .index-content {
     top: 50%;
@@ -495,7 +506,7 @@ footer span {
     width: 15px;
     height: 15px;
     background: url(../img/sprite.png) -30px -184px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .mail:before {
@@ -506,7 +517,7 @@ footer span {
     width: 15px;
     height: 10px;
     background: url(../img/sprite.png) -30px -239px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .dl:before {
@@ -517,7 +528,7 @@ footer span {
     width: 16px;
     height: 22px;
     background: url(../img/sprite.png) -30px -207px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 @media (max-width: 980px) {
@@ -725,12 +736,12 @@ a.selected-management {
 
 .base-button {
     background: url(../img/sprite.png) -5px -134px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .mobile-base .base-button.expanded {
     background: url(../img/sprite.png) -43px -97px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .mobile-base a {
@@ -914,7 +925,7 @@ quote {
     width: 15px;
     height: 15px;
     background: url(../img/sprite.png) -30px -184px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .footer-base .mail:before {
@@ -925,7 +936,7 @@ quote {
     width: 15px;
     height: 10px;
     background: url(../img/sprite.png) -30px -239px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 
 .footer-base .dl:before {
@@ -936,7 +947,7 @@ quote {
     width: 16px;
     height: 22px;
     background: url(../img/sprite.png) -30px -207px;
-    background-size: 300px 300px;
+    background-size: 300px 350px;
 }
 /*OVERLAY MARKETING*/
 
