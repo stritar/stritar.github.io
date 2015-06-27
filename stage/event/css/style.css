@@ -563,7 +563,46 @@ footer span {
     width: 30%;
     height: 100%;
     position: fixed;
-    background: url(../img/bg-temp.jpg);
+}
+
+.left-about {
+    background: url(../img/bg-about.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-contact {
+    background: url(../img/bg-contact.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-gallery {
+    background: url(../img/bg-contact.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-management {
+    background: url(../img/bg-management.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-marketing {
+    background: url(../img/bg-marketing.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-production {
+    background: url(../img/bg-production.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-contact {
+    background: url(../img/bg-contact.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
