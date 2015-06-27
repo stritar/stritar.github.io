@@ -1030,7 +1030,7 @@ quote {
 .gallery span {
     display: block;
     width: 180px;
-    height: auto;
+    height: 150px;
     overflow: hidden;
     float: left;
     margin: 0 20px 20px 0;
