@@ -571,6 +571,12 @@ footer span {
     background-repeat: no-repeat;
 }
 
+.left-uber {
+    background: url(../img/bg-about.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .left-contact {
     background: url(../img/bg-contact.jpg);
     background-size: cover;
