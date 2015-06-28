@@ -1065,8 +1065,8 @@ quote {
     }
     .gallery span {
         display: block;
-        width: 100% !important;
-        height: auto;
+        width: 280px !important;
+        height: 200px !important;
         overflow: hidden;
         float: none !important;
         margin: 0 auto 20px auto !important;
