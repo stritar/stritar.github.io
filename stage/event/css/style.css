@@ -1093,3 +1093,19 @@ quote {
     margin-top: 15px;
     line-height: 0;
 }
+
+iframe {
+    display: block;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    iframe {
+        display: block;
+        width: 300px !important;
+        height: 200px !important;
+        margin: 0 auto;
+    }
+}
