@@ -837,7 +837,7 @@ h4 {
     font-family: AkkuratPro-Bold;
     font-size: 14px;
     color: #6A6A70;
-    line-height: 2px;
+    line-height: 20px;
 }
 
 p {
@@ -1012,7 +1012,7 @@ quote {
 }
 
 #artists .team-member {
-    margin-bottom: -40px;
+    margin-bottom: 0px;
 }
 /*GALLERY*/
 
