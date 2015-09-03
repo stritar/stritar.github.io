@@ -16,6 +16,7 @@ p.light {
     color: #404040;
     line-height: 29px;
     width: 570px;
+    display: block;
     text-align: left;
 }
 p.thin {
@@ -24,5 +25,6 @@ p.thin {
     color: #404040;
     line-height: 29px;
     width: 570px;
+    display: block;
     text-align: left;
 }
