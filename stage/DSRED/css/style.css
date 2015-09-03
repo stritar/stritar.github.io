@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Campton Light';
+    src: url('../fonts/Campton-Light.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/Campton-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Campton-Light.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Campton-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Campton-Light.svg#cb0076bde307d1c9b973c30a403bd200') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 200;
+}
+p.light {
+    font-family: 'Campton Light';
+    font-size: 18px;
+    color: #404040;
+    line-height: 29px;
+}
+p.thin {
+    font-family: 'Campton Light';
+    font-size: 18px;
+    color: #404040;
+    line-height: 29px;
+}
