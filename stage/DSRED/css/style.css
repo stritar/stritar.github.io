@@ -10,6 +10,18 @@
     font-style: normal;
     font-weight: 200;
 }
+@font-face {
+    font-family: 'Campton Thin';
+    src: url('../fonts/Campton-Thin.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/Campton-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Campton-Thin.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Campton-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Campton-Thin.svg#726004dfd21b579ad4cf6a5fb0df1ae6') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: 200;
+}
 p.light {
     font-family: 'Campton Light';
     font-size: 18px;
@@ -20,7 +32,7 @@ p.light {
     text-align: left;
 }
 p.thin {
-    font-family: 'Campton Light';
+    font-family: 'Campton Thin';
     font-size: 18px;
     color: #404040;
     line-height: 29px;
