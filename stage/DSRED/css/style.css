@@ -15,10 +15,14 @@ p.light {
     font-size: 18px;
     color: #404040;
     line-height: 29px;
+    width: 570px;
+    text-align: left;
 }
 p.thin {
     font-family: 'Campton Light';
     font-size: 18px;
     color: #404040;
     line-height: 29px;
+    width: 570px;
+    text-align: left;
 }
