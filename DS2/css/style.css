@@ -259,8 +259,7 @@ nav a:hover:before,
     margin-top: 5px;
     width: 8px;
     height: 8px;
-    background: url(../img/sprite.png) -116px -98px;
-    background-size: 246px 302px;
+    background: url(../img/selected.svg);
     float: left;
     margin-left: 20px;
     margin-right: 20px;
