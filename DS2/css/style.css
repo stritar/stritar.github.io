@@ -1,0 +1,253 @@
+/*FONTS*/
+
+@font-face {
+    font-family: 'Campton Light';
+    src: url('../fonts/Campton-Light.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/Campton-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Campton-Light.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Campton-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Campton-Light.svg#cb0076bde307d1c9b973c30a403bd200') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    /*font-weight: 200;*/
+}
+@font-face {
+    font-family: 'Campton ExtraBold';
+    src: url('../fonts/Campton-ExtraBold.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/Campton-ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Campton-ExtraBold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Campton-ExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Campton-ExtraBold.svg#156f804e1152db5438ed7d3941e6befb') format('svg');
+    /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    /*font-weight: 700;*/
+}
+@font-face {
+    font-family: 'tisaproregular';
+    src: url('../fonts/tisapro-regular-webfont.eot');
+    src: url('../fonts/tisapro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-regular-webfont.woff') format('woff'), url('../fonts/tisapro-regular-webfont.ttf') format('truetype'), url('../fonts/tisapro-regular-webfont.svg#tisaproregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tisaproitalicmedium';
+    src: url('../fonts/tisapro-mediumitalic-webfont.eot');
+    src: url('../fonts/tisapro-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-mediumitalic-webfont.woff') format('woff'), url('../fonts/tisapro-mediumitalic-webfont.ttf') format('truetype'), url('../fonts/tisapro-mediumitalic-webfont.svg#tisaproitalicmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tisapromedium';
+    src: url('../fonts/tisapro-medium-webfont.eot');
+    src: url('../fonts/tisapro-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-medium-webfont.woff') format('woff'), url('../fonts/tisapro-medium-webfont.ttf') format('truetype'), url('../fonts/tisapro-medium-webfont.svg#tisapromedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tisaproitalicbold';
+    src: url('../fonts/tisapro-bolditalic-webfont.eot');
+    src: url('../fonts/tisapro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-bolditalic-webfont.woff') format('woff'), url('../fonts/tisapro-bolditalic-webfont.ttf') format('truetype'), url('../fonts/tisapro-bolditalic-webfont.svg#tisaproitalicbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tisaprobold';
+    src: url('../fonts/tisapro-bold-webfont.eot');
+    src: url('../fonts/tisapro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-bold-webfont.woff') format('woff'), url('../fonts/tisapro-bold-webfont.ttf') format('truetype'), url('../fonts/tisapro-bold-webfont.svg#tisaprobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tisaproitalic';
+    src: url('../fonts/tisapro-italic-webfont.eot');
+    src: url('../fonts/tisapro-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/tisapro-italic-webfont.woff') format('woff'), url('../fonts/tisapro-italic-webfont.ttf') format('truetype'), url('../fonts/tisapro-italic-webfont.svg#tisaproitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*VIDEO CONTAINER*/
+
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    -webkit-transform: translateZ(0);
+}
+@media (max-width: 1014px) {
+    video#bgvid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        display: none;
+    }
+}
+.intro {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.intro-back {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    background: url(../img/back-temp.jpg)no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -100;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+}
+.intro-holder {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+}
+.fade-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    pointer-events: none;
+}
+.fade-out-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/*HAMBURGER*/
+
+.no-scroll {
+    overflow: hidden;
+}
+.toggle-menu {
+    display: block;
+    width: 42px;
+    height: 42px;
+    position: fixed;
+    z-index: 999999999;
+    margin: 20px 20px 0 0;
+    padding: 0;
+    right: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transform: translateZ(0);
+}
+.svg-menu-toggle {
+    fill: #fff;
+    pointer-events: all;
+    cursor: pointer;
+}
+.svg-menu-toggle .bar {
+    -webkit-transform: rotate(0) translateY(0) translateX(0);
+    transform: rotate(0) translateY(0) translateX(0);
+    opacity: 1;
+    -webkit-transform-origin: 20px 10px;
+    -moz-transform-origin: 20px 10px;
+    transform-origin: 20px 10px;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+    -moz-transition: -moz-transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+.svg-menu-toggle .bar:nth-of-type(1) {
+    -webkit-transform-origin: 20px 10px;
+    -moz-transform-origin: 20px 10px;
+    transform-origin: 20px 10px;
+}
+.svg-menu-toggle .bar:nth-of-type(3) {
+    -webkit-transform-origin: 20px 20px;
+    -moz-transform-origin: 20px 20px;
+    transform-origin: 20px 20px;
+}
+.svg-menu-toggle.active .bar:nth-of-type(1) {
+    -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+    -moz-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+    transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+    fill: #F2F2F2;
+}
+.svg-menu-toggle.active .bar:nth-of-type(2) {
+    opacity: 0;
+}
+.svg-menu-toggle.active .bar:nth-of-type(3) {
+    -webkit-transform: rotate(45deg) translateY(6px) translateX(0px);
+    -moz-transform: rotate(45deg) translateY(6px) translateX(0px);
+    transform: rotate(45deg) translateY(6px) translateX(0px);
+    fill: #F2F2F2;
+}
+.inline-svg {
+    display: block;
+    margin: 0 auto;
+}
+.cbp-spmenu a {
+    color: #F2F2F2;
+    text-decoration: none;
+    padding: 0;
+}
+.menu-primary {
+    font-family: 'Campton ExtraBold';
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.menu-secondary {
+    font-family: 'Campton Light';
+    font-size: 12px;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+}
+.drop {
+    display: block;
+    margin-top: 35px;
+}
+.menu-link-holder {
+    display: block;
+    margin-top: 40px;
+}
+nav a:before {
+    display: block;
+    content: "";
+    margin-top: 6px;
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+nav a:hover:before,
+.selected:before {
+    display: block;
+    content: "";
+    margin-top: 5px;
+    width: 8px;
+    height: 8px;
+    background: url(../img/sprite.png) -116px -98px;
+    background-size: 246px 302px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
