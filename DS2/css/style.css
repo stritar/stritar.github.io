@@ -163,6 +163,11 @@ video#bgvid {
     transform: scale3d(1, 1, 1);
     -webkit-transform: translateZ(0);
 }
+@media (max-width: 375px) {
+    .toggle-menu {
+        margin: 0px 0px 0 0 !important;
+    }
+}
 .svg-menu-toggle {
     fill: #fff;
     pointer-events: all;
