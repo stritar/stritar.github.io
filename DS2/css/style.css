@@ -69,6 +69,13 @@
     font-style: normal;
 }
 
+/*TYPE STYLE*/
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 /*VIDEO CONTAINER*/
 
 video#bgvid {
