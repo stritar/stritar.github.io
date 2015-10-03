@@ -145,8 +145,8 @@ video#bgvid {
 }
 .toggle-menu {
     display: block;
-    width: 42px;
-    height: 42px;
+    width: 60px;
+    height: 60px;
     position: fixed;
     z-index: 999999999;
     margin: 20px 20px 0 0;
@@ -185,19 +185,21 @@ video#bgvid {
     transform-origin: 20px 20px;
 }
 .svg-menu-toggle.active .bar:nth-of-type(1) {
-    -webkit-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
-    -moz-transform: rotate(-45deg) translateY(-10px) translateX(-8px);
-    transform: rotate(-45deg) translateY(-10px) translateX(-8px);
+    -webkit-transform: rotate(-45deg) translateY(-11px) translateX(-17px);
+    -moz-transform: rotate(-45deg) translateY(-11px) translateX(-17px);
+    transform: rotate(-45deg) translateY(-11px) translateX(-17px);
     fill: #F2F2F2;
+    opacity: 1;
 }
 .svg-menu-toggle.active .bar:nth-of-type(2) {
     opacity: 0;
 }
 .svg-menu-toggle.active .bar:nth-of-type(3) {
-    -webkit-transform: rotate(45deg) translateY(6px) translateX(0px);
-    -moz-transform: rotate(45deg) translateY(6px) translateX(0px);
-    transform: rotate(45deg) translateY(6px) translateX(0px);
+    -webkit-transform: rotate(45deg) translateY(0px) translateX(0px);
+    -moz-transform: rotate(45deg) translateY(0px) translateX(0px);
+    transform: rotate(45deg) translateY(2px) translateX(4px);
     fill: #F2F2F2;
+    opacity: 1;
 }
 .inline-svg {
     display: block;
