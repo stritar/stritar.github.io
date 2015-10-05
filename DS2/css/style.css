@@ -205,19 +205,51 @@ p {
     .article {
         display: block;
         overflow: hidden;
-        width: 100%;
-        margin: 80px auto;
+        width: 820px;
+        margin: 60px auto;
     }
     .article p {
         display: block;
-        width: 570px;
-        margin: 0 auto 40px auto;
+        width: 400px;
     }
-    .article p:nth-of-type(1) {
-        float: none;
+}
+@media (max-width: 860px) {
+    .article {
+        display: block;
+        overflow: hidden;
+        max-width: 600px;
+        min-width: 320px;
+        margin: 60px auto;
     }
-    .article p:nth-of-type(2) {
-        float: none;
+    .article p {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+    }
+    p {
+        font-family: 'Campton Light';
+        font-size: 20px;
+        color: #6B6B77;
+        line-height: 34px;
+    }
+}
+@media (max-width: 640px) {
+    .article {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        margin: 20px auto;
+    }
+    .article p {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+    }
+    p {
+        font-family: 'Campton Light';
+        font-size: 20px;
+        color: #6B6B77;
+        line-height: 34px;
     }
 }
 .title-middle {
