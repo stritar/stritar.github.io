@@ -189,7 +189,7 @@ p {
     display: block;
     overflow: hidden;
     width: 1170px;
-    margin: 70px auto;
+    margin: 60px auto;
 }
 .article p {
     display: block;
@@ -635,7 +635,7 @@ nav a:hover:before,
         z-index: 1000;
         position: absolute;
         margin-left: -300px;
-        top: 50.5%;
+        top: 45.5%;
         left: 50%;
         color: #F2F2F2;
         font-size: 40px;

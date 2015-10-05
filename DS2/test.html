@@ -2,24 +2,64 @@
     .test-holder {
         display: block;
         width: 600px;
-        margin: 500px auto 0 auto;
+        margin: 2500px auto 2300px auto;
+    }
+    
+    .trans {
+        -webkit-transition: .25s ease-out;
+        -moz-transition: .25s ease-out;
+        -ms-transition: .25s ease-out;
+        -o-transition: .25s ease-out;
+        transition: .25s ease-out;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    
+    .svg-menu-toggle.active .bar:nth-of-type(3) {
+        -webkit-transform: rotate(45deg) translateY(0px) translateX(0px);
+        -moz-transform: rotate(45deg) translateY(0px) translateX(0px);
+        transform: rotate(45deg) translateY(2px) translateX(4px);
+        fill: #F2F2F2;
+        opacity: 1;
+    }
+    
+    .svg-test {
+        display: block;
+    }
+    
+    svg-test .red {
+        width: 0;
     }
 
 </style>
 
-<div class="test-holder">
+<div class="test-holder" id="test-red">
     <svg width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 
         <title>Status</title>
         <desc>Created with Sketch.</desc>
         <defs></defs>
-        <g id="Status">
-            <rect id="grey" fill="#EAEAEA" x="0" y="0" width="300" height="4" rx="4"></rect>
-            <rect id="red" fill="#E56E53" x="0" y="0" width="210" height="4"></rect>
+        <g id="Status" class="svg-test">
+            <rect class="grey" fill="#EAEAEA" x="0" y="0" width="300" height="4" rx="2"></rect>
+            <rect class="red trans" fill="#E56E53" x="0" y="0" width="0" height="4" rx="2">></rect>
         </g>
 
     </svg>
 
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+<script>
+    var targetOffset = $("#test-red").offset().top;
+
+    var $w = $(window).scroll(function() {
+        if ($w.scrollTop() > targetOffset) {
+            $('.svg-test .red').css({
+                "width": "210px;"
+            });
+
+        } else {
+            // ...
+        }
+    });
+
+</script>
