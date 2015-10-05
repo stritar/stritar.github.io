@@ -165,11 +165,44 @@ video#bgvid {
     z-index: 1;
     pointer-events: none;
 }
-.intro_carrier {
+#intro_holder {
+    position: absolute;
+    width: 380px;
+    top: 30%;
+    margin-left: -190px;
+    left: 50%;
+}
+#intro_holder a {
+    margin-top: 60px;
     display: block;
-    width: 600px;
-    height: 100%;
-    background: red;
+    width: 180px;
+    height: 50px;
+    background: #3B3B41;
+    border-radius: 40px;
+    font-family: 'Campton ExtraBold';
+    color: #F2F2F2;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 17px;
+    text-decoration: none;
+}
+#intro_holder a:hover {
+    background: #5B5B65;
+}
+#intro_holder a:nth-of-type(1) {
+    float: left;
+}
+#intro_holder a:nth-of-type(2) {
+    float: right;
+}
+.main_logo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    background: url(../img/Logo.svg);
+    background-repeat: no-repeat;
+    margin: 0 auto;
 }
 .arrow_down {
     position: absolute;
@@ -290,10 +323,15 @@ video#bgvid {
     fill: #F2F2F2;
     opacity: 1;
 }
+.svg-menu-toggle.active:hover .bar:nth-of-type(1),
+.svg-menu-toggle.active:hover .bar:nth-of-type(2),
+.svg-menu-toggle.active:hover .bar:nth-of-type(3) {
+    fill: #E56E53;
+}
 .svg-menu-toggle:hover .bar:nth-of-type(1),
 .svg-menu-toggle:hover .bar:nth-of-type(2),
 .svg-menu-toggle:hover .bar:nth-of-type(3) {
-    fill: #E56E53;
+    fill: #5B5B65;
 }
 .inline-svg {
     display: block;
