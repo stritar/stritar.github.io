@@ -172,6 +172,46 @@ video#bgvid {
     margin-left: -190px;
     left: 50%;
 }
+@media (max-width: 480px) {
+    #intro_holder {
+        position: absolute;
+        width: 100%;
+        top: 20% !important;
+        margin-left: 0;
+        left: 0;
+    }
+    #intro_holder a:nth-of-type(1) {
+        float: none !important;
+        margin: 0 auto;
+    }
+    #intro_holder a:nth-of-type(2) {
+        float: none !important;
+        margin: 0 auto;
+    }
+    #intro_holder a {
+        margin-top: 10px !important;
+        display: block;
+        width: 260px !important;
+        height: 50px;
+        background: #3B3B41;
+        border-radius: 40px;
+        font-family: 'Campton ExtraBold';
+        color: #F2F2F2;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 17px;
+        text-decoration: none;
+    }
+    .main_logo {
+        display: block;
+        width: 160px;
+        height: 160px;
+        background: url(../img/Logo.svg);
+        background-repeat: no-repeat;
+        margin: 0 auto 20% auto !important;
+    }
+}
 #intro_holder a {
     margin-top: 60px;
     display: block;
