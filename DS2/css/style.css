@@ -139,7 +139,7 @@ h2:after {
     height: 8px;
     margin: 32px auto;
     content: "";
-    background: url(../img/dot.svg);
+    background: url(../img/dot-divider.svg);
     font-weight: normal;
 }
 @media (max-width: 768px) {
@@ -149,7 +149,7 @@ h2:after {
         height: 8px;
         margin: 16px auto 18px auto;
         content: "";
-        background: url(../img/dot.svg);
+        background: url(../img/dot-divider.svg);
         font-weight: normal;
     }
 }
