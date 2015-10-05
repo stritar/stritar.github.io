@@ -163,7 +163,7 @@ h3 {
     display: block;
     max-width: 750px;
     margin: 0 auto;
-    margin-top: -5px;
+    margin-top: 27px;
 }
 @media (max-width: 768px) {
     h3 {
@@ -176,7 +176,7 @@ h3 {
         display: block;
         max-width: 350px;
         margin: 0 auto;
-        margin-top: -5px;
+        margin-top: 10px;
     }
 }
 p {
@@ -189,7 +189,7 @@ p {
     display: block;
     overflow: hidden;
     width: 1170px;
-    margin: 60px auto;
+    margin: 70px auto;
 }
 .article p {
     display: block;
