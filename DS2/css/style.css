@@ -98,6 +98,16 @@ section {
     margin: 0;
     position: relative;
 }
+.section-text {
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+@media (max-width: 768px) {
+    .section-text {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
 
 /*TYPE STYLE*/
 
@@ -107,39 +117,107 @@ h1 {
 }
 h2 {
     font-family: 'Campton ExtraBold';
-    font-size: 80px;
-    line-height: 70px;
+    font-size: 64px;
+    line-height: 64px;
     color: #3B3B41;
     text-align: center;
     width: 760px;
     display: block;
     margin: 0 auto;
+    text-transform: uppercase;
 }
 @media (max-width: 768px) {
     h2 {
-        font-size: 40px;
+        font-size: 32px;
         line-height: 32px;
         width: 280px;
     }
 }
 h2:after {
     display: block;
-    width: 12px;
+    width: 8px;
     height: 8px;
     margin: 32px auto;
     content: "";
-    background: url(../img/sprite.png) -116px -90px;
-    background-size: 246px 302px;
+    background: url(../img/dot.svg);
     font-weight: normal;
 }
 @media (max-width: 768px) {
     h2:after {
+        display: block;
         width: 8px;
         height: 8px;
-        margin: 22px auto;
-        font-size: 80px;
-        background: url(../img/sprite.png) -116px -90px;
-        background-size: 246px 302px;
+        margin: 16px auto 18px auto;
+        content: "";
+        background: url(../img/dot.svg);
+        font-weight: normal;
+    }
+}
+h3 {
+    font-family: 'tisaproitalicbold';
+    font-size: 30px;
+    line-height: 39px;
+    color: #3B3B41;
+    text-align: center;
+    font-weight: normal;
+    display: block;
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: -5px;
+}
+@media (max-width: 768px) {
+    h3 {
+        font-family: 'tisaproitalicbold';
+        font-size: 19px;
+        line-height: 26px;
+        color: #3B3B41;
+        text-align: center;
+        font-weight: normal;
+        display: block;
+        max-width: 350px;
+        margin: 0 auto;
+        margin-top: -5px;
+    }
+}
+p {
+    font-family: 'Campton Light';
+    font-size: 18px;
+    color: #6B6B77;
+    line-height: 32px;
+}
+.article {
+    display: block;
+    overflow: hidden;
+    width: 1170px;
+    margin: 80px auto;
+}
+.article p {
+    display: block;
+    width: 570px;
+}
+.article p:nth-of-type(1) {
+    float: left;
+}
+.article p:nth-of-type(2) {
+    float: right;
+}
+@media (max-width: 1170px) {
+    .article {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        margin: 80px auto;
+    }
+    .article p {
+        display: block;
+        width: 570px;
+        margin: 0 auto 40px auto;
+    }
+    .article p:nth-of-type(1) {
+        float: none;
+    }
+    .article p:nth-of-type(2) {
+        float: none;
     }
 }
 .title-middle {
@@ -510,7 +588,7 @@ nav a:hover:before,
     z-index: 1000;
     position: absolute;
     margin-left: -300px;
-    top: 45%;
+    top: 45.2%;
     left: 50%;
     color: #F2F2F2;
     pointer-events: none;
@@ -525,7 +603,7 @@ nav a:hover:before,
         z-index: 1000;
         position: absolute;
         margin-left: -300px;
-        top: 45.5%;
+        top: 50.5%;
         left: 50%;
         color: #F2F2F2;
         font-size: 40px;
@@ -710,7 +788,7 @@ nav a:hover:before,
 .info-details {
     top: 50%;
     left: 50%;
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: -140px;
     position: absolute;
     width: 280px;
