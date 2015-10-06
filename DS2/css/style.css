@@ -925,6 +925,20 @@ nav a:hover:before,
         padding: 0 20px;
     }
 }
+@media (max-width: 900px) {
+    .stat {
+        display: block;
+        max-width: 768px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .chart-holder {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
+}
 .chart-bar {
     position: relative;
     margin: 10px 0;
