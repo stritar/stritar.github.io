@@ -985,3 +985,25 @@ nav a:hover:before,
     height: auto;
     margin: 0 auto;
 }
+.desc-holder {
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 900px;
+    left: 50%;
+    margin-left: -450px;
+}
+.desc-holder span {
+    float: left;
+    display: block;
+    width: 33.3%;
+    height: 50px;
+}
+.desc-holder span span:nth-of-type(1) {
+    display: block;
+    width: 40px;
+    height: 90px;
+    background-image: url(../img/Line-Left.svg);
+    margin: 0 auto;
+    border: none;
+}
