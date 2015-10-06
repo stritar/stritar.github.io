@@ -889,17 +889,48 @@ nav a:hover:before,
     overflow: hidden;
 }
 .chart-holder {
-    width: 370px;
+    width: 400px;
     float: left;
     display: block;
-    margin: 0 15px;
+    margin: 0;
+    padding: 0 20px;
+}
+@media (max-width: 1200px) {
+    .stat {
+        display: block;
+        width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .chart-holder {
+        width: 300px;
+        float: left;
+        display: block;
+        margin: 0;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 1200px) {
+    .stat {
+        display: block;
+        width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .chart-holder {
+        width: 300px;
+        float: left;
+        display: block;
+        margin: 0;
+        padding: 0 20px;
+    }
 }
 .chart-bar {
     position: relative;
     margin: 10px 0;
     overflow: hidden;
     /* set dimensions */
-    width: 300px;
+    width: 100%;
     /* or 100% if flexible and contained in another element which sets width */
     height: 4px;
     background: #EAEAEA;
@@ -917,9 +948,24 @@ nav a:hover:before,
     -moz-transition: .25s ease-out;
     -ms-transition: .25s ease-out;
     -o-transition: .25s ease-out;
-    transition: .25s ease-out;
+    transition: .85s ease-out;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     /* set color */
     background-color: #E56E53;
+}
+
+/*PROCESS*/
+
+.end-temp {
+    padding-top: 160px;
+    display: block;
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+}
+.end-temp img {
+    width: 1024px;
+    height: auto;
+    margin: 0 auto;
 }
