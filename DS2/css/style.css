@@ -928,7 +928,7 @@ nav a:hover:before,
 @media (max-width: 900px) {
     .stat {
         display: block;
-        max-width: 768px;
+        max-width: 600px;
         width: 100%;
         margin: 0 auto;
         overflow: hidden;
