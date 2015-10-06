@@ -7,12 +7,34 @@
             display: block;
             width: 600px;
             /*height: 300px;*/
-            margin: 2500px auto 2300px auto;
-            padding: 200px 0 0;
-            border-top: 8px solid #ddd;
+            margin: 1500px auto 1300px auto;
         }
         
-        .trans {
+        .test-trigger {
+            border-top: 8px solid #ddd;
+            padding: 120px 0;
+        }
+        
+        .chart-bar {
+            position: relative;
+            margin: 40px 0;
+            overflow: hidden;
+            /* set dimensions */
+            width: 300px;
+            /* or 100% if flexible and contained in another element which sets width */
+            height: 4px;
+            background: #ddd;
+            border-radius: 2px;
+        }
+        
+        .chart-bar>div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            overflow: hidden;
+            border-radius: 2px;
             -webkit-transition: .25s ease-out;
             -moz-transition: .25s ease-out;
             -ms-transition: .25s ease-out;
@@ -20,121 +42,98 @@
             transition: .25s ease-out;
             -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
-        }
-        
-        .svg-menu-toggle.active .bar:nth-of-type(3) {
-            -webkit-transform: rotate(45deg) translateY(0px) translateX(0px);
-            -moz-transform: rotate(45deg) translateY(0px) translateX(0px);
-            transform: rotate(45deg) translateY(2px) translateX(4px);
-            fill: #F2F2F2;
-            opacity: 1;
-        }
-        
-        .chart {
-            padding: 40px 0;
-        }
-        
-        .svg-test {
-            display: block;
-        }
-        
-        .svg-test .red {
-            width: 0;
-        }
-        
-        .chart-animate:nth-of-type(1) .svg-test .red {
-            width: 200px;
-        }
-        
-        .chart-animate:nth-of-type(2) .svg-test .red {
-            width: 45px;
-        }
-        
-        .chart-animate:nth-of-type(3) .svg-test .red {
-            width: 120px;
-        }
-        
-        .chart-animate:nth-of-type(4) .svg-test .red {
-            width: 300px;
-        }
-        
-        .chart-animate:nth-of-type(5) .svg-test .red {
-            width: 240px;
+            /* set color */
+            background-color: salmon;
         }
 
     </style>
 </head>
 
 <body>
-    <div class="test-holder" id="test-red">
-        <div class="chart">
-            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <g id="Status" class="svg-test">
-                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
-                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
-                </g>
-            </svg>
-        </div>
 
-        <div class="chart">
-            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <g id="Status" class="svg-test">
-                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
-                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
-                </g>
-            </svg>
+    <div class="test-holder">
+        <div class="test-trigger" data-action="animate-chart">
+            <h3>Sexy charts design</h3>
+            <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="10">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="35">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="76">
+                <div></div>
+            </div>
         </div>
-
-        <div class="chart">
-            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <g id="Status" class="svg-test">
-                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
-                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
-                </g>
-            </svg>
+        <div class="test-trigger" data-action="animate-chart">
+            <h3>Sexy charts devopement code</h3>
+            <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="10">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="35">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="76">
+                <div></div>
+            </div>
         </div>
-
-        <div class="chart">
-            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <g id="Status" class="svg-test">
-                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
-                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
-                </g>
-            </svg>
+        <div class="test-trigger" data-action="animate-chart">
+            <h3>Sexy charts managment</h3>
+            <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="10">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="35">
+                <div></div>
+            </div>
+            <div class="chart-bar" data-element="chart-bar" data-fill="76">
+                <div></div>
+            </div>
         </div>
-
-        <div class="chart">
-            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <g id="Status" class="svg-test">
-                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
-                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
-                </g>
-            </svg>
-        </div>
-
     </div>
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
         $(function() {
-            animateCharts($(window));
+            var $w = $(window);
 
-            var $w = $(window).scroll(function() {
-                animateCharts($w);
+            animateCharts();
+
+            $w.scroll(function() {
+                animateCharts();
             });
 
-            function animateCharts(w) {
-                var container = $('.test-holder');
-                var elementToAnimate = $('.chart');
-                var visualOffset = 0 // w.outerHeight()/3;
+            function animateCharts() {
+                var container = $('[data-action=animate-chart]');
+                var elementToAnimate = $('[data-element=chart-bar]');
+                var visualOffset = $w.outerHeight() / 1.2;
                 var delay = 200;
 
                 container.each(function() {
                     var targetOffset = $(this).offset().top;
-                    if (w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
-                        $(this).addClass('animated');
-                        $(this).find(elementToAnimate).each(function(idx) {
+                    if ($w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
+                        var thisContainer = $(this);
+                        thisContainer.addClass('animated');
+                        thisContainer.find(elementToAnimate).each(function(idx) {
+                            var delayedElement = $(this);
                             setTimeout(function() {
-                                elementToAnimate.eq(idx).addClass('chart-animate');
+                                delayedElement.find('div').width(delayedElement.data('fill') + '%');
                             }, (idx * delay));
                         });
                     }

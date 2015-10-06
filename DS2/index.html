@@ -149,7 +149,7 @@
         </div>
     </section>
 
-    <section class="section-back section-text">
+    <section id="AboutMe" class="section-back section-text">
         <h2>About Me</h2>
         <h3>Lorem ipsum dolor sit amet, conse ctetur adipiscing  dolor sit ametelit, sed do eiusmod tempor.</h3>
         <div class="article">
@@ -159,11 +159,82 @@
             </p>
         </div>
         <div class="stat">
-            <div class="chart-holder" id="chart-trigger"></div>
-            <div class="chart-holder" id="chart-trigger"></div>
-            <div class="chart-holder" id="chart-trigger"></div>
+            <div class="chart-holder" data-action="animate-chart">
+                <h4>SOFTWARE</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+            </div>
+            <div class="chart-holder" data-action="animate-chart">
+
+                <h4>SOFTWARE</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+
+            </div>
+            <div class="chart-holder" data-action="animate-chart">
+
+                <h4>SOFTWARE</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Temporary name</p>
+
+            </div>
         </div>
     </section>
+    <section style="height:2000px;"></section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -293,6 +364,40 @@
         $(function() { // $(document).ready shorthand
             $.fx.speeds.xslow = 1500;
             $('#fader').fadeIn('xslow');
+        });
+
+    </script>
+    <script>
+        $(function() {
+            var $w = $(window);
+
+            animateCharts();
+
+            $w.scroll(function() {
+                animateCharts();
+            });
+
+            function animateCharts() {
+                var container = $('[data-action=animate-chart]');
+                var elementToAnimate = $('[data-element=chart-bar]');
+                var visualOffset = $w.outerHeight() / 1.7;
+                var delay = 200;
+
+                container.each(function() {
+                    var targetOffset = $(this).offset().top;
+                    if ($w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
+                        var thisContainer = $(this);
+                        thisContainer.addClass('animated');
+                        thisContainer.find(elementToAnimate).each(function(idx) {
+                            var delayedElement = $(this);
+                            setTimeout(function() {
+                                delayedElement.find('div').width(delayedElement.data('fill') + '%');
+                            }, (idx * delay));
+                        });
+                    }
+                });
+            }
+
         });
 
     </script>
