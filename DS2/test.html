@@ -1,65 +1,82 @@
-<style>
-    .test-holder {
-        display: block;
-        width: 600px;
-        margin: 2500px auto 2300px auto;
-    }
-    
-    .trans {
-        -webkit-transition: .25s ease-out;
-        -moz-transition: .25s ease-out;
-        -ms-transition: .25s ease-out;
-        -o-transition: .25s ease-out;
-        transition: .25s ease-out;
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-    
-    .svg-menu-toggle.active .bar:nth-of-type(3) {
-        -webkit-transform: rotate(45deg) translateY(0px) translateX(0px);
-        -moz-transform: rotate(45deg) translateY(0px) translateX(0px);
-        transform: rotate(45deg) translateY(2px) translateX(4px);
-        fill: #F2F2F2;
-        opacity: 1;
-    }
-    
-    .svg-test {
-        display: block;
-    }
-    
-    svg-test .red {
-        width: 0;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-</style>
-
-<div class="test-holder" id="test-red">
-    <svg width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-        <title>Status</title>
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
-        <g id="Status" class="svg-test">
-            <rect class="grey" fill="#EAEAEA" x="0" y="0" width="300" height="4" rx="2"></rect>
-            <rect class="red trans" fill="#E56E53" x="0" y="0" width="0" height="4" rx="2">></rect>
-        </g>
-
-    </svg>
-
-
-</div>
-<script>
-    var targetOffset = $("#test-red").offset().top;
-
-    var $w = $(window).scroll(function() {
-        if ($w.scrollTop() > targetOffset) {
-            $('.svg-test .red').css({
-                "width": "210px;"
-            });
-
-        } else {
-            // ...
+<head>
+    <style>
+        .test-holder {
+            display: block;
+            width: 600px;
+            height: 300px;
+            margin: 2500px auto 2300px auto;
+            padding: 200px 0;
+            background-color: yellow;
         }
-    });
+        
+        .trans {
+            -webkit-transition: .25s ease-out;
+            -moz-transition: .25s ease-out;
+            -ms-transition: .25s ease-out;
+            -o-transition: .25s ease-out;
+            transition: .25s ease-out;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+        
+        .svg-menu-toggle.active .bar:nth-of-type(3) {
+            -webkit-transform: rotate(45deg) translateY(0px) translateX(0px);
+            -moz-transform: rotate(45deg) translateY(0px) translateX(0px);
+            transform: rotate(45deg) translateY(2px) translateX(4px);
+            fill: #F2F2F2;
+            opacity: 1;
+        }
+        
+        .svg-test {
+            display: block;
+        }
+        
+        .svg-test .red {
+            width: 0;
+        }
+        
+        .animated .svg-test .red {
+            width: 200px;
+        }
 
-</script>
+    </style>
+</head>
+
+<body>
+    <div class="test-holder" id="test-red">
+        <svg class="metro" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+            <title>Status</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Status" class="svg-test">
+                <rect class="grey" fill="#EAEAEA" x="0" y="0" width="300" height="4" rx="2"></rect>
+                <rect class="red trans" fill="#E56E53" x="0" y="0" width="0" height="4" rx="2">></rect>
+            </g>
+
+        </svg>
+
+
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var targetOffset = $("#test-red").offset().top;
+
+        $('body').css('background', 'lightsalmon');
+
+        var $w = $(window).scroll(function() {
+            console.log($w.scrollTop());
+            if ($w.scrollTop() > targetOffset) {
+                $('.test-holder').addClass('animated');
+                console.log('trigger');
+            } else {
+                // ...
+            }
+        });
+
+    </script>
+</body>
+
+</html>
