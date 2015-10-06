@@ -6,10 +6,10 @@
         .test-holder {
             display: block;
             width: 600px;
-            height: 300px;
+            /*height: 300px;*/
             margin: 2500px auto 2300px auto;
-            padding: 200px 0;
-            background-color: yellow;
+            padding: 200px 0 0;
+            border-top: 8px solid #ddd;
         }
         
         .trans {
@@ -30,6 +30,10 @@
             opacity: 1;
         }
         
+        .chart {
+            padding: 40px 0;
+        }
+        
         .svg-test {
             display: block;
         }
@@ -38,8 +42,24 @@
             width: 0;
         }
         
-        .animated .svg-test .red {
+        .chart-animate:nth-of-type(1) .svg-test .red {
             width: 200px;
+        }
+        
+        .chart-animate:nth-of-type(2) .svg-test .red {
+            width: 45px;
+        }
+        
+        .chart-animate:nth-of-type(3) .svg-test .red {
+            width: 120px;
+        }
+        
+        .chart-animate:nth-of-type(4) .svg-test .red {
+            width: 300px;
+        }
+        
+        .chart-animate:nth-of-type(5) .svg-test .red {
+            width: 240px;
         }
 
     </style>
@@ -47,33 +67,80 @@
 
 <body>
     <div class="test-holder" id="test-red">
-        <svg class="metro" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-            <title>Status</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
-            <g id="Status" class="svg-test">
-                <rect class="grey" fill="#EAEAEA" x="0" y="0" width="300" height="4" rx="2"></rect>
-                <rect class="red trans" fill="#E56E53" x="0" y="0" width="0" height="4" rx="2">></rect>
-            </g>
+        <div class="chart">
+            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="Status" class="svg-test">
+                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
+                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
+                </g>
+            </svg>
+        </div>
 
-        </svg>
+        <div class="chart">
+            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="Status" class="svg-test">
+                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
+                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
+                </g>
+            </svg>
+        </div>
 
+        <div class="chart">
+            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="Status" class="svg-test">
+                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
+                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
+                </g>
+            </svg>
+        </div>
+
+        <div class="chart">
+            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="Status" class="svg-test">
+                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
+                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
+                </g>
+            </svg>
+        </div>
+
+        <div class="chart">
+            <svg class="svg" width="300px" height="4px" viewBox="0 0 300 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="Status" class="svg-test">
+                    <rect class="grey" fill="#EAEAEA " x="0" y="0" width="300" height="4" rx="2"></rect>
+                    <rect class="red trans" fill="#E56E53 " x="0" y="0" width="0" height="4" rx="2">></rect>
+                </g>
+            </svg>
+        </div>
 
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
-        var targetOffset = $("#test-red").offset().top;
+        $(function() {
+            animateCharts($(window));
 
-        $('body').css('background', 'lightsalmon');
+            var $w = $(window).scroll(function() {
+                animateCharts($w);
+            });
 
-        var $w = $(window).scroll(function() {
-            console.log($w.scrollTop());
-            if ($w.scrollTop() > targetOffset) {
-                $('.test-holder').addClass('animated');
-                console.log('trigger');
-            } else {
-                // ...
+            function animateCharts(w) {
+                var container = $('.test-holder');
+                var elementToAnimate = $('.chart');
+                var visualOffset = 0 // w.outerHeight()/3;
+                var delay = 200;
+
+                container.each(function() {
+                    var targetOffset = $(this).offset().top;
+                    if (w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
+                        $(this).addClass('animated');
+                        $(this).find(elementToAnimate).each(function(idx) {
+                            setTimeout(function() {
+                                elementToAnimate.eq(idx).addClass('chart-animate');
+                            }, (idx * delay));
+                        });
+                    }
+                });
             }
+
         });
 
     </script>
