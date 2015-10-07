@@ -128,9 +128,9 @@ h2 {
 }
 @media (max-width: 768px) {
     h2 {
-        font-size: 32px;
-        line-height: 32px;
-        width: 280px;
+        font-size: 42px;
+        line-height: 42px;
+        width: 100% !important;
     }
 }
 h2:after {
@@ -168,15 +168,16 @@ h3 {
 @media (max-width: 768px) {
     h3 {
         font-family: 'tisaproitalicbold';
-        font-size: 19px;
-        line-height: 26px;
+        font-size: 22px;
+        line-height: 36px;
         color: #3B3B41;
         text-align: center;
         font-weight: normal;
         display: block;
-        max-width: 350px;
+        max-width: 570px;
         margin: 0 auto;
         margin-top: 10px;
+        padding: 0 20px;
     }
 }
 h4 {
@@ -233,7 +234,7 @@ p {
         overflow: hidden;
         max-width: 600px;
         min-width: 320px;
-        margin: 60px auto;
+        margin: 30px auto;
     }
     .article p {
         display: block;
@@ -264,6 +265,19 @@ p {
         font-size: 20px;
         color: #6B6B77;
         line-height: 34px;
+    }
+    h3 {
+        font-family: 'tisaproitalicbold';
+        font-size: 20px;
+        line-height: 32px;
+        color: #3B3B41;
+        text-align: center;
+        font-weight: normal;
+        display: block;
+        max-width: 570px;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 0 20px;
     }
 }
 .title-middle {
@@ -363,11 +377,20 @@ video#bgvid {
         left: 50%;
     }
 }
+@media (max-width: 768px) {
+    #intro_holder {
+        position: absolute;
+        width: 380px;
+        top: 30%;
+        margin-left: -190px;
+        left: 50%;
+    }
+}
 @media (max-width: 480px) {
     #intro_holder {
         position: absolute;
         width: 100%;
-        top: 15% !important;
+        top: 22% !important;
         margin-left: 0;
         left: 0;
     }
@@ -401,6 +424,15 @@ video#bgvid {
         background: url(../img/Logo.svg);
         background-repeat: no-repeat;
         margin: 0 auto 12% auto !important;
+    }
+}
+@media (max-width: 320px) {
+    #intro_holder {
+        position: absolute;
+        width: 100%;
+        top: 12% !important;
+        margin-left: 0;
+        left: 0;
     }
 }
 #intro_holder a {
@@ -977,33 +1009,43 @@ nav a:hover:before,
     padding-top: 160px;
     display: block;
     width: 1024px;
-    height: 768px;
     margin: 0 auto;
+}
+@media (max-width: 1024px) {
+    .end-temp {
+        padding-top: 80px;
+        display: block;
+        width: 768px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    .end-temp {
+        padding-top: 80px;
+        display: block;
+        width: 640px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 640px) {
+    .end-temp {
+        padding-top: 80px;
+        display: block;
+        width: 480px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 480px) {
+    .end-temp {
+        padding-top: 80px;
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+    }
 }
 .end-temp img {
-    width: 1024px;
+    max-width: 1024px;
+    width: 100%;
     height: auto;
     margin: 0 auto;
-}
-.desc-holder {
-    display: block;
-    position: absolute;
-    height: 50px;
-    width: 900px;
-    left: 50%;
-    margin-left: -450px;
-}
-.desc-holder span {
-    float: left;
-    display: block;
-    width: 33.3%;
-    height: 50px;
-}
-.desc-holder span span:nth-of-type(1) {
-    display: block;
-    width: 40px;
-    height: 90px;
-    background-image: url(../img/Line-Left.svg);
-    margin: 0 auto;
-    border: none;
 }
