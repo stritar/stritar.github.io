@@ -1049,3 +1049,47 @@ nav a:hover:before,
     height: auto;
     margin: 0 auto;
 }
+
+/*HIRE ME*/
+
+.contactme {
+    margin-top: 30px;
+    text-align: center;
+}
+a.mail {
+    width: 100%;
+    text-decoration: none;
+    font-family: 'tisaproitalicbold';
+    font-size: 24px;
+    color: #E56E53;
+    line-height: 38px;
+}
+.social {
+    display: block;
+    width: 172px;
+    margin: 40px auto;
+}
+.social a {
+    float: left;
+}
+.behance {
+    margin-top: 3px;
+    margin-right: 40px;
+    display: block;
+    width: 32px;
+    height: 20px;
+    background-image: url(../img/Behance.svg);
+}
+.dribbble {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url(../img/Dribbble.svg);
+}
+.society6 {
+    margin-left: 40px;
+    display: block;
+    width: 32px;
+    height: 24px;
+    background-image: url(../img/S6.svg);
+}
