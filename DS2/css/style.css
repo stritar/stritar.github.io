@@ -1067,7 +1067,7 @@ a.mail {
 .social {
     display: block;
     width: 172px;
-    margin: 40px auto -120px auto;
+    margin: 40px auto 40px auto;
 }
 .social a {
     float: left;
