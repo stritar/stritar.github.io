@@ -1147,6 +1147,12 @@ a.mail {
     background-repeat: no-repeat;
     z-index: 999;
     margin: 35px 0 0 35px;
+    position: fixed;
+}
+@media (max-width: 375px) {
+    .back-home {
+        margin: 15px 0 0 15px;
+    }
 }
 .back-home span {
     display: block;
@@ -1158,4 +1164,48 @@ a.mail {
 }
 .back-home span:hover {
     opacity: 1;
+}
+.section-project {
+    padding: 80px 0 80px 0;
+}
+.logo-project {
+    margin: 0 auto 80px auto;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(../img/Logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+h1.project-name {
+    font-family: 'Campton ExtraBold';
+    font-size: 64px;
+    line-height: 34px;
+    color: #3B3B41;
+    text-align: center;
+    width: 760px;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+@media (max-width: 768px) {
+    h1.project-name {
+        font-size: 42px;
+        line-height: 42px;
+        width: 100% !important;
+    }
+}
+h2.project-name {
+    font-family: 'Campton Light';
+    font-size: 20px;
+    color: #E56E53;
+}
+h2.project-name:after {
+    display: none;
+}
+.project-image img {
+    max-width: 2000px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
 }
