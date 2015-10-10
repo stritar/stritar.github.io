@@ -1135,3 +1135,27 @@ a.mail {
 .xing span {
     background-image: url(../img/Xing_hover.svg);
 }
+
+/*PROJECT*/
+
+.back-home {
+    position: absolute;
+    display: block;
+    width: 21px;
+    height: 33px;
+    background-image: url(../img/BackHome.svg);
+    background-repeat: no-repeat;
+    z-index: 999;
+    margin: 35px 0 0 35px;
+}
+.back-home span {
+    display: block;
+    width: 21px;
+    height: 33px;
+    background-image: url(../img/BackHome_hover.svg);
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+.back-home span:hover {
+    opacity: 1;
+}
