@@ -87,7 +87,17 @@
     </div>
     <section>
 
+
+
+
     </section>
+
+
+
+
+
+
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -118,33 +128,39 @@
 
     </script>
     <script type="text/javascript">
+        $(document).ready(function($) {
+            var nav = 'close';
+            $('.svg-menu-toggle').click(function() {
+                if (nav == 'close') {
+                    $(this).attr("class", "svg-menu-toggle active");
+                    nav = 'open';
+                } else {
+                    $(this).attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('body').bind('click', function(e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('a').bind('click', function(e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
         $('.menu-primary').click(function() {
             $(this).next('.dot-holder-1').toggle();
         });
 
     </script>
-    <script type="text/javascript">
-        $(function() {
 
-            // Do our DOM lookups beforehand
-            var wyp = $("#small-logo-trigger");
-
-            wyp.waypoint({
-                handler: function(event) {
-                    if ($("#logo-small").css('opacity') == '1')
-                        $("#logo-small").animate({
-                            'opacity': 0
-                        })
-                    else
-                        $("#logo-small").animate({
-                            'opacity': 1
-                        })
-                }
-            });
-
-        });
-
-    </script>
     <script type="text/javascript">
         $("html,a").click(function() {
             $("body").removeClass("no-scroll");
