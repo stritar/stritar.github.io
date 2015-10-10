@@ -1166,7 +1166,7 @@ a.mail {
     opacity: 1;
 }
 .section-project {
-    padding: 80px 0 80px 0;
+    padding: 80px 0 200px 0;
 }
 .logo-project {
     margin: 0 auto 80px auto;
@@ -1212,43 +1212,55 @@ h2.project-name {
 h2.project-name:after {
     display: none;
 }
-.project-image img {
+.project-image {
+    position: relative;
     display: block;
     max-width: 2000px;
     width: 100%;
     height: auto;
-    padding: 0 20px;
-    margin: 0 auto;
+    margin: 40px auto;
+}
+@media (max-width: 768px) {
+    .project-image {
+        position: relative;
+        display: block;
+        max-width: 2000px;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+    }
 }
 .project-image p {
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-.appreciate-behance a {
-    display: block;
-    width: 160px;
-    height: 160px;
-    margin: 100px auto 0 auto;
-    background-image: url(../img/appreciate.svg);
-}
-.appreciate-behance a span {
     position: absolute;
     display: block;
-    width: 160px;
-    height: 160px;
-    background-image: url(../img/appreciate_hover.svg);
-    opacity: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background: rgba(242, 242, 242, 0.90);
+    margin-left: 20px;
+    padding: 15px 20px 10px 20px;
+    line-height: 1;
 }
-.appreciate-behance a span:hover {
-    opacity: 1;
-}
-.appreciate-behance h3 {
-    margin-bottom: 120px;
-}
-@media (max-width: 640px) {
-    .appreciate-behance h3 {
-        margin-bottom: 20px;
+@media (max-width: 768px) {
+    .project-image p {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        background: rgba(242, 242, 242, 0.90);
+        margin-left: 15px;
+        padding: 10px 15px 6px 15px;
+        line-height: 1;
+        font-size: 14px;
     }
+}
+.project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px;
 }
