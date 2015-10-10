@@ -1067,7 +1067,7 @@ a.mail {
 .social {
     display: block;
     width: 360px;
-    margin: 40px auto 40px auto;
+    margin: 80px auto;
 }
 .social a {
     float: left;
@@ -1076,11 +1076,20 @@ a.mail {
     display: block;
     margin: 0 10px;
 }
+.social a span {
+    width: 40px;
+    height: 40px;
+    display: block;
+    opacity: 0;
+}
+.social a span:hover {
+    opacity: 1;
+}
 @media (max-width: 480px) {
     .social {
         display: block;
         width: 300px;
-        margin: 40px auto 40px auto;
+        margin: 40px auto;
     }
     .social a {
         float: left;
@@ -1093,18 +1102,36 @@ a.mail {
 .behance {
     background-image: url(../img/Behance.svg);
 }
+.behance span {
+    background-image: url(../img/Behance_hover.svg);
+}
 .dribbble {
     background-image: url(../img/Dribbble.svg);
+}
+.dribbble span {
+    background-image: url(../img/Dribbble_hover.svg);
 }
 .twitter {
     background-image: url(../img/Twitter.svg);
 }
+.twitter span {
+    background-image: url(../img/Twitter_hover.svg);
+}
 .medium {
     background-image: url(../img/Medium.svg);
+}
+.medium span {
+    background-image: url(../img/Medium_hover.svg);
 }
 .codepen {
     background-image: url(../img/CodePen.svg);
 }
+.codepen span {
+    background-image: url(../img/CodePen_hover.svg);
+}
 .xing {
     background-image: url(../img/Xing.svg);
+}
+.xing span {
+    background-image: url(../img/Xing_hover.svg);
 }
