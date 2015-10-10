@@ -1066,30 +1066,45 @@ a.mail {
 }
 .social {
     display: block;
-    width: 172px;
+    width: 360px;
     margin: 40px auto 40px auto;
 }
 .social a {
     float: left;
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 10px;
+}
+@media (max-width: 480px) {
+    .social {
+        display: block;
+        width: 300px;
+        margin: 40px auto 40px auto;
+    }
+    .social a {
+        float: left;
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin: 0 5px;
+    }
 }
 .behance {
-    margin-top: 3px;
-    margin-right: 40px;
-    display: block;
-    width: 32px;
-    height: 20px;
     background-image: url(../img/Behance.svg);
 }
 .dribbble {
-    display: block;
-    width: 26px;
-    height: 26px;
     background-image: url(../img/Dribbble.svg);
 }
-.society6 {
-    margin-left: 40px;
-    display: block;
-    width: 32px;
-    height: 24px;
-    background-image: url(../img/S6.svg);
+.twitter {
+    background-image: url(../img/Twitter.svg);
+}
+.medium {
+    background-image: url(../img/Medium.svg);
+}
+.codepen {
+    background-image: url(../img/CodePen.svg);
+}
+.xing {
+    background-image: url(../img/Xing.svg);
 }
