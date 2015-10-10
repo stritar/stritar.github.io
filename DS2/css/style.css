@@ -1177,6 +1177,20 @@ a.mail {
     background-repeat: no-repeat;
     background-size: 80px;
 }
+@media (max-width: 640px) {
+    .section-project {
+        padding: 40px 0 200px 0;
+    }
+    .logo-project {
+        margin: 0 auto 40px auto;
+        display: block;
+        width: 80px;
+        height: 80px;
+        background: url(../img/Logo.svg);
+        background-repeat: no-repeat;
+        background-size: 80px;
+    }
+}
 h1.project-name {
     font-family: 'Campton ExtraBold';
     font-size: 64px;
