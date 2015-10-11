@@ -1251,9 +1251,10 @@ h2.project-name:after {
     margin: 0;
     padding: 0;
     width: auto;
-    background: rgba(242, 242, 242, 0.90);
+    font-size: 12px;
+    background: rgba(242, 242, 242, 0.95);
     margin-left: 20px;
-    padding: 15px 20px 10px 20px;
+    padding: 8px 10px 8px 10px;
     line-height: 1;
 }
 @media (max-width: 768px) {
@@ -1264,7 +1265,7 @@ h2.project-name:after {
         margin: 0;
         padding: 0;
         width: auto;
-        background: rgba(242, 242, 242, 0.90);
+        background: rgba(242, 242, 242, 0.95);
         margin-left: 15px;
         padding: 10px 15px 6px 15px;
         line-height: 1;
