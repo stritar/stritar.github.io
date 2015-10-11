@@ -1186,7 +1186,7 @@ a.mail {
     opacity: 0;
 }
 .logo-project span:hover {
-    opacity: 0;
+    opacity: 1;
 }
 @media (max-width: 640px) {
     .section-project {
