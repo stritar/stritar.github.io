@@ -1177,6 +1177,17 @@ a.mail {
     background-repeat: no-repeat;
     background-size: 80px;
 }
+.logo-project span {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(../img/Logo_Hover.svg);
+    opacity: 0;
+}
+.logo-project span:hover {
+    opacity: 0;
+}
 @media (max-width: 640px) {
     .section-project {
         padding: 40px 0 200px 0;
