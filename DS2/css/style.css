@@ -342,7 +342,6 @@ video#bgvid {
     -o-background-size: cover;
     background-size: cover;
     z-index: -100;
-    position: fixed;
     -webkit-transform: translateZ(0);
 }
 .fade-out {
@@ -1287,4 +1286,10 @@ h2.project-name:after {
     height: auto;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/*AFFIX*/
+
+#movie.affix {
+    display: none;
 }

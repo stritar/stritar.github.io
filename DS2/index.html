@@ -96,7 +96,7 @@
         <a href="#LatestWork" class="arrow_down">
             <span class="trans"></span>
         </a>
-        <div class="intro-back">
+        <div id="movie" class="intro-back">
             <video autoplay loop poster="img/back-temp.jpg" id="bgvid">
                 <source src="video/hk.webm" type="video/webm">
                 <source src="video/hk.mp4" / type="video/mp4">
@@ -310,7 +310,7 @@
 
     <script src="jquery-mousewheel/jquery.mousewheel.js"></script>
     <script src="js/jquery.colorscroll.js"></script>
-
+    <script src="js/affix.js"></script>
 
 
     <script type="text/javascript">
@@ -358,20 +358,7 @@
         });
 
     </script>
-    <script type="text/javascript">
-        $('.fade-out').colorScroll({
-            colors: [{
-                color: 'rgba(242 ,242 ,242 ,0)',
-                position: '0%'
-            }, {
-                color: 'rgba(242 ,242 ,242 ,1)',
-                position: '5%'
-            }]
-        });
 
-        $('body').colorScroll();
-
-    </script>
     <script type="text/javascript">
         $("html,a").click(function() {
             $("body").removeClass("no-scroll");
@@ -430,4 +417,5 @@
         });
 
     </script>
+
 </body>
