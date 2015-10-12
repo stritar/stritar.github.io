@@ -325,39 +325,53 @@
         });
 
     </script>
-<script type="text/javascript">
-    $(document).ready(function($) {
-        var nav = 'close';
-        $('.svg-menu-toggle').click(function() {
-            if (nav == 'close') {
-                $(this).attr("class", "svg-menu-toggle active");
-                nav = 'open';
-            } else {
-                $(this).attr("class", "svg-menu-toggle");
-                nav = 'close';
-            }
+    <script type="text/javascript">
+        $(document).ready(function($) {
+            var nav = 'close';
+            $('.svg-menu-toggle').click(function() {
+                if (nav == 'close') {
+                    $(this).attr("class", "svg-menu-toggle active");
+                    nav = 'open';
+                } else {
+                    $(this).attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('body').bind('click', function(e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('a').bind('click', function(e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
         });
-        $('body').bind('click', function(e) {
-            if (nav == 'open') {
-                $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
-                nav = 'close';
-            }
-        });
-        $('a').bind('click', function(e) {
-            if (nav == 'open') {
-                $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
-                nav = 'close';
-            }
-        });
-    });
-</script>
+
+    </script>
     <script type="text/javascript">
         $('.menu-primary').click(function() {
             $(this).next('.dot-holder-1').toggle();
         });
 
     </script>
+    <script type="text/javascript">
+        $('.fade-out').colorScroll({
+            colors: [{
+                color: 'rgba(242 ,242 ,242 ,0)',
+                position: '0%'
+            }, {
+                color: 'rgba(242 ,242 ,242 ,1)',
+                position: '5%'
+            }]
+        });
 
+        $('body').colorScroll();
+
+    </script>
     <script type="text/javascript">
         $("html,a").click(function() {
             $("body").removeClass("no-scroll");
