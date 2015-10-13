@@ -51,6 +51,12 @@
 </head>
 
 <body>
+    <div id="loader-wrapper">
+
+        <h1>Hello</h1>
+
+
+    </div>
     <nav class=" cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
         <a class="menu-primary Home trans" href="#Start">Start</a>
@@ -85,6 +91,7 @@
 
         </svg>
     </div>
+
     <section class="intro" id="Start">
         <div class="fade-out"></div>
         <div id="intro_holder">
@@ -238,7 +245,7 @@
     </section>
 
 
-<!--
+    <!--
 <section id="Process" class="section-back section-text">
     <h2>Process</h2>
     <h3>Lorem ipsum dolor sit amet, conse ctetur adipiscing  dolor sit ametelit, sed do eiusmod tempor.</h3>
@@ -415,6 +422,18 @@
                     }
                 });
             }
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            setTimeout(function() {
+                $('body').addClass('loaded');
+                $('.toggle-menu').css('opacity', '1');
+
+            }, 3000);
 
         });
 
