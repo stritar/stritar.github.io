@@ -567,9 +567,9 @@ video#bgvid {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     -webkit-transform: translateZ(0);
-    opacity: 0.000000001;
-    -webkit-transition: all 0.1s 0.5s ease-out;
-    transition: all 0.1s 0.5s ease-out;
+    opacity: 0;
+    -webkit-transition: all 3s ease-out;
+    transition: all 3s ease-out;
 }
 @media (max-width: 375px) {
     .toggle-menu {
