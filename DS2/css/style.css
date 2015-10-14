@@ -145,8 +145,15 @@ section {
 /*TYPE STYLE*/
 
 h1 {
-    margin: 0;
-    padding: 0;
+    font-family: 'Campton ExtraBold';
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    color: white;
+    margin-top: -80px;
+    font-size: 64px;
 }
 h2 {
     font-family: 'Campton ExtraBold';
