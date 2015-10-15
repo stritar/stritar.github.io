@@ -1,5 +1,17 @@
 /*PRELOADER*/
 
+h1 {
+    font-family: 'Campton ExtraBold';
+    text-transform: uppercase;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    color: white;
+    margin-top: -80px;
+    font-size: 28px;
+}
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -144,18 +156,6 @@ section {
 
 /*TYPE STYLE*/
 
-h1 {
-    font-family: 'Campton Light';
-    text-transform: uppercase;
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: 50%;
-    text-align: center;
-    color: white;
-    margin-top: -80px;
-    font-size: 64px;
-}
 h2 {
     font-family: 'Campton ExtraBold';
     font-size: 64px;
