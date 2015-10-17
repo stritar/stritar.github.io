@@ -1043,8 +1043,10 @@ nav a:hover:before,
     transition: .85s ease-out;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    /* set color */
-    background-color: #E56E53;
+    background-image: linear-gradient(-90deg, #E56E53 5%, #E15535 100%);
+}
+.chart-bar>div.dark-bar {
+    background-image: linear-gradient(-90deg, #737380 5%, #3B3B41 100%);
 }
 
 /*PROCESS*/
