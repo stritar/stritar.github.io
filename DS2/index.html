@@ -50,9 +50,14 @@
     <meta name="google-site-verification" content="rDH4kY2MpEHQ4R4xBckT3mQGNehZE73sN5yseQ2e0t8" />
 </head>
 
-<body>
+<body class="noscroll">
     <div id="loader-wrapper">
-        <h1>HELLO!</h1>
+        <!--        <h1>HELLO!</h1>-->
+        <div id="intro-load" class="chart-holder" data-action="animate-chart">
+            <div class="chart-bar" data-element="chart-bar" data-fill="100">
+                <div></div>
+            </div>
+        </div>
     </div>
     <nav class=" cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         <span class="menu-link-holder">
@@ -428,9 +433,10 @@
 
             setTimeout(function() {
                 $('body').addClass('loaded');
+                $('body').removeClass('noscroll');
                 $('.toggle-menu').css('opacity', 1);
 
-            }, 3000);
+            }, 1200);
 
         });
 
