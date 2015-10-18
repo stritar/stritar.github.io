@@ -1287,7 +1287,7 @@ h2.project-name:after {
     max-width: 2000px;
     width: 100%;
     height: auto;
-    margin: 40px auto;
+    margin: 5px auto;
 }
 @media (max-width: 768px) {
     .project-image {
@@ -1312,6 +1312,7 @@ h2.project-name:after {
     padding: 16px 10px 16px 20px;
     line-height: 1;
     color: #F2F2F2;
+    text-align: center;
 }
 @media (max-width: 768px) {
     .project-image p {
@@ -1320,12 +1321,14 @@ h2.project-name:after {
         bottom: 0;
         margin: 0;
         padding: 0;
-        width: auto;
-        background: rgba(59, 59, 65, 0.95);
-        margin-left: 15px;
-        padding: 10px 15px 6px 15px;
-        line-height: 1;
+        width: 100%;
         font-size: 14px;
+        background: rgba(59, 59, 65, 0.90);
+        margin-left: 0px;
+        padding: 16px 10px 16px 20px;
+        line-height: 1;
+        color: #F2F2F2;
+        text-align: center;
     }
 }
 .project-image img {
@@ -1334,6 +1337,19 @@ h2.project-name:after {
     height: auto;
     margin: 0 auto;
     padding: 0;
+}
+.appreciate {
+    padding-top: 40px;
+    display: block;
+    width: 300px;
+    margin: 0px auto;
+}
+.appreciate a {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    background-image: url(../img/appreciate.svg);
 }
 
 /*AFFIX*/
