@@ -1287,7 +1287,7 @@ h2.project-name:after {
     max-width: 2000px;
     width: 100%;
     height: auto;
-    margin: 0px auto;
+    margin: 20px auto;
 }
 @media (max-width: 768px) {
     .project-image {
