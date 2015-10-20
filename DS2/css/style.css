@@ -1281,6 +1281,11 @@ h2.project-name {
 h2.project-name:after {
     display: none;
 }
+.project-keeper {
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+}
 .project-image {
     position: relative;
     display: block;
@@ -1299,16 +1304,30 @@ h2.project-name:after {
         margin: 20px auto;
     }
 }
+@media (max-width: 640px) {
+    .project-image {
+        position: relative;
+        display: block;
+        max-width: 2000px;
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+    .project-keeper {
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+}
 .project-image p {
     position: absolute;
     display: block;
     bottom: 0;
     margin: 0;
-    padding: 0;
     width: 100%;
     font-size: 14px;
-    background: rgba(59, 59, 65, 0.95);
-    margin-left: 0px;
+    background: rgba(59, 59, 65, 0.90);
+    margin-right: 20px;
     padding: 25px 10px 20px 25px;
     line-height: 1;
     color: #F2F2F2;
