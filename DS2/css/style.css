@@ -460,7 +460,7 @@ video#bgvid {
     }
     .main_logo {
         display: block;
-        width: 160px;
+        width: 980px;
         height: 160px;
         background: url(../img/Logo.svg);
         background-repeat: no-repeat;
