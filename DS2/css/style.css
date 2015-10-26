@@ -405,7 +405,7 @@ video#bgvid {
 #intro_holder {
     position: absolute;
     width: 380px;
-    top: 32%;
+    top: 36%;
     margin-left: -190px;
     left: 50%;
 }
@@ -413,7 +413,7 @@ video#bgvid {
     #intro_holder {
         position: absolute;
         width: 380px;
-        top: 23%;
+        top: 29%;
         margin-left: -190px;
         left: 50%;
     }
@@ -431,7 +431,7 @@ video#bgvid {
     #intro_holder {
         position: absolute;
         width: 100%;
-        top: 22% !important;
+        top: 24% !important;
         margin-left: 0;
         left: 0;
     }
@@ -461,9 +461,10 @@ video#bgvid {
     .main_logo {
         display: block;
         width: 980px;
-        height: 160px;
-        background: url(../img/Logo.svg);
-        background-repeat: no-repeat;
+        width: 140px;
+        height: 140px;
+        background-image: url(../img/Logo.svg);
+        background-size: 140px 140px;
         margin: 0 auto 12% auto !important;
     }
 }
@@ -477,7 +478,7 @@ video#bgvid {
     }
 }
 #intro_holder a {
-    margin-top: 60px;
+    margin-top: 40px;
     display: block;
     width: 180px;
     height: 50px;
@@ -502,10 +503,10 @@ video#bgvid {
 }
 .main_logo {
     display: block;
-    width: 160px;
-    height: 160px;
-    background: url(../img/Logo.svg);
-    background-repeat: no-repeat;
+    width: 140px;
+    height: 140px;
+    background-image: url(../img/Logo.svg);
+    background-size: 140px 140px;
     margin: 0 auto;
 }
 .arrow_down {
@@ -1326,7 +1327,7 @@ h2.project-name:after {
     margin: 0;
     width: 100%;
     font-size: 14px;
-    background: rgba(59, 59, 65, 0.90);
+    background: rgba(59, 59, 65, 0.70);
     margin-right: 20px;
     padding: 25px 10px 20px 25px;
     line-height: 1;
@@ -1341,10 +1342,10 @@ h2.project-name:after {
         margin: 0;
         padding: 0;
         width: 100%;
-        font-size: 14px;
-        background: rgba(59, 59, 65, 0.95);
+        font-size: 12px;
+        background: rgba(59, 59, 65, 0.70);
         margin-left: 0px;
-        padding: 16px 10px 16px 20px;
+        padding: 8px 10px 6px 20px;
         line-height: 1;
         color: #F2F2F2;
         text-align: center;
