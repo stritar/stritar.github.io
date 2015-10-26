@@ -1116,8 +1116,13 @@ a.mail {
 }
 .social {
     display: block;
-    width: 360px;
+    width: 300px;
     margin: 80px auto;
+}
+.social .icons-links {
+    display: block;
+    width: 120px;
+    margin: 0 auto;
 }
 .social a {
     float: left;
