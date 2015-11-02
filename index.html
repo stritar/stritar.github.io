@@ -70,8 +70,9 @@
 
         <a class="menu-secondary" href="https://www.behance.net/denisstritar" target="_blank">Behance</a>
         <a class="menu-secondary" href="https://dribbble.com/StritarD" target="_blank">Dribbble</a>
+
+        <a class="menu-secondary" href="https://twitter.com/WorkStritar" target="_blank">Twitter</a>
         <!--
-        <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Twitter</a>
         <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Medium</a>
         <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">CodePen</a>
         <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Xing</a>
@@ -312,8 +313,10 @@
             <div class="icons-links">
                 <a class="behance" target="_blank" href="https://www.behance.net/denisstritar"><span class="trans"></span></a>
                 <a class="dribbble" target="_blank" href="https://dribbble.com/StritarD"><span class="trans"></span></a>
+
+                <a class="twitter" target="_blank" href="http://twitter.com/WorkStritar"><span class="trans"></span></a>
                 <!--
-<a class="twitter" href=""><span class="trans"></span></a>
+               
 <a class="medium" href=""><span class="trans"></span></a>
 <a class="codepen" href=""><span class="trans"></span></a>
 <a class="xing" href=""><span class="trans"></span></a>
@@ -341,21 +344,19 @@
 
 
     <script type="text/javascript">
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             $('.toggle-menu').jPushMenu();
         });
-
     </script>
     <script type="text/javascript">
-        $('.toggle-menu').click(function() {
+        $('.toggle-menu').click(function () {
             $('body').toggleClass('no-scroll');
         });
-
     </script>
     <script type="text/javascript">
-        $(document).ready(function($) {
+        $(document).ready(function ($) {
             var nav = 'close';
-            $('.svg-menu-toggle').click(function() {
+            $('.svg-menu-toggle').click(function () {
                 if (nav == 'close') {
                     $(this).attr("class", "svg-menu-toggle active");
                     nav = 'open';
@@ -364,38 +365,35 @@
                     nav = 'close';
                 }
             });
-            $('body').bind('click', function(e) {
+            $('body').bind('click', function (e) {
                 if (nav == 'open') {
                     $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
                     nav = 'close';
                 }
             });
-            $('a').bind('click', function(e) {
+            $('a').bind('click', function (e) {
                 if (nav == 'open') {
                     $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
                     nav = 'close';
                 }
             });
         });
-
     </script>
     <script type="text/javascript">
-        $('.menu-primary').click(function() {
+        $('.menu-primary').click(function () {
             $(this).next('.dot-holder-1').toggle();
         });
-
     </script>
 
     <script type="text/javascript">
-        $("html,a").click(function() {
+        $("html,a").click(function () {
             $("body").removeClass("no-scroll");
         });
-
     </script>
     <script>
-        (function(i, s, o, g, r, a, m) {
+        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
@@ -407,16 +405,15 @@
 
         ga('create', 'UA-30794080-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 
     <script>
-        $(function() {
+        $(function () {
             var $w = $(window);
 
             animateCharts();
 
-            $w.scroll(function() {
+            $w.scroll(function () {
                 animateCharts();
             });
 
@@ -426,14 +423,14 @@
                 var visualOffset = $w.outerHeight() / 1.4;
                 var delay = 300;
 
-                container.each(function() {
+                container.each(function () {
                     var targetOffset = $(this).offset().top;
                     if ($w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
                         var thisContainer = $(this);
                         thisContainer.addClass('animated');
-                        thisContainer.find(elementToAnimate).each(function(idx) {
+                        thisContainer.find(elementToAnimate).each(function (idx) {
                             var delayedElement = $(this);
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 delayedElement.find('div').width(delayedElement.data('fill') + '%');
                             }, ((idx + 1) * delay));
                         });
@@ -442,12 +439,11 @@
             }
 
         });
-
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            setTimeout(function() {
+            setTimeout(function () {
                 $('body').addClass('loaded');
                 $('body').removeClass('noscroll');
                 $('.toggle-menu').css('opacity', 1);
@@ -455,6 +451,5 @@
             }, 2100);
 
         });
-
     </script>
 </body>
