@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="22px" height="15px" viewBox="0 0 22 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
     <title>Arrow_Down_2</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Index-Mobile" sketch:type="MSArtboardGroup" transform="translate(-149.000000, -532.000000)" fill="#3B3B41">
-            <g id="Arrow_Down_2" sketch:type="MSLayerGroup" transform="translate(147.000000, 530.000000)">
-                <path d="M14,3.65930035 C14,2.00109516 15.3465171,0.656854249 17,0.656854249 L17,0.656854249 C18.6568542,0.656854249 20,1.99415697 20,3.65930035 L20,17.3431458 L14,17.3431458 L14,3.65930035 Z" id="Rectangle-13-Copy" sketch:type="MSShapeGroup" transform="translate(17.000000, 9.000000) rotate(-315.000000) translate(-17.000000, -9.000000) "></path>
-                <path d="M6,3.65930035 C6,2.00109516 7.34651712,0.656854249 9,0.656854249 L9,0.656854249 C10.6568542,0.656854249 12,1.99415697 12,3.65930035 L12,17.3431458 L6,17.3431458 L6,3.65930035 Z" id="Rectangle-13-Copy-2" sketch:type="MSShapeGroup" transform="translate(9.000000, 9.000000) scale(-1, 1) rotate(-315.000000) translate(-9.000000, -9.000000) "></path>
+        <g id="Index-Mobile" sketch:type="MSArtboardGroup" transform="translate(-129.000000, -532.000000)" fill="#3B3B41">
+            <g id="Arrow_Down_2" sketch:type="MSLayerGroup" transform="translate(128.000000, 530.000000)">
+                <path d="M13,3.65930035 C13,2.00109516 14.3465171,0.656854249 16,0.656854249 L16,0.656854249 C17.6568542,0.656854249 19,1.99415697 19,3.65930035 L19,15.3469632 C19,16.4494244 18.1017394,17.3431458 17.0020869,17.3431458 L13,17.3431458 L13,3.65930035 Z" id="Rectangle-13-Copy" sketch:type="MSShapeGroup" transform="translate(16.000000, 9.000000) rotate(-315.000000) translate(-16.000000, -9.000000) "></path>
+                <path d="M5.42080918,3.65930035 C5.42080918,2.00109516 6.76732629,0.656854249 8.42080918,0.656854249 L8.42080918,0.656854249 C10.0776634,0.656854249 11.4208092,1.99415697 11.4208092,3.65930035 L11.4208092,15.3469632 C11.4208092,16.4494244 10.5225486,17.3431458 9.42289605,17.3431458 L5.42080918,17.3431458 L5.42080918,3.65930035 Z" id="Rectangle-13-Copy-2" sketch:type="MSShapeGroup" transform="translate(8.420809, 9.000000) scale(-1, 1) rotate(-315.000000) translate(-8.420809, -9.000000) "></path>
             </g>
         </g>
     </g>
