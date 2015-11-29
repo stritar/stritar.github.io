@@ -572,8 +572,8 @@ video#bgvid {
 .arrow_down {
     position: absolute;
     display: block;
-    width: 42px;
-    height: 26px;
+    width: 38px;
+    height: 23px;
     background: url(../img/Arrow_Down.svg);
     background-repeat: no-repeat;
     bottom: 20px;
