@@ -5,11 +5,8 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1261.000000, -1356.000000)" fill="#3B3B41">
-            <g id="Arrow_Down" sketch:type="MSLayerGroup" transform="translate(1259.000000, 1354.000000)">
-                <rect id="Rectangle-13-Copy" sketch:type="MSShapeGroup" transform="translate(29.000000, 13.000000) rotate(-315.000000) translate(-29.000000, -13.000000) " x="26" y="-1" width="6" height="28"></rect>
-                <path d="M10,1.99649048 C10,0.341574484 11.3465171,-1 13,-1 L13,-1 C14.6568542,-1 16,0.350498199 16,1.99649048 L16,25.0087557 C16,26.1084896 15.1017394,27 14.0020869,27 L10,27 L10,1.99649048 Z" id="Rectangle-13-Copy-2" sketch:type="MSShapeGroup" transform="translate(13.000000, 13.000000) scale(-1, 1) rotate(-315.000000) translate(-13.000000, -13.000000) "></path>
-            </g>
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1261.000000, -1378.000000)" stroke="#3B3B41" stroke-width="6" stroke-linecap="round">
+            <path d="M1264.5,1381.5 L1278.6583,1397.0211 C1279.40336,1397.83787 1280.61526,1397.83358 1281.3564,1397.0211 L1295.5147,1381.5" id="Arrow_Down" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

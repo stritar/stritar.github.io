@@ -5,11 +5,8 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1321.000000, -1356.000000)" fill="#737380">
-            <g id="Arrow_Down_Hover" sketch:type="MSLayerGroup" transform="translate(1319.000000, 1354.000000)">
-                <rect id="Rectangle-13-Copy" sketch:type="MSShapeGroup" transform="translate(29.000000, 13.000000) rotate(-315.000000) translate(-29.000000, -13.000000) " x="26" y="-1" width="6" height="28"></rect>
-                <rect id="Rectangle-13-Copy-2" sketch:type="MSShapeGroup" transform="translate(13.000000, 13.000000) scale(-1, 1) rotate(-315.000000) translate(-13.000000, -13.000000) " x="10" y="-1" width="6" height="28"></rect>
-            </g>
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1294.000000, -1378.000000)" stroke="#737380" stroke-width="6" stroke-linecap="round">
+            <path d="M1297.5,1381.5 L1311.6583,1397.0211 C1312.40336,1397.83787 1313.61526,1397.83358 1314.3564,1397.0211 L1328.5147,1381.5" id="Arrow_Down_Hover" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>
