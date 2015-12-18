@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Animation Showcase</title>
+    <meta name="description" content="Animation showcase for Denis' Awsome Website">
+    <meta name="author" content="pandako">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sanchez:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/styles.css?v=1.0">
+
+    <style>
+        .animation-element {
+            display: none;
+        }
+        
+        @media screen and (min-width: 720px) {
+            .animation-element {
+                display: block;
+                height: 100vh;
+            }
+        }
+        
+        .animating .animation-element {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .animation-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .animation-canvas {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .animation-content {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        
+        .animation-canvas img {
+            max-width: 100%;
+        }
+        
+        .animating .animation-content {
+            display: block;
+        }
+        
+        .animation-content.show {
+            opacity: 1;
+        }
+        
+        .animation-fallback {
+            position: relative;
+        }
+        
+        @media screen and (min-width: 720px) {
+            .animation-fallback {
+                display: none;
+            }
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="t">
+                <div class="c">
+                    <h1>Animation Showcase</h1>
+                    <span>This is showcase example for the Denis' Awsome Website&trade;</span>
+                    <h2 class="intro">It all starts <strong>HERE</strong>.</h2>
+                </div>
+            </div>
+            <div class="cave-toasty"></div>
+        </header>
+        <section>
+            <div class="limit-content">
+                <h1>Let's begin with some boring text about me</h1>
+                <picture class="me" title="Look it's me! And I'm a bit special.">
+                    <img src="assets/specialman-cropped.jpg" " alt="Look it 's me! And I'm a bit special./>
+                    <span>And you know what the hand is for.</span>
+                </picture>
+                <p>Praesent in ligula vitae turpis tristique tincidunt congue ut turpis. Mauris euismod mi congue rhoncus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac ornare mi. Nunc eget consectetur ipsum. In a nunc sed sem feugiat scelerisque eget vel orci. In mi erat, pulvinar ac finibus et, pulvinar nec nisl. Etiam ac iaculis sapien. Aliquam fringilla aliquet condimentum. Integer lacinia, leo eu ultricies congue, orci sem suscipit ex, at mollis quam magna vitae velit. Sed id consequat lacus. Nulla felis diam, bibendum id mi eget, placerat molestie leo. Integer id ornare ante. Aliquam sollicitudin elit ac neque cursus, sit amet consequat sapien condimentum. </p>
+                <p>Nullam fermentum massa a metus accumsan euismod. In imperdiet euismod vestibulum. Duis ut semper nibh. Sed a velit purus. Proin sodales vitae dui lobortis dictum. Cras ut massa nec elit posuere fringilla sit amet eget nulla. Integer volutpat, nulla sed gravida auctor, mi lorem consectetur ex, nec consectetur felis nunc id sapien. Nunc iaculis, ligula nec consequat suscipit, massa libero consectetur ex, et congue neque nunc in quam. Nunc sapien massa, pharetra in malesuada eu, vehicula ac velit. Suspendisse porta, risus in vestibulum tincidunt, odio ex sollicitudin nisl, consectetur cursus ante odio non libero.</p>
+            </div>
+        </section>
+        <section class="text-with-art">
+            <div class="limit-content">
+                <h1>By throwing some fartsy image alongside text, I hope to keep your attention</h1>
+                <p>Ut vulputate quam diam, vitae fringilla nulla tincidunt maximus. Morbi gravida non libero sit amet imperdiet. Aenean a nunc nec neque eleifend egestas. Nullam porta diam non laoreet aliquet. Sed urna lorem, tempus a ipsum et, pharetra laoreet orci. Maecenas eget augue sed ligula condimentum tempor a non elit. Nullam sed sollicitudin enim, nec commodo felis. Donec ultrices aliquam nisi vitae dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam at dapibus turpis. Sed nec sem nisi.</p>
+            </div>
+            <img src="assets/push-the-sky-away.jpg" alt="just some bullshit image">
+        </section>
+        <section class="charts">
+            <h1>And for no reason in particular, <br>here are some useless charts:</h1>
+            <img src="assets/chart_1.png" alt="chart">
+            <img src="assets/chart_2.png" alt="chart">
+            <img src="assets/chart_3.png" alt="chart">
+            <div class="limit-content">
+                <p>Now if that isn't totally amazing...</p>
+                <p>But! prepare yourself for the next feature, for it will make you shit your pants!</p>
+            </div>
+        </section>
+        <section class="section9">
+
+            <div class="animation-container" data-type="animation-container">
+                <div class="animation-element" data-type="animation-element">
+                    <div class="animation-wrapper">
+                        <div class="animation-canvas" data-type="animation-canvas">
+                            <img data-type="animation-frame" data-length="60" data-folder="animation-assets" data-name="frame-" data-ext="png" src="animation-assets/frame-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-content" data-type="animation-content">
+                    <div class="limit-content">
+                        <h1>And finally you've come to an end!</h1>
+                        <p>I hope you've liked the awesome experience of this crazy ride of my website. And if this didn't completely satisfied you for some weird reason and made you whole again, have some random pictures of helpless and retarded puppies for a cherry on top:</p>
+                        <div class="puppies">
+                            <img src="assets/B_imissyou_6uUQd3Da.jpg">
+                            <img src="assets/puppies-feat-05122013.jpg">
+                            <img src="assets/puppy-puppies-32057231-500-518.jpg">
+                            <img src="assets/Photo_1.jpg">
+                        </div>
+                        <span class="signature">Cheers, yours sincerely Denis D'penis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animation-fallback">
+                <div class="whatever" style="background:url(animation-assets/frame-60.png) center center no-repeat; background-size:contain;">
+                    <div class="limit-content">
+                        <h1>And finally you've come to an end!</h1>
+                        <p>I hope you've liked the awesome experience of this crazy ride of my website. And if this didn't completely satisfied you for some weird reason and made you whole again, have some random pictures of helpless and retarded puppies for a cherry on top:</p>
+                        <div class="puppies">
+                            <img src="assets/B_imissyou_6uUQd3Da.jpg">
+                            <img src="assets/puppies-feat-05122013.jpg">
+                            <img src="assets/puppy-puppies-32057231-500-518.jpg">
+                            <img src="assets/Photo_1.jpg">
+                        </div>
+                        <span class="signature">Cheers, yours sincerely Denis D'penis</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- scripts -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            var page = $(window);
+            var animationContainer = $('[data-type=animation-container]');
+            var animationElement = $('[data-type=animation-element]');
+            var animationCanvas = $('[data-type=animation-canvas]');
+            var animationFrame = $('[data-type=animation-frame]');
+            var animationContent = $('[data-type=animation-content]');
+            var animationOffsetTop = Math.round(animationContainer.offset().top);
+            var numOfFrames = animationFrame.data('length');
+
+            var frames = {
+                'name': animationFrame.data('name'),
+                'ext': animationFrame.data('ext'),
+                'path': animationFrame.data('folder')
+            };
+            animationFrame.attr('src', frames.path + '/' + frames.name + 1 + '.' + frames.ext);
+
+            if (shouldAnimate()) {
+                calcRatio();
+                setScrollLength();
+            }
+
+            $(window).on('resize', function () {
+                if (shouldAnimate()) {
+                    calcRatio();
+                    setScrollLength();
+                } else {
+                    animationContainer.removeClass('animating').height('auto');
+                    animationContent.removeClass('show');
+                }
+            });
+
+            page.scroll(function () {
+                if (shouldAnimate()) {
+                    var offsetTop = page.scrollTop();
+                    var windowHeight = $(window).height();
+                    var framesTimeline = animationContainer.height() - windowHeight;
+                    var frameStep = Math.ceil(framesTimeline / numOfFrames);
+
+                    if (offsetTop >= animationOffsetTop) {
+                        animationContainer.addClass('animating');
+
+                        if (offsetTop >= $('body').height() - windowHeight) {
+                            animationContent.addClass('show');
+                        } else {
+                            var currentFrame = Math.floor((offsetTop - animationOffsetTop) / frameStep);
+                            if (currentFrame > numOfFrames) {
+                                currentFrame = numOfFrames;
+                            } else if (currentFrame < 1) {
+                                currentFrame = 1;
+                            }
+                            animationContent.removeClass('show');
+                            animationFrame.attr('src', frames.path + '/' + frames.name + currentFrame + '.' + frames.ext);
+                        }
+                    } else {
+                        animationContainer.removeClass('animating');
+                        animationContent.removeClass('show');
+                    }
+                }
+            });
+
+            function setScrollLength() {
+                animationContainer.height(page.height() * 3);
+            }
+
+            function shouldAnimate() {
+                if (animationElement.css('display') == 'block') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function calcRatio() {
+                if (page.width() / page.height() > animationFrame.width() / animationFrame.height()) {
+                    animationFrame.css({
+                        maxWidth: 'none',
+                        maxHeight: page.height(),
+                    });
+                } else {
+                    animationFrame.css({
+                        maxWidth: '100%',
+                        maxHeight: 'none',
+                    });
+                }
+            }
+
+
+            // easter
+            var interval = 4017;
+            setTimeout(function () {
+                $('.cave-toasty').addClass('flash');
+                setTimeout(function () {
+                    $('.cave-toasty').removeClass('flash');
+                }, 100);
+            }, 3000);
+
+            setTimeout(function () {
+                setInterval(function () {
+                    $('.cave-toasty').addClass('flash');
+                    setTimeout(function () {
+                        $('.cave-toasty').removeClass('flash');
+                    }, 100);
+                }, 10000);
+            }, interval);
+            setTimeout(function () {
+                setInterval(function () {
+                    $('.cave-toasty').addClass('flash');
+                    setTimeout(function () {
+                        $('.cave-toasty').removeClass('flash');
+                    }, 100);
+                }, 7543);
+            }, interval);
+        });
+    </script>
+</body>
+
+</html>
