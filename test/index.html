@@ -1,293 +1,438 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <title>Denis Stritar - Digital Designer</title>
     <meta charset="utf-8">
-
-    <title>Animation Showcase</title>
-    <meta name="description" content="Animation showcase for Denis' Awsome Website">
-    <meta name="author" content="pandako">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
 
-    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Sanchez:400,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/styles.css?v=1.0">
 
-    <style>
-        .animation-element {
-            display: none;
-        }
-        
-        @media screen and (min-width: 720px) {
-            .animation-element {
-                display: block;
-                height: 100vh;
-            }
-        }
-        
-        .animating .animation-element {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .animation-wrapper {
-            display: table;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .animation-canvas {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-        }
-        
-        .animation-content {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity .5s;
-        }
-        
-        .animation-canvas img {
-            max-width: 100%;
-        }
-        
-        .animating .animation-content {
-            display: block;
-        }
-        
-        .animation-content.show {
-            opacity: 1;
-        }
-        
-        .animation-fallback {
-            position: relative;
-        }
-        
-        @media screen and (min-width: 720px) {
-            .animation-fallback {
-                display: none;
-            }
-        }
-    </style>
+    <meta content='Denis Stritar' name='author'>
+    <meta name="description" content=“Denis Stritar - Digital Designer” />
 
-    <!--[if lt IE 9]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	  <![endif]-->
+    <meta itemprop="name" content="Denis Stritar">
+    <meta itemprop="description" content="Denis Stritar - Digital Designer">
+    <meta itemprop="image" content="http://www.denisstritar.com/img/fb.png">
+
+    <meta name="twitter:card" content="portfolio">
+    <meta name="twitter:site" content="@DS2284">
+    <meta name="twitter:title" content="Denis Stritar">
+    <meta name="twitter:description" content="Digital Designer">
+    <meta name="twitter:creator" content="@DS2284">
+    <meta name="twitter:image" content="http://www.denisstritar.com/img/fb.png">
+
+
+    <meta property="og:title" content="Denis Stritar - Digital Designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.denisstritar.com" />
+    <meta property="og:image" content="http://www.denisstritar.com/img/fb.png" />
+    <meta property="og:description" content="Denis Stritar - Digital Designer" />
+    <meta property="og:site_name" content="Denis Stritar - Digital Designer" />
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
+    <link rel="stylesheet" href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
+    <link rel="stylesheet" href="css/style.css" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="favicon.ico">
+    <link rel="icon" href="img/favicon.ico" type="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png">
+
+    <meta name="google-site-verification" content="rDH4kY2MpEHQ4R4xBckT3mQGNehZE73sN5yseQ2e0t8" />
 </head>
 
-<body>
-    <div class="wrapper">
-        <header>
-            <div class="t">
-                <div class="c">
-                    <h1>Animation Showcase</h1>
-                    <span>This is showcase example for the Denis' Awsome Website&trade;</span>
-                    <h2 class="intro">It all starts <strong>HERE</strong>.</h2>
-                </div>
+<body class="noscroll">
+    <div id="loader-wrapper">
+        <!--        <h1>HELLO!</h1>-->
+        <div id="intro-load" class="chart-holder" data-action="animate-chart">
+            <div class="chart-bar" data-element="chart-bar" data-fill="100">
+                <div class="dark-bar"></div>
             </div>
-            <div class="cave-toasty"></div>
-        </header>
-        <section>
-            <div class="limit-content">
-                <h1>Let's begin with some boring text about me</h1>
-                <picture class="me" title="Look it's me! And I'm a bit special.">
-                    <img src="assets/specialman-cropped.jpg" " alt="Look it 's me! And I'm a bit special./>
-                    <span>And you know what the hand is for.</span>
-                </picture>
-                <p>Praesent in ligula vitae turpis tristique tincidunt congue ut turpis. Mauris euismod mi congue rhoncus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac ornare mi. Nunc eget consectetur ipsum. In a nunc sed sem feugiat scelerisque eget vel orci. In mi erat, pulvinar ac finibus et, pulvinar nec nisl. Etiam ac iaculis sapien. Aliquam fringilla aliquet condimentum. Integer lacinia, leo eu ultricies congue, orci sem suscipit ex, at mollis quam magna vitae velit. Sed id consequat lacus. Nulla felis diam, bibendum id mi eget, placerat molestie leo. Integer id ornare ante. Aliquam sollicitudin elit ac neque cursus, sit amet consequat sapien condimentum. </p>
-                <p>Nullam fermentum massa a metus accumsan euismod. In imperdiet euismod vestibulum. Duis ut semper nibh. Sed a velit purus. Proin sodales vitae dui lobortis dictum. Cras ut massa nec elit posuere fringilla sit amet eget nulla. Integer volutpat, nulla sed gravida auctor, mi lorem consectetur ex, nec consectetur felis nunc id sapien. Nunc iaculis, ligula nec consequat suscipit, massa libero consectetur ex, et congue neque nunc in quam. Nunc sapien massa, pharetra in malesuada eu, vehicula ac velit. Suspendisse porta, risus in vestibulum tincidunt, odio ex sollicitudin nisl, consectetur cursus ante odio non libero.</p>
-            </div>
-        </section>
-        <section class="text-with-art">
-            <div class="limit-content">
-                <h1>By throwing some fartsy image alongside text, I hope to keep your attention</h1>
-                <p>Ut vulputate quam diam, vitae fringilla nulla tincidunt maximus. Morbi gravida non libero sit amet imperdiet. Aenean a nunc nec neque eleifend egestas. Nullam porta diam non laoreet aliquet. Sed urna lorem, tempus a ipsum et, pharetra laoreet orci. Maecenas eget augue sed ligula condimentum tempor a non elit. Nullam sed sollicitudin enim, nec commodo felis. Donec ultrices aliquam nisi vitae dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam at dapibus turpis. Sed nec sem nisi.</p>
-            </div>
-            <img src="assets/push-the-sky-away.jpg" alt="just some bullshit image">
-        </section>
-        <section class="charts">
-            <h1>And for no reason in particular, <br>here are some useless charts:</h1>
-            <img src="assets/chart_1.png" alt="chart">
-            <img src="assets/chart_2.png" alt="chart">
-            <img src="assets/chart_3.png" alt="chart">
-            <div class="limit-content">
-                <p>Now if that isn't totally amazing...</p>
-                <p>But! prepare yourself for the next feature, for it will make you shit your pants!</p>
-            </div>
-        </section>
-        <section class="section9">
+        </div>
+    </div>
+    <nav class=" cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+        <span class="menu-link-holder">
+        <a class="menu-primary Home trans" href="#Start">Start</a>
+        <a class="menu-primary NavLatestWork" href="#LatestWork">Latest Work</a>
+        <a class="menu-primary NavAboutMe" href="#AboutMe">About Me</a>
+<!--<a class="menu-primary NavProcess" href="#Process">Process</a>-->
+        <a class="menu-primary NavHireMe" href="#HireMe">Hire Me</a>
+        <span class="drop"></span>
 
-            <div class="animation-container" data-type="animation-container">
-                <div class="animation-element" data-type="animation-element">
-                    <div class="animation-wrapper">
-                        <div class="animation-canvas" data-type="animation-canvas">
-                            <img data-type="animation-frame" data-length="60" data-folder="animation-assets" data-name="frame-" data-ext="png" src="animation-assets/frame-1.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="animation-content" data-type="animation-content">
-                    <div class="limit-content">
-                        <h1>And finally you've come to an end!</h1>
-                        <p>I hope you've liked the awesome experience of this crazy ride of my website. And if this didn't completely satisfied you for some weird reason and made you whole again, have some random pictures of helpless and retarded puppies for a cherry on top:</p>
-                        <div class="puppies">
-                            <img src="assets/B_imissyou_6uUQd3Da.jpg">
-                            <img src="assets/puppies-feat-05122013.jpg">
-                            <img src="assets/puppy-puppies-32057231-500-518.jpg">
-                            <img src="assets/Photo_1.jpg">
-                        </div>
-                        <span class="signature">Cheers, yours sincerely Denis D'penis</span>
-                    </div>
-                </div>
-            </div>
+        <a class="menu-secondary" href="https://www.behance.net/denisstritar" target="_blank">Behance</a>
+        <a class="menu-secondary" href="https://dribbble.com/StritarD" target="_blank">Dribbble</a>
 
-            <div class="animation-fallback">
-                <div class="whatever" style="background:url(animation-assets/frame-60.png) center center no-repeat; background-size:contain;">
-                    <div class="limit-content">
-                        <h1>And finally you've come to an end!</h1>
-                        <p>I hope you've liked the awesome experience of this crazy ride of my website. And if this didn't completely satisfied you for some weird reason and made you whole again, have some random pictures of helpless and retarded puppies for a cherry on top:</p>
-                        <div class="puppies">
-                            <img src="assets/B_imissyou_6uUQd3Da.jpg">
-                            <img src="assets/puppies-feat-05122013.jpg">
-                            <img src="assets/puppy-puppies-32057231-500-518.jpg">
-                            <img src="assets/Photo_1.jpg">
-                        </div>
-                        <span class="signature">Cheers, yours sincerely Denis D'penis</span>
-                    </div>
-                </div>
-            </div>
+        <a class="menu-secondary" href="https://twitter.com/WorkStritar" target="_blank">Twitter</a>
+        <!--
+        <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Medium</a>
+        <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">CodePen</a>
+        <a class="menu-secondary" href="http://society6.com/denisstritar" target="_blank">Xing</a>
+-->
+        </span>
+    </nav>
+    <div class="toggle-menu menu-right push-body">
 
-        </section>
+        <svg class="inline-svg" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 32 22.5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Group</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+
+            <g class="svg-menu-toggle" data-element="bun" sketch:type="MSLayerGroup">
+                <rect class="bar" fill="#3B3B41" sketch:type="MSShapeGroup" x="15" y="39" width="30" height="6" rx="3"></rect>
+                <rect class="bar" fill="#3B3B41" sketch:type="MSShapeGroup" x="15" y="27" width="30" height="6" rx="3"></rect>
+                <rect class="bar" fill="#3B3B41" sketch:type="MSShapeGroup" x="15" y="15" width="30" height="6" rx="3"></rect>
+                <circle id="Oval-32" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" cx="30" cy="30" r="30"></circle>
+
+            </g>
+
+        </svg>
     </div>
 
-    <!-- scripts -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <section class="intro" id="Start">
+        <div class="fade-out"></div>
+        <div id="intro_holder">
+            <div class="main_logo"></div>
+            <a class="trans" href="#LatestWork">Latest Work</a>
+            <a class="trans" href="#HireMe">Hire Me</a>
+        </div>
+
+        <a href="#LatestWork" class="arrow_down">
+            <span class="trans"></span>
+        </a>
+        <div id="movie" class="intro-back">
+            <video muted autoplay loop poster="img/back-temp.jpg" id="bgvid">
+                <source src="video/fuji.webm" type="video/webm">
+                <source src="video/fuji.mp4" / type="video/mp4">
+                <source src="video/fuji.ogv" / type="video/ogg">
+            </video>
+        </div>
+    </section>
+    <section id="LatestWork" class="section-back">
+        <div class="container-fluid">
+            <h2 class="title-middle">LATEST<br> WORK</h2>
+            <div class="col-md-12">
+                <a class="proj-link" target="_blank" href="https://www.behance.net/gallery/27515677/North-Nation">
+                    <div class="proj-info trans">
+                        <div class="info-details">
+                            <span class="proj-name">North Nation</span>
+                            <br>
+                            <span class="proj-type">Branding</span>
+                        </div>
+                    </div>
+                    <span class="img-dimmer"></span>
+                    <div class="proj-pic proj1 trans "></div>
+                </a>
+            </div>
+            <div class="container-fluid">
+                <div class="col-md-6">
+                    <a class="proj-link" target="_blank" href="https://www.behance.net/gallery/22646711/Cloud-Poetry">
+                        <div class="proj-info trans">
+                            <div class="info-details">
+                                <span class="proj-name">Cloud Poetry</span>
+                                <br>
+                                <span class="proj-type">Web Design</span>
+                            </div>
+                        </div>
+                        <span class="img-dimmer"></span>
+                        <div class="proj-pic proj2 trans"></div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="proj-link" target="_blank" href="https://www.behance.net/gallery/23689143/Toy-Rocket">
+                        <div class="proj-info trans">
+                            <div class="info-details">
+                                <span class="proj-name">Toy Rocket</span>
+                                <br>
+                                <span class="proj-type">Toy Design</span>
+                            </div>
+                        </div>
+                        <span class="img-dimmer"></span>
+                        <div class="proj-pic proj3 trans"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="AboutMe" class="section-back section-text">
+        <h2>About Me</h2>
+        <h3>I am a full-stack digital designer with a broad range of skills and experiences, focused on UI and product design.</h3>
+        <div class="article">
+            <p>I have been a digital designer for 12 years, during which time I learned how to write the code, 3D model, illustrate and develop products. My particular interest is in UI where I am able to practice the whole spectrum of skills. I am occasionally hired to assist in developing a business idea. I also consult start-ups and established firms. I work internationally and can adapt and relocate if necessary.
+            </p>
+            <p>I spend most of my free time developing my personal projects, reading, flying long-haul while listening to podcasts, and exploring world on long walks. Some of my heroes are Christopher Hitchens, Nick Cave & Warren Ellis, Elon Musk and Dwight D. Eisenhower. I have become obsessed with skydiving and am in a process of getting licensed.
+                <br>My motto is Nil Desperandum - Never despair.
+            </p>
+        </div>
+        <div class="stat">
+            <div class="chart-holder" data-action="animate-chart">
+                <h4>Software</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="99">
+                    <div></div>
+                </div>
+                <p>Sketch</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                    <div></div>
+                </div>
+                <p>Illustrator</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                    <div></div>
+                </div>
+                <p>Photoshop</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="77">
+                    <div></div>
+                </div>
+                <p>Modo</p>
+
+
+            </div>
+            <div class="chart-holder" data-action="animate-chart">
+
+                <h4>Fundamentals</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="99">
+                    <div></div>
+                </div>
+                <p>UI</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="85">
+                    <div></div>
+                </div>
+                <p>UX</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="80">
+                    <div></div>
+                </div>
+                <p>Branding</p>
+
+                <div class="chart-bar" data-element="chart-bar" data-fill="70">
+                    <div></div>
+                </div>
+                <p>HTML</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="76">
+                    <div></div>
+                </div>
+                <p>CSS</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                    <div></div>
+                </div>
+                <p>Illustration</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="70">
+                    <div></div>
+                </div>
+                <p>3D Modeling</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="66">
+                    <div></div>
+                </div>
+                <p>Typography</p>
+
+
+
+            </div>
+            <div class="chart-holder" data-action="animate-chart">
+
+                <h4>Other</h4>
+                <div class="chart-bar" data-element="chart-bar" data-fill="96">
+                    <div></div>
+                </div>
+                <p>Product Design</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="89">
+                    <div></div>
+                </div>
+
+                <p>Concept & Ideas</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                    <div></div>
+                </div>
+                <p> Working in Groups</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="95">
+                    <div></div>
+                </div>
+                <p>Teaching & Assisting</p>
+                <div class="chart-bar" data-element="chart-bar" data-fill="90">
+                    <div></div>
+                </div>
+                <p>Research</p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+<section id="Process" class="section-back section-text">
+ TEMP. PLACEHOLDER
+</section>
+-->
+    <section id="LatestWork" class="section-back section-text">
+        <div class="container-fluid">
+            <h2>Process</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</h3>
+            <div class="process-map">
+
+
+
+            </div>
+
+        </div>
+    </section>
+    <section id="HireMe" class="section-back section-text">
+        <h2>Hire Me</h2>
+        <h3>I'm open for work as a freelancer or as a team member dedicated to work on a long-term projects. </h3>
+        <div class="contactme">
+            <a class="mail" href="mailto:denis@denisstritar.com">denis@denisstritar.com</a>
+        </div>
+
+        <div class="social">
+            <div class="icons-links">
+                <a class="behance" target="_blank" href="https://www.behance.net/denisstritar"><span class="trans"></span></a>
+                <a class="dribbble" target="_blank" href="https://dribbble.com/StritarD"><span class="trans"></span></a>
+
+                <a class="twitter" target="_blank" href="http://twitter.com/WorkStritar"><span class="trans"></span></a>
+                <!--
+               
+<a class="medium" href=""><span class="trans"></span></a>
+<a class="codepen" href=""><span class="trans"></span></a>
+<a class="xing" href=""><span class="trans"></span></a>
+-->
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jPushMenu.js"></script>
+    <script type="text/javascript" src="js/smooth-scroll.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/nav-state.js"></script>
+    <script type="text/javascript" src="js/uilang.js"></script>
+
+    <script type="text/javascript" src="js/background-check.min.js"></script>
+
+
+    <script src="jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="js/jquery.colorscroll.js"></script>
+    <script src="js/affix.js"></script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.toggle-menu').jPushMenu();
+        });
+    </script>
+    <script type="text/javascript">
+        $('.toggle-menu').click(function () {
+            $('body').toggleClass('no-scroll');
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            var nav = 'close';
+            $('.svg-menu-toggle').click(function () {
+                if (nav == 'close') {
+                    $(this).attr("class", "svg-menu-toggle active");
+                    nav = 'open';
+                } else {
+                    $(this).attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('body').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+            $('a').bind('click', function (e) {
+                if (nav == 'open') {
+                    $('.svg-menu-toggle').attr("class", "svg-menu-toggle");
+                    nav = 'close';
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('.menu-primary').click(function () {
+            $(this).next('.dot-holder-1').toggle();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $("html,a").click(function () {
+            $("body").removeClass("no-scroll");
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-30794080-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
     <script>
         $(function () {
-            var page = $(window);
-            var animationContainer = $('[data-type=animation-container]');
-            var animationElement = $('[data-type=animation-element]');
-            var animationCanvas = $('[data-type=animation-canvas]');
-            var animationFrame = $('[data-type=animation-frame]');
-            var animationContent = $('[data-type=animation-content]');
-            var animationOffsetTop = Math.round(animationContainer.offset().top);
-            var numOfFrames = animationFrame.data('length');
+            var $w = $(window);
 
-            var frames = {
-                'name': animationFrame.data('name'),
-                'ext': animationFrame.data('ext'),
-                'path': animationFrame.data('folder')
-            };
-            animationFrame.attr('src', frames.path + '/' + frames.name + 1 + '.' + frames.ext);
+            animateCharts();
 
-            if (shouldAnimate()) {
-                calcRatio();
-                setScrollLength();
-            }
-
-            $(window).on('resize', function () {
-                if (shouldAnimate()) {
-                    calcRatio();
-                    setScrollLength();
-                } else {
-                    animationContainer.removeClass('animating').height('auto');
-                    animationContent.removeClass('show');
-                }
+            $w.scroll(function () {
+                animateCharts();
             });
 
-            page.scroll(function () {
-                if (shouldAnimate()) {
-                    var offsetTop = page.scrollTop();
-                    var windowHeight = $(window).height();
-                    var framesTimeline = animationContainer.height() - windowHeight;
-                    var frameStep = Math.ceil(framesTimeline / numOfFrames);
+            function animateCharts() {
+                var container = $('[data-action=animate-chart]');
+                var elementToAnimate = $('[data-element=chart-bar]');
+                var visualOffset = $w.outerHeight() / 1.4;
+                var delay = 300;
 
-                    if (offsetTop >= animationOffsetTop) {
-                        animationContainer.addClass('animating');
-
-                        if (offsetTop >= $('body').height() - windowHeight) {
-                            animationContent.addClass('show');
-                        } else {
-                            var currentFrame = Math.floor((offsetTop - animationOffsetTop) / frameStep);
-                            if (currentFrame > numOfFrames) {
-                                currentFrame = numOfFrames;
-                            } else if (currentFrame < 1) {
-                                currentFrame = 1;
-                            }
-                            animationContent.removeClass('show');
-                            animationFrame.attr('src', frames.path + '/' + frames.name + currentFrame + '.' + frames.ext);
-                        }
-                    } else {
-                        animationContainer.removeClass('animating');
-                        animationContent.removeClass('show');
+                container.each(function () {
+                    var targetOffset = $(this).offset().top;
+                    if ($w.scrollTop() > targetOffset - visualOffset && !$(this).hasClass('animated')) {
+                        var thisContainer = $(this);
+                        thisContainer.addClass('animated');
+                        thisContainer.find(elementToAnimate).each(function (idx) {
+                            var delayedElement = $(this);
+                            setTimeout(function () {
+                                delayedElement.find('div').width(delayedElement.data('fill') + '%');
+                            }, ((idx + 1) * delay));
+                        });
                     }
-                }
-            });
-
-            function setScrollLength() {
-                animationContainer.height(page.height() * 3);
+                });
             }
 
-            function shouldAnimate() {
-                if (animationElement.css('display') == 'block') {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-            function calcRatio() {
-                if (page.width() / page.height() > animationFrame.width() / animationFrame.height()) {
-                    animationFrame.css({
-                        maxWidth: 'none',
-                        maxHeight: page.height(),
-                    });
-                } else {
-                    animationFrame.css({
-                        maxWidth: '100%',
-                        maxHeight: 'none',
-                    });
-                }
-            }
-
-
-            // easter
-            var interval = 4017;
-            setTimeout(function () {
-                $('.cave-toasty').addClass('flash');
-                setTimeout(function () {
-                    $('.cave-toasty').removeClass('flash');
-                }, 100);
-            }, 3000);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
 
             setTimeout(function () {
-                setInterval(function () {
-                    $('.cave-toasty').addClass('flash');
-                    setTimeout(function () {
-                        $('.cave-toasty').removeClass('flash');
-                    }, 100);
-                }, 10000);
-            }, interval);
-            setTimeout(function () {
-                setInterval(function () {
-                    $('.cave-toasty').addClass('flash');
-                    setTimeout(function () {
-                        $('.cave-toasty').removeClass('flash');
-                    }, 100);
-                }, 7543);
-            }, interval);
+                $('body').addClass('loaded');
+                $('body').removeClass('noscroll');
+                $('.toggle-menu').css('opacity', 1);
+
+            }, 2100);
+
         });
     </script>
 </body>
-
-</html>
