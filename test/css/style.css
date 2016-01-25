@@ -1584,9 +1584,9 @@ h2.project-name:after {
 
 .process-map {
     display: block;
-    width: 1024px;
-    height: 700px;
+    width: 1180px;
+    height: 680px;
     background-image: url(../img/map-desktop.png);
-    background-size: 1024px 700px;
-    margin: 90px auto 0 auto;
+    background-size: 1180px 680px;
+    margin: 0 auto;
 }
