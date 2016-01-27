@@ -1582,11 +1582,35 @@ h2.project-name:after {
     display: none;
 }
 
-.process-map {
+.desktop-map {
     display: block;
     width: 1180px;
     height: 680px;
-    background-image: url(../img/map-desktop.png);
-    background-size: 1180px 680px;
     margin: 0 auto;
+}
+
+.mobile-map {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .desktop-map {
+        display: none;
+    }
+    .mobile-map {
+        display: block;
+        width: 320px;
+        height: 1015px;
+        margin: 0 auto;
+    }
+}
+
+tspan {
+    font-family: 'Campton Light';
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.map-terminus {
+    font-family: 'Campton ExtraBold';
 }
