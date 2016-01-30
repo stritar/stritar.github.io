@@ -2,74 +2,383 @@
 <html class="no-js" lang="">
 
 <head>
-    <title>Lime test</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <title>Line test</title>
+
+    <style>
+        .desktop-map {
+            display: block;
+            width: 1180px;
+            height: 680px;
+            margin: 0 auto;
+        }
+        
+        .mobile-map {
+            display: none;
+        }
+        
+        @media (max-width: 1180px) {
+            .desktop-map {
+                display: none;
+            }
+            .mobile-map {
+                display: block;
+                width: 320px;
+                height: 1015px;
+                margin: 0 auto;
+            }
+        }
+        
+        tspan {
+            font-family: 'Campton Light';
+            font-size: 14px;
+            line-height: 18px;
+        }
+        
+        .map-terminus {
+            font-family: 'Campton ExtraBold';
+        }
+        
+        section {
+            display: block;
+            height: 1200px;
+        }
+        
+        section p {
+            width: 100%;
+            margin-top: 20%;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 40px;
+        }
+        /* ANIM*/
+        
+        .lines {
+            opacity: 0;
+        }
+        
+        .lines.in-view {
+            opacity: 1;
+        }
+        
+        #BLUE,
+        #RED,
+        #YELLOW,
+        #GREY {
+            animation: dash 5s ease-in forwards;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="linija">
-        <svg width="766px" height="669px" viewBox="0 0 766 669" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-            <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                <g id="map-desktop-copy" sketch:type="MSArtboardGroup" transform="translate(-226.000000, -5.000000)">
-                    <g id="Group" sketch:type="MSLayerGroup" transform="translate(228.000000, 7.000000)">
-                        <rect id="Rectangle-109-Copy-23" fill="#F2F2F2" sketch:type="MSShapeGroup" x="80" y="579" width="6" height="6" rx="12"></rect>
-                        <path d="M518,607.738317 L518,162.991451 C518,157.467926 514.832428,149.822859 510.928848,145.919533 L368,3" id="linija2" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(443.000000, 305.369158) scale(-1, 1) translate(-443.000000, -305.369158) "></path>
-                        <path d="M468.784192,84 L538.181591,154.102571 C542.072924,158.012271 549.706852,161.173087 555.225122,161.155092 L592.792482,161.032583 C598.316167,161.01457 605.951144,164.16761 609.857777,168.075056 L749.698309,307.944659 C753.614751,311.84422 756.784192,319.478777 756.784192,325.003628 L756.784192,372.0061 C756.784192,377.525131 753.624078,385.159304 749.7096,389.073783 L625.04589,513.737493 C621.1387,517.644682 613.491201,520.812085 607.961555,520.812085 L526.009742,520.812085 C520.481514,520.812085 512.82961,523.982878 508.925305,527.887679 L376,660.829864" id="Line-Copy-11" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(566.392096, 372.414932) scale(-1, 1) translate(-566.392096, -372.414932) "></path>
-                        <path d="M360,40 L201.066462,198.933538 C197.167841,202.832159 189.52261,206 183.999469,206 L119.000531,206 C113.48008,206 105.725823,209.053799 101.686922,212.820852 L12.313078,296.179148 C8.26980646,299.950277 5,307.477658 5,313.001128 L5,422.00128 C5,427.519432 8.16829028,435.161069 12.0709399,439.063718 C12.0709399,439.063718 92.7460446,519.738823 133.084119,560.076897" id="linija1" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(182.500000, 300.038449) scale(-1, 1) translate(-182.500000, -300.038449) "></path>
-                        <rect id="Rectangle-213" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="355" y="338" width="26" height="8" rx="4"></rect>
-                        <rect id="Rectangle-109-Copy-14" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="513" y="0" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="364" y="603" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-16" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="660" y="80" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-26" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="754" y="657" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-15" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="364" y="200" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="364" y="492" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-15" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="433" y="80" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-17" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="493" y="190" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-18" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="401" y="282" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-21" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="401" y="407" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-22" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="481" y="487" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-24" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="613" y="518" width="8" height="8" rx="12"></rect>
-                        <path d="M160.075234,560.076897 L231.915881,631.917545" id="Line-Copy-10" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(195.995557, 595.997221) scale(-1, 1) translate(-195.995557, -595.997221) "></path>
-                        <rect id="Rectangle-109-Copy-25" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="683" y="587" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="0" y="35" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="78" y="112" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="148" y="182" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-27" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="307" y="253" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-28" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="297" y="486" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-30" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="157" y="627" width="8" height="8" rx="12"></rect>
-                        <rect id="Rectangle-109-Copy-29" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="228" y="556" width="8" height="8" rx="12"></rect>
+    <section>
+        <p>3</p>
+    </section>
+    <section>
+        <p>2</p>
+    </section>
+    <section>
+        <p>1</p>
+    </section>
+    <div>
+        <h2>Process</h2>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</h3>
+        <div class="article">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+        <div class="desktop-map">
+            <svg width="1180px" height="680px" viewBox="0 0 1180 680" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Desktop" sketch:type="MSArtboardGroup">
+                        <g id="Bg-Lines" sketch:type="MSLayerGroup" transform="translate(233.000000, 10.000000)">
+                            <rect id="Rectangle-109-Copy-23" sketch:type="MSShapeGroup" x="75" y="576" width="6" height="6" rx="12"></rect>
+                            <path d="M513,604.738317 L513,159.991451 C513,154.467926 509.832428,146.822859 505.928848,142.919533 L363,0" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(438.000000, 302.369158) scale(-1, 1) translate(-438.000000, -302.369158) "></path>
+                            <path d="M463.784192,81 L533.181591,151.102571 C537.072924,155.012271 544.706852,158.173087 550.225122,158.155092 L587.792482,158.032583 C593.316167,158.01457 600.951144,161.16761 604.857777,165.075056 L744.698309,304.944659 C748.614751,308.84422 751.784192,316.478777 751.784192,322.003628 L751.784192,369.0061 C751.784192,374.525131 748.624078,382.159304 744.7096,386.073783 L620.04589,510.737493 C616.1387,514.644682 608.491201,517.812085 602.961555,517.812085 L521.009742,517.812085 C515.481514,517.812085 507.82961,520.982878 503.925305,524.887679 L371,657.829864" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(561.392096, 369.414932) scale(-1, 1) translate(-561.392096, -369.414932) "></path>
+                            <path d="M355,37 L196.066462,195.933538 C192.167841,199.832159 184.52261,203 178.999469,203 L114.000531,203 C108.48008,203 100.725823,206.053799 96.686922,209.820852 L7.31307805,293.179148 C3.26980646,296.950277 0,304.477658 0,310.001128 L0,419.00128 C0,424.519432 3.16829028,432.161069 7.07093993,436.063718 C7.07093993,436.063718 87.7460446,516.738823 128.084119,557.076897" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(177.500000, 297.038449) scale(-1, 1) translate(-177.500000, -297.038449) "></path>
+                            <path d="M155.075234,557.076897 L226.915881,628.917545" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(190.995557, 592.997221) scale(-1, 1) translate(-190.995557, -592.997221) "></path>
+                        </g>
+                        <path d="M696.784192,91 L766.181591,161.102571 C770.072924,165.012271 777.706852,168.173087 783.225122,168.155092 L820.792482,168.032583 C826.316167,168.01457 833.951144,171.16761 837.857777,175.075056 L977.698309,314.944659 C981.614751,318.84422 984.784192,326.478777 984.784192,332.003628 L984.784192,379.0061 C984.784192,384.525131 981.624078,392.159304 977.7096,396.073783 L853.04589,520.737493 C849.1387,524.644682 841.491201,527.812085 835.961555,527.812085 L754.009742,527.812085 C748.481514,527.812085 740.82961,530.982878 736.925305,534.887679 L604,667.829864" id="YELLOW" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(794.392096, 379.414932) scale(-1, 1) translate(-794.392096, -379.414932) "></path>
+                        <path d="M596,10 L738.928848,152.919533 C742.832428,156.822859 746,164.467926 746,169.991451 L746,614.738317" id="RED" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(671.000000, 312.369158) scale(-1, 1) translate(-671.000000, -312.369158) "></path>
+                        <path d="M388.075234,567.076897 L459.915881,638.917545" id="GREY" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(423.995557, 602.997221) scale(-1, 1) translate(-423.995557, -602.997221) "></path>
+                        <path d="M588,47 L429.066462,205.933538 C425.167841,209.832159 417.52261,213 411.999469,213 L347.000531,213 C341.48008,213 333.725823,216.053799 329.686922,219.820852 L240.313078,303.179148 C236.269806,306.950277 233,314.477658 233,320.001128 L233,429.00128 C233,434.519432 236.16829,442.161069 240.07094,446.063718 L361.084119,567.076897" id="BLUE" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(410.500000, 307.038449) scale(-1, 1) translate(-410.500000, -307.038449) "></path>
+                        <rect id="Rectangle-213" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="583" y="345" width="26" height="8" rx="4"></rect>
+                        <rect id="Rectangle-109-Copy-14" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="741" y="7" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="592" y="610" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-16" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="888" y="87" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-26" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="982" y="664" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-15" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="592" y="207" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="592" y="499" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-15" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="661" y="87" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-17" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="721" y="197" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-18" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="629" y="289" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-21" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="629" y="414" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-22" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="709" y="494" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-24" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="841" y="525" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-25" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="911" y="594" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="228" y="42" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="306" y="119" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-19" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="376" y="189" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-27" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="535" y="260" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-28" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="525" y="493" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-30" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="385" y="634" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-29" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="456" y="563" width="8" height="8" rx="12"></rect>
+                        <text id="Inspiration" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" fill="#404040">
+                            <tspan x="764" y="15">Inspiration</tspan>
+                        </text>
+                        <text id="Experience" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" line-spacing="16" fill="#3B3B41">
+                            <tspan x="615" y="622">Experience</tspan>
+                            <tspan x="615" y="638">Acquisition</tspan>
+                        </text>
+                        <text id="Data-Collection" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" fill="#404040">
+                            <tspan x="911" y="95">Data Collection</tspan>
+                        </text>
+                        <text id="Launch" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" fill="#404040">
+                            <tspan x="1005" y="672">Launch</tspan>
+                        </text>
+                        <text id="Cognitive-Sandbox" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="685" y="95">Cognitive Sandbox</tspan>
+                        </text>
+                        <text id="Big-" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" line-spacing="16" fill="#404040">
+                            <tspan x="615" y="219">Big </tspan>
+                            <tspan x="615" y="235">Picture</tspan>
+                        </text>
+                        <text id="The-Zone" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" line-spacing="16" fill="#404040">
+                            <tspan x="615" y="511">The Zone</tspan>
+                        </text>
+                        <text id="Research" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="744" y="205">Research</tspan>
+                        </text>
+                        <text id="Preparation" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="653" y="297">Preparation</tspan>
+                        </text>
+                        <text id="UX" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="653" y="422">UX</tspan>
+                        </text>
+                        <text id="UI" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="733" y="502">UI</tspan>
+                        </text>
+                        <text id="Development" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="865" y="533">Development</tspan>
+                        </text>
+                        <text id="Trial-Run" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" fill="#404040">
+                            <tspan x="935" y="602">Trial Run</tspan>
+                        </text>
+                        <text id="Commitment" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" sketch:alignment="right" fill="#404040">
+                            <tspan x="481.342" y="353">Commitment</tspan>
+                        </text>
+                        <text id="Introduction" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" sketch:alignment="right" fill="#404040">
+                            <tspan x="125.668" y="50">Introduction</tspan>
+                        </text>
+                        <text id="Client-Meeting" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" sketch:alignment="right" fill="#404040">
+                            <tspan x="192.272" y="127">Client Meeting</tspan>
+                        </text>
+                        <text id="Budged-&amp;-Timeline" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" sketch:alignment="right" fill="#404040">
+                            <tspan x="236.022" y="197">Budged &amp; Timeline</tspan>
+                        </text>
+                        <text id="Project-Management" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" sketch:alignment="right" fill="#404040">
+                            <tspan x="379.706" y="268">Project Management</tspan>
+                        </text>
+                        <text id="Regular-Updates" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" sketch:alignment="right" fill="#404040">
+                            <tspan x="398.392" y="501">Regular Updates</tspan>
+                        </text>
+                        <text id="Improvements" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="260" sketch:alignment="right" fill="#404040">
+                            <tspan x="276.8" y="642">Improvements</tspan>
+                        </text>
+                        <text id="Handoff" sketch:type="MSTextLayer" font-family="Campton" font-size="14" font-weight="633" sketch:alignment="right" fill="#404040">
+                            <tspan x="383.488" y="571">Handoff</tspan>
+                        </text>
+                        <g id="Legend" sketch:type="MSLayerGroup" transform="translate(50.000000, 550.000000)">
+                            <text id="Organisation" sketch:type="MSTextLayer" font-family="Campton" font-size="16" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="55" y="17">Organisation</tspan>
+                            </text>
+                            <path d="M0,13 L40,13" id="Line" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Mind" sketch:type="MSTextLayer" font-family="Campton" font-size="16" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="55" y="42">Mind</tspan>
+                            </text>
+                            <path d="M0,38 L40,38" id="Line-Copy" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Workflow" sketch:type="MSTextLayer" font-family="Campton" font-size="16" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="55" y="67">Workflow</tspan>
+                            </text>
+                            <path d="M0,63 L40,63" id="Line-Copy-4" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Post-Project" sketch:type="MSTextLayer" font-family="Campton" font-size="16" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="55" y="92">Post-Project</tspan>
+                            </text>
+                            <path d="M0,88 L40,88" id="Line-Copy-5" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                        </g>
                     </g>
                 </g>
-            </g>
-        </svg>
+            </svg>
+        </div>
+        <div class="mobile-map">
+            <svg width="320px" height="1015px" viewBox="0 0 320 1015" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+                <g id="DS-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Mobile" sketch:type="MSArtboardGroup">
+                        <g id="Bg-Lines" sketch:type="MSLayerGroup" transform="translate(29.000000, 97.000000)" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round">
+                            <path d="M110.911764,832.735337 L110.911764,537.81634 C110.911764,532.295458 114.095233,524.67349 118.022242,520.788219 L197.889522,441.769793 C201.815603,437.88544 205,430.256985 205,424.733212 L205,409.001676 C205,403.471616 201.819516,395.851 197.89619,391.966511 L118.10381,312.964001 C114.181411,309.08043 111,301.453635 111,295.931128 L111,0.5" id="grey" sketch:type="MSShapeGroup" transform="translate(157.955882, 416.617669) scale(-1, 1) translate(-157.955882, -416.617669) "></path>
+                            <path d="M103,833.930512 L103,0.5" id="grey" sketch:type="MSShapeGroup"></path>
+                            <path d="M1,831.609608 L1,731.102573" id="grey" sketch:type="MSShapeGroup"></path>
+                            <path d="M1,730.735337 L1,537.816361 C1,532.297718 4.18048395,524.67349 8.10380973,520.788219 L87.8961903,441.769793 C91.8185891,437.88544 95,430.256985 95,424.733212 L95,409.001676 C95,403.471616 91.8195161,395.851 87.8961903,391.966511 L8.10380973,312.964001 C4.18141091,309.08043 1,301.453635 1,295.931128 L1,0.5" id="grey" sketch:type="MSShapeGroup"></path>
+                        </g>
+                        <path d="M140,97.5 L140,392.931128 C140,398.453635 143.181411,406.08043 147.10381,409.964001 L226.89619,488.966511 C230.819516,492.851 234,500.471616 234,506.001676 L234,521.733212 C234,527.256985 230.815603,534.88544 226.889522,538.769793 L147.022242,617.788219 C143.095233,621.67349 139.911764,629.295458 139.911764,634.81634 L139.911764,929.735337" id="YELLOW" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(186.955882, 513.617669) scale(-1, 1) translate(-186.955882, -513.617669) "></path>
+                        <path d="M132,97.5 L132,930.930512" id="RED" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                        <path d="M30,828.102573 L30,928.609608" id="GREY" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                        <path d="M30,97.5 L30,392.931128 C30,398.453635 33.1814109,406.08043 37.1038097,409.964001 L116.89619,488.966511 C120.819516,492.851 124,500.471616 124,506.001676 L124,521.733212 C124,527.256985 120.818589,534.88544 116.89619,538.769793 L37.1038097,617.788219 C33.1804839,621.67349 30,629.297718 30,634.816361 L30,827.735337" id="BLUE" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                        <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="93" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-21" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="168" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-22" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="243" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-23" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="318" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-24" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="724" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-26" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="925" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-25" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="26" y="824" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-31" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="93" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-30" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="193" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-29" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="293" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-32" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="925" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-35" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="128" y="93" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-34" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="128" y="193" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-33" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="128" y="293" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-36" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="128" y="775" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-38" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="685" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-39" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="745" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-40" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="805" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-41" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="230" y="865" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-109-Copy-37" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="128" y="925" width="8" height="8" rx="12"></rect>
+                        <rect id="Rectangle-213" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="116" y="509" width="32" height="8" rx="4"></rect>
+                        <text id="Introduction" sketch:type="MSTextLayer" transform="translate(77.647573, 141.747576) rotate(-315.000000) translate(-77.647573, -141.747576) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="37.1475735" y="147.747576">Introduction</tspan>
+                        </text>
+                        <text id="Client-Meeting" sketch:type="MSTextLayer" transform="translate(72.243768, 220.744426) rotate(-315.000000) translate(-72.243768, -220.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="32.2437676" y="219.744426">Client </tspan>
+                            <tspan x="32.2437676" y="233.744426">Meeting</tspan>
+                        </text>
+                        <text id="Budged-&amp;-Timeline" sketch:type="MSTextLayer" transform="translate(72.243768, 295.744426) rotate(-315.000000) translate(-72.243768, -295.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="32.2437676" y="294.744426">Budged &amp; </tspan>
+                            <tspan x="32.2437676" y="308.744426">Timeline</tspan>
+                        </text>
+                        <text id="Project--Copy-2" sketch:type="MSTextLayer" transform="translate(72.243768, 370.744426) rotate(-315.000000) translate(-72.243768, -370.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="32.2437676" y="369.744426">Project </tspan>
+                            <tspan x="32.2437676" y="383.744426">Management</tspan>
+                        </text>
+                        <text id="Regular-Updates" sketch:type="MSTextLayer" transform="translate(72.243768, 776.744426) rotate(-315.000000) translate(-72.243768, -776.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="32.2437676" y="775.744426">Regular </tspan>
+                            <tspan x="32.2437676" y="789.744426">Updates</tspan>
+                        </text>
+                        <text id="Improvements" sketch:type="MSTextLayer" transform="translate(78.794020, 972.744028) rotate(-315.000000) translate(-78.794020, -972.744028) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="37.2940201" y="978.744028">Improvements</tspan>
+                        </text>
+                        <text id="Handoff" sketch:type="MSTextLayer" transform="translate(77.294020, 871.744426) rotate(-315.000000) translate(-77.294020, -871.744426) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="37.2940201" y="877.744426">Handoff</tspan>
+                        </text>
+                        <text id="Research" sketch:type="MSTextLayer" transform="translate(281.244426, 241.744426) rotate(-315.000000) translate(-281.244426, -241.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244426" y="247.744426">Research</tspan>
+                        </text>
+                        <text id="Preparation" sketch:type="MSTextLayer" transform="translate(281.244013, 341.744426) rotate(-315.000000) translate(-281.244013, -341.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244013" y="347.744426">Preparation</tspan>
+                        </text>
+                        <text id="Launch" sketch:type="MSTextLayer" transform="translate(278.244426, 972.744028) rotate(-315.000000) translate(-278.244426, -972.744028) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="238.244426" y="978.744028">Launch</tspan>
+                        </text>
+                        <text id="Inspiration" sketch:type="MSTextLayer" transform="translate(179.747576, 141.747576) rotate(-315.000000) translate(-179.747576, -141.747576) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="139.247576" y="147.747576">Inspiration</tspan>
+                        </text>
+                        <text id="Data-Collection" sketch:type="MSTextLayer" transform="translate(277.744426, 145.747576) rotate(-315.000000) translate(-277.744426, -145.747576) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="237.244426" y="144.747576">Data </tspan>
+                            <tspan x="237.244426" y="158.747576">Collection</tspan>
+                        </text>
+                        <text id="Commitment" sketch:type="MSTextLayer" font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="156.244426" y="517.744426">Commitment</tspan>
+                        </text>
+                        <text id="Cognitive-Sandbox" sketch:type="MSTextLayer" transform="translate(174.243764, 245.744426) rotate(-315.000000) translate(-174.243764, -245.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="134.243764" y="244.744426">Cognitive </tspan>
+                            <tspan x="134.243764" y="258.744426">Sandbox</tspan>
+                        </text>
+                        <text id="Big-" sketch:type="MSTextLayer" transform="translate(174.244426, 346.744426) rotate(-315.000000) translate(-174.244426, -346.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="134.244426" y="345.744426">Big </tspan>
+                            <tspan x="134.244426" y="359.744426">Picture</tspan>
+                        </text>
+                        <text id="The-Zone" sketch:type="MSTextLayer" transform="translate(179.394022, 819.744426) rotate(-315.000000) translate(-179.394022, -819.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="139.394022" y="825.744426">The Zone</tspan>
+                        </text>
+                        <text id="UX" sketch:type="MSTextLayer" transform="translate(281.244013, 734.744426) rotate(-315.000000) translate(-281.244013, -734.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244013" y="740.744426">UX</tspan>
+                        </text>
+                        <text id="UI" sketch:type="MSTextLayer" transform="translate(281.244013, 793.744426) rotate(-315.000000) translate(-281.244013, -793.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244013" y="799.744426">UI</tspan>
+                        </text>
+                        <text id="Development" sketch:type="MSTextLayer" transform="translate(281.244013, 852.744426) rotate(-315.000000) translate(-281.244013, -852.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244013" y="858.744426">Development</tspan>
+                        </text>
+                        <text id="Trial-Run" sketch:type="MSTextLayer" transform="translate(281.244013, 913.744426) rotate(-315.000000) translate(-281.244013, -913.744426) " font-family="Campton" font-size="12" font-weight="260" line-spacing="14" fill="#404040">
+                            <tspan x="241.244013" y="919.744426">Trial Run</tspan>
+                        </text>
+                        <text id="Experience" sketch:type="MSTextLayer" transform="translate(174.243764, 978.744426) rotate(-315.000000) translate(-174.243764, -978.744426) " font-family="Campton" font-size="12" font-weight="633" line-spacing="14" fill="#404040">
+                            <tspan x="134.243764" y="977.744426">Experience</tspan>
+                            <tspan x="134.243764" y="991.744426">Acquisition</tspan>
+                        </text>
+                        <g id="Legend" sketch:type="MSLayerGroup" transform="translate(22.000000, 18.000000)">
+                            <text id="Organisation" sketch:type="MSTextLayer" font-family="Campton" font-size="12" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="35" y="14">Organisation</tspan>
+                            </text>
+                            <path d="M0,11 L20,11" id="Line" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Mind" sketch:type="MSTextLayer" font-family="Campton" font-size="12" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="35" y="44">Mind</tspan>
+                            </text>
+                            <path d="M0,42 L20,42" id="Line-Copy" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Workflow" sketch:type="MSTextLayer" font-family="Campton" font-size="12" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="182" y="13">Workflow</tspan>
+                            </text>
+                            <path d="M147,11 L167,11" id="Line-Copy-4" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <path d="M147,42 L167,42" id="Line-Copy-5" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                            <text id="Post-Project" sketch:type="MSTextLayer" font-family="Campton" font-size="12" font-weight="260" line-spacing="30" fill="#404040">
+                                <tspan x="182" y="44">Post-Project</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
     </div>
+    <section>
+        <p>1</p>
+    </section>
+    <section>
+        <p>2</p>
+    </section>
+    <section>
+        <p>3</p>
+    </section>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        function isScrolledIntoView(elem) {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
 
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
 
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
 
+        $(window).scroll(function () {
 
+            if (isScrolledIntoView('.lines') === true) {
+                $('.lines').addClass('in-view')
+            }
+
+        });
+    </script>
 </body>
-<script>
-    var path = document.querySelector('#linija1', '#linija2');
-    var length = path.getTotalLength();
-    var delay = 1000;
-    // Clear any previous transition
-    path.style.transition = path.style.WebkitTransition =
-        'none';
-    // Set up the starting positions
-    path.style.strokeDasharray = length + ' ' + length;
-    path.style.strokeDashoffset = length;
-    setTimeout(function () {
 
-        // Trigger a layout so styles are calculated & the browser
-        // picks up the starting position before animating
-        path.getBoundingClientRect();
-        // Define our transition
-        path.style.transition = path.style.WebkitTransition =
-            'stroke-dashoffset 2s ease-in-out';
-
-        // Go!
-        path.style.strokeDashoffset = '0';
-    }, delay);
-</script>
 
 </html>
