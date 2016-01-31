@@ -52,19 +52,21 @@
         }
         /* ANIM*/
         
-        #BLUE,
-        #RED,
-        #YELLOW,
-        #GREY {
+        .lines {
             animation: dash 5s ease-in forwards;
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
+            opacity: 0;
         }
         
         @keyframes dash {
             to {
                 stroke-dashoffset: 0;
             }
+        }
+        
+        .lines.in-view {
+            opacity: 1;
         }
     </style>
 </head>
@@ -100,10 +102,14 @@
                                 <path d="M355,37 L196.066462,195.933538 C192.167841,199.832159 184.52261,203 178.999469,203 L114.000531,203 C108.48008,203 100.725823,206.053799 96.686922,209.820852 L7.31307805,293.179148 C3.26980646,296.950277 0,304.477658 0,310.001128 L0,419.00128 C0,424.519432 3.16829028,432.161069 7.07093993,436.063718 C7.07093993,436.063718 87.7460446,516.738823 128.084119,557.076897" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(177.500000, 297.038449) scale(-1, 1) translate(-177.500000, -297.038449) "></path>
                                 <path d="M155.075234,557.076897 L226.915881,628.917545" id="grey" stroke="#EAEAEA" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(190.995557, 592.997221) scale(-1, 1) translate(-190.995557, -592.997221) "></path>
                             </g>
-                            <path d="M696.784192,91 L766.181591,161.102571 C770.072924,165.012271 777.706852,168.173087 783.225122,168.155092 L820.792482,168.032583 C826.316167,168.01457 833.951144,171.16761 837.857777,175.075056 L977.698309,314.944659 C981.614751,318.84422 984.784192,326.478777 984.784192,332.003628 L984.784192,379.0061 C984.784192,384.525131 981.624078,392.159304 977.7096,396.073783 L853.04589,520.737493 C849.1387,524.644682 841.491201,527.812085 835.961555,527.812085 L754.009742,527.812085 C748.481514,527.812085 740.82961,530.982878 736.925305,534.887679 L604,667.829864" id="YELLOW" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(794.392096, 379.414932) scale(-1, 1) translate(-794.392096, -379.414932) "></path>
-                            <path d="M596,10 L738.928848,152.919533 C742.832428,156.822859 746,164.467926 746,169.991451 L746,614.738317" id="RED" class="testline" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(671.000000, 312.369158) scale(-1, 1) translate(-671.000000, -312.369158) "></path>
-                            <path d="M388.075234,567.076897 L459.915881,638.917545" id="GREY" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(423.995557, 602.997221) scale(-1, 1) translate(-423.995557, -602.997221) "></path>
-                            <path d="M588,47 L429.066462,205.933538 C425.167841,209.832159 417.52261,213 411.999469,213 L347.000531,213 C341.48008,213 333.725823,216.053799 329.686922,219.820852 L240.313078,303.179148 C236.269806,306.950277 233,314.477658 233,320.001128 L233,429.00128 C233,434.519432 236.16829,442.161069 240.07094,446.063718 L361.084119,567.076897" id="BLUE" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(410.500000, 307.038449) scale(-1, 1) translate(-410.500000, -307.038449) "></path>
+                            <path d="M696.784192,91 L766.181591,161.102571 C770.072924,165.012271 777.706852,168.173087 783.225122,168.155092 L820.792482,168.032583 C826.316167,168.01457 833.951144,171.16761 837.857777,175.075056 L977.698309,314.944659 C981.614751,318.84422 984.784192,326.478777 984.784192,332.003628 L984.784192,379.0061 C984.784192,384.525131 981.624078,392.159304 977.7096,396.073783 L853.04589,520.737493 C849.1387,524.644682 841.491201,527.812085 835.961555,527.812085 L754.009742,527.812085 C748.481514,527.812085 740.82961,530.982878 736.925305,534.887679 L604,667.829864" id="YELLOW" class="lines" stroke="#F9A446" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(794.392096, 379.414932) scale(-1, 1) translate(-794.392096, -379.414932) "></path>
+
+                            <path d="M596,10 L738.928848,152.919533 C742.832428,156.822859 746,164.467926 746,169.991451 L746,614.738317" id="RED" class="lines" stroke="#E56E53" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(671.000000, 312.369158) scale(-1, 1) translate(-671.000000, -312.369158) "></path>
+
+                            <path d="M388.075234,567.076897 L459.915881,638.917545" id="GREY" class="lines" stroke="#CCCCD1" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(423.995557, 602.997221) scale(-1, 1) translate(-423.995557, -602.997221) "></path>
+
+                            <path d="M588,47 L429.066462,205.933538 C425.167841,209.832159 417.52261,213 411.999469,213 L347.000531,213 C341.48008,213 333.725823,216.053799 329.686922,219.820852 L240.313078,303.179148 C236.269806,306.950277 233,314.477658 233,320.001128 L233,429.00128 C233,434.519432 236.16829,442.161069 240.07094,446.063718 L361.084119,567.076897" id="BLUE" class="lines" stroke="#80BDDC" stroke-width="4" stroke-linecap="round" sketch:type="MSShapeGroup" transform="translate(410.500000, 307.038449) scale(-1, 1) translate(-410.500000, -307.038449) "></path>
+
                             <rect id="Rectangle-213" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="583" y="345" width="26" height="8" rx="4"></rect>
                             <rect id="Rectangle-109-Copy-14" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="741" y="7" width="8" height="8" rx="12"></rect>
                             <rect id="Rectangle-109-Copy-20" stroke="#F3F3F3" stroke-width="2" fill="#3B3B41" sketch:type="MSShapeGroup" x="592" y="610" width="8" height="8" rx="12"></rect>
@@ -354,6 +360,28 @@
     </section>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
+        $(function () {
+            var $w = $(window);
+
+            animateRails();
+
+            $w.scroll(function () {
+                animateRails();
+            });
+
+            function animateRails() {
+                var container = $('.desktop-map');
+                var targetOffset = container.offset().top;
+                var visualOffset = $w.outerHeight() / 1.4;
+
+                if ($w.scrollTop() > targetOffset - visualOffset && !$('.lines').hasClass('in-view')) {
+                    $('.lines').addClass('in-view');
+                }
+            }
+        });
+    </script>
+    <!--
+    <script>
         function isScrolledIntoView(elem) {
             var docViewTop = $(window).scrollTop();
             var docViewBottom = docViewTop + $(window).height();
@@ -366,12 +394,13 @@
 
         $(window).scroll(function () {
 
-            if (isScrolledIntoView('.testline') === true) {
-                $('.testline').addClass('run')
+            if (isScrolledIntoView('.blueline') === true) {
+                $('.blueline').addClass('anim')
             }
 
         });
     </script>
+-->
 </body>
 
 
