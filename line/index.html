@@ -51,7 +51,7 @@
             font-size: 40px;
         }
         /* ANIM*/
-        
+        /*
         .lines {
             animation: dash 5s ease-in forwards;
             stroke-dasharray: 1000;
@@ -66,6 +66,16 @@
         }
         
         .lines.in-view {
+            opacity: 1;
+        }
+*/
+        
+        #Desktop.lines {
+            opacity: 0;
+            transition: opacity 5s;
+        }
+        
+        #Desktop.lines.visible {
             opacity: 1;
         }
     </style>
@@ -374,8 +384,8 @@
                 var targetOffset = container.offset().top;
                 var visualOffset = $w.outerHeight() / 1.4;
 
-                if ($w.scrollTop() > targetOffset - visualOffset && !$('.lines').hasClass('in-view')) {
-                    $('.lines').addClass('in-view');
+                if ($w.scrollTop() > targetOffset - visualOffset && !$('.lines').hasClass('visible')) {
+                    $('.lines').addClass('visible');
                 }
             }
         });
