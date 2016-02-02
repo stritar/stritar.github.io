@@ -1581,3 +1581,110 @@ h2.project-name:after {
 #movie.affix {
     display: none;
 }
+
+
+/*PROCESS*/
+
+.line {
+    stroke-dasharray: 1080;
+    stroke-dashoffset: 1080;
+}
+
+.animated .line {
+    -webkit-animation: dash 1.5s ease-in forwards;
+    -moz-animation: dash 1.5s ease-in forwards;
+    animation: dash 1.5s ease-in forwards;
+}
+
+.animated #greyLine {
+    -webkit-animation-delay: 1.2s !important;
+    -moz-animation-delay: 1.2s !important;
+    animation-delay: 1.2s !important;
+}
+
+.animated #redLine {
+    -webkit-animation-delay: 1.8s;
+    -moz-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+
+.animated #yellowLine {
+    -webkit-animation-delay: 2.8s;
+    -moz-animation-delay: 2.8s;
+    animation-delay: 2.8s;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+tspan {
+    font-family: 'Campton Light';
+    font-size: 14px;
+    color: #3B3B41;
+    line-height: 20px;
+}
+
+.terminus {
+    font-family: 'Campton ExtraBold';
+    font-size: 14px;
+    color: #3B3B41;
+    line-height: 20px;
+}
+
+.desktopMap {
+    display: block;
+    width: 1170px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.tabletLand {
+    display: none;
+}
+
+.tableProf {
+    display: none;
+}
+
+.mobileMap {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .desktopMap {
+        display: none;
+    }
+    .tabletLand {
+        display: none;
+    }
+    .tableProf {
+        display: block;
+        width: 768px;
+        height: 600px;
+        margin: 0 auto;
+    }
+    .mobileMap {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktopMap {
+        display: none;
+    }
+    .tabletLand {
+        display: none;
+    }
+    .tableProf {
+        display: none;
+    }
+    .mobileMap {
+        display: block;
+        width: 320px;
+        height: 1015px;
+        margin: 0 auto;
+    }
+}
