@@ -1278,7 +1278,7 @@ a.download:before {
 .social {
     display: block;
     width: 180px;
-    margin: 80px auto;
+    margin: 60px auto 80px auto;
 }
 
 .social .icons-links {
@@ -1716,4 +1716,32 @@ tspan {
         height: 816px;
         margin: 0 auto;
     }
+}
+
+#resume a {
+    margin: 40px auto 0 auto;
+    display: block;
+    width: 180px;
+    height: 50px;
+    background: #3B3B41;
+    border-radius: 40px;
+    font-family: 'Campton ExtraBold';
+    color: #F2F2F2;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 17px;
+    text-decoration: none;
+}
+
+#resume a:hover {
+    background: #737380;
+}
+
+.dl_arrow_holder {
+    margin-left: 30px;
+    margin-top: -4px;
+    display: block;
+    position: absolute;
 }
