@@ -998,6 +998,14 @@ nav a:hover:before,
     background-size: cover;
 }
 
+.proj4 {
+    background: url(../img/proj/proj4.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .dl1 {
     background: url(../img/proj/dl1.jpg) no-repeat;
     -webkit-background-size: cover;
