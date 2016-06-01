@@ -1285,13 +1285,13 @@ a.download:before {
 
 .social {
     display: block;
-    width: 180px;
+    width: 240px;
     margin: 60px auto 80px auto;
 }
 
 .social .icons-links {
     display: block;
-    width: 180px;
+    width: 240px;
     margin: 0 auto;
 }
 
@@ -1317,12 +1317,12 @@ a.download:before {
 @media (max-width: 480px) {
     .social {
         display: block;
-        width: 180px !important;
+        width: 240px !important;
         margin: 40px auto;
     }
     .social .icons-links {
         display: block;
-        width: 180px;
+        width: 240px;
         margin: 0 auto 0 10px;
     }
     .social a {
@@ -1356,6 +1356,14 @@ a.download:before {
 
 .twitter span {
     background-image: url(../img/Twitter_hover.svg);
+}
+
+.angel {
+    background-image: url(../img/Angel_Normal.svg);
+}
+
+.angel span {
+    background-image: url(../img/Angel_Hover.svg);
 }
 
 .medium {
