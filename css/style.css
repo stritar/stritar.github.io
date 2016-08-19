@@ -1084,8 +1084,12 @@ nav a:hover:before,
 /*HIRE ME*/
 
 a.major_link {
-    font-family: 'Campton ExtraBold';
+    font-family: 'Campton Light';
     font-size: 36px;
+    color: #3B3B41;
+}
+
+a.major_link:hover {
     color: #FF5722;
 }
 
