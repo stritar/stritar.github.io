@@ -243,7 +243,7 @@ h4 {
 p {
     font-family: 'Campton Light';
     font-size: 18px;
-    color: #6B6B77;
+    color: #3B3B41;
     line-height: 28px;
 }
 
@@ -275,74 +275,80 @@ p {
     float: right;
 }
 
-@media (max-width: 1200px) {
+.article_title_holder {
+    display: block;
+    width: 1170px;
+    margin: 0 auto 108px auto;
+}
+
+.article_title_holder h3 {
+    width: 970px;
+}
+
+@media (max-width: 1440px) {
+    .article_title_holder {
+        display: block;
+        width: 780px;
+        margin: 0 auto 70px auto;
+    }
+    .article_title_holder h3 {
+        width: 622px;
+    }
     .article {
         display: block;
         overflow: hidden;
-        width: 820px;
+        width: 780px;
         margin: 60px auto;
     }
     .article p {
         display: block;
-        width: 400px;
+        width: 380px;
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+    .article_title_holder {
+        display: block;
+        width: 513px;
+        margin: 0 auto 30px auto;
+    }
+    .article_title_holder h3 {
+        width: auto;
+    }
     .article {
         display: block;
         overflow: hidden;
-        max-width: 600px;
-        min-width: 320px;
+        width: 513px;
         margin: 30px auto;
     }
     .article p {
         display: block;
-        width: 100%;
-        padding: 10px 20px;
-    }
-    p {
-        font-family: 'Campton Light';
-        font-size: 20px;
-        color: #6B6B77;
-        line-height: 34px;
+        width: auto;
+        margin-bottom: 44px;
     }
 }
 
 @media (max-width: 640px) {
+    .article_title_holder {
+        display: block;
+        max-width: 343px;
+        width: auto !important;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
     .article {
         display: block;
         overflow: hidden;
-        width: 100%;
-        margin: 20px auto;
+        width: auto !important;
+        max-width: 343px;
+        padding: 0 16px;
+        margin: 0 auto;
     }
     .article p {
         display: block;
-        width: 100%;
-        padding: 10px 20px;
+        width: auto;
+        margin: 20px 0;
     }
-    p {
-        font-family: 'Campton Light';
-        font-size: 20px;
-        color: #6B6B77;
-        line-height: 34px;
-    }
-}
-
-.title-middle {
-    display: block;
-    width: 600px;
-    z-index: 1000;
-    position: absolute;
-    margin-left: -300px;
-    top: 45%;
-    left: 50%;
-    color: #F2F2F2;
-    pointer-events: none;
-}
-
-.title-middle:after {
-    display: none;
 }
 
 .section-back {
@@ -419,6 +425,22 @@ video#bgvid {
     }
 }
 
+.Scroll_Down_Arrow {
+    display: none;
+}
+
+@media (max-width: 860px) {
+    .Scroll_Down_Arrow {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 13px;
+        bottom: 32px;
+        left: 50%;
+        margin-left: -10px;
+    }
+}
+
 circle {
     -webkit-animation-duration: 1.4s;
     animation-duration: 1.4s;
@@ -428,6 +450,7 @@ circle {
     animation-name: scroll;
     animation-timing-function: ease-in;
     -webkit-animation-timing-function: ease-in;
+    fill: #FF5722;
 }
 
 @-webkit-keyframes scroll {
@@ -487,26 +510,13 @@ circle {
 
 .main_logo {
     display: block;
-    position: fixed;
+    position: absolute;
     width: 64px;
     height: 64px;
     background-image: url(../img/Logo.svg);
     background-size: 64px 64px;
     margin: 32px 0 0 32px;
     z-index: 999999;
-}
-
-.main_logo a {
-    display: block;
-    width: 64px;
-    height: 64px;
-    background-image: url(../img/Logo_Hover.svg);
-    background-size: 64px 64px;
-    opacity: 0;
-}
-
-.main_logo a:hover {
-    opacity: 1;
 }
 
 @media (max-width: 375px) {
@@ -683,59 +693,6 @@ nav a:hover:before,
 
 
 /*PROJECT*/
-
-.title-middle {
-    display: block;
-    width: 600px;
-    z-index: 1000;
-    position: absolute;
-    margin-left: -300px;
-    top: 45.2%;
-    left: 50%;
-    color: #F2F2F2;
-    pointer-events: none;
-}
-
-.title-middle:after {
-    display: none;
-}
-
-@media (max-width: 1440px) {
-    .title-middle {
-        display: block;
-        width: 600px;
-        z-index: 1000;
-        position: absolute;
-        margin-left: -300px;
-        top: 45.5%;
-        left: 50%;
-        color: #F2F2F2;
-        font-size: 40px;
-        line-height: 40px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .title-middle {
-        position: relative;
-        display: block;
-        width: auto;
-        z-index: 1000;
-        margin: 0px auto 10px auto;
-        padding-top: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-        top: 0;
-        left: 0;
-        color: inherit;
-    }
-}
-
-@media (max-width: 1024px) {
-    .title-middle br {
-        display: none;
-    }
-}
 
 .proj-thumbs {
     margin-top: 40px;
@@ -927,10 +884,10 @@ nav a:hover:before,
     top: 50%;
     left: 50%;
     margin-top: -40px;
-    margin-left: -140px;
+    margin-left: -190px;
     position: absolute;
-    width: 280px;
-    height: 80px;
+    width: 380px;
+    height: 100px;
 }
 
 .proj-arrow {
@@ -956,25 +913,36 @@ nav a:hover:before,
 .proj-name,
 .proj-type {
     position: absolute;
-    margin: 0;
-    padding: 0;
     color: #F2F2F2;
     width: 100%;
 }
 
-.proj-name {
-    display: block;
-    font-size: 25px;
+.proj-type {
+    text-transform: uppercase;
     font-family: 'Campton ExtraBold';
-    text-align: center;
-    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
 }
 
-.proj-type {
-    font-family: 'Campton Light';
-    font-size: 16px;
-    text-align: center;
-    margin-top: 20px;
+.proj-name {
+    display: block;
+    font-size: 48px;
+    font-family: 'Copernicus Web';
+    text-align: left;
+    font-weight: normal;
+}
+
+@media (max-width: 1024px) {
+    .info-details {
+        width: 280px;
+        margin-left: -140px;
+    }
+    .proj-type {
+        font-size: 14px;
+    }
+    .proj-name {
+        font-size: 36px;
+    }
 }
 
 
@@ -982,58 +950,58 @@ nav a:hover:before,
 
 .stat {
     display: block;
-    width: 1200px;
+    width: 1170px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .chart-holder {
-    width: 400px;
+    width: 390px;
     float: left;
     display: block;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 40px 0 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
     .stat {
         display: block;
-        width: 900px;
+        width: 780px;
         margin: 0 auto;
         overflow: hidden;
     }
     .chart-holder {
-        width: 300px;
+        width: 260px;
         float: left;
         display: block;
         margin: 0;
-        padding: 0 20px;
+        padding: 0 40px 0 0;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .stat {
         display: block;
-        width: 900px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    .chart-holder {
-        width: 300px;
-        float: left;
-        display: block;
-        margin: 0;
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 900px) {
-    .stat {
-        display: block;
-        max-width: 600px;
+        max-width: 513px;
         width: 100%;
         margin: 0 auto;
         overflow: hidden;
+    }
+    .chart-holder {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .stat {
+        display: block;
+        max-width: 343px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0 16px;
     }
     .chart-holder {
         width: 100%;
@@ -1069,11 +1037,11 @@ nav a:hover:before,
     transition: .85s ease-out;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    background-image: linear-gradient(-90deg, #E56E53 5%, #E15535 100%);
+    background-image: linear-gradient(-90deg, #ff3d00 5%, #FF5722 100%);
 }
 
 .chart-bar>div.dark-bar {
-    background-image: linear-gradient(-90deg, #8D8D99 0%, #737380 100%);
+    background-image: linear-gradient(-90deg, #ff3d00 0%, #737380 100%);
 }
 
 
@@ -1280,236 +1248,6 @@ a.download:before {
 
 .xing span {
     background-image: url(../img/Xing_hover.svg);
-}
-
-
-/*PROJECT*/
-
-.back-home {
-    position: absolute;
-    display: block;
-    width: 21px;
-    height: 33px;
-    background-image: url(../img/BackHome.svg);
-    background-repeat: no-repeat;
-    z-index: 999;
-    margin: 35px 0 0 35px;
-    position: fixed;
-}
-
-@media (max-width: 375px) {
-    .back-home {
-        margin: 15px 0 0 15px;
-    }
-}
-
-.back-home span {
-    display: block;
-    width: 21px;
-    height: 33px;
-    background-image: url(../img/BackHome_hover.svg);
-    background-repeat: no-repeat;
-    opacity: 0;
-}
-
-.back-home span:hover {
-    opacity: 1;
-}
-
-.section-project {
-    padding: 80px 0 200px 0;
-}
-
-.logo-project {
-    margin: 20px auto 100px auto;
-    display: block;
-    width: 80px;
-    height: 80px;
-    background: url(../img/Logo.svg);
-    background-repeat: no-repeat;
-    background-size: 80px;
-}
-
-.logo-project span {
-    position: absolute;
-    display: block;
-    width: 80px;
-    height: 80px;
-    background: url(../img/Logo_Hover.svg);
-    opacity: 0;
-}
-
-.logo-project span:hover {
-    opacity: 1;
-}
-
-@media (max-width: 640px) {
-    .section-project {
-        padding: 40px 0 200px 0;
-    }
-    .logo-project {
-        margin: 0 auto 40px auto;
-        display: block;
-        width: 80px;
-        height: 80px;
-        background: url(../img/Logo.svg);
-        background-repeat: no-repeat;
-        background-size: 80px;
-    }
-}
-
-h1.project-name {
-    font-family: 'Campton ExtraBold';
-    font-size: 64px;
-    line-height: 34px;
-    color: #3B3B41;
-    text-align: center;
-    width: 760px;
-    display: block;
-    margin: 0 auto;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    h1.project-name {
-        font-size: 42px;
-        line-height: 42px;
-        width: 100% !important;
-    }
-}
-
-h2.project-name {
-    font-family: 'Campton Light';
-    font-size: 16px;
-    color: #E56E53;
-}
-
-@media (max-width: 768px) {
-    h2.project-name {
-        font-family: 'Campton Light';
-        font-size: 14px;
-        color: #E56E53;
-    }
-}
-
-h2.project-name:after {
-    display: none;
-}
-
-.project-keeper {
-    position: relative;
-    width: 100%;
-    padding: 0 20px;
-}
-
-.project-image {
-    position: relative;
-    display: block;
-    max-width: 2000px;
-    width: 100%;
-    height: auto;
-    margin: 20px auto;
-}
-
-@media (max-width: 768px) {
-    .project-image {
-        position: relative;
-        display: block;
-        max-width: 2000px;
-        width: 100%;
-        height: auto;
-        margin: 20px auto;
-    }
-}
-
-@media (max-width: 640px) {
-    .project-image {
-        position: relative;
-        display: block;
-        max-width: 2000px;
-        width: 100%;
-        height: auto;
-        margin: 10px auto;
-    }
-    .project-keeper {
-        position: relative;
-        width: 100%;
-        padding: 0;
-    }
-}
-
-.project-image p {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    margin: 0;
-    width: 100%;
-    font-size: 14px;
-    background: rgba(59, 59, 65, 0.70);
-    margin-right: 20px;
-    padding: 25px 10px 20px 25px;
-    line-height: 1;
-    color: #F2F2F2;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .project-image p {
-        position: absolute;
-        display: block;
-        bottom: 0;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        font-size: 12px;
-        background: rgba(59, 59, 65, 0.70);
-        margin-left: 0px;
-        padding: 8px 10px 6px 20px;
-        line-height: 1;
-        color: #F2F2F2;
-        text-align: center;
-    }
-}
-
-.project-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.appreciate {
-    padding-top: 100px;
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: 0px auto;
-}
-
-.appreciate a {
-    display: block;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-    background-image: url(../img/appreciate.svg);
-}
-
-.appreciate a span {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    background-image: url(../img/appreciate_hover.svg);
-    opacity: 0;
-}
-
-.appreciate a span:hover {
-    opacity: 1;
-}
-
-.appreciate p {
-    padding-top: 20px;
-    text-align: center;
 }
 
 
