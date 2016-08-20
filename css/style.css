@@ -1,33 +1,3 @@
-/*PRELOADER*/
-
-
-/* Rectangle 145: */
-
-#intro-load {
-    display: block;
-    top: 50%;
-    left: 50%;
-    margin-left: -160px;
-    margin-top: -12px;
-    width: 320px;
-    height: 24px;
-    position: absolute;
-}
-
-#loader-wrapper {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #F4F4F4;
-    z-index: 99900;
-}
-
-.noscroll {
-    overflow: hidden;
-}
-
-
 /* Loaded */
 
 .loaded #loader {
@@ -148,7 +118,7 @@ section {
     width: 970px;
     margin: 0 auto;
     position: absolute;
-    top: 32%;
+    top: 29%;
     margin-left: -485px;
     left: 50%;
 }
@@ -210,12 +180,11 @@ h3 {
 
 @media (max-width: 640px) {
     .intro-holder {
-        max-width: 343px;
-        width: auto !important;
+        width: 100%;
+        max-width: 300px;
         top: 38%;
-        margin-left: 0px;
-        left: 0;
-        margin: 0 16px;
+        left: 50%;
+        margin-left: -150px;
     }
     h2 {
         font-size: 14px;
