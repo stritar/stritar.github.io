@@ -419,7 +419,7 @@ circle {
     animation-name: scroll;
     animation-timing-function: ease-in;
     -webkit-animation-timing-function: ease-in;
-    fill: #FF5722;
+    fill: #404040;
 }
 
 @-webkit-keyframes scroll {
