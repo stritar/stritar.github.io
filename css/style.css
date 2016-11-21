@@ -673,6 +673,12 @@ nav a:hover:before,
     height: auto;
 }
 
+.drb-link {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .img-dimmer {
     z-index: 1;
     position: absolute;
@@ -824,6 +830,38 @@ nav a:hover:before,
     background-size: cover;
 }
 
+.drb1 {
+    background: url(../img/proj/drb1.gif) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.drb2 {
+    background: url(../img/proj/drb2.gif) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.drb3 {
+    background: url(../img/proj/drb3.gif) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.drb4 {
+    background: url(../img/proj/drb4.gif) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .dl1 {
     background: url(../img/proj/dl1.jpg) no-repeat;
     -webkit-background-size: cover;
@@ -860,7 +898,9 @@ nav a:hover:before,
 }
 
 .proj-name,
-.proj-type {
+.proj-type,
+.drb-type,
+.drb-name {
     position: absolute;
     color: #F2F2F2;
     width: 100%;
@@ -881,6 +921,21 @@ nav a:hover:before,
     font-weight: normal;
 }
 
+.drb-type {
+    text-transform: uppercase;
+    font-family: 'Campton ExtraBold';
+    font-size: 16px;
+    text-align: left;
+}
+
+.drb-name {
+    display: block;
+    font-size: 32px;
+    font-family: 'Copernicus Web';
+    text-align: left;
+    font-weight: normal;
+}
+
 @media (max-width: 1024px) {
     .info-details {
         width: 280px;
@@ -894,6 +949,22 @@ nav a:hover:before,
     }
     .info-details {
         top: 55%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .drb-type {
+        text-transform: uppercase;
+        font-family: 'Campton ExtraBold';
+        font-size: 14px;
+        text-align: left;
+    }
+    .drb-name {
+        display: block;
+        font-size: 36px;
+        font-family: 'Copernicus Web';
+        text-align: left;
+        font-weight: normal;
     }
 }
 
