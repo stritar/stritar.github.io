@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <a-scene>
         <a-assets>
             <img id="texture" src="/texture/texture.jpg">
         </a-assets>
-        <a-box position="0 0 -4" rotation="-20 -50 0" src="#texture"></a-box>
+        <a-box position="0 0 -4" rotation="-20 -50 0" material="src=#texture"></a-box>
     </a-scene>
 </body>
 
