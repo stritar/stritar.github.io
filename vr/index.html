@@ -7,6 +7,23 @@
 <body>
     <a-scene>
         <a-asset>
+            <a-asset-item id="model" src="models/test.obj"></a-asset-item>
+            <a-asset-item id="material" src="models/test.mtl"></a-asset-item>
+        </a-asset>
+
+        <a-obj-model id="heart-test" src="#model" mtl="#material" position="0 0.5 -3" rotation="10 28 0">
+            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 355 0">
+            </a-animation>
+        </a-obj-model>
+        <a-camera position="0 0 10">
+            <a-animation attribute="position" repeat="indefinite" dur="10000" to="0 0 0"></a-animation>
+        </a-camera>
+        <a-light type="ambient" color="#EAF2FF" position="0 0 0"></a-light>
+
+    </a-scene>
+
+    <!--    <a-scene>
+        <a-asset>
             <img id="texture" src="texture/test.jpg">
         </a-asset>
         <a-box src="#texture" width="1" height="1" depth="1" position="0 0.5 -3" rotation="10 28 0">
@@ -15,9 +32,10 @@
         </a-box>
         <a-camera position="0 0 10">
             <a-animation attribute="position" repeat="indefinite" dur="10000" to="0 0 0"></a-animation>
-
         </a-camera>
-    </a-scene>
+        <a-light type="spot" color="#FF9898" position="0 0 0" loot-at="a-box"></a-light>
+        <a-light type="point" color="#9BD5FF" position="0 20 30" loot-at="a-box"></a-light>
+    </a-scene>-->
 </body>
 
 </html>
