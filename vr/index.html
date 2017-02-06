@@ -6,7 +6,11 @@
 
 <body>
     <a-scene>
-        <a-box width="1" height="2" depth="1" position="0 2 -3" rotation="10 28 0" src="texture/test.jpg"></a-box>
+        <a-box width="1" height="1" depth="1" position="0 2 -3" rotation="10 28 0" src="texture/test.jpg">
+
+            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 360 0">
+            </a-animation>
+        </a-box>
     </a-scene>
 </body>
 
