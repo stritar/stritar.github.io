@@ -6,11 +6,17 @@
 
 <body>
     <a-scene>
-        <a-box width="1" height="1" depth="1" position="0 2 -3" rotation="10 28 0" src="texture/test.jpg">
-
-            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 360 0">
+        <a-asset>
+            <img id="texture" src="texture/test.jpg">
+        </a-asset>
+        <a-box src="#texture" width="1" height="1" depth="1" position="0 0.5 -3" rotation="10 28 0">
+            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 355 0">
             </a-animation>
         </a-box>
+        <a-camera position="0 0 10">
+            <a-animation attribute="position" repeat="indefinite" dur="10000" to="0 0 0"></a-animation>
+
+        </a-camera>
     </a-scene>
 </body>
 
