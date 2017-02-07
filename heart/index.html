@@ -20,23 +20,25 @@
         <!--OBJECTS-->
         <a-obj-model src="#top" mtl="#top-material" position="0 5 -20" rotation="0 0 0" scale="1 1 1">
             <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1.1 1.1 1.1" repeat="indefinite"></a-animation>
-            <a-animation attribute="rotation" dur="80000" easing="ease-out-elastic" to="0 40 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+            <a-animation attribute="rotation" fill="backwards" dur="280000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
             <a-animation attribute="position" dur="70" delay="500" to="0 5.05 -20" repeat="indefinite"></a-animation>
             <a-animation attribute="position" dur="30" delay="250" to="0 5.03 -20" repeat="indefinite"></a-animation>
 
         </a-obj-model>
-        <a-obj-model src="#middle" mtl="#middle-material" position="0 4.8 -20" rotation="0 0 0">
-            <a-animation attribute="rotation" dur="50000" easing="ease-out-elastic" to="0 160 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+        <a-obj-model src="#middle" mtl="#middle-material" position="0 4.8 -20" rotation="0 0 0" scale="1 1 1">
+
+            <a-animation attribute="rotation" dur="190000" to="0 360 0" easing="ease-out-elastic" fill="backwards" direction="alternateReverse" repeat="indefinite"></a-animation>
         </a-obj-model>
         <a-obj-model src="#bottom" mtl="#bottom-material" position="0 4.6 -20" rotation="0 360 0">
-            <a-animation attribute="rotation" dur="50000" easing="ease-out-elastic" to="0 160 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+
+            <a-animation attribute="rotation" dur="180000" to="0 0 0" easing="ease-out-elastic" fill="backwards" direction="alternateReverse" repeat="indefinite"></a-animation>
         </a-obj-model>
         <a-obj-model src="#floor" mtl="#floor-material" position="0 4.3 -20" rotation="0 0 0">
         </a-obj-model>
         <!--CAMERA-->
 
-        <a-camera position="0 0 30">
-            <a-animation attribute="position" dur="10000" to="0 0 -10"></a-animation>
+        <a-camera position="0 10 30">
+            <a-animation attribute="position" dur="10000" to="0 1 0"></a-animation>
         </a-camera>
 
     </a-scene>
