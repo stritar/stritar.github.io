@@ -6,37 +6,40 @@
 
 <body>
     <a-scene>
+        <!--ASSETS-->
         <a-asset>
-            <a-asset-item id="model" src="models/test.obj"></a-asset-item>
-            <a-asset-item id="material" src="models/test.mtl"></a-asset-item>
+            <a-asset-item id="top" src="models/top.obj"></a-asset-item>
+            <a-asset-item id="top-material" src="models/top.mtl"></a-asset-item>
+            <a-asset-item id="middle" src="models/middle.obj"></a-asset-item>
+            <a-asset-item id="middle-material" src="models/middle.mtl"></a-asset-item>
+            <a-asset-item id="bottom" src="models/bottom.obj"></a-asset-item>
+            <a-asset-item id="bottom-material" src="models/bottom.mtl"></a-asset-item>
+            <a-asset-item id="floor" src="models/floor.obj"></a-asset-item>
+            <a-asset-item id="floor-material" src="models/floor.mtl"></a-asset-item>
         </a-asset>
+        <!--OBJECTS-->
+        <a-obj-model src="#top" mtl="#top-material" position="0 5 -20" rotation="0 0 0" scale="1 1 1">
+            <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1.1 1.1 1.1" repeat="indefinite"></a-animation>
+            <a-animation attribute="rotation" dur="80000" easing="ease-out-elastic" to="0 40 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+            <a-animation attribute="position" dur="70" delay="500" to="0 5.05 -20" repeat="indefinite"></a-animation>
+            <a-animation attribute="position" dur="30" delay="250" to="0 5.03 -20" repeat="indefinite"></a-animation>
 
-        <a-obj-model id="heart-test" src="#model" mtl="#material" position="0 0.5 -3" rotation="10 28 0">
-            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 355 0">
-            </a-animation>
         </a-obj-model>
-        <a-camera position="0 0 10">
-            <a-animation attribute="position" repeat="indefinite" dur="10000" to="0 0 0"></a-animation>
+        <a-obj-model src="#middle" mtl="#middle-material" position="0 4.8 -20" rotation="0 0 0">
+            <a-animation attribute="rotation" dur="50000" easing="ease-out-elastic" to="0 160 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+        </a-obj-model>
+        <a-obj-model src="#bottom" mtl="#bottom-material" position="0 4.6 -20" rotation="0 360 0">
+            <a-animation attribute="rotation" dur="50000" easing="ease-out-elastic" to="0 160 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+        </a-obj-model>
+        <a-obj-model src="#floor" mtl="#floor-material" position="0 4.3 -20" rotation="0 0 0">
+        </a-obj-model>
+        <!--CAMERA-->
+
+        <a-camera position="0 0 30">
+            <a-animation attribute="position" dur="10000" to="0 0 -10"></a-animation>
         </a-camera>
-        <a-light type="ambient" color="#EAF2FF" position="0 0 0"></a-light>
-        <a-light type="spot" intensity="0.5" color="#F2F4FF" position="0 0 0" look-at="a-obj-model"></a-light>
 
     </a-scene>
-
-    <!--    <a-scene>
-        <a-asset>
-            <img id="texture" src="texture/test.jpg">
-        </a-asset>
-        <a-box src="#texture" width="1" height="1" depth="1" position="0 0.5 -3" rotation="10 28 0">
-            <a-animation attribute="rotation" repeat="indefinite" dur="10000" fill="forwards" to="0 355 0">
-            </a-animation>
-        </a-box>
-        <a-camera position="0 0 10">
-            <a-animation attribute="position" repeat="indefinite" dur="10000" to="0 0 0"></a-animation>
-        </a-camera>
-        <a-light type="spot" color="#FF9898" position="0 0 0" loot-at="a-box"></a-light>
-        <a-light type="point" color="#9BD5FF" position="0 20 30" loot-at="a-box"></a-light>
-    </a-scene>-->
 </body>
 
 </html>
