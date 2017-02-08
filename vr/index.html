@@ -18,11 +18,11 @@
             <a-asset-item id="floor-material" src="models/floor.mtl"></a-asset-item>
         </a-asset>
         <!--OBJECTS-->
-        <a-obj-model src="#top" mtl="#top-material" position="0 0 0" rotation="0 0 0" scale="1 1 1">
+        <a-obj-model src="#top" mtl="#top-material" position="0 5 0" rotation="0 0 0" scale="1 1 1">
             <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1.1 1.1 1.1" repeat="indefinite"></a-animation>
             <a-animation attribute="rotation" fill="backwards" dur="280000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
-            <a-animation attribute="position" dur="70" delay="500" to="0 0.05 0" repeat="indefinite"></a-animation>
-            <a-animation attribute="position" dur="30" delay="250" to="0 0.03 0" repeat="indefinite"></a-animation>
+            <a-animation attribute="position" dur="70" delay="500" to="0 5.05 0" repeat="indefinite"></a-animation>
+            <a-animation attribute="position" dur="30" delay="250" to="0 5.03 0" repeat="indefinite"></a-animation>
 
         </a-obj-model>
         <a-obj-model src="#middle" mtl="#middle-material" position="0 4.8 0" rotation="0 0 0" scale="1 1 1">
@@ -37,8 +37,8 @@
         </a-obj-model>
         <!--CAMERA-->
 
-        <a-camera position="0 10 280">
-            <a-animation attribute="position" dur="10000" to="0 0 100"></a-animation>
+        <a-camera position="0 10 320">
+            <a-animation attribute="position" dur="10000" to="0 0 160"></a-animation>
         </a-camera>
 
     </a-scene>
