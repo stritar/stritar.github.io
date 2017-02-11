@@ -2,45 +2,46 @@
 
 <head>
     <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <a-scene>
+    <a-scene fog="type: linear; near:1; far:20; density:1; color: #9AB7C7">
         <!--ASSETS-->
         <a-asset>
             <a-asset-item id="top" src="models/top.obj"></a-asset-item>
             <a-asset-item id="top-material" src="models/top.mtl"></a-asset-item>
-            <a-asset-item id="middle" src="models/middle.obj"></a-asset-item>
-            <a-asset-item id="middle-material" src="models/middle.mtl"></a-asset-item>
-            <a-asset-item id="bottom" src="models/bottom.obj"></a-asset-item>
-            <a-asset-item id="bottom-material" src="models/bottom.mtl"></a-asset-item>
+            <a-asset-item id="concrete" src="models/concrete.obj"></a-asset-item>
+            <a-asset-item id="concrete-material" src="models/concrete.mtl"></a-asset-item>
             <a-asset-item id="floor" src="models/floor.obj"></a-asset-item>
             <a-asset-item id="floor-material" src="models/floor.mtl"></a-asset-item>
+
+
         </a-asset>
         <!--OBJECTS-->
-        <a-obj-model src="#top" mtl="#top-material" position="0 5 0" rotation="0 0 0">
-            <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1.1 1.1 1.1" repeat="indefinite"></a-animation>
-            <a-animation attribute="rotation" fill="backwards" dur="280000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
-            <a-animation attribute="position" dur="70" delay="500" to="0 5.05 0" repeat="indefinite"></a-animation>
-            <a-animation attribute="position" dur="30" delay="250" to="0 5.03 0" repeat="indefinite"></a-animation>
-
-        </a-obj-model>
-        <a-obj-model src="#middle" mtl="#middle-material" position="0 4.8 0" rotation="0 0 0">
+        <a-obj-model src="#top" color="#E24C3F" mtl="#top-material" position="0 0 0" scale="1.1 1.1 1.1" rotation="0 0 0">
+            <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1 1 1" repeat="indefinite"></a-animation>
             <a-animation attribute="rotation" fill="backwards" dur="280000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
         </a-obj-model>
-        <a-obj-model src="#bottom" mtl="#bottom-material" position="0 4.6 0" rotation="0 0 0">
+        <a-obj-model src="#concrete" mtl="#concrete-material" position="0 0 0" scale="1 1 1" rotation="0 0 0">
             <a-animation attribute="rotation" fill="backwards" dur="280000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
-
         </a-obj-model>
-        <a-obj-model src="#floor" mtl="#floor-material" position="0 4.3 0" rotation="0 0 0">
+<a-plane roughness="10" color="#9AB7C7" height="90" width="90" position="0 -1.563 0" rotation="-90 0 0">
 
-        </a-obj-model>
+
+
+
+</a-plane>
+
         <!--CAMERA-->
 
-        <a-camera position="0 40 420">
-            <a-animation attribute="position" dur="10000" to="0 0 160"></a-animation>
+        <a-camera position="0 1 10">
+            <a-animation attribute="position" dur="8000" to="0 -1 4"></a-animation>
         </a-camera>
-
+        <!--LIGHTS-->
+        <a-light color="#DEEDF1" position="1 20 10"></a-light>
+        <<a-light type="ambient" color="#1A1A1A"></a-light>
+            <a-light type="point" color="#3B3B3B" intensity="0.5" position="0 2 0" look-at="#top"></a-light>
     </a-scene>
 </body>
 

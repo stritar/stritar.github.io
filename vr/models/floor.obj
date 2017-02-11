@@ -1,17 +1,30 @@
-# OBJ written from /Users/Stritar/Dropbox/DS/Projects/2016/VR/Heart/Exports/Lowfi/Floor.obj
+# OBJ written from /Users/Stritar/Dropbox/DS/Projects/2016/VR/Heart/Exports/floor.obj
 # Units	meters
 
-o Floor
-v -3.85 -8 -3.85
-v 3.85 -8 -3.85
-v 3.85 -8 3.85
-v -3.85 -8 3.85
+o floor
+v -7.32888 -1.55 -7.32888
+v 7.32888 -1.55 -7.32888
+v -7.32888 -1.55 7.32888
+v 7.32888 -1.55 7.32888
+v 0 -1.55 9.77184
+v 9.77184 -1.55 0
+v 0 -1.55 -9.77184
+v -9.77184 -1.55 0
+v 0 -1.55 0
 vn 0 1 0
-vt 0.25 1
-vt 0.25 0.666667
-vt 0.5 0.666667
-vt 0.5 1
-mtllib Floor.mtl
-usemtl Floor
+vt 0.865854 0.865854
+vt 0.5 0.987805
+vt 0.5 0.5
+vt 0.987805 0.5
+vt 0.134146 0.865854
+vt 0.0121951 0.5
+vt 0.134146 0.134146
+vt 0.5 0.0121951
+vt 0.865854 0.134146
+mtllib floor.mtl
+usemtl floor
 g Default
-f 1/1/1 4/2/1 3/3/1 2/4/1
+f 3/1/1 5/2/1 9/3/1 8/4/1
+f 5/2/1 4/5/1 6/6/1 9/3/1
+f 9/3/1 6/6/1 2/7/1 7/8/1
+f 8/4/1 9/3/1 7/8/1 1/9/1
