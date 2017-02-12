@@ -1,0 +1,18 @@
+# MTL written from /Users/Stritar/Dropbox/DS/Projects/2016/VR/Heart/Exports/cloth.obj
+newmtl cloth
+Kd 0.844016 0.843959 0.843991
+Ns 4
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd ../texture/cloth_color.png
+map_Bump ../texture/cloth_bump.png
+newmtl cloth_inside
+Kd 0.844016 0.843959 0.843991
+Ns 4
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd ../texture/cloth_inside_color.png

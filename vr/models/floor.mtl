@@ -1,9 +1,0 @@
-# MTL written from /Users/Stritar/Dropbox/DS/Projects/2016/VR/Heart/Exports/floor.obj
-newmtl floor
-Kd 0.6 0.6 0.6
-Ns 4
-d 1
-illum 2
-Ka 0 0 0
-Ks 0 0 0
-map_Kd ../texture/floor.png
