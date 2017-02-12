@@ -18,16 +18,18 @@
         <!--OBJECTS-->
         <a-obj-model src="#cloth" mtl="#cloth-material" position="0 0.05 0" scale="1.1 1.1 1.1" rotation="0 0 0">
             <a-animation attribute="scale" dur="500" delay="500" easing="ease-out-elastic" to="1 1 1" repeat="indefinite"></a-animation>
-            <a-animation attribute="rotation" fill="backwards" dur="180000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+            <a-animation attribute="rotation" delay="16000" fill="backwards" dur="28000" easing="ease-in-out" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
         </a-obj-model>
         <a-obj-model src="#heart" mtl="#heart-material" position="0 0 0" scale="1 1 1" rotation="0 0 0">
-            <a-animation attribute="rotation" fill="backwards" dur="180000" easing="ease-out-elastic" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
+            <a-animation attribute="rotation" delay="16000" fill="backwards" dur="28000" easing="ease-in-out" to="0 360 0" direction="alternateReverse" repeat="indefinite"></a-animation>
         </a-obj-model>
-
+        <a-plane src="texture/text.png" color="red" height="8" width="8" rotation="90 0 0" position="0 8 3.5">
+            <a-animation attribute="position" dur="9000" easing="ease-out" to="0 5 3.5"></a-animation>
+        </a-plane>
         <!--CAMERA-->
 
-        <a-camera position="0 -1.5 50">
-            <a-animation attribute="position" dur="8000" easing="ease-out" to="0 0 3.5"></a-animation>
+        <a-camera position="0 -1.7 3.5" rotation="90 0 0">
+            <a-animation attribute="rotation" delay="8000" dur="8000" easing="ease-in-out" to="0 0 0"></a-animation>
         </a-camera>
         <!--LIGHTS-->
 

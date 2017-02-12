@@ -3,7 +3,7 @@ newmtl cloth
 Kd 0.844016 0.843959 0.843991
 Ns 4
 d 1
-illum 2
+illum 1
 Ka 0 0 0
 Ks 0 0 0
 map_Kd ../texture/cloth_color.png
