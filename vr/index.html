@@ -6,11 +6,10 @@
 
 <body>
     <a-scene>
-        <a-box color="#CDCDCD " opacity="1 " depth="1 " position="0 1 -5 " rotation="0 40 30" cursor-listener></a-box>
-        <a-box color="#CDCDCD " opacity="1 " depth="1 " position="1 3 -1 " rotation="0 10 20" cursor-listener></a-box>
-        <a-box color="#CDCDCD " opacity="1 " depth="1 " position="4 -2 -3 " rotation="8 2 6" cursor-listener></a-box>
-        <a-box color="#CDCDCD " opacity="1 " depth="1 " position="-5 3 2 " rotation="0 10 8" cursor-listener></a-box>
-        <a-box color="#CDCDCD " opacity="1 " depth="1 " position="-9 -8 7 " rotation="10 2 6" cursor-listener></a-box>
+        <a-box color="#FFC500 " opacity="1" depth="1 " position="0 1 -5 " rotation="0 40 30" click-1></a-box>
+        <a-box color="#00C269 " opacity="1" width="1" depth="1 " position="0 6 -5 " rotation="0 30 10" click-2></a-box>
+        <a-box color="#4684F5 " depth="1 " position="3 4 -5 " rotation="0 30 10" click-3></a-box>
+
         <a-sky color="#343B46"></a-sky>
         <a-camera position="0 2 4 ">
             <a-cursor cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring" material="color: white; shader: flat">
@@ -21,13 +20,33 @@
     </a-scene>
 </body>
 <script>
-    AFRAME.registerComponent('cursor-listener', {
+    AFRAME.registerComponent('click-1', {
         init: function () {
-            var COLORS = ['red', 'green', 'blue'];
+            var COLORS = ['#FFC500', '#00C269', '#4684F5'];
             this.el.addEventListener('click', function (evt) {
                 var randomIndex = Math.floor(Math.random() * COLORS.length);
                 this.setAttribute('material', 'color', COLORS[randomIndex]);
-                console.log('I was clicked at: ', evt.detail.intersection.point);
+
+            });
+        }
+    });
+    AFRAME.registerComponent('click-2', {
+        init: function () {
+            var ROTATE = ['45 20 11', '15 5 10', '22 10 18'];
+            this.el.addEventListener('click', function (evt) {
+                var randomIndex = Math.floor(Math.random() * ROTATE.length);
+                this.setAttribute('rotation', ROTATE[randomIndex]);
+
+            });
+        }
+    });
+    AFRAME.registerComponent('click-3', {
+        init: function () {
+            var RESIZE = ['2', '0.5', '3', '5'];
+            this.el.addEventListener('click', function (evt) {
+                var randomIndex = Math.floor(Math.random() * RESIZE.length);
+                this.setAttribute('depth', RESIZE[randomIndex]);
+
             });
         }
     });
