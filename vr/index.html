@@ -6,52 +6,50 @@
 
 <body>
     <a-scene>
-        <a-box color="#FFC500" opacity="1" depth="1 " position="0 1 -5 " rotation="0 40 30" click-1></a-box>
-        <a-box color="#00C269" opacity="1" width="1" depth="1 " position="0 6 -5" rotation="0 30 10" click-2></a-box>
-        <a-box color="#4684F5" depth="1 " position="3 4 -5 " rotation="0 30 10" click-3></a-box>
+        <a-assets>
+            <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+            <a-mixin id="cube-hovered" material="color: magenta"></a-mixin>
+            <a-mixin id="cube-selected" material="color: cyan"></a-mixin>
+            <a-mixin id="red" material="color: red"></a-mixin>
+            <a-mixin id="green" material="color: green"></a-mixin>
+            <a-mixin id="blue" material="color: blue"></a-mixin>
+            <a-mixin id="yellow" material="color: yellow"></a-mixin>
+            <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
+        </a-assets>
 
-        <a-sky color="#343B46"></a-sky>
-        <a-camera position="0 2 4 ">
-            <a-cursor cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring" material="color: white; shader: flat">
-                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
-            </a-cursor>
-        </a-camera>
-        <a-light light="type: point; intensity: 2.75; distance: 50; decay: 2" position="0 4 10">
-        </a-light>
+        <a-entity position="0 2.2 4">
+            <a-entity camera look-controls>
+                <a-entity position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.30;
+                          radiusInner: 0.20;" material="color: cyan; shader: flat" cursor="maxDistance: 30; fuse: true">
+                    <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                    <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+
+        <a-entity position="3.5 1 0" rotation="0 45 0">
+            <a-entity mixin="cube blue" cursor-listener>
+                <a-animation begin="click" fill="forwards" repeat="1" direction="alternate" attribute="position" from="0 0 0" to="15 0 0" dur="2000"></a-animation>
+            </a-entity>
+        </a-entity>
+
     </a-scene>
+    <script>
+        // Component to change to random color on click.
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                var COLORS = ['black', 'green'];
+                this.el.addEventListener('click', function (evt) {
+                    var randomIndex = Math.floor(Math.random() * COLORS.length);
+                    this.setAttribute('material', 'color', COLORS[randomIndex]);
+                    console.log('I was clicked at: ', evt.detail.intersection.point);
+                });
+            }
+        });
+    </script>
+
 </body>
-<script>
-    AFRAME.registerComponent('click-1', {
-        init: function () {
-            var COLORS = ['#FFC500', '#00C269', '#4684F5'];
-            this.el.addEventListener('click', function (evt) {
-                var randomIndex = Math.floor(Math.random() * COLORS.length);
-                this.setAttribute('material', 'color', COLORS[randomIndex]);
 
-            });
-        }
-    });
-    AFRAME.registerComponent('click-2', {
-        init: function () {
-            var ROTATE = ['45 20 11', '35 -5 10', '2 10 18'];
-            this.el.addEventListener('click', function (evt) {
-                var randomIndex = Math.floor(Math.random() * ROTATE.length);
-                this.setAttribute('rotation', ROTATE[randomIndex]);
-
-            });
-        }
-    });
-    AFRAME.registerComponent('click-3', {
-        init: function () {
-            var RESIZE = ['2', '0.5', '3', '5'];
-            this.el.addEventListener('click', function (evt) {
-                var randomIndex = Math.floor(Math.random() * RESIZE.length);
-                this.setAttribute('depth', RESIZE[randomIndex]);
-
-            });
-        }
-    });
-</script>
 
 </html>
