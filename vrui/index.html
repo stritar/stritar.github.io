@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <a-scene>
         <a-assets>
             <img id="space" src="img/space.jpg">
@@ -19,12 +20,17 @@
 
 
 
-        <a-entity camera look-controls position="0 0 0">
-            <a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: circle; radius: 0.015" material="color: white; shader: flat">
+        <a-entity camera look-controls>
+            <a-entity position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.05;
+                          radiusInner: 0.03;" material="color: white; shader: flat" cursor="maxDistance: 30; fuse: true">
+                <a-animation begin="click" attribute="scale" to="1 1 1"></a-animation>
+                <a-animation begin="fusing" attribute="scale" to="0.5 0.5 0.5"></a-animation>
             </a-entity>
         </a-entity>
-        <a-entity ui position="1.7 0 -2" rotation="0 -40 0">
-            <a-entity button position="0 0 -3">
+
+
+        <a-entity ui position="1.7 0 -2" rotation="0 -40 0" cursor-listener>
+            <a-entity button position="0 0 -3.2">
                 <a-animation attribute="position" from="0 0 -3" to="0 0 0" delay="1900" dur="1100" fill="forwards"> </a-animation>
                 <a-image src="#btn_frame" position="0 0 -3" scale="1 1 1">
                     <a-animation attribute="scale" from="1 1 1" to="2 2 2" delay="1900" dur="1100"></a-animation>
@@ -36,10 +42,6 @@
                 <a-image src="#start" position="0 0 -3" scale="1 1 1">
                 </a-image>
             </a-entity>
-
-
-
-
         </a-entity>
 
 
@@ -48,9 +50,12 @@
 
 
 
-        <a-sky src="#space" rotation="0 -130 0"></a-sky>
-    </a-scene>
+        <a-sky src="#space" rotation="0 0 0"></a-sky>
 
+
+
+
+    </a-scene>
 </body>
 
 
