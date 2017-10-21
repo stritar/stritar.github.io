@@ -11,7 +11,12 @@
         <a-box color="tomato" depth="2" height="4" width="0.5" position="0 0 -12"></a-box>
         <a-box color="tomato" depth="2" height="4" width="0.5" position="1 0 -12"></a-box>
         <a-box color="tomato" depth="2" height="4" width="0.5" position="-1 0 -12"></a-box>
-        <a-entity position="0 -1 2">
+        <a-entity position="0 -1 20" rotation="0 0 0">
+            <a-animation attribute="position"
+                         dur="10000"
+                         fill="forwards"
+                         to="0 -1 -1"
+                         repeat="0"></a-animation>
             <a-camera wasd-controls-enabled="false" look-controls="enabled: false"></a-camera>
         </a-entity>
     </a-scene>
