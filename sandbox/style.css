@@ -1,5 +1,11 @@
-#container {
+#container-1 {
+    display: block;
+    height: 100%;
+background: red;
+}
+
+#container-2 {
     display: block;
     height: 1000px;
-
+    background: black;
 }
