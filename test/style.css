@@ -10,17 +10,17 @@ body {
 }
 
 .floater {
-    left: 100px;
-    top: 300px;
-    display: block;
-    width: 200px;
-    height: 200px;
+    left: 50%;
+    margin-left: -152px;
+    bottom: 32px;
+    width: 304px;
+    height: 56px;
     display: block;
     position: fixed;
     background: rgba(255, 255, 255, 0.70);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-radius: 16px;
+    border-radius: 28px;
     z-index: 1;
 }
 
@@ -40,7 +40,6 @@ p {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background: grey;
 }
 
 #bottom-frame {
@@ -57,5 +56,8 @@ p {
         width: 100%;
         height: 100%;
         z-index: 2;
+    }
+    .floater {
+        bottom: 8px;
     }
 }
