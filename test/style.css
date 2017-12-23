@@ -39,10 +39,9 @@ p {
 }
 
 #scene {
-    top: 25%;
     display: block;
-    width: 800px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
     background: grey;
 }
@@ -54,13 +53,4 @@ p {
     background: red;
 }
 
-@media (max-width: 840px) {
-    #scene {
-        top: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        background: grey;
-    }
-}
+@media (max-width: 840px) {}
