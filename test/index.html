@@ -6,11 +6,7 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-click-drag-component"></script>
-
-    <script>
-        registerAframeClickDragComponent(window.AFRAME);
-    </script>
+    <script src="https://morandd.github.io/aframe-multitouch-look-controls/multitouch-look-controls.js"></script>
 </head>
 
 <body>
@@ -20,11 +16,13 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-           <a-sphere click-drag position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-            <a-entity camera="userHeight:1.6; fov: 99;" look-controls-enabled="false"></a-entity>
+            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+            <a-entity camera="userHeight:1.6; fov: 99;" multitouch-look-controls>
+
+            </a-entity>
         </a-scene>
     </div>
-    <div id="bottom-frame">
+    <div id=" bottom-frame ">
     </div>
 
 
