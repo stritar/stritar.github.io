@@ -6,6 +6,7 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/allanweir/aframe-touch-rotation-controls/master/dist/aframe-touch-rotation-controls.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     <div class="bg">
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
             <a-box position="-1 2 -3" rotation="0 45 0" color="#4CC3D9" dynamic-body></a-box>
-            <a-entity camera="userHeight: 1.6" look-controls="enabled: false"></a-entity>
+            <a-entity camera="userHeight: 1.6" look-controls="enabled: false" universal-controls="movementControls: hmd; rotationControls: touch-rotation"></a-entity>
         </a-scene>
     </div>
 
