@@ -6,7 +6,10 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="look.js"></script>
+    <script src="https://unpkg.com/aframe-click-drag-component"></script>
+    <script>
+        registerAframeClickDragComponent(window.AFRAME);
+    </script>
 </head>
 
 <body>
@@ -16,12 +19,13 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-box position="0 1.5 -3" rotation="0 45 0" color="#4CC3D9" dynamic-body></a-box>
-            <a-entity camera="userHeight: 1.6; fov: 99;" look-controls></a-entity>
+            <a-sphere click-drag position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+            <a-entity camera="userHeight: 1.6; fov: 99; " look-controls-enabled="false"></a-entity>
         </a-scene>
     </div>
     <div id="bottom-frame">
     </div>
+
 
 </body>
 
