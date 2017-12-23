@@ -6,7 +6,7 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="aframe-no-click-look-controls.min.js"></script>
+    <script src="look.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
             <a-box position="-1 2 -3" rotation="0 45 0" color="#4CC3D9" dynamic-body></a-box>
-            <a-entity camera="userHeight: 1.6" no-click-look-controls="maxyaw:0.8;maxpitch:1"></a-entity>
+            <a-entity camera="userHeight: 1.6" look-controls></a-entity>
         </a-scene>
     </div>
     <div id="bottom-frame">
