@@ -1,6 +1,12 @@
-.bg {
+body {
+    margin: 0;
+}
+
+#top-frame {
     display: block;
-    height: 1000px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
 .floater {
@@ -25,7 +31,28 @@ p {
 }
 
 #scene {
+    top: 25%;
     display: block;
-    width: 600px;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background: grey;
+}
+
+#bottom-frame {
+    display: block;
+    width: 100%;
     height: 800px;
+    background: red;
+}
+
+@media (max-width: 840px) {
+    #scene {
+        top: 25%;
+        display: block;
+        width: 288px;
+        height: 500px;
+        margin: 0 auto;
+        background: grey;
+    }
 }
