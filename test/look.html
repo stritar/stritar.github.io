@@ -1,25 +1,29 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Curved Images</title>
-    <meta name="description" content="Curved Images - A-Frame">
-    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 </head>
 
 <body>
-
-    <a-scene>
-
-        <a-entity camera no-click-look-controls="maxyaw:0.4;maxpitch:0.4" fov="80" position="0 1.8 0" near="0.2"></a-entity>
-        <a-curvedimage src="imgs/3.png" radius="5.7" theta-length="300" height="13" rotation="0 150 10" scale="1.2 1.2 1.2" position="0 1 0"></a-curvedimage>
-        <a-curvedimage src="imgs/1.png" radius="5.7" theta-length="72" height="2.6" rotation="-30 45 -20" position="0 -0.7 0" scale="0.6 0.6 0.6"></a-curvedimage>
+    <a-scene embedded="true">
+        <a-box position="0 3.5 -2" rotation="30 30 0" color="skyblue" event-set__enter="_event: mouseenter; material.color: yellowgreen; scale: 3 1 1" event-set__leave="_event: mouseleave; material.color: skyblue; scale: 1 1 1">
+            <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+        </a-box>
 
 
-        <a-sky color="#FFF"></a-sky>
+
+        <a-entity position="0 1.8 4">
+            <a-entity camera mouse-cursor>
+                <a-cursor fuse="true" color="yellow"></a-cursor>
+            </a-entity>
+        </a-entity>
 
     </a-scene>
+
 </body>
 
 </html>

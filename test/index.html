@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
-
-    <script src="look.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 </head>
 
 <body>
@@ -16,8 +16,10 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-entity camera no-click-look-controls="maxyaw:0.4;maxpitch:0.4" fov="80" position="0 1.8 0" near="0.2"></a-entity>
-            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+            <a-entity camera fov="80" position="0 1.8 0" near="0.2" mouse-cursor position rotation scale visible></a-entity>
+            <a-box position="0 1.25 -5" radius="1.25" color="#EF2D5E">
+                <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+            </a-box>
         </a-scene>
     </div>
     <div id="bottom-frame">
