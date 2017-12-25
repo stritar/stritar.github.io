@@ -17,8 +17,8 @@
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
             <a-entity camera fov="80" position="0 1.8 0" near="0.2" mouse-cursor position rotation scale visible></a-entity>
-            <a-box position="0 1.25 -5" radius="1.25" color="#EF2D5E">
-                <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+            <a-box position="0 1 -5" color="#EF2D5E">
+                <a-animation attribute="rotation" begin="click" fill="both" easing="ease-out" to="0 1 -6 "></a-animation>
             </a-box>
         </a-scene>
     </div>
