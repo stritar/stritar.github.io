@@ -15,11 +15,14 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-assets>
-                <a-asset-item id="export-obj" src="../obj/export-obj.obj"></a-asset-item>
-            </a-assets>
+
             <a-entity camera fov="80" position="0 1.6 0" near="0.2" mouse-cursor></a-entity>
-            <a-entity obj-model="obj:#export-obj" position="0 1 -5" color="#EF2D5E" rotation="0 0 0" material="color: red">
+            <!--
+     <a-box position="0 1 -5" color="#EF2D5E" rotation="0 0 0" material="color: red">
+    <a-animation dur="3800" easing="ease-in-out" attribute="rotation" repeat="indefinite" direction="alternate" to="0 90 0 "></a-animation>
+</a-box>
+-->
+            <a-entity position="0 1 -5" obj-model="obj: url(obj/export-obj.obj); mtl: url(obj/export-obj.mtl)">
                 <a-animation dur="3800" easing="ease-in-out" attribute="rotation" repeat="indefinite" direction="alternate" to="0 90 0 "></a-animation>
             </a-entity>
         </a-scene>

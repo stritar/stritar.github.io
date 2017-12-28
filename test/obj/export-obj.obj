@@ -1,7 +1,7 @@
-# OBJ written from /Users/Stritar/Dropbox/DS/Projects/2017/denisstritar.com/Sketch/export obj 2/export-obj.obj
+# OBJ written from /Applications/XAMPP/xamppfiles/htdocs/VR/obj/export-obj.obj
 # Units	meters
 
-o yy 
+o Mesh
 v 0.166976 -1.20897 -0.991445
 v 0.324904 -0.98336 0.782148
 v 0.168041 -0.0161537 0.763679
