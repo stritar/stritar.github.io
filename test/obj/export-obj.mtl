@@ -1,6 +1,6 @@
-# MTL written from obj/export-obj.obj
-newmtl fabric
-Kd 1 0.106986 0.0343
+# MTL written from /Applications/XAMPP/xamppfiles/htdocs/VR/obj/export-obj.obj
+newmtl box
+Kd 0.48 0.48 0.48
 Ns 256
 d 1
 illum 2
