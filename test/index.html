@@ -15,9 +15,9 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-entity camera fov="80" position="0 1.8 0" near="0.2" mouse-cursor></a-entity>
-            <a-box position="0 1 -5" color="#EF2D5E">
-                <a-animation attribute="rotation" fill="both" easing="ease-out" to="0 180 -6 "></a-animation>
+            <a-entity camera fov="80" position="0 1.6 0" near="0.2" mouse-cursor></a-entity>
+            <a-box position="0 1 -5" color="#EF2D5E" rotation="0 0 0">
+                <a-animation dur="3800" easing="ease-in-out" attribute="rotation" repeat="indefinite" direction="alternate" to="0 90 0 "></a-animation>
             </a-box>
         </a-scene>
     </div>
