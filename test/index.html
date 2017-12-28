@@ -6,7 +6,6 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet">
     <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 </head>
 
 <body>
@@ -14,12 +13,11 @@
         <div class="blur"></div>
     </div>
     <div id="top-frame">
-
+        <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-<!--        <div class="ghost"></div>-->
-            <a-entity camera fov="80" position="0 1.8 0" near="0.2" mouse-cursor position rotation scale visible></a-entity>
+            <a-entity camera fov="80" position="0 1.8 0" near="0.2" mouse-cursor></a-entity>
             <a-box position="0 1 -5" color="#EF2D5E">
-                <a-animation attribute="rotation" begin="click" fill="both" easing="ease-out" to="0 45 -6 "></a-animation>
+                <a-animation attribute="rotation" fill="both" easing="ease-out" to="0 180 -6 "></a-animation>
             </a-box>
         </a-scene>
     </div>
