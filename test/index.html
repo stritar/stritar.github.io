@@ -16,16 +16,19 @@
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
             <a-entity camera position="-16 -3 13.5" rotation="0 -65 0">
-                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="-8 -1 9" to="-16 -3 13.5"></a-animation>
+                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="-16 -1 8" to="-16 -3 13.5"></a-animation>
             </a-entity>
             <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c2.obj); mtl:url(obj/cloth/c2.mtl)">
                 <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 0" to="0 0 -1" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
             </a-entity>
             <a-entity position="0 0 -1" rotation="0 0 0" obj-model="obj:url(obj/cloth/c3.obj); mtl:url(obj/cloth/c3.mtl)">
                 <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 -1" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
             </a-entity>
             <a-entity position="0 0 -2" rotation="0 0 0" obj-model="obj:url(obj/cloth/c4.obj); mtl:url(obj/cloth/c4.mtl)">
                 <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 -2" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
             </a-entity>
             <a-light type="ambient" color="#FFFFFF"></a-light>
         </a-scene>
