@@ -15,20 +15,19 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-entity camera position="-16 -3 13.5" rotation="0 -65 0">
-                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="-16 -1 8" to="-16 -3 13.5"></a-animation>
+            <a-entity camera position="-25 -3 10" rotation="0 -80 0">
+                <a-animation attribute="position" easing="ease-in-out" dur="10000" to="-16 -3 9"></a-animation>
             </a-entity>
             <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c2.obj); mtl:url(obj/cloth/c2.mtl)">
-                <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 0" to="0 0 -1" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
+                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 1" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="11000" from="0 0 -10" to="0 0 3" repeat="indefinite" direction="alternate"></a-animation>
             </a-entity>
-            <a-entity position="0 0 -1" rotation="0 0 0" obj-model="obj:url(obj/cloth/c3.obj); mtl:url(obj/cloth/c3.mtl)">
-                <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 -1" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
+            <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c3.obj); mtl:url(obj/cloth/c3.mtl)">
+                <a-animation attribute="rotation" easing="ease-in-out" dur="12040" from="0 0 2" to="0 0 -3" repeat="indefinite" direction="alternate"></a-animation>
             </a-entity>
-            <a-entity position="0 0 -2" rotation="0 0 0" obj-model="obj:url(obj/cloth/c4.obj); mtl:url(obj/cloth/c4.mtl)">
-                <a-animation attribute="position" easing="ease-in-out" dur="10000" from="0 0 -2" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="20000" from="0 -50 0" to="0 0 0"></a-animation>
+            <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c4.obj); mtl:url(obj/cloth/c4.mtl)">
+                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 -0.5" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="12000" from="0 0 12" to="0 0 -1" repeat="indefinite" direction="alternate"></a-animation>
             </a-entity>
             <a-light type="ambient" color="#FFFFFF"></a-light>
         </a-scene>
@@ -38,3 +37,9 @@
 </body>
 
 </html>
+
+<!--
+                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 1" to="0 0.2 -1" repeat="indefinite" direction="alternate"></a-animation>
+                <a-animation attribute="scale" easing="ease-in-out" dur="15000" from="1 1 0.5" to="1 1 1" direction="alternate"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" dur="10000" from="0 0 -1" to="0 0 3" r direction="alternate"></a-animation>
+-->
