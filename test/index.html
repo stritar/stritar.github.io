@@ -16,7 +16,8 @@
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
             <a-entity camera position="0 -2 15" rotation="0 0 0">
-                <a-animation attribute="position" easing="ease-in-out" dur="5000" from="0 10 15" to="0 -2 15"></a-animation>
+                <a-animation attribute="position" easing="ease-in-out" dur="5000" from="0 10 11" to="0 -2 15"></a-animation>
+
             </a-entity>
             <a-assets>
                 <img id="b1" src="blob-1.png">
@@ -26,8 +27,9 @@
             <a-plane position="8 -10 -30" rotation="0 0 0" height="7" width="7" src="#b3" transparent="true">
                 <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="6800" from="8 -8 -30" to="8 -5 -30"></a-animation>
             </a-plane>
-            <a-plane position="-5 -11 -20" rotation="0 0 0" height="7" width="7" src="#b2" transparent="true">
-                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="7400" from="-5 -11 -20" to="-5 -13 -20"></a-animation>
+            <a-plane position="-5 -8 -20" rotation="0 0 0" height="7" width="7" src="#b2" transparent="true">
+                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="7400" from="-5 -8 -20" to="-5 -10 -20"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="9000" from="0 0 0" to="10 0 2"></a-animation>
             </a-plane>
             <a-plane position="0 0 0" rotation="0 0 0" height="7" width="7" src="#b1" transparent="true">
                 <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="9000" from="0 0 0" to="0 1 0"></a-animation>
