@@ -15,20 +15,27 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-entity camera position="-25 -3 15" rotation="0 -70 0">
-                <a-animation attribute="position" easing="ease-in-out" dur="10000" to="-16 -3 12"></a-animation>
+            <a-entity camera position="0 -2 15" rotation="0 0 0">
+                <a-animation attribute="position" easing="ease-in-out" dur="5000" from="0 10 15" to="0 -2 15"></a-animation>
             </a-entity>
-            <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c2.obj); mtl:url(obj/cloth/c2.mtl)">
-                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 1" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="11000" from="0 0 -10" to="0 0 3" repeat="indefinite" direction="alternate"></a-animation>
-            </a-entity>
-            <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c3.obj); mtl:url(obj/cloth/c3.mtl)">
-                <a-animation attribute="rotation" easing="ease-in-out" dur="12040" from="0 0 2" to="0 0 -3" repeat="indefinite" direction="alternate"></a-animation>
-            </a-entity>
-            <a-entity position="0 0 0" rotation="0 0 0" obj-model="obj:url(obj/cloth/c4.obj); mtl:url(obj/cloth/c4.mtl)">
-                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 -0.5" to="0 0 0" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="12000" from="0 0 12" to="0 0 -1" repeat="indefinite" direction="alternate"></a-animation>
-            </a-entity>
+            <a-assets>
+                <img id="b1" src="blob-1.png">
+                <img id="b2" src="blob-2.png">
+                <img id="b3" src="blob-3.png">
+            </a-assets>
+            <a-plane position="8 -10 -30" rotation="0 0 0" height="7" width="7" src="#b3" transparent="true">
+                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="6800" from="8 -8 -30" to="8 -5 -30"></a-animation>
+            </a-plane>
+            <a-plane position="-5 -11 -20" rotation="0 0 0" height="7" width="7" src="#b2" transparent="true">
+                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="7400" from="-5 -11 -20" to="-5 -13 -20"></a-animation>
+            </a-plane>
+            <a-plane position="0 0 0" rotation="0 0 0" height="7" width="7" src="#b1" transparent="true">
+                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="9000" from="0 0 0" to="0 1 0"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="9000" from="0 2 4" to="30 0 0"></a-animation>
+            </a-plane>
+
+
+
             <a-light type="ambient" color="#FFFFFF"></a-light>
         </a-scene>
     </div>
