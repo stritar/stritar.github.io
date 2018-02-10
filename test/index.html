@@ -61,7 +61,9 @@
             <!--            LEVEL 1-->
             <a-plane position="0 0 18" rotation="0 0 0" height="5" width="5" src="#lvl1" transparent="true"></a-plane>
             <!--            LEVEL 1 END-->
-
+            <a-light type="ambient" color="#FFFFFF" intensity="light.intensity: 0">
+                <a-animation attribute="light.intensity" begin="7000" dur="800" to="1"></a-animation>
+            </a-light>
         </a-scene>
     </div>
     <div id="bottom-frame">
