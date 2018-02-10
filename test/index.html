@@ -15,26 +15,53 @@
     <div id="top-frame">
         <div class="ghost"></div>
         <a-scene embedded vr-mode-ui="enabled: false" id="scene">
-            <a-entity camera position="0 -2 15" rotation="0 0 0">
-                <a-animation attribute="position" easing="ease-in-out" dur="5000" from="-2 5 -2" to="5.4 7 8"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="5000" from="0 0 0" to="-30 25 0"></a-animation>
+            <a-entity position="0 0 0" rotation="0 0 0">
+                <a-animation attribute="position" easing="ease-in-out" direction="alternate-reverse" repeat="indefinite" dur="8000" begin="6000" from="-2 0 0" to="0 0 0"></a-animation>
+                <a-animation attribute="rotation" easing="ease-in-out" direction="alternate-reverse" repeat="indefinite" dur="8000" begin="6000" from="0 10 0" to="0 0 0"></a-animation>
+                <a-entity camera position="0 0 0" rotation="0 0 0">
+                    <a-animation attribute="position" easing="ease-in-out" dur="6000" from="0 12 0" to="0 3 25"></a-animation>
+                    <a-animation attribute="rotation" easing="ease-in-out" dur="6000" from="-30 0 0" to="-15 0 0"></a-animation>
+                </a-entity>
             </a-entity>
+
             <a-assets>
-                <img id="b1" src="blob-1.png">
-                <img id="b2" src="blob-2.png">
-                <img id="b3" src="blob-3.png">
+                <img id="lvl4" src="lvl-4.png">
+                <img id="lvl4b" src="lvl-4-b.png">
+                <img id="lvl3" src="lvl-3.png">
+                <img id="lvl3b" src="lvl-3-b.png">
+                <img id="lvl2" src="lvl-2.png">
+                <img id="lvl2b" src="lvl-2-b.png">
+                <img id="lvl1" src="lvl-1.png">
             </a-assets>
-            <a-plane position="0 0 -8" rotation="0 0 0" height="7" width="7" src="#b3" transparent="true">
-                <!--      <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="6800" from="0 -3 -20" to="0 -5 -20"></a-animation>-->
-            </a-plane>
-            <a-plane position="0 0 -4" rotation="0 0 0" height="7" width="7" src="#b2" transparent="true">
-                <!--                <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="7400" from="0 -2 -10" to="0 -3 -10"></a-animation>-->
+            <!--            LEVEL 4-->
+            <a-plane position="0 0 0" rotation="0 0 0" height="10" width="10" src="#lvl4b" transparent="true" material="opacity: 0">
+                <a-animation attribute="material.opacity" easing="ease-in-out" dur="3000" begin="3000" to="1"></a-animation>
+                <a-plane position="0 0 0" rotation="0 0 0" height="10" width="10" src="#lvl4" transparent="true" material="opacity: 1">
+                    <a-animation attribute="material.opacity" easing="ease-in-out" dur="3000" begin="3000" to="0"></a-animation>
 
+                </a-plane>
             </a-plane>
-            <a-plane position="0 0 0" rotation="0 0 0" height="7" width="7" src="#b1" transparent="true">
-                <!--    <a-animation attribute="position" easing="ease-in-out" repeat="indefinite" direction="alternate" dur="9000" from="0 0 0" to="0 2 0"></a-animation>-->
+            <!--            LEVEL 4 END-->
+            <!--            LEVEL 3-->
+            <a-plane position="0 0 10" rotation="0 0 0" height="5" width="5" src="#lvl3b" transparent="true" material="opacity: 0">
+                <a-animation attribute="material.opacity" easing="ease-in-out" dur="3500" begin="2500" to="1"></a-animation>
+                <a-plane position="0 0 0" rotation="0 0 0" height="5" width="5" src="#lvl3" transparent="true" material="opacity: 1">
+                    <a-animation attribute="material.opacity" easing="ease-in-out" dur="3000" begin="2000" to="0"></a-animation>
+                </a-plane>
+            </a-plane>
+            <!--            LEVEL 3 END-->
+            <!--            LEVEL 2-->
+            <a-plane position="0 0 11" rotation="0 0 0" height="5" width="5" src="#lvl2b" transparent="true" material="opacity: 0">
+                <a-animation attribute="material.opacity" easing="ease-in-out" dur="3000" begin="2000" to="1"></a-animation>
+                <a-plane position="0 0 0" rotation="0 0 0" height="5" width="5" src="#lvl2" transparent="true" material="opacity: 1">
+                    <a-animation attribute="material.opacity" easing="ease-in-out" dur="3000" begin="3000" to="0"></a-animation>
+                </a-plane>
+            </a-plane>
+            <!--            LEVEL 2 END-->
+            <!--            LEVEL 1-->
+            <a-plane position="0 0 18" rotation="0 0 0" height="5" width="5" src="#lvl1" transparent="true"></a-plane>
+            <!--            LEVEL 1 END-->
 
-            </a-plane>
         </a-scene>
     </div>
     <div id="bottom-frame">
@@ -42,9 +69,3 @@
 </body>
 
 </html>
-
-<!--
-                <a-animation attribute="position" easing="ease-in-out" dur="20000" from="0 0 1" to="0 0.2 -1" repeat="indefinite" direction="alternate"></a-animation>
-                <a-animation attribute="scale" easing="ease-in-out" dur="15000" from="1 1 0.5" to="1 1 1" direction="alternate"></a-animation>
-                <a-animation attribute="rotation" easing="ease-in-out" dur="10000" from="0 0 -1" to="0 0 3" r direction="alternate"></a-animation>
--->
