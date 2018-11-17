@@ -1,24 +1,39 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="ui">
-      <div class="monitor"></div>
-      <a href="" class="fab"></a>
-    </div>
-    <a-scene vr-mode-ui="enabled: false">
-        <a-assets>
-            <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
-            <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
-            <a-asset-item id="train-obj" src="train.obj"></a-asset-item>
-            <a-asset-item id="train-mtl" src="train.mtl"></a-asset-item>
-          </a-assets>
-          <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
-          <a-obj-model src="#train-obj" mtl="#train-mtl" material="color: blue;"></a-obj-model>
-          <a-camera position="0.25 0.45 8.3" fov="90" camera look-controls></a-camera>
-      <a-sky color="#000000"></a-sky>
-    </a-scene>
-  </body>
+
+<head>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <link rel="stylesheet" href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="ui">
+    <div class="monitor"></div>
+    <a href="" class="fab"></a>
+  </div>
+  <a-scene vr-mode-ui="enabled: false">
+    <a-assets>
+      <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
+      <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
+      <a-asset-item id="train-obj" src="train.obj"></a-asset-item>
+      <a-asset-item id="train-mtl" src="train.mtl"></a-asset-item>
+    </a-assets>
+    <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
+    <a-obj-model src="#train-obj" mtl="#train-mtl" visible="false">
+      <a-animation attribute="position" delay="20000" dur="20000" fill="forwards" from="0 0 -50" to="0 0 0" repeat="indefinite"
+        easing="ease-out"></a-animation>
+      <a-animation attribute="visible" delay="20000" to="true"></a-animation>
+      <a-animation attribute="visible" delay="40000" to="false"></a-animation>
+    </a-obj-model>
+    <a-obj-model src="#train-obj" mtl="#train-mtl" visible="false">
+      <a-animation attribute="position" dur="20000" delay="40000" fill="forwards" from="0 0 0" to="0 0 50" repeat="indefinite"
+        easing="ease-in">
+      </a-animation>
+      <a-animation attribute="visible" delay="40000" to="true">
+      </a-animation>
+    </a-obj-model>
+    <a-camera position="0.25 0.45 8.3" fov="90" camera look-controls></a-camera>
+    <a-sky color="#000000"></a-sky>
+  </a-scene>
+</body>
+
 </html>
