@@ -1,9 +1,14 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
   </head>
   <body>
-    <a-scene>
+    <div class="ui">
+      <div class="monitor"></div>
+      <a href="" class="fab"></a>
+    </div>
+    <a-scene vr-mode-ui="enabled: false">
         <a-assets>
             <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
             <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
@@ -13,7 +18,7 @@
           <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
           <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
           <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
-          <a-entity position="0.25 0.45 8.3" camera look-controls></a-entity>
+          <a-camera position="0.25 0.45 8.3" fov="60" camera look-controls></a-camera>
       <a-sky color="#000000"></a-sky>
     </a-scene>
   </body>
