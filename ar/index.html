@@ -5,15 +5,15 @@
   <body>
     <a-scene>
         <a-assets>
-            <a-asset-item id="wall-obj" src="wall.obj"></a-asset-item>
-            <a-asset-item id="wall-mtl" src="wall.mtl"></a-asset-item>
-            <a-asset-item id="platform-obj" src="platform.obj"></a-asset-item>
-            <a-asset-item id="platform-mtl" src="platform.mtl"></a-asset-item>
+            <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
+            <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
+            <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
+            <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
           </a-assets>
           <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
-          <a-obj-model src="#wall-obj" mtl="#wall-mtl"></a-obj-model>
-          <a-obj-model src="#platform-obj" mtl="#platform-mtl"></a-obj-model>
-          <a-entity position="0.5 0.5 8.3" camera look-controls></a-entity>
+          <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
+          <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
+          <a-entity position="0.25 0.45 8.3" camera look-controls></a-entity>
       <a-sky color="#000000"></a-sky>
     </a-scene>
   </body>
