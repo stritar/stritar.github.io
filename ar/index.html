@@ -12,13 +12,12 @@
         <a-assets>
             <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
             <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
-            <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
-            <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
+            <a-asset-item id="train-obj" src="train.obj"></a-asset-item>
+            <a-asset-item id="train-mtl" src="train.mtl"></a-asset-item>
           </a-assets>
-          <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
           <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
-          <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
-          <a-camera position="0.25 0.45 8.3" fov="60" camera look-controls></a-camera>
+          <a-obj-model src="#train-obj" mtl="#train-mtl" material="color: blue;"></a-obj-model>
+          <a-camera position="0.25 0.45 8.3" fov="90" camera look-controls></a-camera>
       <a-sky color="#000000"></a-sky>
     </a-scene>
   </body>
