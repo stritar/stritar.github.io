@@ -10,46 +10,16 @@
     <div class="monitor"></div>
     <a href="" class="fab"></a>
   </div>
+
   <a-scene vr-mode-ui="enabled: false">
     <a-assets>
-      <a-asset-item id="shell-obj" src="shell.obj"></a-asset-item>
-      <a-asset-item id="shell-mtl" src="shell.mtl"></a-asset-item>
-      <a-asset-item id="train1-obj" src="train1.obj"></a-asset-item>
-      <a-asset-item id="train1-mtl" src="train1.mtl"></a-asset-item>
-      <a-asset-item id="train2-obj" src="train2.obj"></a-asset-item>
-      <a-asset-item id="train2-mtl" src="train2.mtl"></a-asset-item>
-      <img id="person" src="person.png">
+   
+      <img id="test" src="test.JPG">
     </a-assets>
-    <a-camera position="0.25 0.45 8.3" fov="90" camera look-controls></a-camera>
-    <a-sky color="#000000"></a-sky>
-    <a-obj-model src="#shell-obj" mtl="#shell-mtl"></a-obj-model>
-    <a-obj-model src="#train1-obj" mtl="#train1-mtl" visible="false">
-      <a-animation attribute="visible" delay="50000" to="true"></a-animation>
-      <a-animation attribute="position" delay="50000" dur="10000" from="0 0 -50" to="0 0 0" easing="ease-out"></a-animation>
-      <a-animation attribute="visible" delay="60000" to="false"></a-animation>
-    </a-obj-model>
-    <a-obj-model src="#train1-obj" mtl="#train1-mtl" visible="false">
-      <a-animation attribute="visible" delay="60000" to="true"></a-animation>
-      <a-animation attribute="position" delay="70000" dur="10000" from="0 0 0" to="0 0 50" easing="ease-in"></a-animation>
-    </a-obj-model>
-    <a-obj-model src="#train2-obj" mtl="#train2-mtl" visible="false">
-        <a-animation attribute="visible" delay="7000" to="true"></a-animation>
-        <a-animation attribute="position" delay="7000" dur="10000" from="0 0 50" to="0 0 0" easing="ease-out"></a-animation>
-        <a-animation attribute="visible" delay="17000" to="false"></a-animation>
-      </a-obj-model>
-      <a-obj-model src="#train2-obj" mtl="#train2-mtl" visible="false">
-        <a-animation attribute="visible" delay="17000" to="true"></a-animation>
-        <a-animation attribute="position" delay="26000" dur="10000" from="0 0 0" to="0 0 -50" easing="ease-in"></a-animation>
-      </a-obj-model>
-      <a-plane src="#person" height="0.4" width="0.4" position="-0.3 0.35 3" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="-0.2 0.35 3.2" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="0.20 0.35 3.2" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="0.189 0.35 4.8" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="0.32 0.35 5" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="-0.32 0.35 6.5" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="-0.2 0.35 7.2" rotation="0 0 0" transparent="true"></a-plane>
-      <a-plane src="#person" height="0.4" width="0.4" position="0.4 0.35 7.4" rotation="0 0 0" transparent="true"></a-plane>
-  
+    <a-sky id="image-360" radius="10" rotation="0 -90 0" src="#test"></a-sky>
+    <a-camera look-controls></a-camera>
+
   </a-scene>
 </body>
+
 </html>
