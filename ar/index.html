@@ -3,24 +3,23 @@
 <head>
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <link rel="stylesheet" href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 
 <body>
-  <div class="ui">
-    <div class="monitor"></div>
-    <a href="" class="fab"></a>
-  </div>
-
-  <a-scene vr-mode-ui="enabled: false">
-    <a-assets>
-      <img id="scenario1" src="scenario1.JPG">
-      <img id="scenario2" src="scenario2.JPG">
-
-    </a-assets>
-    <a-sky id="image-360" radius="10" rotation="0 -90 0" src="#scenario2"></a-sky>
-    <a-camera look-controls></a-camera>
-
-  </a-scene>
+    <div class="center intro">
+        <p>You are currently located at:</p>
+        <h1>S+U Alexander Platz</h1>
+        <br>
+        <p>On a train platform for:</p>
+        <h1>U2 Pankow <-> Ruhleben</h1>
+    </div>
+<div class="center bottom">
+    <a href="ar.html" class="button-big">Yes, This is my current location</a>
+    <br><br>
+    <a class="center" href="#">I'm on a different platofrm or station</a>
+    <br><br>
+</div>
 </body>
 
 </html>
