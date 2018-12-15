@@ -1,7 +1,6 @@
 body {
-    margin: 16px;
-    padding: 0px;
-    clear: both;
+   margin: 0px;
+   padding: 0px;
 }
 
 .ui {
@@ -21,80 +20,24 @@ body {
     background: rgba(255, 255, 255, 0.39);
 }
 
-.fab {
-    position: absolute;
-    bottom: 32px;
-    right: 32px;
-    display: block;
-    width: 64px;
-    height: 64px;
-    background:#FFFFFF;
-    border-radius: 50%;
-    pointer-events: none;
-    -webkit-box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
-    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
-}
-
-h1 {
-    font-family: Roboto;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-}
-
-p, a {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: black;
-}
-
-br {
-    display: block;
-    height: 16px;
-    width: 100%;
-}
-
-.center {
-    text-align: center;
-}
-.intro {
-    display: block;
-    height: 150px;
-    width: 100%;
-    margin-top: 180px;
-}
-
-.bottom {
-    display: block;
-    position: absolute;
-    bottom:16px;
-   left: 16px;
-   right: 16px;
-    
-}
-
-.button-big {
-    display: block;
-    padding: 24px 0 23px;
-    border: 1px solid #979797;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    border-radius: 50px;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-}
-
 scene {
     z-index: -1;
 }
+
+.intro {
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url('1.jpg') no-repeat;
+    background-size: 414px 736px;
+}
+
+.button-intro {
+    position: absolute;
+    left: 16px;
+    bottom: 88px;
+    display: block;
+    width: 382px;
+    height: 67px;
+}
+
