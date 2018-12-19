@@ -12,6 +12,7 @@ body {
 }
 
 .status {
+    z-index: 50000;
     display: block;
     position: absolute;
     top:16px;
@@ -19,18 +20,12 @@ body {
     width: 382px;
     height: 91px;
     background: url(status.png);
+    background-color: white;
     background-size: 382px 91px;
     border-radius: 4px;
     box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
 }
 
-.monitor{
-    position: absolute;
-    width: 100%;
-    height: 64px;
-    top:16px;
-    background: rgba(255, 255, 255, 0.39);
-}
 
 .intro {
     position: relative;
