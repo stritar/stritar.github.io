@@ -9,7 +9,19 @@ body {
     height: 100%;
     z-index: 1;
     position: absolute;
-    pointer-events: none;
+}
+
+.status {
+    display: block;
+    position: absolute;
+    top:16px;
+    left: 16px;
+    width: 382px;
+    height: 91px;
+    background: url(status.png);
+    background-size: 382px 91px;
+    border-radius: 4px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
 }
 
 .monitor{
@@ -55,6 +67,67 @@ body {
     height: 67px;
     background: url(intro_btn_2.png);
     background-size: 382px 67px;
+}
+
+.change-location {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    left: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 166px;
+    height: 56px;
+    background: url(change.png);
+    background-size: 166px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.map-view {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    right: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 119px;
+    height: 56px;
+    background: url(map.png);
+    background-size: 119px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.ar-view {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    right: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 119px;
+    height: 56px;
+    background: url(ar.png);
+    background-size: 119px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.map-image-1 {
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url(map-image-1.png);
+    background-size: 414px 736px;
+}
+
+.map-image-2 {
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url(map-image-2.png);
+    background-size: 414px 736px;
 }
 
 scene {
