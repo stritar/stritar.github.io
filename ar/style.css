@@ -120,6 +120,7 @@ body {
     height: 736px;
     background: url(map-image-1.png);
     background-size: 414px 736px;
+    z-index: -999999;
 }
 
 .map-image-2 {
@@ -128,6 +129,7 @@ body {
     height: 736px;
     background: url(map-image-2.png);
     background-size: 414px 736px;
+    z-index: -999999;
 }
 
 scene {
