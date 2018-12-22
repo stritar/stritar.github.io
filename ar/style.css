@@ -18,10 +18,10 @@ body {
     top:16px;
     left: 16px;
     width: 382px;
-    height: 91px;
+    height: 56px;
     background: url(status.png);
     background-color: white;
-    background-size: 382px 91px;
+    background-size: 382px 56px;
     border-radius: 4px;
     box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
 }
@@ -30,11 +30,12 @@ body {
 .intro {
     position: relative;
     display: block;
-    width: 270px;
-    height: 142px;
-    background: url(desc.svg) no-repeat;
-    top: 200px;
-    left: 72px;
+    width: 414px;
+    height: 736px;
+    background: url(desc.jpg);
+    background-size: 414px 736px;
+    top: 0px;
+    left: 0px;
 }
 
 .bottom-btns {
