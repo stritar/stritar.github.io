@@ -18,32 +18,114 @@
     font-style: normal;
 }
 
+h2 {
+    font-family: 'Campton-Bold';
+    font-size: 32px;
+    color: #29323D;
+    line-height: 43px;
+}
 
 p {
-    font-family: 'Campton-Book', Helvetica, sans-serif;
-    font-size: 18px;
-    line-height: 30px;
+    font-family:'Campton-Book';
+    font-size: 21px;
     color: #29323D;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: block;
-    height: 1000px;
+    line-height: 35px;
 }
 
-b {
-    font-family: 'Campton-bold', Helvetica, sans-serif;
+
+
+s {
+    font-family:'Campton-Book';
+    font-size: 16px;
+    color: #29323D;
+    line-height: 23px;
 }
 
-a {
+p a, 
+small a {
+    font-family: 'Campton-Bold';
     color: #29323D;
     text-decoration: none;
-    border-bottom: 2px solid #EC164B;
+    border-bottom: 3px solid #EC1349;
     -webkit-transition: color 0.12s ease-in;
     -moz-transition: color 0.12s ease-in;
     -o-transition: color 0.12s ease-in;
     transition: color 0.12s ease-in;
 }
 
-a:hover {
-    color: #EC164B; 
+p a:hover, 
+s a:hover {
+    color: #EC1349;
+}
+
+.article-link{
+    display: block;
+    text-decoration: none;
+    margin: 32 0;
+    border-top:dashed red;
+}
+
+b {
+    font-family: 'Campton-Bold';
+}
+
+#wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#header {
+margin: 64px 0;
+}
+
+#hub {
+    margin: 64px 0;
+}
+
+.logo {
+    display: block;
+    width: 96px;
+    height: 96px;
+}   
+
+svg #face {
+    fill:#29323D;
+    -webkit-transition: fill 0.12s ease-in-out;
+    -moz-transition: fill 0.12s ease-in-out;
+    -o-transition: fill 0.12s ease-in-out;
+    transition: fill 0.12s ease-in-out;
+}
+
+svg:hover #face  {
+    fill:#EC1349;
+}
+
+@media (max-width: 799px) {
+    body {
+        margin: 0 16px;
+    }
+
+    p {
+        font-family:'Campton-Book';
+        font-size: 18px;
+        color: #29323D;
+        line-height: 30px;
+    }
+
+    #wrapper {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    #header {
+        margin: 32px 0;
+        }
+
+    .logo {
+            width: 64px;
+            height: 64px;
+        }    
+
+        #hub {
+            margin: 32px 0;
+        }
 }
