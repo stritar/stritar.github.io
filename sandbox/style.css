@@ -19,7 +19,7 @@
 }
 
 html, body {
-    height: 100%;
+
     margin: 0;
 }
 
@@ -59,7 +59,7 @@ small a {
 }
 
 p a:hover, 
-s a:hover {
+small a:hover {
     color: #EC1349;
 }
 
@@ -67,7 +67,8 @@ s a:hover {
     display: block;
     text-decoration: none;
     border-top: 1px dashed #A3B1C2;
-    padding: 32px 0;!important
+    padding: 32px 0;
+    overflow: hidden;
 }
 
 .info {
@@ -108,9 +109,7 @@ b {
 
 #wrapper {
     max-width: 800px;
-    margin: 0 auto -100px auto;
-    min-height: 100%;
-    overflow: hidden;
+    margin: 0 auto;
 }
 
 #header {
@@ -120,6 +119,7 @@ margin: 64px 0;
 #hub {
     margin: 64px 0;
     border-bottom: 1px dashed #A3B1C2;
+  
 }
 
 .logo {
@@ -148,11 +148,14 @@ svg:hover #face  {
     height: 100px;
     display: block;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 800px;    
 }
 
 .footer-icons {
-    width: 100%;
+   display: block;
+   width: 100%;
+   height: 24px;
+   margin-bottom: 16px;
 }
 
 .external-icon {
@@ -162,6 +165,7 @@ svg:hover #face  {
     margin-right: 16px;
     float: left;
     background-size: 24px 24px;
+  
 }
 
 .linkedin {
@@ -208,9 +212,8 @@ svg:hover #face  {
 
     #wrapper {
         max-width: 480px;
-        margin: 0 auto -100px auto;
-        min-height: 100%;
-        overflow: hidden;
+        margin: 0 auto;
+    
     }
 
     .article-link{
