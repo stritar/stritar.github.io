@@ -18,10 +18,6 @@
     font-style: normal;
 }
 
-body {
-    height: 1000px;
-}
-
 
 p {
     font-family: 'Campton-Book', Helvetica, sans-serif;
@@ -30,6 +26,8 @@ p {
     color: #29323D;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: block;
+    height: 1000px;
 }
 
 b {
