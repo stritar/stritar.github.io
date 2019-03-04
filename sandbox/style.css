@@ -23,6 +23,7 @@ h2 {
     font-size: 32px;
     color: #29323D;
     line-height: 43px;
+    margin: 0;
 }
 
 p {
@@ -33,8 +34,7 @@ p {
 }
 
 
-
-s {
+small {
     font-family:'Campton-Book';
     font-size: 16px;
     color: #29323D;
@@ -47,10 +47,10 @@ small a {
     color: #29323D;
     text-decoration: none;
     border-bottom: 3px solid #EC1349;
-    -webkit-transition: color 0.12s ease-in;
-    -moz-transition: color 0.12s ease-in;
-    -o-transition: color 0.12s ease-in;
-    transition: color 0.12s ease-in;
+    -webkit-transition: color 0.18s ease-in;
+    -moz-transition: color 0.18s ease-in;
+    -o-transition: color 0.18s ease-in;
+    transition: color 0.18s ease-in;
 }
 
 p a:hover, 
@@ -61,8 +61,20 @@ s a:hover {
 .article-link{
     display: block;
     text-decoration: none;
-    margin: 32 0;
-    border-top:dashed red;
+    border-top: 1px dashed #A3B1C2;
+    border-bottom: 1px dashed #A3B1C2;
+    padding: 32px 0;!important
+}
+
+.article-link h2 {
+    -webkit-transition: color 0.18s ease-in;
+    -moz-transition: color 0.18s ease-in;
+    -o-transition: color 0.18s ease-in;
+    transition: color 0.18s ease-in;
+}
+
+.article-link:hover h2 {
+    color: #EC1349;
 }
 
 b {
@@ -90,10 +102,10 @@ margin: 64px 0;
 
 svg #face {
     fill:#29323D;
-    -webkit-transition: fill 0.12s ease-in-out;
-    -moz-transition: fill 0.12s ease-in-out;
-    -o-transition: fill 0.12s ease-in-out;
-    transition: fill 0.12s ease-in-out;
+    -webkit-transition: fill 0.18s ease-in-out;
+    -moz-transition: fill 0.18s ease-in-out;
+    -o-transition: fill 0.18s ease-in-out;
+    transition: fill 0.18s ease-in-out;
 }
 
 svg:hover #face  {
@@ -105,6 +117,13 @@ svg:hover #face  {
         margin: 0 16px;
     }
 
+    h2 {
+        font-family: 'Campton-Bold';
+        font-size: 25px;
+        color: #29323D;
+        line-height: 32px;
+    }
+
     p {
         font-family:'Campton-Book';
         font-size: 18px;
@@ -112,10 +131,22 @@ svg:hover #face  {
         line-height: 30px;
     }
 
+    small {
+        font-family:'Campton-Book';
+        font-size: 14px;
+        color: #29323D;
+        line-height: 20px;
+    }
+
     #wrapper {
         max-width: 480px;
         margin: 0 auto;
     }
+
+    .article-link{
+        padding: 16px 0;!important
+    }
+
     #header {
         margin: 32px 0;
         }
