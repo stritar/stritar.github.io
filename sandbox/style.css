@@ -18,6 +18,11 @@
     font-style: normal;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 h2 {
     font-family: 'Campton-Bold';
     font-size: 32px;
@@ -62,9 +67,27 @@ s a:hover {
     display: block;
     text-decoration: none;
     border-top: 1px dashed #A3B1C2;
-    border-bottom: 1px dashed #A3B1C2;
     padding: 32px 0;!important
 }
+
+.info {
+    position: relative;
+    padding-right: 40px;
+}
+
+.arrow {
+position: absolute;
+top: 50%;
+margin-top: -12px;
+right: 0;
+display: block;
+float: right;
+width: 24px;
+height: 24px;
+background: url(assets/arrow.svg);
+background-size: 24px 24px;
+}
+
 
 .article-link h2 {
     -webkit-transition: color 0.18s ease-in;
@@ -77,13 +100,17 @@ s a:hover {
     color: #EC1349;
 }
 
+
+
 b {
     font-family: 'Campton-Bold';
 }
 
 #wrapper {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto -100px auto;
+    min-height: 100%;
+    overflow: hidden;
 }
 
 #header {
@@ -92,6 +119,7 @@ margin: 64px 0;
 
 #hub {
     margin: 64px 0;
+    border-bottom: 1px dashed #A3B1C2;
 }
 
 .logo {
@@ -110,6 +138,46 @@ svg #face {
 
 svg:hover #face  {
     fill:#EC1349;
+}
+
+.push {
+  height: 50px;
+}
+
+#footer {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.footer-icons {
+    width: 100%;
+}
+
+.external-icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+    float: left;
+    background-size: 24px 24px;
+}
+
+.linkedin {
+    background-image: url(assets/linkedin.svg)
+}
+
+.medium {
+    background-image: url(assets/medium.svg)
+}
+
+.behance {
+    background-image: url(assets/behance.svg)
+}
+
+.dribbble {
+    background-image: url(assets/dribbble.svg)
 }
 
 @media (max-width: 799px) {
@@ -140,7 +208,9 @@ svg:hover #face  {
 
     #wrapper {
         max-width: 480px;
-        margin: 0 auto;
+        margin: 0 auto -100px auto;
+        min-height: 100%;
+        overflow: hidden;
     }
 
     .article-link{
@@ -157,6 +227,18 @@ svg:hover #face  {
         }    
 
         #hub {
-            margin: 32px 0;
+            margin: 32px 0 52px 0;
         }
+
+    .arrow {
+        margin-top: -8px;
+        width: 16px;
+        height: 16px;
+        background-size: 16px 16px;
+    }
+    #footer {
+        
+        max-width: 480px;
+     
+    }
 }
