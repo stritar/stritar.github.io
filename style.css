@@ -234,10 +234,10 @@ svg:hover #face  {
         }
 
     .arrow {
-        margin-top: -8px;
-        width: 16px;
-        height: 16px;
-        background-size: 16px 16px;
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+        background-size: 24px 24px;
     }
     #footer {
         
