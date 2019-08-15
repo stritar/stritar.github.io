@@ -1,0 +1,9 @@
+# MTL written from /Users/denisstritar/Dropbox/1. Personal Projects/1.2 Years/2019/denisstritar.com/Modo/export/concept.obj
+newmtl Concept
+Kd 0.6 0.6 0.6
+Ns 4096
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd /Users/denisstritar/Dropbox/1. Personal Projects/1.2 Years/2019/denisstritar.com/Modo/Final-Texture.JPG
