@@ -5,12 +5,11 @@
   <body>
     <a-scene vr-mode-ui="enabled: false" loading-screen="enabled: false">
       <a-assets>
-        <a-asset-item id="concept-obj" src="concept.obj"></a-asset-item>
-        <a-asset-item id="concept-mtl" src="concept.mtl"></a-asset-item>
+        <img id="sky" src="sky.png">
       </a-assets>
       <a-light type="ambient" color="#fff"></a-light>
       <a-camera look-controls-enabled="false" position="0 3 0" rotation="-25 0 0" fov="70" zoom="1"></a-camera>
-      <a-obj-model src="#concept-obj" mtl="#concept-mtl" position="0 0 -5" rotation="0 0 0" animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; loop: true;"></a-obj-model>
+      <a-sky src="#sky"></a-sky>
     </a-scene>
   </body>
 </html>
