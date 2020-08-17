@@ -51,7 +51,7 @@ small a {
     font-family: 'Campton-Bold';
     color: #3E3B44;
     text-decoration: none;
-    border-bottom: 3px solid #FF1A6C;
+    border-bottom: 3px solid #F41C3D;
     -webkit-transition: color 0.18s ease-in;
     -moz-transition: color 0.18s ease-in;
     -o-transition: color 0.18s ease-in;
@@ -60,7 +60,7 @@ small a {
 
 p a:hover, 
 small a:hover {
-    color: #FF1A6C;
+    color: #F41C3D;
 }
 
 .article-link{
@@ -100,7 +100,7 @@ background-size: 24px 24px;
 }
 
 .article-link:hover h2 {
-    color: #FF1A6C;
+    color: #F41C3D;
 }
 
 
@@ -139,7 +139,7 @@ svg #face {
 }
 
 svg:hover #face  {
-    fill:#FF1A6C;
+    fill:#F41C3D;
 }
 
 .push {
