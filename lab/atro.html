@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+   
+    <link rel="stylesheet" href="atropos/node_modules/atropos/atropos.css" />
+
+    <meta name="theme-color" content="#fafafa">
+
+    <style>
+
+        .my-atropos {
+            width: 320px;
+            height: 160px;
+            background-color: red;
+        }
+        .one {
+            background-color: blue;
+            width: 120px;
+            height: 160px;
+        }
+        .two {
+            background-color: green;
+            width: 90px;
+            height: 90px;
+        }
+        .three {
+            background-color: black;
+            width: 30px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="atropos/node_modules/atropos/atropos.min.js"></script>
+    <script>const myAtropos = Atropos({
+    el: '.my-atropos',
+    activeOffset: 40,
+    shadowScale: 1.05,
+    onEnter() {
+        console.log('Enter');
+    },
+    onLeave() {
+        console.log('Leave');
+    },
+    onRotate(x, y) {
+        console.log('Rotate', x, y);
+    }
+
+    </script>
+
+
+
+    <!-- main Atropos container (required), add your custom class here -->
+    <div class="atropos my-atropos">
+        <!-- scale container (required) -->
+        <div class="atropos-scale one">
+            <!-- rotate container (required) -->
+            <div class="atropos-rotate two">
+                <!-- inner container (required) -->
+                <div class="atropos-inner three">
+                   LOL1
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
