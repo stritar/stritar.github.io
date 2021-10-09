@@ -1,12 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="EmptyHtmlFile.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="atro1.html">
     <Files>
-      <File FileName="EmptyHtmlFile.html" Line="1" Column="1" />
+      <File FileName="atro1.html" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="lab" expanded="True" selected="True" />
+          <Node name="lab" expanded="True">
+            <Node name="Solution Items" expanded="True">
+              <Node name="/Users/denis.stritar/Dropbox/2. Git/stritar.github.io/lab/atropos.html" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
