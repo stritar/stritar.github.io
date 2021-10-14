@@ -38,9 +38,8 @@ p {
         color: #3E3B44;
         text-decoration: underline;
         text-decoration-color: #F45550;
-        text-decoration-thickness: 4px;
+        text-decoration-thickness: 3px;
         text-underline-offset: 3px;
-        /*        border-bottom: 4px solid #F45550;*/
         -webkit-transition: color 0.18s ease-out;
         -moz-transition: color 0.18s ease-out;
         -o-transition: color 0.18s ease-out;
