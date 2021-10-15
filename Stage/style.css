@@ -50,3 +50,9 @@ p {
     small a:hover {
         color: #F45550;
     }
+
+@media (max-width: 799px) {
+    body {
+        margin: 0 16px;
+    }
+}
