@@ -38,10 +38,10 @@ small a {
     text-decoration-color: #F45550;
     text-decoration-thickness: 3px;
     text-underline-offset: var(--offset, 3px);
-    -webkit-transition: color 0.18s ease-out;
-    -moz-transition: color 0.18s ease-out;
-    -o-transition: color 0.18s ease-out;
-    transition: color 0.18s ease-out;
+    -webkit-transition: color 0.18s easie-in;
+    -moz-transition: color 0.18s easie-in;
+    -o-transition: color 0.18s easie-in;
+    transition: color 0.18s easie-in;
 }
 
     p a:hover,
