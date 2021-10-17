@@ -19,12 +19,6 @@
     font-family: "Campton-Medium";
 }
 
-body {
-    margin: 0;
-    width: 343px;
-    font-family: "Campton-Book";
-}
-
 p {
     font-family: 'Campton-Book';
     font-size: 21px;
@@ -32,19 +26,23 @@ p {
     line-height: 30px;
 }
 
-    p a,
-    small a {
-        font-family: 'Campton-Bold';
-        color: #3E3B44;
-        text-decoration: underline;
-        text-decoration-color: #F45550;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 3px;
-        -webkit-transition: color 0.18s ease-out;
-        -moz-transition: color 0.18s ease-out;
-        -o-transition: color 0.18s ease-out;
-        transition: color 0.18s ease-out;
-    }
+b {
+    font-family: 'Campton-Bold';
+}
+
+p a,
+small a {
+    font-family: 'Campton-Bold';
+    color: #3E3B44;
+    text-decoration: underline;
+    text-decoration-color: #F45550;
+    text-decoration-thickness: 3px;
+    text-underline-offset: var(--offset, 3px);
+    -webkit-transition: color 0.18s ease-out;
+    -moz-transition: color 0.18s ease-out;
+    -o-transition: color 0.18s ease-out;
+    transition: color 0.18s ease-out;
+}
 
     p a:hover,
     small a:hover {
@@ -53,6 +51,12 @@ p {
 
 @media (max-width: 799px) {
     body {
+
         margin: 0 16px;
+    }
+    p {
+        font-size: 18px;
+        color: #3E3B44;
+        line-height: 27px;
     }
 }
