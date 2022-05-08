@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{105E8782-46E0-406C-A159-1104531FE54A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmptyHtmlFile.html">
+    <Files>
+      <File FileName="EmptyHtmlFile.html" Line="8" Column="8" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Snacks" expanded="True">
+            <Node name="Snacks" expanded="True">
+              <Node name="EmptyHtmlFile.html" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Snacks FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
