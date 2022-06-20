@@ -202,8 +202,8 @@ svg:hover #face {
     right: 8px;
     bottom: 8px;
     left: 8px;
-    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F3F3F4;
-    border-radius: 16px;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 70.31%, rgba(255, 255, 255, 0) 100%), #F3F3F4;
+    border-radius: 40px;
     -webkit-transition: 0.18s ease-in-out;
     -moz-transition: 0.18s ease-in-out;
     -o-transition: 0.18s ease-in-out;
@@ -214,10 +214,11 @@ svg:hover #face {
 .bubble:hover {
     /* Rectangle 59 */
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%), #EAE9ED;
-    top: 4px;
-    right: 4px;
-    bottom: 4px;
-    left: 4px;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    border-radius: 48px;
 
 }
 
@@ -227,6 +228,7 @@ svg:hover #face {
     bottom: 16px;
     left: 16px;
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%), #e4e3e8;
+    border-radius: 32px;
 
 }
 
