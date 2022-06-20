@@ -21,7 +21,7 @@ p {
     font-family: 'Campton-Book';
     font-size: 21px;
     color: #3E3B44;
-    line-height: 35px;
+    line-height: 48px;
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 {
 
 small {
     font-family: 'Campton-Book';
-    font-size: 16px;
+    font-size: 17px;
     color: #3E3B44;
     line-height: 23px;
 }
@@ -43,7 +43,7 @@ small a {
     font-family: 'Campton-Bold';
     color: #3E3B44;
     text-decoration: none;
-    border-bottom: 3px solid #F45550;
+    border-bottom: 3px solid #FF4F4F;
     -webkit-transition: color 0.14s ease-in-out;
     -moz-transition: color 0.14s ease-in-out;
     -o-transition: color 0.14s ease-in-out;
@@ -181,7 +181,7 @@ svg:hover #face {
 #projects {
     display: block;
     overflow: auto;
-    max-width: 1880px;
+    max-width: 1600px;
     margin: 64px auto;
     padding: 0 16px;
 }
@@ -202,7 +202,7 @@ svg:hover #face {
     right: 8px;
     bottom: 8px;
     left: 8px;
-    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F7F7F8;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F3F3F4;
     border-radius: 16px;
     -webkit-transition: 0.18s ease-in-out;
     -moz-transition: 0.18s ease-in-out;
@@ -213,11 +213,20 @@ svg:hover #face {
 
 .bubble:hover {
     /* Rectangle 59 */
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0) 100%), #EEEDF0;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%), #EAE9ED;
     top: 4px;
     right: 4px;
     bottom: 4px;
     left: 4px;
+
+}
+
+.bubble:active {
+    top: 16px;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%), #e4e3e8;
 
 }
 
