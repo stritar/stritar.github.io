@@ -1,0 +1,56 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 4194250, 2021-10-14T07:30:53-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Campton-Black by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/campton/black/
+ * 
+ * Webfont: Campton-Bold by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/campton/bold/
+ * 
+ * Webfont: Campton-Book by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/campton/book/
+ * 
+ * Webfont: Campton-ExtraLight by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/campton/extra-light/
+ * 
+ * Webfont: Campton-Medium by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/campton/medium/
+ * 
+ * 
+ * Webfonts copyright: Copyright © 2017 by René Bieder. All rights reserved.
+ * 
+ * © 2021 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3fffca");
+  
+@font-face {
+  font-family: "Campton-Bold";
+  src: url('webFonts/CamptonBold/font.woff2') format('woff2'), url('webFonts/CamptonBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Campton-Black";
+  src: url('webFonts/CamptonBlack/font.woff2') format('woff2'), url('webFonts/CamptonBlack/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Campton-Medium";
+  src: url('webFonts/CamptonMedium/font.woff2') format('woff2'), url('webFonts/CamptonMedium/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Campton-Book";
+  src: url('webFonts/CamptonBook/font.woff2') format('woff2'), url('webFonts/CamptonBook/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Campton-ExtraLight";
+  src: url('webFonts/CamptonExtraLight/font.woff2') format('woff2'), url('webFonts/CamptonExtraLight/font.woff') format('woff');
+}
+
