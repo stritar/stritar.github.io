@@ -1,0 +1,133 @@
+body {
+   margin: 0px;
+   padding: 0px;
+}
+
+.ui {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+}
+
+.status {
+    z-index: 50000;
+    display: block;
+    position: absolute;
+    top:16px;
+    left: 16px;
+    width: 382px;
+    height: 56px;
+    background: url(status.png);
+    background-color: white;
+    background-size: 382px 56px;
+    border-radius: 4px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+
+.intro {
+    position: relative;
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url(desc.jpg);
+    background-size: 414px 736px;
+    top: 0px;
+    left: 0px;
+}
+
+.bottom-btns {
+    position: absolute;
+    bottom:0;
+    margin: 0;
+    display: block;
+    width: 414px;
+}
+
+.btn-1 {
+    margin: 16 auto;
+    display: block;
+    width: 382px;
+    height: 67px;
+    background: url(intro_btn_1.png);
+    background-size: 382px 67px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.btn-2 {
+    margin: 16 auto;
+    display: block;
+    width: 382px;
+    height: 67px;
+    background: url(intro_btn_2.png);
+    background-size: 382px 67px;
+}
+
+.change-location {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    left: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 166px;
+    height: 56px;
+    background: url(change.png);
+    background-size: 166px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.map-view {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    right: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 119px;
+    height: 56px;
+    background: url(map.png);
+    background-size: 119px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.ar-view {
+    display: block;
+    position: absolute;
+    bottom:16px;
+    right: 16px;
+    margin: 16 auto;
+    display: block;
+    width: 119px;
+    height: 56px;
+    background: url(ar.png);
+    background-size: 119px 56px;
+    border-radius: 50px;
+    box-shadow: 0 7px 11px 0 rgba(52,59,70,0.16), 0 1px 13px 0 rgba(52,59,70,0.18), 0 3px 6px 0 rgba(52,59,70,0.20);
+}
+
+.map-image-1 {
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url(map-image-1.png);
+    background-size: 414px 736px;
+    z-index: -999999;
+}
+
+.map-image-2 {
+    display: block;
+    width: 414px;
+    height: 736px;
+    background: url(map-image-2.png);
+    background-size: 414px 736px;
+    z-index: -999999;
+}
+
+scene {
+    z-index: -1;
+}

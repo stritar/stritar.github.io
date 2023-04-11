@@ -1,0 +1,62 @@
+﻿
+.CamptonBlack {
+    font-family: "Campton-Black";
+}
+
+.CamptonBold {
+    font-family: "Campton-Bold";
+}
+
+.CamptonBook {
+    font-family: "Campton-Book";
+}
+
+.CamptonExtraLight {
+    font-family: "Campton-ExtraLight";
+}
+
+.CamptonMedium {
+    font-family: "Campton-Medium";
+}
+
+p {
+    font-family: 'Campton-Book';
+    font-size: 21px;
+    color: #3E3B44;
+    line-height: 30px;
+}
+
+b {
+    font-family: 'Campton-Bold';
+}
+
+p a,
+small a {
+    font-family: 'Campton-Bold';
+    color: #3E3B44;
+    text-decoration: underline;
+    text-decoration-color: #F45550;
+    text-decoration-thickness: 3px;
+    text-underline-offset: var(--offset, 3px);
+    -webkit-transition: color 0.18s easie-in;
+    -moz-transition: color 0.18s easie-in;
+    -o-transition: color 0.18s easie-in;
+    transition: color 0.18s easie-in;
+}
+
+    p a:hover,
+    small a:hover {
+        color: #F45550;
+    }
+
+@media (max-width: 799px) {
+    body {
+
+        margin: 0 16px;
+    }
+    p {
+        font-size: 18px;
+        color: #3E3B44;
+        line-height: 27px;
+    }
+}
