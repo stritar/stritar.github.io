@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebGL Cube Rotation with Touch Controls</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <canvas id="glCanvas"></canvas>
+
+    <script>
+        // Vertex shader program
+        const vsSource = `
+        attribute vec4 aVertexPosition;
+        attribute vec4 aVertexColor;
+
+        uniform mat4 uModelViewMatrix;
+        uniform mat4 uProjectionMatrix;
+
+        varying lowp vec4 vColor;
+
+        void main() {
+          gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+          vColor = aVertexColor;
+        }
+      `;
+
+        // Fragment shader program
+        const fsSource = `
+        varying lowp vec4 vColor;
+
+        void main() {
+          gl_FragColor = vColor;
+        }
+      `;
+
+        // Initialize the WebGL context
+        const canvas = document.querySelector("#glCanvas");
+        const gl = canvas.getContext("webgl");
+
+        if (!gl) {
+            alert("Unable to initialize WebGL. Your browser may not support it.");
+        }
+
+        // Create shader programs
+        const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+
+        // Create buffers and bind data
+        const buffers = initBuffers(gl);
+
+        // Touch rotation variables
+        let lastX = 0;
+        let lastY = 0;
+        let dragging = false;
+
+        // Event listeners for touch controls
+        canvas.addEventListener("touchstart", handleTouchStart, false);
+        canvas.addEventListener("touchmove", handleTouchMove, false);
+        canvas.addEventListener("touchend", handleTouchEnd, false);
+
+        function handleTouchStart(event) {
+            event.preventDefault();
+            const touch = event.touches[0];
+            lastX = touch.clientX;
+            lastY = touch.clientY;
+            dragging = true;
+        }
+
+        function handleTouchMove(event) {
+            event.preventDefault();
+            if (!dragging) return;
+            const touch = event.touches[0];
+            const deltaX = touch.clientX - lastX;
+            const deltaY = touch.clientY - lastY;
+            lastX = touch.clientX;
+            lastY = touch.clientY;
+            rotateCube(deltaX, deltaY);
+        }
+
+        function handleTouchEnd(event) {
+            event.preventDefault();
+            dragging = false;
+        }
+
+        function rotateCube(deltaX, deltaY) {
+            // Apply rotation logic here
+            // Update the cube's rotation matrix based on touch input
+        }
+
+        // Initialize the shader program
+        function initShaderProgram(gl, vsSource, fsSource) {
+            const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
+            const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+            const shaderProgram = gl.createProgram();
+            gl.attachShader(shaderProgram, vertexShader);
+            gl.attachShader(shaderProgram, fragmentShader);
+            gl.linkProgram(shaderProgram);
+
+            if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                alert(
+                    "Unable to initialize the shader program: " +
+                    gl.getProgramInfoLog(shaderProgram)
+                );
+                return null;
+            }
+
+            return shaderProgram;
+        }
+
+        // Create and compile a shader
+        function loadShader(gl, type, source) {
+            const shader = gl.createShader(type);
+
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                alert(
+                    "An error occurred compiling the shaders: " +
+                    gl.getShaderInfoLog(shader)
+                );
+                gl.deleteShader(shader);
+                return null;
+            }
+
+            return shader;
+        }
+
+        // Initialize the cube buffers
+        function initBuffers(gl) {
+            // Define the vertices and colors for the cube
+            const positions = [
+                // Front face
+                -1.0, -1.0, 1.0,
+                1.0, -1.0, 1.0,
+                1.0, 1.0, 1.0,
+                -1.0, 1.0, 1.0,
+
+                // Back face
+                -1.0, -1.0, -1.0,
+                -1.0, 1.0, -1.0,
+                1.0, 1.0, -1.0,
+                1.0, -1.0, -1.0,
+
+                // ...
+
+                // Define the colors for the cube faces
+                1.0, 0.0, 0.0, 1.0, // Front face: red
+                0.0, 1.0, 0.0, 1.0, // Back face: green
+                // ...
+
+            ];
+
+            // Create a buffer for vertex positions
+            const positionBuffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+            gl.bufferData(
+                gl.ARRAY_BUFFER,
+                new Float32Array(positions),
+                gl.STATIC_DRAW
+            );
+
+            // ...
+
+            return {
+                position: positionBuffer,
+                // ...
+            };
+        }
+
+        // Render the scene
+        function drawScene(gl, programInfo, buffers) {
+            gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
+            gl.clearDepth(1.0); // Clear everything
+            gl.enable(gl.DEPTH_TEST); // Enable depth testing
+            gl.depthFunc(gl.LEQUAL); // Near things obscure far things
+
+            // Clear the canvas before drawing
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+            // Set up the viewport
+            gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+
+            // Use the shader program
+            gl.useProgram(programInfo.program);
+
+            // Set the shader uniforms
+            gl.uniformMatrix4fv(
+                programInfo.uniformLocations.projectionMatrix,
+                false,
+                projectionMatrix
+            );
+            gl.uniformMatrix4fv(
+                programInfo.uniformLocations.modelViewMatrix,
+                false,
+                modelViewMatrix
+            );
+
+            // Bind the position buffer
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+
+            // ...
+
+            // Draw the cube
+            const offset = 0;
+            const vertexCount = 24; // Assuming 24 vertices for a cube
+            gl.drawArrays(gl.TRIANGLES, offset, vertexCount);
+        }
+
+        // Call the drawScene function repeatedly to animate the cube
+        function renderLoop() {
+            requestAnimationFrame(renderLoop);
+            drawScene(gl, programInfo, buffers);
+        }
+
+        // Start rendering
+        renderLoop();
+
+    </script>
+</body>
+
+</html>
