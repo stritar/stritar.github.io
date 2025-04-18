@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="theme1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Grid with Theme Switcher</title>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="layout.css" />
+</head>
+<body>
+  <main class="grid-container">
+    <div class="nav">
+        test sfsfsd
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+    <div class="grid-item">Lorem ipsum dolor sit amet.</div>
+    <div class="grid-item">Consectetur adipiscing elit.</div>
+    <div class="grid-item">Integer nec odio. Praesent libero.</div>
+    <div class="grid-item">Sed cursus ante dapibus diam.</div>
+  </main>
+  <div class="flare">
+    <img src="/img/flare.png" />
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', currentTheme === 'theme1' ? 'theme2' : 'theme1');
+    }
+  </script>
+</body>
+</html>
