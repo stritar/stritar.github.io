@@ -6,13 +6,39 @@
   <title>Responsive Grid with Theme Switcher</title>
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="layout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <main class="grid-container">
     <div class="nav">
-        test sfsfsd
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-    </div>
+        <div class="logo"></div>
+        <div class="nav-bar">
+          <div class="right-aligned-content">
+            <div class="icon-button" onclick="toggleTheme()">
+                <div class="theme"></div>
+            </div>
+            <div class="icon-button">
+                <div class="github"></div>
+            </div>
+            <p class="ghost-link desk">
+                Docs
+            </p>
+            <p class="ghost-link desk">
+                Customers
+            </p>
+            <p class="ghost-link desk">
+                Login
+            </p>
+            <div class="cta-small">
+                <p>Get started</p>
+            </div>
+            <div class="secondary-small phone">
+                <div class="menu-icon"></div>
+            </div>
+            </div>
+        </div>
+      </div>
+
     <div class="grid-item">Lorem ipsum dolor sit amet.</div>
     <div class="grid-item">Consectetur adipiscing elit.</div>
     <div class="grid-item">Integer nec odio. Praesent libero.</div>
@@ -31,3 +57,5 @@
   </script>
 </body>
 </html>
+
+
