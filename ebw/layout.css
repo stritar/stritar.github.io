@@ -1,4 +1,13 @@
 
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -11,16 +20,41 @@
 
 .grid-item {
   background: var(--surface-opacity-0-0-25);
-  padding: var(--space-2);
-  border-radius: 8px;
+  padding: 32px;
+  border-radius: 12px;
   grid-column: span 3;
   min-height: 100px;
   transition: background-color 0.2s;
+  cursor: pointer;
+  position: relative;
 }
 
 .grid-item:hover {
   background: var(--surface-opacity-0-0-50);
   transition: background-color 0.5s;
+}
+
+.grid-item .headings {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.grid-item h2 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 150% */
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.grid-item h3 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 150% */
+  margin: 0;
 }
 
 .nav {
@@ -55,6 +89,20 @@
     gap: 16px !important; 
     }
 
+  .logo {
+    width: 40px !important; 
+  }
+
+  .beta-container {
+    margin-top: 64px !important;
+  }
+
+  h1 {
+    font-size: 32px !important;
+    line-height: 36px !important;
+    width: 320px !important;
+  }
+
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -74,7 +122,7 @@
 
 @media (min-width: 1024px) and (max-width: 1199px) {
   .grid-item {
-    grid-column: span 4;
+    grid-column: span 6;
   }
 
   .phone  {
@@ -84,7 +132,7 @@
 
 @media (min-width: 1200px) {
   .grid-item {
-    grid-column: span 3;
+    grid-column: span 6;
   }
 
   .phone  {
@@ -95,7 +143,6 @@
 body {
   background-color: var(--surface--1);
   color: var(--content-strong);
-  font-family: sans-serif;
   transition: background-color 0.2s, color 0.2s;
   padding: 0;
   margin: 0;
@@ -127,7 +174,7 @@ body {
   transform: translateX(-50%);
     /* Fade animation */
   opacity: 0.4;
-  animation: fadeInOut 15s ease-in-out infinite;
+  animation: fadeInOut 20s ease-in-out infinite;
 }
 
 @keyframes fadeInOut {
@@ -213,7 +260,7 @@ p.ghost-link:hover {
   background-color: var(--cta-default);
   height: auto;
   border-radius: 9999px;
-  height: 40px;
+  height: 32px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -238,6 +285,79 @@ p.ghost-link:hover {
   color: #ffffff;
 }
 
+.cta-big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cta-default);
+  height: auto;
+  border-radius: 9999px;
+  height: 48px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cta-big:hover {
+  background-color: var(--cta-hover);
+  transition: background-color 0.2s;
+}
+
+.cta-big:active {
+  background-color: var(--cta-pressed);
+  transition: background-color 0.2s;
+}
+
+.cta-big p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+  padding: 0 40px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.secondary-big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-default);
+  height: auto;
+  border-radius: 9999px;
+  height: 48px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondary-big:hover {
+  background-color: var(--secondary-hover);
+  transition: background-color 0.2s;
+}
+
+.secondary-big:active {
+  background-color: var(--cta-pressed);
+  transition: background-color 0.2s;
+}
+
+.secondary-big p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+  padding: 0 40px;
+  margin: 0;
+  color: var(--content-inverted);
+}
+
+.hero-buttons {
+  grid-column: 12;
+  display: flex;
+  gap: 16px;
+  grid-column: span 12;
+  justify-content: center;
+}
+
+
 .secondary-small {
   display: flex;
   justify-content: center;
@@ -257,4 +377,122 @@ p.ghost-link:hover {
   background-image: var(--menu-icon);
   background-size: cover;
   border-image-width: 0;
+}
+
+.beta-container {
+  display: flex;
+  margin-top: 96px;
+  grid-column: span 12;
+  height: auto;
+  justify-content: center;
+}
+
+.beta-badge {
+  width: 61px;
+  height: 24px;
+  background-image: var(--beta);
+  background-size: cover;
+  border-image-width: 0;
+}
+
+.hero {
+  display: flex;
+  grid-column: span 12;
+  height: auto;
+  justify-content: center;
+}
+
+h1 {
+width:700px;
+text-align: center;
+font-family: 'Inter', sans-serif;
+font-size: 72px;
+font-style: normal;
+font-weight: 200;
+line-height: 80px;
+margin: 0;
+}
+
+h1 strong {
+  font-weight: 700;
+}
+
+.mono {
+  display: flex;
+  grid-column: span 12;
+  font-family: 'DM Mono', monospace;
+  justify-content: center;
+}
+
+p.mono {
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 150% */
+margin:0;
+}
+
+
+.lottie-1-light,
+.lottie-1-dark {
+  display: none;
+}
+
+
+html[data-theme="theme1"] .lottie-1-dark {
+display: block;
+}
+
+
+html[data-theme="theme2"] .lottie-1-light {
+display: block;
+}
+
+lottie-player {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.quote {
+  display: flexbox;
+  grid-column: span 12;
+  margin-bottom: 64px;
+}
+
+.quote p {
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 32px; /* 150% */
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.quote small {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 150% */
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.bottom-margin{
+  margin-bottom: 100px;
+}
+
+section {
+  display: flex;
+  grid-column: span 12;
+  margin: 520px 0;
 }

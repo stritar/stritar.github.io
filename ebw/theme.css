@@ -13,6 +13,7 @@
     --github-icon: url("./img/icons/github_dark.svg");
     --theme-icon: url("./img/icons/sun.svg");
     --menu-icon: url("./img/icons/menu-dark.svg");
+    --beta: url("./img/beta-dark.svg");
 
     /*surface*/
     --surface-1: #2E3136;
@@ -44,6 +45,8 @@
     --content-strong:#FFFFFF;
     --content-subtle:#DDE0E4;
     --content-muted:#BDC1CA;
+    --content-inverted:#1A1C1F;
+
   }
   
   [data-theme="theme2"] {
@@ -52,8 +55,7 @@
     --github-icon: url("./img/icons/github_light.svg");
     --theme-icon: url("./img/icons/moon.svg");
     --menu-icon: url("./img/icons/menu-light.svg");
-
-
+    --beta: url("./img/beta-light.svg");
 
     /*surface*/
     --surface-1: #FFF;
@@ -86,5 +88,7 @@
     --content-strong:#1A1C1F;
     --content-subtle:#2E3136;
     --content-muted:#646B76;
+    --content-inverted:#ffff;
+
   }
   
