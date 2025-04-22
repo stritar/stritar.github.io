@@ -76,8 +76,14 @@ a {
 }
 
 .logo-lottie {
-  width: 204px; 
-  height: 40px;
+  width:auto; 
+  height: 48px;
+  cursor: pointer;
+}
+
+.logo-lottie lottie-player {
+  height: 48px;
+  width: auto;  
 }
 
 /* Responsive Breakpoints */
@@ -99,8 +105,14 @@ a {
     gap: 16px !important; 
     }
 
-  .logo {
-    width: 40px !important; 
+  .logo-lottie {
+    width: 40px !important;
+    overflow: hidden !important;
+  }
+
+  .logo-lottie lottie-player {
+    height: 48px !important;
+    width: 240px !important;
   }
 
   .beta-container {
