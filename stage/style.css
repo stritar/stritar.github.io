@@ -1,0 +1,98 @@
+/* Base styles */
+body {
+  font-family: sans-serif;
+  height: 100%; /* ensure full viewport coverage */
+  margin: 0;
+  background: var(--color-bg-page);
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* keeps gradient filling viewport even when scrolling */
+  background-size: 100% 100%;   /* stretch vertically */
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Container: always centered, max width 1440px */
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+}
+
+/* Mobile: 390px, 4 columns, 16px margin, 16px gutter */
+@media (max-width: 390px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 16px;
+    gap: 16px;
+  }
+}
+
+/* Tablet: 768px, 8 columns, 24px margin, 24px gutter */
+@media (min-width: 391px) and (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(8, 1fr);
+    padding: 0 24px;
+    gap: 24px;
+  }
+}
+
+/* Desktop: up to 1440px, 12 columns, 96px margin, 32px gutter */
+@media (min-width: 769px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0 96px;
+    gap: 32px;
+  }
+}
+
+/* Content block spanning all columns */
+.content {
+  grid-column: 1 / -1;
+}
+
+/* Light theme (default) */
+:root[data-theme="light"] {
+  --color-bg-page: linear-gradient(
+    180deg,
+    #E9EAEA 0%,
+    #EDECEB 50%,
+    #F7F5F4 100%
+  );
+  --color-text: #111111;
+
+  --color-btn-bg: #f0f0f0;
+  --color-btn-text: #111111;
+  --color-btn-bg-hover: #e0e0e0;
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --color-bg-page: linear-gradient(
+    180deg,
+    #222324 0%,
+    #292623 50%,
+    #3D3A37 100%
+  );
+  --color-text: #f0f0f0;
+
+  --color-btn-bg: #333333;
+  --color-btn-text: #f0f0f0;
+  --color-btn-bg-hover: #444444;
+}
+
+#theme-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+  background: var(--color-btn-bg-hover);
+}
+

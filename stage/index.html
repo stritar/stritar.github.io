@@ -4,8 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Page Title</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="content">
+        <p>Test container.</p>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+      </div>
+    </div>
+
+        <script>
+      const toggleBtn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      // Load saved theme or system preference
+      function initTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          root.setAttribute("data-theme", savedTheme);
+        } else {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            root.setAttribute("data-theme", "dark");
+          } else {
+            root.setAttribute("data-theme", "light");
+          }
+        }
+      }
+
+      // Toggle and save preference
+      toggleBtn.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme");
+        const newTheme = current === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+
+      initTheme();
+    </script>
+
   </body>
 </html>
