@@ -136,21 +136,21 @@ p a {
 /* Intro copy spacing (content width) */
 @media (max-width: 390px) {
     .intro p {
-        margin: 8px 0;
+        margin: 4px 0 !important;
         max-width: 512px;
     }
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
     .intro p {
-        margin: 8px 0;
+        margin: 8px 0 !important;
         max-width: 512px;
     }
 }
 
 @media (min-width: 769px) {
     .intro p {
-        margin: 16px 0;
+        margin: 16px 0 !important;
         max-width: 512px;
     }
 }
@@ -225,17 +225,16 @@ p a {
 @media (min-width: 391px) and (max-width: 768px) {
     .header {
         padding-top: 32px;
+        /* tablet */
     }
 }
 
-/* tablet */
 @media (min-width: 769px) {
     .header {
         padding-top: 40px;
+        /* desktop */
     }
 }
-
-/* desktop */
 
 /* Intro needs 16px padding top & bottom (all breakpoints) */
 .content.intro {
@@ -407,7 +406,7 @@ p a {
 
 @media (max-width: 390px) {
     .cards-grid {
-        grid-template-columns: 2fr;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -451,6 +450,10 @@ p a {
     --card-bg-hover: rgba(0, 0, 0, 0.50);
 }
 
+.card p {
+    font-size: 12px;
+}
+
 .card {
     background: var(--card-bg);
 }
@@ -474,7 +477,6 @@ p a {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 8px;
-    outline: 1px dashed currentColor;
     opacity: 0.25;
     transition: opacity 0.2s ease;
 }
@@ -563,6 +565,8 @@ p a {
     }
 }
 
+/* desktop */
+
 /* ---- Exact spacing between header and intro ---- */
 /* Intro keeps 16px top padding (as requested) */
 .content.intro {
@@ -573,9 +577,8 @@ p a {
 /* Base: no bottom padding on header; compute the exact gap using vars */
 :root {
     --intro-pt: 16px;
+    /* intro top padding used in the calc */
 }
-
-/* intro top padding used in the calc */
 
 .header {
     padding-bottom: 0;
