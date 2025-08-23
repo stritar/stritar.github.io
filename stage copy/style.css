@@ -56,8 +56,7 @@ body::after {
     pointer-events: none;
     will-change: opacity;
     transition: opacity 0.8s ease;
-    z-index: -2;
-    /* below WebGL layer */
+    z-index: -1;
 }
 
 /* Light gradient layer */
@@ -221,26 +220,21 @@ p a {
     padding-top: 16px;
     /* phone */
     padding-bottom: 0;
-
-    /* keep header above any lifted content */
-    position: relative;
-    z-index: 1;
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
     .header {
         padding-top: 32px;
+        /* tablet */
     }
 }
 
-/* tablet */
 @media (min-width: 769px) {
     .header {
         padding-top: 40px;
+        /* desktop */
     }
 }
-
-/* desktop */
 
 /* Intro needs 16px padding top & bottom (all breakpoints) */
 .content.intro {
@@ -249,10 +243,6 @@ p a {
     gap: 8px;
     padding: 16px 0;
     /* 16 top & bottom */
-
-    /* keep intro above any lifted content */
-    position: relative;
-    z-index: 1;
 }
 
 .button-group {
@@ -578,6 +568,7 @@ p a {
 /* desktop */
 
 /* ---- Exact spacing between header and intro ---- */
+/* Intro keeps 16px top padding (as requested) */
 .content.intro {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -586,9 +577,9 @@ p a {
 /* Base: no bottom padding on header; compute the exact gap using vars */
 :root {
     --intro-pt: 16px;
+    /* intro top padding used in the calc */
 }
 
-/* intro top padding used in the calc */
 .header {
     padding-bottom: 0;
     /* margin-bottom = desired - container row-gap - intro top padding */
@@ -604,6 +595,7 @@ p a {
     .header {
         --desired-gap: 16px;
         padding-top: 16px;
+        /* phone top padding */
     }
 }
 
@@ -616,6 +608,7 @@ p a {
     .header {
         --desired-gap: 24px;
         padding-top: 32px;
+        /* tablet top padding */
     }
 }
 
@@ -628,21 +621,6 @@ p a {
     .header {
         --desired-gap: 24px;
         padding-top: 40px;
+        /* desktop top padding */
     }
 }
-
-/* ========== WebGL background layer (above gradients, below content) ========== */
-#webgl-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    /* under content, above gradients */
-    pointer-events: none !important;
-    /* never intercept clicks */
-}
-
-#webgl-bg * {
-    pointer-events: none !important;
-}
-
-/* ensure the canvas is inert */
