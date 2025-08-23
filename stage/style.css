@@ -422,7 +422,7 @@ p {
     --color-btn-text: #F7F5F4;
     --color-btn-bg-hover: rgba(47, 47, 47, 1.00);
 
-    --slider-bg: rgba(47, 47, 47, 0.80);
+    --slider-bg: rgba(47, 47, 47, 1.00);
 }
 
 /* Dark theme */
