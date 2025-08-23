@@ -15,6 +15,9 @@
     font-display: swap;
 }
 
+html, body {
+  background-color: #EDECEB; /* fallback base color for light theme */
+}
 
 
 body {
@@ -422,7 +425,7 @@ p {
     --color-btn-text: #F7F5F4;
     --color-btn-bg-hover: rgba(47, 47, 47, 1.00);
 
-    --slider-bg: rgba(47, 47, 47, 0.80);
+    --slider-bg: rgba(47, 47, 47, 1.00);
 }
 
 /* Dark theme */
@@ -437,5 +440,5 @@ p {
     --color-btn-text: #2F2F2F;
     --color-btn-bg-hover: rgba(247, 245, 244, 1.00);
 
-    --slider-bg: rgba(247, 245, 244, 0.80);
+    --slider-bg: rgba(247, 245, 244, 1.00);
 }
