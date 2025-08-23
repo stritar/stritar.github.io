@@ -48,7 +48,7 @@ body {
         grid-template-columns: repeat(12, 1fr);
         padding: 0 96px;
         gap: 32px;
-        margin-top: 32px;
+        margin-top: 40px;
     }
 }
 
@@ -101,8 +101,8 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 64px;
-    height: 32px;
+    width: 56px;
+    height: 28px;
     cursor: pointer;
     /* <-- pointer on container */
 }
@@ -131,8 +131,8 @@ body {
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 4px;
-    top: 4px;
+    left: 2px;
+    top: 2px;
     background: var(--color-btn-text);
     border-radius: 50%;
     transition: transform 0.3s;
@@ -146,14 +146,14 @@ body {
     position: absolute;
     inset: 0;
     background:
-        url("assets/sun.svg") left 8px center / 16px no-repeat,
-        url("assets/moon.svg") right 8px center / 16px no-repeat;
+        url("assets/sun.svg") left 6px center / 16px no-repeat,
+        url("assets/moon.svg") right 6px center / 16px no-repeat;
     pointer-events: none;
 }
 
 /* Move knob when checked */
 .switch input:checked+.slider::before {
-    transform: translateX(32px);
+    transform: translateX(28px);
 }
 
 /* Checked state */
