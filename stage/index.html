@@ -88,17 +88,21 @@
 
         const scene = new THREE.Scene();
 
+        // Helpers to read theme-driven color
+        const getCubeColor = () =>
+            (getComputedStyle(document.documentElement).getPropertyValue("--cube-color").trim() || "#000000");
+
         // Orthographic camera centered at (0,0)
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1000, 1000);
         camera.position.set(0, 0, 10);
 
-        // Pure black cube
-        const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        // Cube uses theme color
+        const material = new THREE.MeshBasicMaterial({ color: new THREE.Color(getCubeColor()) });
         const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
         scene.add(cube);
 
         function resize() {
-            // Size from the fixed container (uses svw/svh/dvh from CSS)
+            // Size from the fixed container (CSS uses svw/svh/dvw/dvh)
             const w = container.clientWidth;
             const h = container.clientHeight;
 
@@ -116,7 +120,11 @@
             cube.position.set(0, 0, 0);
         }
 
-        // Handle all relevant changes
+        // Update cube color when theme changes
+        function setCubeColor() {
+            material.color.set(getCubeColor());
+        }
+
         window.addEventListener("resize", resize, { passive: true });
         window.addEventListener("orientationchange", resize, { passive: true });
 
@@ -132,7 +140,39 @@
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
+
+        // Hook into your existing theme toggle (if present)
+        const toggleInput = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                root.setAttribute("data-theme", savedTheme);
+                if (toggleInput) toggleInput.checked = savedTheme === "dark";
+            } else {
+                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                root.setAttribute("data-theme", systemDark ? "dark" : "light");
+                if (toggleInput) toggleInput.checked = systemDark;
+            }
+            setCubeColor(); // set color on load
+        }
+
+        if (toggleInput) {
+            toggleInput.addEventListener("change", () => {
+                const newTheme = toggleInput.checked ? "dark" : "light";
+                root.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+                setCubeColor(); // update on toggle
+            });
+        }
+
+        // Also react if data-theme changes by any other means
+        new MutationObserver(setCubeColor).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+
+        initTheme();
     </script>
+
 
     <!-- Footer -->
     <footer class="footer">

@@ -655,3 +655,15 @@ p a {
 }
 
 /* ensure canvas is inert */
+
+:root[data-theme="light"] {
+    /* …your existing vars… */
+    --cube-color: #E0E0DD;
+    /* cube in light mode */
+}
+
+:root[data-theme="dark"] {
+    /* …your existing vars… */
+    --cube-color: #1E1B19;
+    /* cube in dark mode */
+}
