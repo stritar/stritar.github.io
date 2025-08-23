@@ -19,35 +19,35 @@
                 </span>
             </label>
         </div>
-        <div class="content">
-            <p>Test container.</p>
-            <button id="theme-toggle">Toggle Dark Mode</button>
+        <div class="content intro">
+            <h1>Denis Stritar</h1>
+            <p>I’m a Berlin-based Product Designer at <a href="">Embeddable.com</a> where I design intuitive, customer-facing analytics experiences that work seamlessly out of the box.</p>
         </div>
     </div>
 
     <script>
-const toggleInput = document.getElementById("theme-toggle");
-const root = document.documentElement;
+        const toggleInput = document.getElementById("theme-toggle");
+        const root = document.documentElement;
 
-function initTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    root.setAttribute("data-theme", savedTheme);
-    toggleInput.checked = savedTheme === "dark";
-  } else {
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    root.setAttribute("data-theme", systemDark ? "dark" : "light");
-    toggleInput.checked = systemDark;
-  }
-}
+        function initTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                root.setAttribute("data-theme", savedTheme);
+                toggleInput.checked = savedTheme === "dark";
+            } else {
+                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                root.setAttribute("data-theme", systemDark ? "dark" : "light");
+                toggleInput.checked = systemDark;
+            }
+        }
 
-toggleInput.addEventListener("change", () => {
-  const newTheme = toggleInput.checked ? "dark" : "light";
-  root.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-});
+        toggleInput.addEventListener("change", () => {
+            const newTheme = toggleInput.checked ? "dark" : "light";
+            root.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+        });
 
-initTheme();
+        initTheme();
 
 
     </script>

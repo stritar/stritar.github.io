@@ -1,6 +1,26 @@
 /* Base styles */
+@font-face {
+    font-family: "Campton";
+    src: url("assets/fonts/Campton-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Campton";
+    src: url("assets/fonts/Campton-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 body {
-    font-family: sans-serif;
+    font-family: "Campton", sans-serif;
+    font-weight: 300;
+    /* Light */
     height: 100%;
     /* ensure full viewport coverage */
     margin: 0;
@@ -12,6 +32,77 @@ body {
     /* stretch vertically */
     color: var(--color-text);
     transition: background 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    /* better on macOS / WebKit */
+    -moz-osx-font-smoothing: grayscale;
+    /* better on macOS / Firefox */
+    text-rendering: optimizeLegibility;
+    /* improves kerning/ligatures */
+}
+
+h1,
+h2,
+h3,
+strong {
+    font-weight: 700;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+p a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+
+@media (max-width: 390px) {
+    h1 {
+        font-size: 24px;
+        line-height: 24px;
+        color: var(--color-text);
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--color-text);
+    }
+}
+
+
+@media (min-width: 391px) and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+        line-height: 24px;
+        color: var(--color-text);
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--color-text);
+    }
+}
+
+
+@media (min-width: 769px) {
+    h1 {
+        font-size: 32px;
+        line-height: 32px;
+        color: var(--color-text);
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--color-text);
+    }
+}
+
+.intro p{
+    margin-top: 16px;
+    max-width: 600px;
 }
 
 /* Container: always centered, max width 1440px */
@@ -55,6 +146,16 @@ body {
 /* Content block spanning all columns */
 .content {
     grid-column: 1 / -1;
+    margin: 0;
+    /* reset any inherited margin */
+    padding: 0;
+    /* ensure no padding */
+}
+
+.content h1,
+p {
+    margin: 0;
+    /* reset paragraph margins */
 }
 
 .header {
@@ -190,11 +291,11 @@ body {
             #E9EAEA 0%,
             #EDECEB 50%,
             #F7F5F4 100%);
-    --color-text: #111111;
+    --color-text: #2F2F2F;
 
-    --color-btn-bg: #f0f0f0;
-    --color-btn-text: #111111;
-    --color-btn-bg-hover: #e0e0e0;
+    --color-btn-bg: #F7F5F4;
+    --color-btn-text: #2F2F2F;
+    --color-btn-bg-hover: #F7F5F4;
 }
 
 /* Dark theme */
@@ -203,9 +304,9 @@ body {
             #222324 0%,
             #292623 50%,
             #3D3A37 100%);
-    --color-text: #f0f0f0;
+    --color-text: #F7F5F4;
 
-    --color-btn-bg: #333333;
-    --color-btn-text: #f0f0f0;
-    --color-btn-bg-hover: #444444;
+    --color-btn-bg: #2F2F2F;
+    --color-btn-text: #F7F5F4;
+    --color-btn-bg-hover: #2F2F2F;
 }
