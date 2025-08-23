@@ -40,14 +40,33 @@ body {
     /* improves kerning/ligatures */
 }
 
+body,
+p,
+li {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Headings */
 h1,
 h2,
 h3,
-strong {
+h4,
+h5,
+h6 {
+    font-family: "Campton", sans-serif;
     font-weight: 700;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    /* bold style */
+    margin: 0;
+    /* reset browser default spacing if needed */
 }
+
+
 
 p a {
     color: inherit;
@@ -100,9 +119,46 @@ p a {
     }
 }
 
-.intro p{
-    margin-top: 16px;
-    max-width: 600px;
+
+/* Mobile: 390px, 4 columns, 16px margin, 16px gutter */
+@media (max-width: 390px) {
+    .intro p {
+        margin: 8px 0;
+        max-width: 512px;
+    }
+}
+
+/* Tablet: 768px, 8 columns, 24px margin, 24px gutter */
+@media (min-width: 391px) and (max-width: 768px) {
+    .intro p {
+        margin: 8px 0;
+        max-width: 512px;
+    }
+}
+
+/* Desktop: up to 1440px, 12 columns, 96px margin, 32px gutter */
+@media (min-width: 769px) {
+    .intro p {
+        margin: 16px 0;
+        max-width: 512px;
+    }
+}
+
+.content.intro {
+    display: flex;
+    flex-direction: column;
+    /* stack elements vertically */
+    gap: 8px;
+    /* 8px space between children */
+}
+
+.button-group {
+    display: flex;
+    /* place buttons side by side */
+    gap: 8px;
+    /* 8px space between them */
+    flex-wrap: wrap;
+    /* allow wrapping on smaller screens */
 }
 
 /* Container: always centered, max width 1440px */
@@ -149,7 +205,6 @@ p a {
     margin: 0;
     /* reset any inherited margin */
     padding: 0;
-    /* ensure no padding */
 }
 
 .content h1,
@@ -234,7 +289,7 @@ p {
     height: 24px;
     left: 2px;
     top: 2px;
-    background: var(--color-btn-text);
+    background: var(--slider-bg);
     border-radius: 50%;
     transition: transform 0.3s;
     cursor: pointer;
@@ -257,10 +312,7 @@ p {
     transform: translateX(28px);
 }
 
-/* Checked state */
-.switch input:checked+.slider {
-    background-color: var(--color-btn-bg-hover);
-}
+
 
 /* Dark theme logo */
 :root[data-theme="dark"] .slider {
@@ -285,6 +337,79 @@ p {
     background-image: url("assets/logo-light.svg");
 }
 
+.btn {
+    display: inline-flex;
+    /* shrink to fit icon + label */
+    align-items: center;
+    /* vertical centering */
+    padding: 8px;
+    /* button padding */
+    background: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    width: auto;
+    /* ensure no stretching */
+    max-width: max-content;
+    /* shrink to fit */
+}
+
+/* Hover effect */
+.btn:hover {
+    background: var(--color-btn-bg-hover);
+}
+
+/* Icon container */
+.btn__icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure icon image fits */
+.btn__icon img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Label spacing (padding left/right) */
+.btn__label {
+    padding: 0 8px;
+    /* space between icon and edges */
+    white-space: nowrap;
+}
+
+/* Dark theme logo */
+:root[data-theme="dark"] .doc {
+    background-image: url("assets/doc-dark.svg");
+}
+
+/* Light theme logo */
+:root[data-theme="light"] .doc {
+    background-image: url("assets/doc-light.svg");
+}
+
+/* Dark theme logo */
+:root[data-theme="dark"] .linkedin {
+    background-image: url("assets/linkedin-dark.svg");
+}
+
+/* Light theme logo */
+:root[data-theme="light"] .linkedin {
+    background-image: url("assets/linkedin-light.svg");
+}
+
+
+
 /* Light theme (default) */
 :root[data-theme="light"] {
     --color-bg-page: linear-gradient(180deg,
@@ -293,9 +418,11 @@ p {
             #F7F5F4 100%);
     --color-text: #2F2F2F;
 
-    --color-btn-bg: #F7F5F4;
-    --color-btn-text: #2F2F2F;
-    --color-btn-bg-hover: #F7F5F4;
+    --color-btn-bg: rgba(47, 47, 47, 0.80);
+    --color-btn-text: #F7F5F4;
+    --color-btn-bg-hover: rgba(47, 47, 47, 1.00);
+
+    --slider-bg: rgba(47, 47, 47, 0.80);
 }
 
 /* Dark theme */
@@ -306,7 +433,9 @@ p {
             #3D3A37 100%);
     --color-text: #F7F5F4;
 
-    --color-btn-bg: #2F2F2F;
-    --color-btn-text: #F7F5F4;
-    --color-btn-bg-hover: #2F2F2F;
+    --color-btn-bg: rgba(247, 245, 244, 0.80);
+    --color-btn-text: #2F2F2F;
+    --color-btn-bg-hover: rgba(247, 245, 244, 1.00);
+
+    --slider-bg: rgba(247, 245, 244, 0.80);
 }
