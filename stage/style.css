@@ -24,12 +24,12 @@ html {
 
 /* ========== Body & gradient layers ========== */
 body {
-    /* Body text = Inter; headings override to Campton below */
     font-family: "Inter", sans-serif;
+    /* body text */
     font-weight: 400;
     margin: 0;
 
-    /* Make page a column so footer can sit at bottom */
+    /* layout to keep footer at bottom */
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
@@ -133,7 +133,7 @@ p a {
     }
 }
 
-/* Intro copy spacing */
+/* Intro copy spacing (content width) */
 @media (max-width: 390px) {
     .intro p {
         margin: 8px 0;
@@ -161,17 +161,19 @@ p a {
     margin-left: auto;
     margin-right: auto;
     display: grid;
-
-    /* Let container grow to push footer down */
     flex: 1 0 auto;
+    /* grow to push footer down */
 }
 
+/* No general top padding/margin; header controls vertical spacing */
 @media (max-width: 390px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
         padding: 0 16px;
+        /* phone sides only */
         gap: 16px;
-        margin-top: 16px;
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 
@@ -179,19 +181,21 @@ p a {
     .container {
         grid-template-columns: repeat(8, 1fr);
         padding: 0 24px;
+        /* tablet sides only */
         gap: 24px;
-        margin-top: 24px;
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 
 @media (min-width: 769px) {
     .container {
         grid-template-columns: repeat(12, 1fr);
-        padding: 0px 96px 0;
-        /* top = 40px, sides = 96px, bottom = 0 */
+        padding: 0 96px;
+        /* desktop sides only */
         gap: 32px;
         margin-top: 0;
-        /* remove old margin so it's exactly 40px */
+        padding-top: 0;
     }
 }
 
@@ -206,23 +210,46 @@ p a {
     margin: 0;
 }
 
+/* Header (logo row): top padding only
+   16px phone, 32px tablet, 40px desktop; bottom = 0 */
+.header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    /* phone */
+    padding-bottom: 0;
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .header {
+        padding-top: 32px;
+    }
+}
+
+/* tablet */
+@media (min-width: 769px) {
+    .header {
+        padding-top: 40px;
+    }
+}
+
+/* desktop */
+
+/* Intro needs 16px padding top & bottom (all breakpoints) */
 .content.intro {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 16px 0;
+    /* 16 top & bottom */
 }
 
 .button-group {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-}
-
-.header {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 #logo {
@@ -380,7 +407,7 @@ p a {
 
 @media (max-width: 390px) {
     .cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
     }
 }
 
@@ -398,7 +425,6 @@ p a {
     }
 }
 
-/* Make whole card clickable & accessible */
 .card {
     display: flex;
     flex-direction: column;
@@ -414,7 +440,7 @@ p a {
     transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-/* Card bg alphas (match slider style; hover from .25 -> .50) */
+/* Card bg alphas (hover .25 -> .50) */
 :root[data-theme="light"] {
     --card-bg: rgba(255, 255, 255, 0.25);
     --card-bg-hover: rgba(255, 255, 255, 0.50);
@@ -444,7 +470,6 @@ p a {
     outline-offset: 4px;
 }
 
-/* Fixed-ratio empty media area for future content */
 .card__media {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -459,32 +484,24 @@ p a {
     opacity: 0.50;
 }
 
-/* Center the cards grid vertically in the section */
+/* Vertically center cards section; lift on larger screens, not on phone */
 .content.cards {
     min-height: 50dvh;
-    /* keep your vertical space */
     display: grid;
     align-content: center;
-    /* vertical centering of grid rows */
     transform: translateY(-10dvh);
-    /* move section up by 10% of viewport */
     will-change: transform;
 }
 
 @media (max-width: 390px) {
     .content.cards {
         transform: none !important;
-        /* cancel the -10dvh shift */
-        margin-top: 16px;
-        /* breathing room under header */
         min-height: auto;
-        /* don't force tall section */
         align-content: start;
-        /* default grid alignment */
+        margin-top: 16px;
     }
 }
 
-/* Tablet: smaller lift */
 @media (min-width: 391px) and (max-width: 768px) {
     .content.cards {
         transform: translateY(-4dvh);
@@ -517,15 +534,14 @@ p a {
     --bg-dark-op: 1;
 }
 
-/* ========== Footer (no bg, bottom, responsive padding) ========== */
+/* ========== Footer (bottom, no bg, responsive padding) ========== */
 .footer {
     flex: 0 0 auto;
-    /* don't grow */
     background: transparent;
     color: var(--color-text);
     text-align: center;
     padding: 16px 16px;
-    /* mobile matches .container padding */
+    /* phone matches container sides */
 }
 
 .footer p {
@@ -547,4 +563,61 @@ p a {
     }
 }
 
-/* desktop */
+/* ---- Exact spacing between header and intro ---- */
+/* Intro keeps 16px top padding (as requested) */
+.content.intro {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/* Base: no bottom padding on header; compute the exact gap using vars */
+:root {
+    --intro-pt: 16px;
+}
+
+/* intro top padding used in the calc */
+
+.header {
+    padding-bottom: 0;
+    /* margin-bottom = desired - container row-gap - intro top padding */
+    margin-bottom: calc(var(--desired-gap, 16px) - var(--row-gap, 16px) - var(--intro-pt));
+}
+
+/* Phone */
+@media (max-width: 390px) {
+    .container {
+        --row-gap: 16px;
+    }
+
+    .header {
+        --desired-gap: 16px;
+        padding-top: 16px;
+        /* phone top padding */
+    }
+}
+
+/* Tablet */
+@media (min-width: 391px) and (max-width: 768px) {
+    .container {
+        --row-gap: 24px;
+    }
+
+    .header {
+        --desired-gap: 24px;
+        padding-top: 32px;
+        /* tablet top padding */
+    }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .container {
+        --row-gap: 32px;
+    }
+
+    .header {
+        --desired-gap: 24px;
+        padding-top: 40px;
+        /* desktop top padding */
+    }
+}

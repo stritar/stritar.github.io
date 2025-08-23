@@ -1,30 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Denis Stritar - Product Designer</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- Inter (body font) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Theme color for iOS/Android UI bars -->
     <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
-            <a href="" id="logo"></a>
+            <a href="#" id="logo" aria-label="Home"></a>
+
             <label class="switch" aria-label="Toggle dark mode">
                 <input type="checkbox" id="theme-toggle" />
-                <span class="slider">
-                    <span class="knob-icon" aria-hidden="true"></span>
-                </span>
+                <span class="slider"></span>
             </label>
         </div>
+
+        <!-- Intro -->
         <div class="content intro">
             <h1>Denis Stritar</h1>
-            <p>I’m a Berlin-based Product Designer at <a href="">Embeddable.com</a> where I design intuitive,
+            <p>I’m a Berlin-based Product Designer at <a href="#">Embeddable</a>, where I design intuitive,
                 customer-facing analytics experiences that work seamlessly out of the box.</p>
             <div class="button-group">
                 <button class="btn">
@@ -37,42 +44,41 @@
                 </button>
             </div>
         </div>
+
+        <!-- Cards -->
         <section class="content cards">
             <div class="cards-grid">
                 <a class="card" href="#">
                     <div class="card__media" aria-hidden="true"></div>
-                    <h3 class="card__title">Card title</h3>
-                    <p class="card__subtitle">Dummy subtitle text goes here for a single line of copy.</p>
+                    <h3 class="card__title">Project name</h3>
+                    <p class="card__subtitle">Project description goes here as dummy text.</p>
                 </a>
-
                 <a class="card" href="#">
                     <div class="card__media" aria-hidden="true"></div>
-                    <h3 class="card__title">Another title</h3>
-                    <p class="card__subtitle">Some short supporting text to describe the card.</p>
+                    <h3 class="card__title">Project name</h3>
+                    <p class="card__subtitle">Project description goes here as dummy text.</p>
                 </a>
-
                 <a class="card" href="#">
                     <div class="card__media" aria-hidden="true"></div>
-                    <h3 class="card__title">Third title</h3>
-                    <p class="card__subtitle">More placeholder copy for the subtitle area.</p>
+                    <h3 class="card__title">Project name</h3>
+                    <p class="card__subtitle">Project description goes here as dummy text.</p>
                 </a>
-
                 <a class="card" href="#">
                     <div class="card__media" aria-hidden="true"></div>
-                    <h3 class="card__title">Fourth title</h3>
-                    <p class="card__subtitle">Small explanatory copy for the card block.</p>
+                    <h3 class="card__title">Project name</h3>
+                    <p class="card__subtitle">Project description goes here as dummy text.</p>
                 </a>
             </div>
         </section>
-
-
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>© <span id="year"></span> Denis Stritar</p>
     </footer>
 
     <script>
+        // Theme toggle
         const toggleInput = document.getElementById("theme-toggle");
         const root = document.documentElement;
 
@@ -96,11 +102,10 @@
 
         initTheme();
 
+        // Footer year
         const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
-
     </script>
-
 </body>
 
 </html>
