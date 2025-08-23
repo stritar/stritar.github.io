@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Use viewport-fit=cover so svh/dvh can use the full screen on iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Denis Stritar - Product Designer</title>
 
     <!-- Inter (body font) -->
@@ -20,19 +21,16 @@
     <!-- WebGL background layer -->
     <div id="webgl-bg" aria-hidden="true"></div>
 
-    <!-- Your existing content -->
+    <!-- Content -->
     <div class="container">
-        <!-- header / i     <!-- Header -->
         <div class="header">
             <a href="#" id="logo" aria-label="Home"></a>
-
             <label class="switch" aria-label="Toggle dark mode">
                 <input type="checkbox" id="theme-toggle" />
                 <span class="slider"></span>
             </label>
         </div>
 
-        <!-- Intro -->
         <div class="content intro">
             <h1>Denis Stritar</h1>
             <p>I’m a Berlin-based Product Designer at <a href="#">Embeddable</a>, where I design intuitive,
@@ -49,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Cards -->
         <section class="content cards">
             <div class="cards-grid">
                 <a class="card" href="#">
@@ -76,8 +73,7 @@
         </section>
     </div>
 
-    <!-- Three.js + scene -->
-    <!-- Three.js + scene -->
+    <!-- Three.js scene -->
     <script type="module">
         import * as THREE from "https://unpkg.com/three@0.161.0/build/three.module.js";
 
@@ -96,23 +92,15 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1000, 1000);
         camera.position.set(0, 0, 10);
 
-        // Pure black cube (lighting independent)
+        // Pure black cube
         const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
         const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
         scene.add(cube);
 
-        function viewportSize() {
-            const vv = window.visualViewport;
-            if (vv) return { w: Math.round(vv.width), h: Math.round(vv.height) };
-            return { w: window.innerWidth, h: window.innerHeight };
-        }
-
         function resize() {
-            const { w, h } = viewportSize();
-
-            // Size the fixed container to the visual viewport so center = true center
-            container.style.width = w + "px";
-            container.style.height = h + "px";
+            // Size from the fixed container (uses svw/svh/dvh from CSS)
+            const w = container.clientWidth;
+            const h = container.clientHeight;
 
             renderer.setSize(w, h, false);
 
@@ -128,10 +116,9 @@
             cube.position.set(0, 0, 0);
         }
 
-        // React to all relevant viewport changes on mobile
-        window.addEventListener("resize", resize);
-        window.visualViewport?.addEventListener("resize", resize);
-        window.visualViewport?.addEventListener("scroll", resize);
+        // Handle all relevant changes
+        window.addEventListener("resize", resize, { passive: true });
+        window.addEventListener("orientationchange", resize, { passive: true });
 
         resize();
 
@@ -146,7 +133,6 @@
         }
         requestAnimationFrame(animate);
     </script>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -169,13 +155,11 @@
                 toggleInput.checked = systemDark;
             }
         }
-
         toggleInput.addEventListener("change", () => {
             const newTheme = toggleInput.checked ? "dark" : "light";
             root.setAttribute("data-theme", newTheme);
             localStorage.setItem("theme", newTheme);
         });
-
         initTheme();
 
         // Footer year

@@ -634,7 +634,16 @@ p a {
 /* ========== WebGL background layer (above gradients, below content) ========== */
 #webgl-bg {
     position: fixed;
-    inset: 0;
+    left: 0;
+    top: 0;
+    /* fallback → small viewport → dynamic viewport (latest wins where supported) */
+    width: 100vw;
+    width: 100svw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+
     z-index: -1;
     /* under content, above gradients */
     pointer-events: none !important;
@@ -645,4 +654,4 @@ p a {
     pointer-events: none !important;
 }
 
-/* ensure the canvas is inert */
+/* ensure canvas is inert */
