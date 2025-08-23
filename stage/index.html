@@ -37,7 +37,40 @@
                 </button>
             </div>
         </div>
+        <section class="content cards">
+            <div class="cards-grid">
+                <a class="card" href="#">
+                    <div class="card__media" aria-hidden="true"></div>
+                    <h3 class="card__title">Card title</h3>
+                    <p class="card__subtitle">Dummy subtitle text goes here for a single line of copy.</p>
+                </a>
+
+                <a class="card" href="#">
+                    <div class="card__media" aria-hidden="true"></div>
+                    <h3 class="card__title">Another title</h3>
+                    <p class="card__subtitle">Some short supporting text to describe the card.</p>
+                </a>
+
+                <a class="card" href="#">
+                    <div class="card__media" aria-hidden="true"></div>
+                    <h3 class="card__title">Third title</h3>
+                    <p class="card__subtitle">More placeholder copy for the subtitle area.</p>
+                </a>
+
+                <a class="card" href="#">
+                    <div class="card__media" aria-hidden="true"></div>
+                    <h3 class="card__title">Fourth title</h3>
+                    <p class="card__subtitle">Small explanatory copy for the card block.</p>
+                </a>
+            </div>
+        </section>
+
+
     </div>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Denis Stritar</p>
+    </footer>
 
     <script>
         const toggleInput = document.getElementById("theme-toggle");
@@ -63,6 +96,8 @@
 
         initTheme();
 
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     </script>
 

@@ -1,4 +1,4 @@
-/* Base styles */
+/* ========== Base fonts ========== */
 @font-face {
     font-family: "Campton";
     src: url("assets/fonts/Campton-Light.woff2") format("woff2");
@@ -15,23 +15,31 @@
     font-display: swap;
 }
 
-/* Solid fallback lives on html so our gradient layers can sit under content */
+/* ========== Solid fallback (behind gradients) ========== */
 html {
     background-color: var(--color-bg-base);
     min-height: 100%;
     min-height: 100dvh;
 }
 
+/* ========== Body & gradient layers ========== */
 body {
-    font-family: "Campton", sans-serif;
-    font-weight: 300;
+    /* Body text = Inter; headings override to Campton below */
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
     margin: 0;
+
+    /* Make page a column so footer can sit at bottom */
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
     position: relative;
     /* anchor pseudo layers */
     z-index: 0;
-    /* create a stacking context above the layers */
+    /* keep content above gradient layers */
     background: none;
-    /* gradient handled by ::before/::after */
+    /* gradient via ::before/::after */
     color: var(--color-text);
     transition: color 0.3s;
     -webkit-font-smoothing: antialiased;
@@ -39,7 +47,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Gradient crossfade layers */
+/* Cross-fade gradient layers (fixed to viewport, behind content) */
 body::before,
 body::after {
     content: "";
@@ -49,7 +57,6 @@ body::after {
     will-change: opacity;
     transition: opacity 0.8s ease;
     z-index: -1;
-    /* <-- put behind body content */
 }
 
 /* Light gradient layer */
@@ -64,26 +71,7 @@ body::after {
     opacity: var(--bg-dark-op);
 }
 
-/* Keep the solid fallback on html */
-html {
-    background-color: var(--color-bg-base);
-    min-height: 100%;
-    min-height: 100dvh;
-}
-
-body,
-p,
-li {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-}
-
-/* Headings */
+/* ========== Typography ========== */
 h1,
 h2,
 h3,
@@ -91,6 +79,7 @@ h4,
 h5,
 h6 {
     font-family: "Campton", sans-serif;
+    /* headings = Campton */
     font-weight: 700;
     margin: 0;
 }
@@ -166,24 +155,15 @@ p a {
     }
 }
 
-/* Layout */
-.content.intro {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.button-group {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
+/* ========== Layout ========== */
 .container {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
+
+    /* Let container grow to push footer down */
+    flex: 1 0 auto;
 }
 
 @media (max-width: 390px) {
@@ -207,9 +187,11 @@ p a {
 @media (min-width: 769px) {
     .container {
         grid-template-columns: repeat(12, 1fr);
-        padding: 0 96px;
+        padding: 0px 96px 0;
+        /* top = 40px, sides = 96px, bottom = 0 */
         gap: 32px;
-        margin-top: 40px;
+        margin-top: 0;
+        /* remove old margin so it's exactly 40px */
     }
 }
 
@@ -220,8 +202,20 @@ p a {
 }
 
 .content h1,
-p {
+.content p {
     margin: 0;
+}
+
+.content.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .header {
@@ -246,7 +240,7 @@ p {
     }
 }
 
-/* Switch */
+/* ========== Theme switch ========== */
 .switch {
     position: relative;
     display: inline-block;
@@ -317,7 +311,7 @@ p {
     background-image: url("assets/logo-light.svg");
 }
 
-/* Buttons */
+/* ========== Buttons ========== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -347,6 +341,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .btn__icon img {
@@ -375,7 +372,127 @@ p {
     background-image: url("assets/linkedin-light.svg");
 }
 
-/* Theme tokens */
+/* ========== Cards (responsive, clickable, centered) ========== */
+.cards-grid {
+    display: grid;
+    gap: 16px;
+}
+
+@media (max-width: 390px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (min-width: 769px) {
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Make whole card clickable & accessible */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    user-select: none;
+    cursor: pointer;
+    backdrop-filter: blur(12.5px);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+/* Card bg alphas (match slider style; hover from .25 -> .50) */
+:root[data-theme="light"] {
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-bg-hover: rgba(255, 255, 255, 0.50);
+}
+
+:root[data-theme="dark"] {
+    --card-bg: rgba(0, 0, 0, 0.25);
+    --card-bg-hover: rgba(0, 0, 0, 0.50);
+}
+
+.card {
+    background: var(--card-bg);
+}
+
+.card:hover,
+.card:focus-visible {
+    background: var(--card-bg-hover);
+    transform: translateY(-2px);
+}
+
+.card:active {
+    transform: translateY(0);
+}
+
+.card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+/* Fixed-ratio empty media area for future content */
+.card__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    outline: 1px dashed currentColor;
+    opacity: 0.25;
+    transition: opacity 0.2s ease;
+}
+
+.card:hover .card__media,
+.card:focus-visible .card__media {
+    opacity: 0.50;
+}
+
+/* Center the cards grid vertically in the section */
+.content.cards {
+    min-height: 50dvh;
+    /* keep your vertical space */
+    display: grid;
+    align-content: center;
+    /* vertical centering of grid rows */
+    transform: translateY(-10dvh);
+    /* move section up by 10% of viewport */
+    will-change: transform;
+}
+
+@media (max-width: 390px) {
+    .content.cards {
+        transform: none !important;
+        /* cancel the -10dvh shift */
+        margin-top: 16px;
+        /* breathing room under header */
+        min-height: auto;
+        /* don't force tall section */
+        align-content: start;
+        /* default grid alignment */
+    }
+}
+
+/* Tablet: smaller lift */
+@media (min-width: 391px) and (max-width: 768px) {
+    .content.cards {
+        transform: translateY(-4dvh);
+        min-height: 45dvh;
+    }
+}
+
+/* ========== Theme tokens (light / dark) ========== */
 :root[data-theme="light"] {
     --color-text: #2F2F2F;
     --color-btn-bg: rgba(47, 47, 47, 0.85);
@@ -399,3 +516,35 @@ p {
     --bg-light-op: 0;
     --bg-dark-op: 1;
 }
+
+/* ========== Footer (no bg, bottom, responsive padding) ========== */
+.footer {
+    flex: 0 0 auto;
+    /* don't grow */
+    background: transparent;
+    color: var(--color-text);
+    text-align: center;
+    padding: 16px 16px;
+    /* mobile matches .container padding */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .footer {
+        padding: 24px 24px;
+    }
+}
+
+/* tablet */
+@media (min-width: 769px) {
+    .footer {
+        padding: 32px 96px;
+    }
+}
+
+/* desktop */
