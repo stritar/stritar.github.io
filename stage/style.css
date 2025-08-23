@@ -1,98 +1,211 @@
 /* Base styles */
 body {
-  font-family: sans-serif;
-  height: 100%; /* ensure full viewport coverage */
-  margin: 0;
-  background: var(--color-bg-page);
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* keeps gradient filling viewport even when scrolling */
-  background-size: 100% 100%;   /* stretch vertically */
-  color: var(--color-text);
-  transition: background 0.3s, color 0.3s;
+    font-family: sans-serif;
+    height: 100%;
+    /* ensure full viewport coverage */
+    margin: 0;
+    background: var(--color-bg-page);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* keeps gradient filling viewport even when scrolling */
+    background-size: 100% 100%;
+    /* stretch vertically */
+    color: var(--color-text);
+    transition: background 0.3s, color 0.3s;
 }
 
 /* Container: always centered, max width 1440px */
 .container {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
 }
 
 /* Mobile: 390px, 4 columns, 16px margin, 16px gutter */
 @media (max-width: 390px) {
-  .container {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 16px;
-    gap: 16px;
-  }
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+        margin-top: 16px;
+    }
 }
 
 /* Tablet: 768px, 8 columns, 24px margin, 24px gutter */
 @media (min-width: 391px) and (max-width: 768px) {
-  .container {
-    grid-template-columns: repeat(8, 1fr);
-    padding: 0 24px;
-    gap: 24px;
-  }
+    .container {
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0 24px;
+        gap: 24px;
+        margin-top: 24px;
+    }
 }
 
 /* Desktop: up to 1440px, 12 columns, 96px margin, 32px gutter */
 @media (min-width: 769px) {
-  .container {
-    grid-template-columns: repeat(12, 1fr);
-    padding: 0 96px;
-    gap: 32px;
-  }
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 96px;
+        gap: 32px;
+        margin-top: 32px;
+    }
 }
 
 /* Content block spanning all columns */
 .content {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
+}
+
+.header {
+    grid-column: 1 / -1;
+    /* span full width of grid */
+    display: flex;
+    justify-content: space-between;
+    /* logo left, toggle right */
+    align-items: center;
+}
+
+#logo {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+}
+
+@media (max-width: 390px) {
+    #logo {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+@media (min-width: 391px) and (max-width: 768px) {
+    #logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    #logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 32px;
+    cursor: pointer;
+    /* <-- pointer on container */
+}
+
+/* Hide native checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    /* <-- pointer when hovering invisible checkbox */
+}
+
+/* Track */
+.slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+/* Knob */
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+    background: var(--color-btn-text);
+    border-radius: 50%;
+    transition: transform 0.3s;
+    cursor: pointer;
+    /* <-- pointer on knob */
+}
+
+/* Sun & moon icons fixed on track */
+.slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        url("assets/sun.svg") left 8px center / 16px no-repeat,
+        url("assets/moon.svg") right 8px center / 16px no-repeat;
+    pointer-events: none;
+}
+
+/* Move knob when checked */
+.switch input:checked+.slider::before {
+    transform: translateX(32px);
+}
+
+/* Checked state */
+.switch input:checked+.slider {
+    background-color: var(--color-btn-bg-hover);
+}
+
+/* Dark theme logo */
+:root[data-theme="dark"] .slider {
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(12.5px);
+}
+
+/* Light theme logo */
+:root[data-theme="light"] .slider {
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(12.5px);
+}
+
+
+/* Dark theme logo */
+:root[data-theme="dark"] #logo {
+    background-image: url("assets/logo-dark.svg");
+}
+
+/* Light theme logo */
+:root[data-theme="light"] #logo {
+    background-image: url("assets/logo-light.svg");
 }
 
 /* Light theme (default) */
 :root[data-theme="light"] {
-  --color-bg-page: linear-gradient(
-    180deg,
-    #E9EAEA 0%,
-    #EDECEB 50%,
-    #F7F5F4 100%
-  );
-  --color-text: #111111;
+    --color-bg-page: linear-gradient(180deg,
+            #E9EAEA 0%,
+            #EDECEB 50%,
+            #F7F5F4 100%);
+    --color-text: #111111;
 
-  --color-btn-bg: #f0f0f0;
-  --color-btn-text: #111111;
-  --color-btn-bg-hover: #e0e0e0;
+    --color-btn-bg: #f0f0f0;
+    --color-btn-text: #111111;
+    --color-btn-bg-hover: #e0e0e0;
 }
 
 /* Dark theme */
 :root[data-theme="dark"] {
-  --color-bg-page: linear-gradient(
-    180deg,
-    #222324 0%,
-    #292623 50%,
-    #3D3A37 100%
-  );
-  --color-text: #f0f0f0;
+    --color-bg-page: linear-gradient(180deg,
+            #222324 0%,
+            #292623 50%,
+            #3D3A37 100%);
+    --color-text: #f0f0f0;
 
-  --color-btn-bg: #333333;
-  --color-btn-text: #f0f0f0;
-  --color-btn-bg-hover: #444444;
+    --color-btn-bg: #333333;
+    --color-btn-text: #f0f0f0;
+    --color-btn-bg-hover: #444444;
 }
-
-#theme-toggle {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: var(--color-btn-bg);
-  color: var(--color-btn-text);
-  transition: background 0.3s, color 0.3s;
-}
-
-#theme-toggle:hover {
-  background: var(--color-btn-bg-hover);
-}
-
