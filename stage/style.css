@@ -15,29 +15,60 @@
     font-display: swap;
 }
 
-
+/* Solid fallback lives on html so our gradient layers can sit under content */
+html {
+    background-color: var(--color-bg-base);
+    min-height: 100%;
+    min-height: 100dvh;
+}
 
 body {
     font-family: "Campton", sans-serif;
     font-weight: 300;
-    /* Light */
-    height: 100%;
-    /* ensure full viewport coverage */
     margin: 0;
-    background: var(--color-bg-page);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* keeps gradient filling viewport even when scrolling */
-    background-size: 100% 100%;
-    /* stretch vertically */
+    position: relative;
+    /* anchor pseudo layers */
+    z-index: 0;
+    /* create a stacking context above the layers */
+    background: none;
+    /* gradient handled by ::before/::after */
     color: var(--color-text);
-    transition: background 0.3s, color 0.3s;
+    transition: color 0.3s;
     -webkit-font-smoothing: antialiased;
-    /* better on macOS / WebKit */
     -moz-osx-font-smoothing: grayscale;
-    /* better on macOS / Firefox */
     text-rendering: optimizeLegibility;
-    /* improves kerning/ligatures */
+}
+
+/* Gradient crossfade layers */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    will-change: opacity;
+    transition: opacity 0.8s ease;
+    z-index: -1;
+    /* <-- put behind body content */
+}
+
+/* Light gradient layer */
+body::before {
+    background: linear-gradient(180deg, #E9EAEA 0%, #EDECEB 50%, #F7F5F4 100%);
+    opacity: var(--bg-light-op);
+}
+
+/* Dark gradient layer */
+body::after {
+    background: linear-gradient(180deg, #222324 0%, #292623 50%, #3D3A37 100%);
+    opacity: var(--bg-dark-op);
+}
+
+/* Keep the solid fallback on html */
+html {
+    background-color: var(--color-bg-base);
+    min-height: 100%;
+    min-height: 100dvh;
 }
 
 body,
@@ -61,12 +92,8 @@ h5,
 h6 {
     font-family: "Campton", sans-serif;
     font-weight: 700;
-    /* bold style */
     margin: 0;
-    /* reset browser default spacing if needed */
 }
-
-
 
 p a {
     color: inherit;
@@ -74,7 +101,7 @@ p a {
     font-weight: 700;
 }
 
-
+/* Type sizes */
 @media (max-width: 390px) {
     h1 {
         font-size: 24px;
@@ -89,7 +116,6 @@ p a {
     }
 }
 
-
 @media (min-width: 391px) and (max-width: 768px) {
     h1 {
         font-size: 24px;
@@ -103,7 +129,6 @@ p a {
         color: var(--color-text);
     }
 }
-
 
 @media (min-width: 769px) {
     h1 {
@@ -119,8 +144,7 @@ p a {
     }
 }
 
-
-/* Mobile: 390px, 4 columns, 16px margin, 16px gutter */
+/* Intro copy spacing */
 @media (max-width: 390px) {
     .intro p {
         margin: 8px 0;
@@ -128,7 +152,6 @@ p a {
     }
 }
 
-/* Tablet: 768px, 8 columns, 24px margin, 24px gutter */
 @media (min-width: 391px) and (max-width: 768px) {
     .intro p {
         margin: 8px 0;
@@ -136,7 +159,6 @@ p a {
     }
 }
 
-/* Desktop: up to 1440px, 12 columns, 96px margin, 32px gutter */
 @media (min-width: 769px) {
     .intro p {
         margin: 16px 0;
@@ -144,24 +166,19 @@ p a {
     }
 }
 
+/* Layout */
 .content.intro {
     display: flex;
     flex-direction: column;
-    /* stack elements vertically */
     gap: 8px;
-    /* 8px space between children */
 }
 
 .button-group {
     display: flex;
-    /* place buttons side by side */
     gap: 8px;
-    /* 8px space between them */
     flex-wrap: wrap;
-    /* allow wrapping on smaller screens */
 }
 
-/* Container: always centered, max width 1440px */
 .container {
     max-width: 1440px;
     margin-left: auto;
@@ -169,7 +186,6 @@ p a {
     display: grid;
 }
 
-/* Mobile: 390px, 4 columns, 16px margin, 16px gutter */
 @media (max-width: 390px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
@@ -179,7 +195,6 @@ p a {
     }
 }
 
-/* Tablet: 768px, 8 columns, 24px margin, 24px gutter */
 @media (min-width: 391px) and (max-width: 768px) {
     .container {
         grid-template-columns: repeat(8, 1fr);
@@ -189,7 +204,6 @@ p a {
     }
 }
 
-/* Desktop: up to 1440px, 12 columns, 96px margin, 32px gutter */
 @media (min-width: 769px) {
     .container {
         grid-template-columns: repeat(12, 1fr);
@@ -199,26 +213,21 @@ p a {
     }
 }
 
-/* Content block spanning all columns */
 .content {
     grid-column: 1 / -1;
     margin: 0;
-    /* reset any inherited margin */
     padding: 0;
 }
 
 .content h1,
 p {
     margin: 0;
-    /* reset paragraph margins */
 }
 
 .header {
     grid-column: 1 / -1;
-    /* span full width of grid */
     display: flex;
     justify-content: space-between;
-    /* logo left, toggle right */
     align-items: center;
 }
 
@@ -237,42 +246,22 @@ p {
     }
 }
 
-
-@media (min-width: 391px) and (max-width: 768px) {
-    #logo {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-
-@media (min-width: 769px) {
-    #logo {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-/* Switch container */
+/* Switch */
 .switch {
     position: relative;
     display: inline-block;
     width: 56px;
     height: 28px;
     cursor: pointer;
-    /* <-- pointer on container */
 }
 
-/* Hide native checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
     cursor: pointer;
-    /* <-- pointer when hovering invisible checkbox */
 }
 
-/* Track */
 .slider {
     position: absolute;
     inset: 0;
@@ -281,7 +270,6 @@ p {
     cursor: pointer;
 }
 
-/* Knob */
 .slider::before {
     content: "";
     position: absolute;
@@ -293,10 +281,8 @@ p {
     border-radius: 50%;
     transition: transform 0.3s;
     cursor: pointer;
-    /* <-- pointer on knob */
 }
 
-/* Sun & moon icons fixed on track */
 .slider::after {
     content: "";
     position: absolute;
@@ -307,43 +293,35 @@ p {
     pointer-events: none;
 }
 
-/* Move knob when checked */
 .switch input:checked+.slider::before {
     transform: translateX(28px);
 }
 
-
-
-/* Dark theme logo */
+/* Slider track (frosted) per theme */
 :root[data-theme="dark"] .slider {
     background: rgba(0, 0, 0, 0.50);
     backdrop-filter: blur(12.5px);
 }
 
-/* Light theme logo */
 :root[data-theme="light"] .slider {
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(12.5px);
 }
 
-
-/* Dark theme logo */
+/* Logo per theme */
 :root[data-theme="dark"] #logo {
     background-image: url("assets/logo-dark.svg");
 }
 
-/* Light theme logo */
 :root[data-theme="light"] #logo {
     background-image: url("assets/logo-light.svg");
 }
 
+/* Buttons */
 .btn {
     display: inline-flex;
-    /* shrink to fit icon + label */
     align-items: center;
-    /* vertical centering */
     padding: 8px;
-    /* button padding */
     background: var(--color-btn-bg);
     color: var(--color-btn-text);
     border: none;
@@ -355,17 +333,13 @@ p {
     font-size: 14px;
     line-height: 16px;
     width: auto;
-    /* ensure no stretching */
     max-width: max-content;
-    /* shrink to fit */
 }
 
-/* Hover effect */
 .btn:hover {
     background: var(--color-btn-bg-hover);
 }
 
-/* Icon container */
 .btn__icon {
     flex: 0 0 16px;
     width: 16px;
@@ -375,67 +349,53 @@ p {
     justify-content: center;
 }
 
-/* Ensure icon image fits */
 .btn__icon img {
     width: 16px;
     height: 16px;
 }
 
-/* Label spacing (padding left/right) */
 .btn__label {
     padding: 0 8px;
-    /* space between icon and edges */
     white-space: nowrap;
 }
 
-/* Dark theme logo */
 :root[data-theme="dark"] .doc {
     background-image: url("assets/doc-dark.svg");
 }
 
-/* Light theme logo */
 :root[data-theme="light"] .doc {
     background-image: url("assets/doc-light.svg");
 }
 
-/* Dark theme logo */
 :root[data-theme="dark"] .linkedin {
     background-image: url("assets/linkedin-dark.svg");
 }
 
-/* Light theme logo */
 :root[data-theme="light"] .linkedin {
     background-image: url("assets/linkedin-light.svg");
 }
 
-
-
-/* Light theme (default) */
+/* Theme tokens */
 :root[data-theme="light"] {
-    --color-bg-page: linear-gradient(180deg,
-            #E9EAEA 0%,
-            #EDECEB 50%,
-            #F7F5F4 100%);
     --color-text: #2F2F2F;
-
-    --color-btn-bg: rgba(47, 47, 47, 0.80);
+    --color-btn-bg: rgba(47, 47, 47, 0.85);
     --color-btn-text: #F7F5F4;
-    --color-btn-bg-hover: rgba(47, 47, 47, 1.00);
-
-    --slider-bg: rgba(47, 47, 47, 1.00);
+    --color-btn-bg-hover: rgba(47, 47, 47, 1);
+    --slider-bg: rgba(47, 47, 47, 1);
+    --color-bg-base: #EDECEB;
+    /* solid behind gradient */
+    --bg-light-op: 1;
+    --bg-dark-op: 0;
 }
 
-/* Dark theme */
 :root[data-theme="dark"] {
-    --color-bg-page: linear-gradient(180deg,
-            #222324 0%,
-            #292623 50%,
-            #3D3A37 100%);
     --color-text: #F7F5F4;
-
-    --color-btn-bg: rgba(247, 245, 244, 0.80);
+    --color-btn-bg: rgba(247, 245, 244, 0.85);
     --color-btn-text: #2F2F2F;
-    --color-btn-bg-hover: rgba(247, 245, 244, 1.00);
-
-    --slider-bg: rgba(247, 245, 244, 1.00);
+    --color-btn-bg-hover: rgba(247, 245, 244, 1);
+    --slider-bg: rgba(247, 245, 244, 1);
+    --color-bg-base: #292623;
+    /* solid behind gradient */
+    --bg-light-op: 0;
+    --bg-dark-op: 1;
 }
