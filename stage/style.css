@@ -18,20 +18,19 @@
 /* ========== Solid fallback (behind gradients) ========== */
 html {
     background-color: var(--color-bg-base);
-    min-height: 100%;
     min-height: 100dvh;
 }
 
-/* ========== Body & gradient layers ========== */
+/* ===== Create reliable stacking tiers ===== */
 body {
+    isolation: isolate;
+    /* top-level stacking context */
     font-family: "Inter", sans-serif;
     font-weight: 400;
     margin: 0;
-
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
-
     position: relative;
     z-index: 0;
     background: none;
@@ -40,9 +39,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
-/* Gradient layers (fixed to viewport, behind content) */
+/* Gradients: z = -1 (always below) */
 body::before,
 body::after {
     content: "";
@@ -52,19 +52,38 @@ body::after {
     will-change: opacity;
     transition: opacity 0.8s ease;
     z-index: -1;
-    /* directly behind content */
 }
 
-/* Light gradient layer */
 body::before {
     background: linear-gradient(180deg, #E9EAEA 0%, #EDECEB 50%, #F7F5F4 100%);
     opacity: var(--bg-light-op);
 }
 
-/* Dark gradient layer */
 body::after {
     background: linear-gradient(180deg, #222324 0%, #292623 50%, #3D3A37 100%);
     opacity: var(--bg-dark-op);
+}
+
+/* Background WebGL: z = 0 (between gradients and UI) */
+#webgl-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none !important;
+    overflow: hidden;
+}
+
+#webgl-bg * {
+    pointer-events: none !important;
+}
+
+/* UI layers: z = 1 */
+.container,
+.header,
+.content,
+.footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* ========== Typography ========== */
@@ -85,7 +104,6 @@ p a {
     font-weight: 700;
 }
 
-/* Type sizes */
 @media (max-width: 390px) {
     h1 {
         font-size: 24px;
@@ -128,7 +146,7 @@ p a {
     }
 }
 
-/* Intro copy spacing (content width) */
+/* Intro copy spacing */
 @media (max-width: 390px) {
     .intro p {
         margin: 4px 0 !important;
@@ -164,8 +182,6 @@ p a {
         grid-template-columns: repeat(4, 1fr);
         padding: 0 16px;
         gap: 16px;
-        margin-top: 0;
-        padding-top: 0;
     }
 }
 
@@ -174,8 +190,6 @@ p a {
         grid-template-columns: repeat(8, 1fr);
         padding: 0 24px;
         gap: 24px;
-        margin-top: 0;
-        padding-top: 0;
     }
 }
 
@@ -184,8 +198,6 @@ p a {
         grid-template-columns: repeat(12, 1fr);
         padding: 0 96px;
         gap: 32px;
-        margin-top: 0;
-        padding-top: 0;
     }
 }
 
@@ -200,7 +212,7 @@ p a {
     margin: 0;
 }
 
-/* Header (logo row) */
+/* Header */
 .header {
     grid-column: 1 / -1;
     display: flex;
@@ -208,8 +220,6 @@ p a {
     align-items: center;
     padding-top: 16px;
     padding-bottom: 0;
-    position: relative;
-    z-index: 1;
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
@@ -230,8 +240,6 @@ p a {
     flex-direction: column;
     gap: 8px;
     padding: 16px 0;
-    position: relative;
-    z-index: 1;
 }
 
 .button-group {
@@ -243,9 +251,9 @@ p a {
 #logo {
     width: 32px;
     height: 32px;
+    display: block;
     background-repeat: no-repeat;
     background-size: contain;
-    display: block;
 }
 
 @media (max-width: 390px) {
@@ -261,22 +269,19 @@ p a {
     display: inline-block;
     width: 56px;
     height: 28px;
-    cursor: pointer;
 }
 
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
-    cursor: pointer;
 }
 
 .slider {
     position: absolute;
     inset: 0;
     border-radius: 9999px;
-    transition: background-color 0.3s;
-    cursor: pointer;
+    transition: background-color 0.3s, filter 0.2s;
 }
 
 .slider::before {
@@ -289,7 +294,6 @@ p a {
     background: var(--slider-bg);
     border-radius: 50%;
     transition: transform 0.3s;
-    cursor: pointer;
 }
 
 .slider::after {
@@ -306,15 +310,15 @@ p a {
     transform: translateX(28px);
 }
 
-/* Slider track (frosted) per theme */
+/* Slider visuals per theme */
 :root[data-theme="dark"] .slider {
-    background: rgba(0, 0, 0, 0.50);
-    backdrop-filter: blur(64px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px);
 }
 
 :root[data-theme="light"] .slider {
-    background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(64px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
 }
 
 /* Logo per theme */
@@ -331,12 +335,11 @@ p a {
     display: inline-flex;
     align-items: center;
     padding: 8px;
-    background: var(--color-btn-bg);
-    color: var(--color-btn-text);
     border: none;
     border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
+    background: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    transition: background 0.3s, filter 0.2s;
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -418,12 +421,10 @@ p a {
     text-decoration: none;
     color: inherit;
     user-select: none;
-    cursor: pointer;
-    backdrop-filter: blur(64px);
-    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    backdrop-filter: blur(16px);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
 }
 
-/* Card bg alphas (hover .25 -> .50) */
 :root[data-theme="light"] {
     --card-bg: rgba(255, 255, 255, 0.25);
     --card-bg-hover: rgba(255, 255, 255, 0.50);
@@ -432,10 +433,6 @@ p a {
 :root[data-theme="dark"] {
     --card-bg: rgba(0, 0, 0, 0.25);
     --card-bg-hover: rgba(0, 0, 0, 0.50);
-}
-
-.card p {
-    font-size: 12px;
 }
 
 .card {
@@ -457,6 +454,10 @@ p a {
     outline-offset: 4px;
 }
 
+.card p {
+    font-size: 12px;
+}
+
 .card__media {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -470,13 +471,10 @@ p a {
     opacity: 0.50;
 }
 
-/* Vertically center cards section; lift on larger screens, not on phone */
+/* Cards section lift — balanced to avoid extra scroll */
 .content.cards {
-    min-height: 50dvh;
     display: grid;
     align-content: center;
-    transform: translateY(-10dvh);
-    will-change: transform;
 }
 
 @media (max-width: 390px) {
@@ -491,11 +489,18 @@ p a {
 @media (min-width: 391px) and (max-width: 768px) {
     .content.cards {
         transform: translateY(-4dvh);
-        min-height: 45dvh;
+        min-height: calc(45dvh - 4dvh);
     }
 }
 
-/* ========== Theme tokens (light / dark) ========== */
+@media (min-width: 769px) {
+    .content.cards {
+        transform: translateY(-10dvh);
+        min-height: calc(50dvh - 10dvh);
+    }
+}
+
+/* ========== Theme tokens ========== */
 :root[data-theme="light"] {
     --color-text: #2F2F2F;
     --color-btn-bg: rgba(47, 47, 47, 0.85);
@@ -533,14 +538,12 @@ p a {
     line-height: 16px;
 }
 
-/* Tablet */
 @media (min-width: 391px) and (max-width: 768px) {
     .footer {
         padding: 24px 24px;
     }
 }
 
-/* Desktop */
 @media (min-width: 769px) {
     .footer {
         padding: 32px 96px;
@@ -562,7 +565,6 @@ p a {
     margin-bottom: calc(var(--desired-gap, 16px) - var(--row-gap, 16px) - var(--intro-pt));
 }
 
-/* Phone */
 @media (max-width: 390px) {
     .container {
         --row-gap: 16px;
@@ -574,7 +576,6 @@ p a {
     }
 }
 
-/* Tablet */
 @media (min-width: 391px) and (max-width: 768px) {
     .container {
         --row-gap: 24px;
@@ -586,7 +587,6 @@ p a {
     }
 }
 
-/* Desktop */
 @media (min-width: 769px) {
     .container {
         --row-gap: 32px;
@@ -598,40 +598,28 @@ p a {
     }
 }
 
-/* ========== WebGL background layer ========== */
-#webgl-bg {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    /* behind content, above gradients */
-    pointer-events: none;
+/* ========== Interaction: force pointer cursors on click targets ========== */
+a[href],
+button,
+#logo,
+.btn,
+.btn *,
+.card,
+.switch,
+.switch *,
+.switch input,
+.switch .slider,
+.switch .slider::before {
+    cursor: pointer !important;
 }
 
-/* Keep gradients well behind WebGL */
-body::before,
-body::after {
-    z-index: -2;
-    /* gradients */
+/* micro-feedback on toggle */
+.switch:hover .slider {
+    filter: brightness(1.08);
 }
 
-/* WebGL background layer (behind content, above gradients) */
-#webgl-bg {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    width: 100svw;
-    width: 100dvw;
-    height: 100vh;
-    height: 100svh;
-    height: 100dvh;
-    z-index: -1;
-    pointer-events: none !important;
-    /* never intercept clicks/toggles */
-}
-
-#webgl-bg * {
-    pointer-events: none !important;
+/* consistent tap highlight */
+button,
+.btn {
+    -webkit-tap-highlight-color: transparent;
 }
