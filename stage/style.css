@@ -21,7 +21,7 @@ html {
     min-height: 100dvh;
 }
 
-/* ===== Create reliable stacking tiers ===== */
+/* ===== Reliable stacking tiers ===== */
 body {
     isolation: isolate;
     /* top-level stacking context */
@@ -42,7 +42,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Gradients: z = -1 (always below) */
+/* Gradients: z = -1 */
 body::before,
 body::after {
     content: "";
@@ -64,7 +64,7 @@ body::after {
     opacity: var(--bg-dark-op);
 }
 
-/* Background WebGL: z = 0 (between gradients and UI) */
+/* WebGL background: z = 0 */
 #webgl-bg {
     position: fixed;
     inset: 0;
@@ -215,22 +215,32 @@ p a {
 /* Header */
 .header {
     grid-column: 1 / -1;
+
     display: flex;
+    flex-direction: row;
+    /* explicitly horizontal */
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    /* don't stretch vertically */
+
     padding-top: 16px;
     padding-bottom: 0;
+
+    max-height: 32px;
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
     .header {
-        padding-top: 32px;
+        margin-top: 24px;
+        padding: 0 !important;
     }
 }
 
 @media (min-width: 769px) {
     .header {
-        padding-top: 40px;
+        margin-top: 40px;
+        padding: 0 !important;
+
     }
 }
 
@@ -346,6 +356,7 @@ p a {
     line-height: 16px;
     width: auto;
     max-width: max-content;
+    backdrop-filter: blur(16px);
 }
 
 .btn:hover {
@@ -598,7 +609,7 @@ p a {
     }
 }
 
-/* ========== Interaction: force pointer cursors on click targets ========== */
+/* ========== Interaction: force pointer cursors ========== */
 a[href],
 button,
 #logo,
@@ -613,12 +624,10 @@ button,
     cursor: pointer !important;
 }
 
-/* micro-feedback on toggle */
 .switch:hover .slider {
     filter: brightness(1.08);
 }
 
-/* consistent tap highlight */
 button,
 .btn {
     -webkit-tap-highlight-color: transparent;
