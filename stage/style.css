@@ -323,12 +323,12 @@ p a {
 /* Slider visuals per theme */
 :root[data-theme="dark"] .slider {
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(24px);
 }
 
 :root[data-theme="light"] .slider {
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(24px);
 }
 
 /* Logo per theme */
@@ -356,7 +356,7 @@ p a {
     line-height: 16px;
     width: auto;
     max-width: max-content;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(24px);
 }
 
 .btn:hover {
@@ -432,7 +432,7 @@ p a {
     text-decoration: none;
     color: inherit;
     user-select: none;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(24px);
     transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
 }
 
@@ -475,7 +475,6 @@ p a {
     border-radius: 8px;
     opacity: 0.25;
     transition: opacity 0.2s ease;
-    background-color: red;
 }
 
 .card:hover .card__media,

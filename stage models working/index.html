@@ -6,65 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Denis Stritar - Product Designer</title>
 
-    <!-- Inter (body font) -->
+    <!-- Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Theme color for iOS/Android UI bars -->
+    <!-- Theme colors -->
     <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
 
-    <!-- Your site CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Import map for GLTFLoader's bare "three" import -->
+    <!-- Import map so GLTFLoader can resolve "three" -->
     <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.161.0/build/three.module.js"
-    }
-  }
+  { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
   </script>
-
-    <style>
-        /* Keep gradients behind WebGL */
-        body::before,
-        body::after {
-            z-index: -2;
-        }
-
-        /* Kill accidental page scroll caused by fixed layers */
-        html,
-        body {
-            overflow-x: hidden;
-        }
-
-        /* WebGL background layer: fixed full-viewport with no vw/vh (prevents scrollbars) */
-        #webgl-bg {
-            position: fixed;
-            inset: 0;
-            /* ← replaces width/height: 100vw/100vh */
-            z-index: -1;
-            /* behind content, above gradients */
-            overflow: hidden;
-            pointer-events: none !important;
-        }
-
-        #webgl-bg canvas {
-            display: block;
-            /* remove inline gaps */
-            /* size is controlled by renderer.setSize(..., true) */
-        }
-    </style>
 </head>
 
 <body>
-    <!-- WebGL background (behind content) -->
+    <!-- WebGL background (below UI) -->
     <div id="webgl-bg" aria-hidden="true"></div>
 
     <!-- Content -->
     <div class="container">
         <div class="header">
-            <a href="#" id="logo" aria-label="Home"></a>
+            <a href="/" id="logo" aria-label="Home"></a>
             <label class="switch" aria-label="Toggle dark mode">
                 <input type="checkbox" id="theme-toggle" />
                 <span class="slider"></span>
@@ -118,7 +83,7 @@
         <p>© <span id="year"></span> Denis Stritar</p>
     </footer>
 
-    <!-- Always-on (non‑module) UI script: theme + buttons + year -->
+    <!-- Always-on UI script -->
     <script>
         (function () {
             const root = document.documentElement;
@@ -130,7 +95,7 @@
                 const saved = localStorage.getItem("theme");
                 if (saved) {
                     root.setAttribute("data-theme", saved);
-                    if (toggleInput) toggleInput.checked = saved === "dark";
+                    if (toggleInput) toggleInput.checked = (saved === "dark");
                 } else {
                     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
                     const theme = systemDark ? "dark" : "light";
@@ -154,7 +119,7 @@
         })();
     </script>
 
-    <!-- WebGL module (isolated) -->
+    <!-- WebGL module: two models, instant swap -->
     <script type="module">
         import * as THREE from "three";
         import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
@@ -170,50 +135,50 @@
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
 
-        // Neutral lights
+        // Lights
         const hemi = new THREE.HemisphereLight(0xffffff, 0x222222, 0.8);
         const dir = new THREE.DirectionalLight(0xffffff, 0.8);
         dir.position.set(3, 5, 4);
         scene.add(hemi, dir);
 
-        let model = null;
+        // Config
+        const ROT_SPEED = 0.15;
+        const PADDING = 2.0;
+
+        // Loader & URLs
         const loader = new GLTFLoader();
+        const URL_LIGHT = new URL("assets/model-light.glb", import.meta.url).href;
+        const URL_DARK = new URL("assets/model-dark.glb", import.meta.url).href;
 
-        const MODEL_URL = new URL("assets/model.glb", import.meta.url).href;
+        let modelLight = null;
+        let modelDark = null;
+        let bothLoaded = false;
 
-        loader.load(
-            MODEL_URL,
-            (gltf) => {
-                model = gltf.scene;
-                model.traverse((o) => {
-                    if (o.isMesh) {
-                        o.frustumCulled = false;
-                        o.castShadow = false;
-                        o.receiveShadow = false;
-                    }
-                });
-                scene.add(model);
-                fitCameraToObject(camera, model, 2.0); // your zoomed-out padding
-                resize(); // ensure correct canvas size on first paint
-            },
-            undefined,
-            (err) => console.error("Failed to load model:", err)
-        );
+        function loadModel(url) {
+            return new Promise((resolve, reject) => {
+                loader.load(url, (gltf) => {
+                    const m = gltf.scene;
+                    m.traverse((o) => {
+                        if (o.isMesh) {
+                            o.frustumCulled = false;
+                            o.castShadow = false;
+                            o.receiveShadow = false;
+                        }
+                    });
+                    resolve(m);
+                }, undefined, reject);
+            });
+        }
 
-        // Center on screen & fit to view with padding
         function fitCameraToObject(cam, object, padding = 1.3) {
             const box = new THREE.Box3().setFromObject(object);
             const size = box.getSize(new THREE.Vector3());
             const center = box.getCenter(new THREE.Vector3());
-
-            // move model center to origin so it's visually centered
             object.position.sub(center);
-
             const maxDim = Math.max(size.x, size.y, size.z);
             const fov = cam.fov * Math.PI / 180;
             let dist = (maxDim / 2) / Math.tan(fov / 2);
             dist *= padding;
-
             cam.position.set(0, 0, dist);
             cam.lookAt(0, 0, 0);
             cam.near = Math.max(0.01, dist / 100);
@@ -221,29 +186,78 @@
             cam.updateProjectionMatrix();
         }
 
-        // Keep canvas perfectly matched to the fixed container
+        function fitCameraToBoth(cam, a, b, padding = 1.3) {
+            const box = new THREE.Box3();
+            if (a) box.expandByObject(a);
+            if (b) box.expandByObject(b);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+            if (a) a.position.sub(center);
+            if (b) b.position.sub(center);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fov = cam.fov * Math.PI / 180;
+            let dist = (maxDim / 2) / Math.tan(fov / 2);
+            dist *= padding;
+            cam.position.set(0, 0, dist);
+            cam.lookAt(0, 0, 0);
+            cam.near = Math.max(0.01, dist / 100);
+            cam.far = dist * 100;
+            cam.updateProjectionMatrix();
+        }
+
+        // Keep canvas synced + fit
         function resize() {
             const rect = container.getBoundingClientRect();
             const w = Math.max(1, Math.floor(rect.width));
             const h = Math.max(1, Math.floor(rect.height));
-            renderer.setSize(w, h, true);   // <- also updates canvas CSS size
+            renderer.setSize(w, h, true);
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
-            if (model) fitCameraToObject(camera, model, 2.0);
+
+            if (bothLoaded) {
+                fitCameraToBoth(camera, modelLight, modelDark, PADDING);
+            } else if (modelLight || modelDark) {
+                fitCameraToObject(camera, modelLight || modelDark, PADDING);
+            }
         }
-        // ResizeObserver catches any layout/OS UI changes
         const ro = new ResizeObserver(resize);
         ro.observe(container);
-        window.addEventListener("orientationchange", resize, { passive: true });
         window.addEventListener("resize", resize, { passive: true });
-        resize();
+        window.addEventListener("orientationchange", resize, { passive: true });
 
-        const ROT_SPEED = 0.15; // rad/s (slow)
+        // Theme linkage
+        const root = document.documentElement;
+        const getTheme = () => root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+
+        function applyThemeVisibility() {
+            const theme = getTheme();
+            if (modelLight) modelLight.visible = (theme === "light");
+            if (modelDark) modelDark.visible = (theme === "dark");
+            if (theme === "light" && modelLight) fitCameraToObject(camera, modelLight, PADDING);
+            if (theme === "dark" && modelDark) fitCameraToObject(camera, modelDark, PADDING);
+        }
+        new MutationObserver((muts) => {
+            if (muts.some(m => m.attributeName === "data-theme")) applyThemeVisibility();
+        }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+
+        // Load models
+        Promise.all([loadModel(URL_LIGHT), loadModel(URL_DARK)])
+            .then(([light, dark]) => {
+                modelLight = light; scene.add(modelLight);
+                modelDark = dark; scene.add(modelDark);
+                bothLoaded = true;
+                applyThemeVisibility();
+                resize();
+            })
+            .catch(err => console.error("Failed to load one of the models:", err));
+
+        // Animate
         let last = 0;
         function animate(t = 0) {
             requestAnimationFrame(animate);
             const dt = (t - last) / 1000; last = t;
-            if (model) model.rotation.y += ROT_SPEED * dt;
+            if (modelLight) modelLight.rotation.y += ROT_SPEED * dt;
+            if (modelDark) modelDark.rotation.y += ROT_SPEED * dt;
             renderer.render(scene, camera);
         }
         animate();

@@ -18,8 +18,8 @@
 
     <!-- Import map so GLTFLoader can resolve "three" -->
     <script type="importmap">
-  { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
-  </script>
+      { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
+    </script>
 </head>
 
 <body>
@@ -119,7 +119,7 @@
         })();
     </script>
 
-    <!-- WebGL module: two models, instant swap -->
+    <!-- WebGL module: two models, cursor-driven horizontal rotation -->
     <script type="module">
         import * as THREE from "three";
         import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
@@ -142,8 +142,13 @@
         scene.add(hemi, dir);
 
         // Config
-        const ROT_SPEED = 0.15;
         const PADDING = 2.0;
+
+        // Cursor-driven yaw (left/right only)
+        const MAX_YAW = 0.8; // ~20deg
+        const EASE = 0.008;
+        let targetYaw = 0;
+        let currYaw = 0;
 
         // Loader & URLs
         const loader = new GLTFLoader();
@@ -251,13 +256,26 @@
             })
             .catch(err => console.error("Failed to load one of the models:", err));
 
+        // --- Pointer handling (use window in case #webgl-bg has pointer-events: none) ---
+        function updateYawFromClientX(clientX) {
+            const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2; // -1..1
+            targetYaw = nx * MAX_YAW;
+        }
+
+        window.addEventListener("pointermove", (e) => updateYawFromClientX(e.clientX), { passive: true });
+        window.addEventListener("mouseleave", () => { targetYaw = 0; }, { passive: true });
+        window.addEventListener("blur", () => { targetYaw = 0; });
+
         // Animate
-        let last = 0;
-        function animate(t = 0) {
+        function animate() {
             requestAnimationFrame(animate);
-            const dt = (t - last) / 1000; last = t;
-            if (modelLight) modelLight.rotation.y += ROT_SPEED * dt;
-            if (modelDark) modelDark.rotation.y += ROT_SPEED * dt;
+
+            // Ease toward target
+            currYaw += (targetYaw - currYaw) * EASE;
+
+            if (modelLight) modelLight.rotation.set(0, currYaw, 0);
+            if (modelDark) modelDark.rotation.set(0, currYaw, 0);
+
             renderer.render(scene, camera);
         }
         animate();
