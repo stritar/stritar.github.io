@@ -25,21 +25,16 @@ html {
 /* ========== Body & gradient layers ========== */
 body {
     font-family: "Inter", sans-serif;
-    /* body text */
     font-weight: 400;
     margin: 0;
 
-    /* layout to keep footer at bottom */
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
 
     position: relative;
-    /* anchor pseudo layers */
     z-index: 0;
-    /* keep content above gradient layers */
     background: none;
-    /* gradient via ::before/::after */
     color: var(--color-text);
     transition: color 0.3s;
     -webkit-font-smoothing: antialiased;
@@ -47,7 +42,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Cross-fade gradient layers (fixed to viewport, behind content) */
+/* Gradient layers (fixed to viewport, behind content) */
 body::before,
 body::after {
     content: "";
@@ -56,8 +51,8 @@ body::after {
     pointer-events: none;
     will-change: opacity;
     transition: opacity 0.8s ease;
-    z-index: -2;
-    /* below WebGL layer */
+    z-index: -1;
+    /* directly behind content */
 }
 
 /* Light gradient layer */
@@ -80,7 +75,6 @@ h4,
 h5,
 h6 {
     font-family: "Campton", sans-serif;
-    /* headings = Campton */
     font-weight: 700;
     margin: 0;
 }
@@ -163,15 +157,12 @@ p a {
     margin-right: auto;
     display: grid;
     flex: 1 0 auto;
-    /* grow to push footer down */
 }
 
-/* No general top padding/margin; header controls vertical spacing */
 @media (max-width: 390px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
         padding: 0 16px;
-        /* phone sides only */
         gap: 16px;
         margin-top: 0;
         padding-top: 0;
@@ -182,7 +173,6 @@ p a {
     .container {
         grid-template-columns: repeat(8, 1fr);
         padding: 0 24px;
-        /* tablet sides only */
         gap: 24px;
         margin-top: 0;
         padding-top: 0;
@@ -193,7 +183,6 @@ p a {
     .container {
         grid-template-columns: repeat(12, 1fr);
         padding: 0 96px;
-        /* desktop sides only */
         gap: 32px;
         margin-top: 0;
         padding-top: 0;
@@ -211,21 +200,16 @@ p a {
     margin: 0;
 }
 
-/* Header (logo row): top padding only
-   16px phone, 32px tablet, 40px desktop; bottom = 0 */
+/* Header (logo row) */
 .header {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 16px;
-    /* phone */
     padding-bottom: 0;
-
-    /* keep header above any lifted content */
     position: relative;
     z-index: 1;
- 
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
@@ -234,24 +218,18 @@ p a {
     }
 }
 
-/* tablet */
 @media (min-width: 769px) {
     .header {
         padding-top: 40px;
     }
 }
 
-/* desktop */
-
-/* Intro needs 16px padding top & bottom (all breakpoints) */
+/* Intro */
 .content.intro {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 16px 0;
-    /* 16 top & bottom */
-
-    /* keep intro above any lifted content */
     position: relative;
     z-index: 1;
 }
@@ -383,11 +361,6 @@ p a {
     background-size: contain;
 }
 
-.btn__icon img {
-    width: 16px;
-    height: 16px;
-}
-
 .btn__label {
     padding: 0 8px;
     white-space: nowrap;
@@ -409,7 +382,7 @@ p a {
     background-image: url("assets/linkedin-light.svg");
 }
 
-/* ========== Cards (responsive, clickable, centered) ========== */
+/* ========== Cards ========== */
 .cards-grid {
     display: grid;
     gap: 16px;
@@ -530,7 +503,6 @@ p a {
     --color-btn-bg-hover: rgba(47, 47, 47, 1);
     --slider-bg: rgba(47, 47, 47, 1);
     --color-bg-base: #EDECEB;
-    /* solid behind gradient */
     --bg-light-op: 1;
     --bg-dark-op: 0;
 }
@@ -542,19 +514,17 @@ p a {
     --color-btn-bg-hover: rgba(247, 245, 244, 1);
     --slider-bg: rgba(247, 245, 244, 1);
     --color-bg-base: #292623;
-    /* solid behind gradient */
     --bg-light-op: 0;
     --bg-dark-op: 1;
 }
 
-/* ========== Footer (bottom, no bg, responsive padding) ========== */
+/* ========== Footer ========== */
 .footer {
     flex: 0 0 auto;
     background: transparent;
     color: var(--color-text);
     text-align: center;
     padding: 16px 16px;
-    /* phone matches container sides */
 }
 
 .footer p {
@@ -563,20 +533,19 @@ p a {
     line-height: 16px;
 }
 
+/* Tablet */
 @media (min-width: 391px) and (max-width: 768px) {
     .footer {
         padding: 24px 24px;
     }
 }
 
-/* tablet */
+/* Desktop */
 @media (min-width: 769px) {
     .footer {
         padding: 32px 96px;
     }
 }
-
-/* desktop */
 
 /* ---- Exact spacing between header and intro ---- */
 .content.intro {
@@ -584,15 +553,12 @@ p a {
     padding-bottom: 16px;
 }
 
-/* Base: no bottom padding on header; compute the exact gap using vars */
 :root {
     --intro-pt: 16px;
 }
 
-/* intro top padding used in the calc */
 .header {
     padding-bottom: 0;
-    /* margin-bottom = desired - container row-gap - intro top padding */
     margin-bottom: calc(var(--desired-gap, 16px) - var(--row-gap, 16px) - var(--intro-pt));
 }
 
@@ -632,39 +598,13 @@ p a {
     }
 }
 
-/* ========== WebGL background layer (above gradients, below content) ========== */
+/* ========== WebGL background layer ========== */
 #webgl-bg {
     position: fixed;
-    left: 0;
-    top: 0;
-    /* fallback → small viewport → dynamic viewport (latest wins where supported) */
+    inset: 0;
     width: 100vw;
-    width: 100svw;
-    width: 100dvw;
     height: 100vh;
-    height: 100svh;
-    height: 100dvh;
-
     z-index: -1;
-    /* under content, above gradients */
-    pointer-events: none !important;
-    /* never intercept clicks */
+    /* behind content, above gradients */
+    pointer-events: none;
 }
-
-#webgl-bg * {
-    pointer-events: none !important;
-}
-
-/* ensure canvas is inert */
-
-:root[data-theme="light"] {
-    /* …your existing vars… */
-    --cube-color: #E0E0DD;
-    /* cube in light mode */
-}
-
-:root[data-theme="dark"] {
-    /* …your existing vars… */
-    --cube-color: #1E1B19;
-    /* cube in dark mode */
-
