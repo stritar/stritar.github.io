@@ -14,6 +14,7 @@
     <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
 
+    <!-- Your CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -36,11 +37,11 @@
             <p>I’m a Berlin-based Product Designer at <a href="#">Embeddable</a>, where I design intuitive,
                 customer-facing analytics experiences that work seamlessly out of the box.</p>
             <div class="button-group">
-                <button class="btn">
+                <button class="btn" id="cv-btn">
                     <span class="btn__icon doc"></span>
                     <span class="btn__label">Download my CV (.pdf)</span>
                 </button>
-                <button class="btn">
+                <button class="btn" id="contact-btn">
                     <span class="btn__icon linkedin"></span>
                     <span class="btn__label">Get in touch</span>
                 </button>
@@ -73,12 +74,55 @@
         </section>
     </div>
 
-    <!-- Three.js scene -->
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© <span id="year"></span> Denis Stritar</p>
+    </footer>
+
+    <!-- App script (includes theme, year, and WebGL) -->
     <script type="module">
         import * as THREE from "https://unpkg.com/three@0.161.0/build/three.module.js";
 
+        // ---------- DOM refs ----------
+        const root = document.documentElement;
+        const toggleInput = document.getElementById("theme-toggle");
+        const yearEl = document.getElementById("year");
         const container = document.getElementById("webgl-bg");
 
+        // ---------- Footer year ----------
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // ---------- Theme: init + toggle ----------
+        function initTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                root.setAttribute("data-theme", savedTheme);
+                if (toggleInput) toggleInput.checked = savedTheme === "dark";
+            } else {
+                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                root.setAttribute("data-theme", systemDark ? "dark" : "light");
+                if (toggleInput) toggleInput.checked = systemDark;
+            }
+        }
+
+        if (toggleInput) {
+            toggleInput.addEventListener("change", () => {
+                const newTheme = toggleInput.checked ? "dark" : "light";
+                root.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+                setCubeColor(); // keep WebGL color in sync
+            });
+        }
+
+        initTheme();
+
+        // ---------- Optional: button actions (replace hrefs as needed) ----------
+        const cvBtn = document.getElementById("cv-btn");
+        const contactBtn = document.getElementById("contact-btn");
+        if (cvBtn) cvBtn.addEventListener("click", () => window.open("assets/Denis-Stritar-CV.pdf", "_blank"));
+        if (contactBtn) contactBtn.addEventListener("click", () => window.open("https://www.linkedin.com/", "_blank"));
+
+        // ---------- WebGL background (Three.js) ----------
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
         renderer.setClearColor(0x000000, 0);
@@ -106,7 +150,8 @@
             const w = container.clientWidth;
             const h = container.clientHeight;
 
-            renderer.setSize(w, h, false);
+            // ✅ Option A: also updates canvas CSS size so it matches buffer size
+            renderer.setSize(w, h);
 
             camera.left = -w / 2;
             camera.right = w / 2;
@@ -128,6 +173,10 @@
         window.addEventListener("resize", resize, { passive: true });
         window.addEventListener("orientationchange", resize, { passive: true });
 
+        // Also react if data-theme changes by any other means
+        new MutationObserver(setCubeColor).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+
+        // Kick things off
         resize();
 
         let last = 0;
@@ -140,71 +189,6 @@
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
-
-        // Hook into your existing theme toggle (if present)
-        const toggleInput = document.getElementById("theme-toggle");
-        const root = document.documentElement;
-
-        function initTheme() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme) {
-                root.setAttribute("data-theme", savedTheme);
-                if (toggleInput) toggleInput.checked = savedTheme === "dark";
-            } else {
-                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                root.setAttribute("data-theme", systemDark ? "dark" : "light");
-                if (toggleInput) toggleInput.checked = systemDark;
-            }
-            setCubeColor(); // set color on load
-        }
-
-        if (toggleInput) {
-            toggleInput.addEventListener("change", () => {
-                const newTheme = toggleInput.checked ? "dark" : "light";
-                root.setAttribute("data-theme", newTheme);
-                localStorage.setItem("theme", newTheme);
-                setCubeColor(); // update on toggle
-            });
-        }
-
-        // Also react if data-theme changes by any other means
-        new MutationObserver(setCubeColor).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
-
-        initTheme();
-    </script>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© <span id="year"></span> Denis Stritar</p>
-    </footer>
-
-    <script>
-        // Theme toggle
-        const toggleInput = document.getElementById("theme-toggle");
-        const root = document.documentElement;
-
-        function initTheme() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme) {
-                root.setAttribute("data-theme", savedTheme);
-                toggleInput.checked = savedTheme === "dark";
-            } else {
-                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                root.setAttribute("data-theme", systemDark ? "dark" : "light");
-                toggleInput.checked = systemDark;
-            }
-        }
-        toggleInput.addEventListener("change", () => {
-            const newTheme = toggleInput.checked ? "dark" : "light";
-            root.setAttribute("data-theme", newTheme);
-            localStorage.setItem("theme", newTheme);
-        });
-        initTheme();
-
-        // Footer year
-        const yearEl = document.getElementById("year");
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 </body>
 

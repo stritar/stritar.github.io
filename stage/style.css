@@ -225,6 +225,7 @@ p a {
     /* keep header above any lifted content */
     position: relative;
     z-index: 1;
+ 
 }
 
 @media (min-width: 391px) and (max-width: 768px) {
@@ -666,4 +667,4 @@ p a {
     /* …your existing vars… */
     --cube-color: #1E1B19;
     /* cube in dark mode */
-}
+
