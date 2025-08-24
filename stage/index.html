@@ -9,16 +9,16 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Theme color for iOS/Android UI bars -->
+    <!-- Theme color -->
     <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- CSS (relative so it works locally and on /stage/) -->
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-    <!-- WebGL background layer -->
+    <!-- WebGL background -->
     <div id="webgl-bg" aria-hidden="true"></div>
 
     <!-- Content -->
@@ -92,7 +92,7 @@
         // ---------- Footer year ----------
         if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        // ---------- Theme ----------
+        // ---------- Theme (WebGL ignores theme for now) ----------
         function initTheme() {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme) {
@@ -116,7 +116,7 @@
         // ---------- Buttons ----------
         const cvBtn = document.getElementById("cv-btn");
         const contactBtn = document.getElementById("contact-btn");
-        if (cvBtn) cvBtn.addEventListener("click", () => window.open("assets/Denis-Stritar-CV.pdf", "_blank"));
+        if (cvBtn) cvBtn.addEventListener("click", () => window.open("./assets/Denis-Stritar-CV.pdf", "_blank"));
         if (contactBtn) contactBtn.addEventListener("click", () => window.open("https://www.linkedin.com/", "_blank"));
 
         // ---------- WebGL background ----------
@@ -131,18 +131,22 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1000, 1000);
         camera.position.set(0, 0, 10);
 
-        // ---- Model loading ----
+        // ---- Model loading (robust relative URL) ----
         const loader = new GLTFLoader();
         const modelGroup = new THREE.Group();
         scene.add(modelGroup);
 
-        const MODEL_URL = "assets/model.glb"; // <-- replace with your model path
+        // Resolves to an absolute URL based on the current page location.
+        const MODEL_URL = new URL("./assets/model.glb", window.location.href).toString();
+
         let baseSize = null;
 
         loader.load(
             MODEL_URL,
             (gltf) => {
                 const model = gltf.scene || gltf.scenes[0];
+
+                // Make it unlit so no lights needed
                 model.traverse((obj) => {
                     if (obj.isMesh) {
                         const src = obj.material;
@@ -150,9 +154,16 @@
                             color: (src && src.color) ? src.color : new THREE.Color("#A0A3A6"),
                             map: src && src.map ? src.map : null
                         });
+                        if (obj.material.map) {
+                            // Make textures crisper if present
+                            const getMaxAniso = renderer.capabilities.getMaxAnisotropy?.() || 1;
+                            obj.material.map.anisotropy = Math.min(8, getMaxAniso);
+                            obj.material.map.generateMipmaps = true;
+                        }
                     }
                 });
 
+                // Normalize/center
                 const box = new THREE.Box3().setFromObject(model);
                 const size = new THREE.Vector3();
                 const center = new THREE.Vector3();
@@ -165,7 +176,9 @@
                 resize();
             },
             undefined,
-            (err) => console.error("Failed to load model:", err)
+            (err) => {
+                console.error("Failed to load model:", err);
+            }
         );
 
         function resize() {
@@ -173,6 +186,7 @@
             const h = container.clientHeight;
 
             renderer.setSize(w, h);
+
             camera.left = -w / 2;
             camera.right = w / 2;
             camera.top = h / 2;
@@ -180,7 +194,7 @@
             camera.updateProjectionMatrix();
 
             if (baseSize) {
-                const target = 0.4 * Math.min(w, h);
+                const target = 0.4 * Math.min(w, h); // ~40% of shorter side
                 const maxDim = Math.max(baseSize.x, baseSize.y) || 1;
                 const scale = target / maxDim;
                 modelGroup.scale.setScalar(scale);
