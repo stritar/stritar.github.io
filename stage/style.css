@@ -402,13 +402,13 @@ p a {
     gap: 16px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 402px) {
     .cards-grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media (min-width: 391px) and (max-width: 768px) {
+@media (min-width: 403px) and (max-width: 768px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -475,6 +475,7 @@ p a {
     border-radius: 8px;
     opacity: 0.25;
     transition: opacity 0.2s ease;
+    background-color: red;
 }
 
 .card:hover .card__media,
