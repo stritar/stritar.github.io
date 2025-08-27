@@ -18,8 +18,8 @@
 
     <!-- Import map so GLTFLoader can resolve "three" -->
     <script type="importmap">
-      { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
-    </script>
+    { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
+  </script>
 </head>
 
 <body>
@@ -119,38 +119,76 @@
         })();
     </script>
 
-    <!-- WebGL module: two models, cursor-driven horizontal rotation -->
+    <!-- WebGL module: light/dark HDR swap + soft shadows -->
     <script type="module">
         import * as THREE from "three";
         import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
+        import { RGBELoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/RGBELoader.js";
 
         const container = document.getElementById("webgl-bg");
 
         // Renderer
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.VSMShadowMap;
+        renderer.useLegacyLights = false; // modern physically-correct falloff
         container.appendChild(renderer.domElement);
 
         // Scene & camera
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
 
-        // Lights
-        const hemi = new THREE.HemisphereLight(0xffffff, 0x222222, 0.8);
-        const dir = new THREE.DirectionalLight(0xffffff, 0.8);
-        dir.position.set(3, 5, 4);
+        // PMREM for clean IBL
+        const pmrem = new THREE.PMREMGenerator(renderer);
+
+        // HDR paths (swap these to your own)
+        const HDR_LIGHT_URL = new URL("assets/hdr/light.hdr", import.meta.url).href;
+        const HDR_DARK_URL = new URL("assets/hdr/dark.hdr", import.meta.url).href;
+
+        // Preload both HDRs -> PMREM env maps
+        let envLight = null, envDark = null;
+        const rgbe = new RGBELoader();
+
+        function loadEnv(url) {
+            return new Promise((resolve, reject) => {
+                rgbe.load(url, (tex) => {
+                    const env = pmrem.fromEquirectangular(tex).texture;
+                    tex.dispose();
+                    resolve(env);
+                }, undefined, reject);
+            });
+        }
+
+        // Subtle additional lights (kept for shadow casting + a bit of directionality)
+        const hemi = new THREE.HemisphereLight(0xffffff, 0x222222, 0.35);
+        const dir = new THREE.DirectionalLight(0xffffff, 1.1);
+        dir.position.set(3, 6, 4);
+        dir.castShadow = true;
+        dir.shadow.mapSize.set(1024, 1024);
+        dir.shadow.camera.near = 0.5;
+        dir.shadow.camera.far = 50;
+        dir.shadow.normalBias = 0.02;
         scene.add(hemi, dir);
+
+        // Contact-shadow plane
+        const shadowMat = new THREE.ShadowMaterial({ opacity: 0.25 });
+        const shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(50, 50), shadowMat);
+        shadowPlane.rotation.x = -Math.PI / 2;
+        shadowPlane.receiveShadow = true;
+        scene.add(shadowPlane);
 
         // Config
         const PADDING = 2.0;
-
-        // Cursor-driven yaw (left/right only)
         const MAX_YAW = 3; // ~20deg
         const EASE = 0.004;
         let targetYaw = 0;
         let currYaw = 0;
 
-        // Loader & URLs
+        // Models
         const loader = new GLTFLoader();
         const URL_LIGHT = new URL("assets/model-light.glb", import.meta.url).href;
         const URL_DARK = new URL("assets/model-dark.glb", import.meta.url).href;
@@ -159,17 +197,22 @@
         let modelDark = null;
         let bothLoaded = false;
 
+        function enableShadows(obj) {
+            obj.traverse((o) => {
+                if (o.isMesh) {
+                    o.frustumCulled = false;
+                    o.castShadow = true;
+                    o.receiveShadow = false; // shadows only on the plane
+                    if (o.material && o.material.isMeshStandardMaterial) o.material.needsUpdate = true;
+                }
+            });
+        }
+
         function loadModel(url) {
             return new Promise((resolve, reject) => {
                 loader.load(url, (gltf) => {
                     const m = gltf.scene;
-                    m.traverse((o) => {
-                        if (o.isMesh) {
-                            o.frustumCulled = false;
-                            o.castShadow = false;
-                            o.receiveShadow = false;
-                        }
-                    });
+                    enableShadows(m);
                     resolve(m);
                 }, undefined, reject);
             });
@@ -180,11 +223,14 @@
             const size = box.getSize(new THREE.Vector3());
             const center = box.getCenter(new THREE.Vector3());
             object.position.sub(center);
+
+            shadowPlane.position.set(0, -size.y / 2 + 0.001, 0);
+
             const maxDim = Math.max(size.x, size.y, size.z);
             const fov = cam.fov * Math.PI / 180;
             let dist = (maxDim / 2) / Math.tan(fov / 2);
             dist *= padding;
-            cam.position.set(0, 0, dist);
+            cam.position.set(0, size.y * 0.15, dist);
             cam.lookAt(0, 0, 0);
             cam.near = Math.max(0.01, dist / 100);
             cam.far = dist * 100;
@@ -199,18 +245,21 @@
             const center = box.getCenter(new THREE.Vector3());
             if (a) a.position.sub(center);
             if (b) b.position.sub(center);
+
+            shadowPlane.position.set(0, -size.y / 2 + 0.001, 0);
+
             const maxDim = Math.max(size.x, size.y, size.z);
             const fov = cam.fov * Math.PI / 180;
             let dist = (maxDim / 2) / Math.tan(fov / 2);
             dist *= padding;
-            cam.position.set(0, 0, dist);
+            cam.position.set(0, size.y * 0.15, dist);
             cam.lookAt(0, 0, 0);
             cam.near = Math.max(0.01, dist / 100);
             cam.far = dist * 100;
             cam.updateProjectionMatrix();
         }
 
-        // Keep canvas synced + fit
+        // Resize handling
         function resize() {
             const rect = container.getBoundingClientRect();
             const w = Math.max(1, Math.floor(rect.width));
@@ -230,38 +279,64 @@
         window.addEventListener("resize", resize, { passive: true });
         window.addEventListener("orientationchange", resize, { passive: true });
 
-        // Theme linkage
+        // Theme helpers
         const root = document.documentElement;
         const getTheme = () => root.getAttribute("data-theme") === "dark" ? "dark" : "light";
 
-        function applyThemeVisibility() {
+        function applyThemeVisibilityAndLighting() {
             const theme = getTheme();
+
+            // swap model visibility
             if (modelLight) modelLight.visible = (theme === "light");
             if (modelDark) modelDark.visible = (theme === "dark");
+
+            // swap environment (already PMREM-filtered)
+            if (theme === "light" && envLight) scene.environment = envLight;
+            if (theme === "dark" && envDark) scene.environment = envDark;
+
+            // optional: make the key light a touch cooler/warmer per mode
+            if (theme === "light") {
+                dir.intensity = 1.1;
+                dir.color.set(0xffffff);
+                hemi.intensity = 0.35;
+            } else {
+                dir.intensity = 0.9;
+                dir.color.set(0xe8eefc);   // tiny bluish tint at night
+                hemi.intensity = 0.25;
+            }
+
+            // refit camera to the visible model
             if (theme === "light" && modelLight) fitCameraToObject(camera, modelLight, PADDING);
             if (theme === "dark" && modelDark) fitCameraToObject(camera, modelDark, PADDING);
         }
+
         new MutationObserver((muts) => {
-            if (muts.some(m => m.attributeName === "data-theme")) applyThemeVisibility();
+            if (muts.some(m => m.attributeName === "data-theme")) applyThemeVisibilityAndLighting();
         }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
 
-        // Load models
-        Promise.all([loadModel(URL_LIGHT), loadModel(URL_DARK)])
-            .then(([light, dark]) => {
-                modelLight = light; scene.add(modelLight);
-                modelDark = dark; scene.add(modelDark);
-                bothLoaded = true;
-                applyThemeVisibility();
-                resize();
-            })
-            .catch(err => console.error("Failed to load one of the models:", err));
+        // Load everything
+        Promise.all([
+            loadEnv(HDR_LIGHT_URL),
+            loadEnv(HDR_DARK_URL),
+            loadModel(URL_LIGHT),
+            loadModel(URL_DARK),
+        ]).then(([envL, envD, mLight, mDark]) => {
+            envLight = envL;
+            envDark = envD;
 
-        // --- Pointer handling (use window in case #webgl-bg has pointer-events: none) ---
+            modelLight = mLight; scene.add(modelLight);
+            modelDark = mDark; scene.add(modelDark);
+
+            bothLoaded = true;
+            applyThemeVisibilityAndLighting();
+            resize();
+        }).catch(err => console.error("Asset load failed:", err));
+
+        // Pointer yaw
         function updateYawFromClientX(clientX) {
             const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2; // -1..1
             targetYaw = nx * MAX_YAW;
         }
-
         window.addEventListener("pointermove", (e) => updateYawFromClientX(e.clientX), { passive: true });
         window.addEventListener("mouseleave", () => { targetYaw = 0; }, { passive: true });
         window.addEventListener("blur", () => { targetYaw = 0; });
@@ -269,13 +344,9 @@
         // Animate
         function animate() {
             requestAnimationFrame(animate);
-
-            // Ease toward target
             currYaw += (targetYaw - currYaw) * EASE;
-
             if (modelLight) modelLight.rotation.set(0, currYaw, 0);
             if (modelDark) modelDark.rotation.set(0, currYaw, 0);
-
             renderer.render(scene, camera);
         }
         animate();
