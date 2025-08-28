@@ -119,7 +119,7 @@
         })();
     </script>
 
-    <!-- WebGL module: light/dark HDR swap + soft shadows -->
+    <!-- WebGL module: light/dark HDR swap + SOFT VSM shadows -->
     <script type="module">
         import * as THREE from "three";
         import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
@@ -133,8 +133,11 @@
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.0;
+
+        // Enable VSM shadows (supports smooth, soft penumbra)
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.VSMShadowMap;
+
         renderer.useLegacyLights = false; // modern physically-correct falloff
         container.appendChild(renderer.domElement);
 
@@ -163,19 +166,31 @@
             });
         }
 
-        // Subtle additional lights (kept for shadow casting + a bit of directionality)
+        // Lights
         const hemi = new THREE.HemisphereLight(0xffffff, 0x222222, 0.35);
+
         const dir = new THREE.DirectionalLight(0xffffff, 1.1);
         dir.position.set(3, 6, 4);
         dir.castShadow = true;
-        dir.shadow.mapSize.set(1024, 1024);
+
+        // — Soft shadow tuning —
+        dir.shadow.mapSize.set(2048, 2048);     // higher res for clean blur
         dir.shadow.camera.near = 0.5;
         dir.shadow.camera.far = 50;
-        dir.shadow.normalBias = 0.02;
+        dir.shadow.normalBias = 0.02;           // keep contact without acne
+        dir.shadow.bias = -0.0005;              // tiny negative bias helps VSM
+
+        // If available in your three version (r161 supports it), this increases softness:
+        dir.shadow.blurSamples = 32;            // try 8–32 for more/less blur
+
+        // Optional: make the shadow frustum just big enough (crisper + stable)
+        const c = dir.shadow.camera;
+        c.left = -8; c.right = 8; c.top = 8; c.bottom = -8;
+
         scene.add(hemi, dir);
 
-        // Contact-shadow plane
-        const shadowMat = new THREE.ShadowMaterial({ opacity: 0.25 });
+        // Contact-shadow plane (slightly lighter for realism)
+        const shadowMat = new THREE.ShadowMaterial({ opacity: 0.18 });
         const shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(50, 50), shadowMat);
         shadowPlane.rotation.x = -Math.PI / 2;
         shadowPlane.receiveShadow = true;
@@ -350,6 +365,14 @@
             renderer.render(scene, camera);
         }
         animate();
+
+        // Quick knobs if you want even softer/harder shadows:
+        // setSoftShadows({ blur: 24, opacity: 0.16 });
+        function setSoftShadows({ blur = 16, opacity = 0.18 } = {}) {
+            if ('blurSamples' in dir.shadow) dir.shadow.blurSamples = blur;
+            shadowMat.opacity = opacity;
+        }
+        window.setSoftShadows = setSoftShadows; // use in console if you like
     </script>
 </body>
 
