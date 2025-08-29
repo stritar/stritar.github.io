@@ -1,0 +1,642 @@
+/* =========================================================
+   1) Fonts & Tokens
+========================================================= */
+@font-face {
+    font-family: "Campton";
+    src: url("assets/fonts/Campton-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Campton";
+    src: url("assets/fonts/Campton-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Theme tokens */
+:root[data-theme="light"] {
+    --color-text: #2F2F2F;
+
+    /* Toggle */
+    --slider-track: rgba(255, 255, 255, 0.5);
+    --slider-knob: rgba(47, 47, 47, 1);
+
+    /* Backgrounds */
+    --color-bg-base: #EDECEB;
+    --bg-light-op: 1;
+    --bg-dark-op: 0;
+
+    /* Cards */
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-bg-hover: rgba(255, 255, 255, 0.50);
+
+    /* Buttons – match spec */
+    --btn1-bg: #5C5C66;
+    /* primary default */
+    --btn1-hover: #212129;
+    /* primary hover */
+    --btn1-pressed: #000000;
+    /* primary pressed */
+    --btn1-text: #FFFFFF;
+    --btn1-disabled-bg: #ECECEF;
+    --btn1-disabled-text: #B7B7BF;
+
+    --btn2-bg: #EDEDF1;
+    /* secondary default */
+    --btn2-hover: #E4E4EA;
+    /* secondary hover */
+    --btn2-pressed: #D2D2D5;
+    /* secondary pressed */
+    --btn2-text: #2B2B31;
+    --btn2-disabled-bg: #ECECEF;
+    --btn2-disabled-text: #B7B7BF;
+}
+
+:root[data-theme="dark"] {
+    --color-text: #F7F5F4;
+    --slider-track: rgba(0, 0, 0, 0.5);
+    --slider-knob: rgba(247, 245, 244, 1);
+    --color-bg-base: #292623;
+    --bg-light-op: 0;
+    --bg-dark-op: 1;
+    --card-bg: rgba(0, 0, 0, 0.25);
+    --card-bg-hover: rgba(0, 0, 0, 0.50);
+
+    /* Keep button palette same to match mock */
+    --btn1-bg: #ECECEF;
+    --btn1-hover: #d0d0d3;
+    --btn1-pressed: #c1c1c5;
+    --btn1-text: #2B2B31;
+    --btn1-disabled-bg: #ECECEF;
+    --btn1-disabled-text: #B7B7BF;
+
+    /* Secondary uses the light-mode Primary ramp */
+    --btn2-bg: #6B6B75;
+    --btn2-hover: #4F4F56;
+    --btn2-pressed: #3D3D42;
+    --btn2-text: #FFFFFF;
+    --btn2-disabled-bg: #ECECEF;
+    --btn2-disabled-text: #B7B7BF;
+}
+
+/* =========================================================
+   2) Base / Reset-ish
+========================================================= */
+html {
+    background-color: var(--color-bg-base);
+    min-height: 100dvh;
+}
+
+body {
+    isolation: isolate;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    position: relative;
+    background: none;
+    color: var(--color-text);
+    transition: color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    z-index: 0;
+}
+
+/* Background gradients (z = -1) */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    will-change: opacity;
+    transition: opacity 0.8s ease;
+    z-index: -1;
+}
+
+body::before {
+    background: linear-gradient(180deg, #FFF 52.3%, #EDEDF1 100%);
+    opacity: var(--bg-light-op);
+}
+
+body::after {
+    background: linear-gradient(180deg, #212129 52.3%, #000 100%);
+    opacity: var(--bg-dark-op);
+}
+
+/* WebGL layer (z = 0) */
+#webgl-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none !important;
+    overflow: hidden;
+}
+
+#webgl-bg * {
+    pointer-events: none !important;
+}
+
+/* UI layers (z = 1) */
+.container,
+.header,
+.content,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================================
+   3) Typography
+========================================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Campton", sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 span {
+    font-weight: 300;
+}
+
+p a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* =========================================================
+   4) Layout & Sections
+========================================================= */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    flex: 1 0 auto;
+}
+
+.content {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+}
+
+.content h1,
+.content p {
+    margin: 0;
+}
+
+/* Header (tight to top) */
+.header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* vertical centering of logo/toggle */
+    padding-top: 8px;
+    /* reduced top gap */
+    padding-bottom: 0;
+    margin: 0;
+    /* no extra margins at any breakpoint */
+}
+
+/* Intro */
+.content.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+    align-items: center;
+    text-align: center;
+}
+
+/* Buttons group */
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    flex: 0 0 auto;
+    background: transparent;
+    color: var(--color-text);
+    text-align: center;
+    padding: 16px 16px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/* =========================================================
+   5) Components
+========================================================= */
+/* Logo (theme-swapped source) */
+#logo {
+    width: 52px;
+    height: 52px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+:root[data-theme="dark"] #logo {
+    background-image: url("assets/logo-dark.svg");
+}
+
+:root[data-theme="light"] #logo {
+    background-image: url("assets/logo-light.svg");
+}
+
+/* Theme switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    transition: background-color 0.3s, filter 0.2s;
+    background: var(--slider-track);
+    backdrop-filter: blur(24px);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 2px;
+    top: 2px;
+    background: var(--slider-knob);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        url("assets/sun.svg") left 6px center / 16px no-repeat,
+        url("assets/moon.svg") right 6px center / 16px no-repeat;
+    pointer-events: none;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(28px);
+}
+
+.switch:hover .slider {
+    filter: brightness(1.08);
+}
+
+/* ===================== Buttons — Base ===================== */
+/* .btn = Primary by default (matches mock). Use .btn--secondary for Secondary. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+    /* pill feel */
+    border-radius: 9999px;
+    /* fully rounded */
+    border: none;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+
+    background: var(--btn1-bg);
+    color: var(--btn1-text);
+
+    box-shadow: none;
+    backdrop-filter: none;
+
+    transition: background-color 120ms ease, color 120ms ease, transform 80ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Primary states (default .btn) */
+.btn:not(:disabled):hover {
+    background: var(--btn1-hover);
+}
+
+.btn:not(:disabled):active {
+    background: var(--btn1-pressed);
+    transform: translateY(0);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn[aria-disabled="true"] {
+    background: var(--btn1-disabled-bg);
+    color: var(--btn1-disabled-text);
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Secondary variant */
+.btn--secondary {
+    background: var(--btn2-bg);
+    color: var(--btn2-text);
+}
+
+.btn--secondary:not(:disabled):hover {
+    background: var(--btn2-hover);
+}
+
+.btn--secondary:not(:disabled):active {
+    background: var(--btn2-pressed);
+    transform: translateY(0);
+}
+
+.btn--secondary:disabled,
+.btn--secondary[disabled],
+.btn--secondary[aria-disabled="true"] {
+    background: var(--btn2-disabled-bg);
+    color: var(--btn2-disabled-text);
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Icons inside button (optional) */
+.btn__icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: center / contain no-repeat;
+}
+
+.btn__label {
+    white-space: nowrap;
+}
+
+/* Button spacing tweak */
+.btn {
+    gap: 0;
+    /* remove space between children */
+}
+
+.btn__label {
+    padding: 0 8px;
+    /* 8px left/right inside the label */
+    white-space: nowrap;
+    /* keep your original no-wrap */
+}
+
+/* If you keep themed icon assets */
+:root[data-theme="dark"] .doc {
+    background-image: url("assets/doc-dark.svg");
+}
+
+:root[data-theme="light"] .doc {
+    background-image: url("assets/doc-light.svg");
+}
+
+:root[data-theme="dark"] .linkedin {
+    background-image: url("assets/linkedin-dark.svg");
+}
+
+:root[data-theme="light"] .linkedin {
+    background-image: url("assets/linkedin-light.svg");
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    user-select: none;
+    backdrop-filter: blur(24px);
+    background: var(--card-bg);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+    background: var(--card-bg-hover);
+    transform: translateY(-2px);
+}
+
+.card:active {
+    transform: translateY(0);
+}
+
+.card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+.card__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    opacity: 0.25;
+    transition: opacity 0.2s ease;
+}
+
+.card:hover .card__media,
+.card:focus-visible .card__media {
+    opacity: 0.50;
+}
+
+/* Cards section lift */
+.content.cards {
+    display: grid;
+    align-content: center;
+}
+
+/* =========================================================
+   6) Interactions / Cursors
+========================================================= */
+a[href],
+button,
+#logo,
+.btn,
+.btn *,
+.card,
+.switch,
+.switch *,
+.switch input,
+.switch .slider,
+.switch .slider::before {
+    cursor: pointer !important;
+}
+
+/* =========================================================
+   7) Responsive Rules
+========================================================= */
+
+/* ===== XS (≤390px) ===== */
+@media (max-width: 390px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .intro p {
+        margin: 4px 0 !important;
+        max-width: 600px;
+    }
+
+    #logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .content.cards {
+        transform: none !important;
+        min-height: auto;
+        align-content: start;
+        margin-top: 16px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== SM/MD (391–768px) ===== */
+@media (min-width: 391px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0 24px;
+        gap: 24px;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .intro p {
+        margin: 8px 0 !important;
+        max-width: 600px;
+    }
+
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .content.cards {
+        transform: translateY(-4dvh);
+        min-height: calc(45dvh - 4dvh);
+    }
+
+    .footer {
+        padding: 24px 24px;
+    }
+}
+
+/* ===== LG+ (≥769px) ===== */
+@media (min-width: 769px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 96px;
+        gap: 32px;
+    }
+
+    h1 {
+        font-size: 64px;
+        line-height: 48px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .intro p {
+        margin: 16px 0 !important;
+        max-width: 800px !important;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .content.cards {
+        transform: translateY(-10dvh);
+        min-height: calc(50dvh - 10dvh);
+    }
+
+    .footer {
+        padding: 32px 96px;
+    }
+}
