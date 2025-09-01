@@ -540,7 +540,7 @@ button,
 
     .intro p {
         margin: 4px 0 !important;
-        max-width: 600px;
+        max-width: 640px;
     }
 
     #logo {
@@ -580,7 +580,7 @@ button,
 
     .intro p {
         margin: 8px 0 !important;
-        max-width: 600px;
+        max-width: 640px;
     }
 
     #logo {
@@ -623,7 +623,7 @@ button,
 
     .intro p {
         margin: 16px 0 !important;
-        max-width: 800px !important;
+        max-width: 640px !important;
     }
 
     .cards-grid {
