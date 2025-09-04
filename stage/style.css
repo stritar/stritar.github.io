@@ -55,9 +55,12 @@ body::after {
 }
 
 body::before {
-    background: linear-gradient(180deg, #E9EAEA 0%, #EDECEB 50%, #F7F5F4 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #FFF 10%, #E9EAEA 80%, #DFE0E0 100%);
     opacity: var(--bg-light-op);
 }
+
+
+
 
 body::after {
     background: linear-gradient(180deg, #222324 0%, #292623 50%, #3D3A37 100%);
