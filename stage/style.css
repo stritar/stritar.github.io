@@ -55,7 +55,7 @@ body::after {
 }
 
 body::before {
-    background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #E9EAEA 50%, #DFE0E0 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F5F6F7 60%, #D9DBDF 100%);
     opacity: var(--bg-light-op);
 }
 
