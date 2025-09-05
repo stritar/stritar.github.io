@@ -310,7 +310,7 @@
             const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2;
             const ny = (clientY / Math.max(1, window.innerHeight) - 0.5) * 2;
             targetYaw = nx * MAX_YAW;
-            targetPitch = -ny * MAX_PITCH;
+            targetPitch = ny * MAX_PITCH;
             targetShiftX = -nx * MAX_SHIFT_X;
             targetShiftY = ny * MAX_SHIFT_Y;
         }
