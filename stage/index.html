@@ -127,7 +127,6 @@
             /* ===== UI visibility toggle ===== */
             const containerEl = document.querySelector(".container");
             const uiToggleBtn = document.getElementById("ui-visibility");
-
             function applyUiState(state) {
                 if (!containerEl || !uiToggleBtn) return;
                 if (state === "hidden") {
@@ -142,10 +141,8 @@
                     uiToggleBtn.setAttribute("aria-pressed", "false");
                 }
             }
-
             const savedUi = localStorage.getItem("ui-visibility") || "shown";
             applyUiState(savedUi);
-
             if (uiToggleBtn) {
                 uiToggleBtn.addEventListener("click", () => {
                     const current = uiToggleBtn.getAttribute("data-state") === "hidden" ? "hidden" : "shown";
@@ -250,10 +247,7 @@
             renderer.setSize(w, h, true);
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
-
-            if (bothLoaded) {
-                fitCameraToBoth(camera, modelLight, modelDark, PADDING);
-            }
+            if (bothLoaded) fitCameraToBoth(camera, modelLight, modelDark, PADDING);
         }
         const ro = new ResizeObserver(resize);
         ro.observe(container);
@@ -290,11 +284,20 @@
             resize();
         }).catch(err => console.error("Asset load failed:", err));
 
-        // --- Pointer yaw + pitch and opposite parallax (x & y) ---
-        const MAX_YAW = 1.2;   // ~±69°? No—radians: 1.2 ≈ 69°; reduce if too much
-        const MAX_PITCH = 0.6;   // ~±34° vertical rotation
-        const MAX_SHIFT_X = 0.25; // world units horizontal slide
-        const MAX_SHIFT_Y = 0.15; // world units vertical slide
+        // ===== INTERACTION MODES =====
+        // Desktop/tablet: pointer-driven. Phones: automatic random drift.
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const likelyPhone = (() => {
+            const touch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            const narrow = Math.min(window.innerWidth, window.innerHeight) < 768; // portrait phones
+            return touch && narrow;
+        })();
+
+        // Shared state
+        const MAX_YAW = 0.8;
+        const MAX_PITCH = 0.45;
+        const MAX_SHIFT_X = 0.25;
+        const MAX_SHIFT_Y = 0.15;
         const EASE = 0.02;
 
         let targetYaw = 0, currYaw = 0;
@@ -302,29 +305,53 @@
         let targetShiftX = 0, currShiftX = 0;
         let targetShiftY = 0, currShiftY = 0;
 
+        // ---- Desktop/tablet: pointer controls ----
         function updateFromPointer(clientX, clientY) {
-            const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2;  // -1..1 (left..right)
-            const ny = (clientY / Math.max(1, window.innerHeight) - 0.5) * 2; // -1..1 (top..bottom)
-
-            // Rotation: follow cursor direction
-            targetYaw = nx * MAX_YAW;          // left/right
-            targetPitch = -ny * MAX_PITCH;       // invert so moving up pitches model up
-
-            // Parallax: move opposite the cursor
+            const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2;
+            const ny = (clientY / Math.max(1, window.innerHeight) - 0.5) * 2;
+            targetYaw = nx * MAX_YAW;
+            targetPitch = -ny * MAX_PITCH;
             targetShiftX = -nx * MAX_SHIFT_X;
-            targetShiftY = ny * MAX_SHIFT_Y;    // moving up shifts model slightly down (opposite)
+            targetShiftY = ny * MAX_SHIFT_Y;
         }
 
-        window.addEventListener("pointermove", (e) => updateFromPointer(e.clientX, e.clientY), { passive: true });
-        window.addEventListener("mouseleave", () => {
+        if (!likelyPhone) {
+            window.addEventListener('pointermove', (e) => updateFromPointer(e.clientX, e.clientY), { passive: true });
+            window.addEventListener('mouseleave', () => { targetYaw = targetPitch = 0; targetShiftX = targetShiftY = 0; }, { passive: true });
+        }
+
+        // ---- Phones: automatic random drift ----
+        let driftTimer = null;
+        function randomizeTargets() {
+            targetYaw = (Math.random() * 2 - 1) * MAX_YAW;
+            targetPitch = (Math.random() * 2 - 1) * MAX_PITCH;
+            targetShiftX = (Math.random() * 2 - 1) * MAX_SHIFT_X;
+            targetShiftY = (Math.random() * 2 - 1) * MAX_SHIFT_Y;
+        }
+        function startDrift() {
+            if (prefersReduced) return;
+            randomizeTargets();
+            driftTimer = setInterval(() => {
+                // vary interval a bit to feel organic
+                randomizeTargets();
+            }, 3500 + Math.random() * 2000);
+        }
+        function stopDrift() {
+            if (driftTimer) { clearInterval(driftTimer); driftTimer = null; }
             targetYaw = targetPitch = 0;
             targetShiftX = targetShiftY = 0;
-        }, { passive: true });
-        window.addEventListener("blur", () => {
-            targetYaw = targetPitch = 0;
-            targetShiftX = targetShiftY = 0;
+        }
+        if (likelyPhone) startDrift();
+
+        // Pause when tab hidden (saves battery)
+        let running = true;
+        document.addEventListener('visibilitychange', () => {
+            running = !document.hidden;
+            if (!running) stopDrift();
+            else if (likelyPhone) startDrift(), animate();
         });
 
+        // Apply transforms
         function applyTransforms(obj) {
             obj.rotation.set(currPitch, currYaw, 0);
             obj.position.x = currShiftX;
@@ -333,13 +360,11 @@
 
         // Animate
         function animate() {
+            if (!running) return;
             requestAnimationFrame(animate);
 
-            // Ease rotations
             currYaw += (targetYaw - currYaw) * EASE;
             currPitch += (targetPitch - currPitch) * EASE;
-
-            // Ease parallax
             currShiftX += (targetShiftX - currShiftX) * EASE;
             currShiftY += (targetShiftY - currShiftY) * EASE;
 
