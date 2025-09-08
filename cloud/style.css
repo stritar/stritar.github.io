@@ -1,0 +1,270 @@
+/* ===== Base & layout ===== */
+html {
+    background-color: var(--color-bg-base);
+    min-height: 100dvh;
+}
+
+body {
+    isolation: isolate;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    position: relative;
+    z-index: 0;
+    background: none;
+    color: var(--color-text);
+    transition: background-color 0.8s ease, color 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* ===== Gradient stack (two layers that crossfade) ===== */
+#bg-stack {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    /* behind WebGL (z=0) */
+    pointer-events: none;
+}
+
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    /* only the active one is 1 */
+    transition: opacity 600ms ease;
+    will-change: opacity;
+}
+
+.bg-layer.theme-morning {
+    background:
+        radial-gradient(50% 50% at 50% 50%, #ffffff 0%, #F4E9D8 100%),
+        linear-gradient(180deg, #F0D8B8 0%, #D7BFA6 50%, #9A8C7A 100%);
+}
+
+.bg-layer.theme-noon {
+    background:
+        radial-gradient(50% 50% at 50% 50%, #ffffff 0%, #D6D5DB 100%),
+        linear-gradient(180deg, #E8E8EA 0%, #D9D7D5 50%, #B8B5B2 100%);
+}
+
+.bg-layer.theme-evening {
+    background:
+        radial-gradient(50% 50% at 50% 50%, #FFD8C2 0%, #B28B7C 100%),
+        linear-gradient(180deg, #4A3F38 0%, #3C3530 50%, #2F2A26 100%);
+}
+
+.bg-layer.theme-night {
+    background:
+        radial-gradient(50% 50% at 50% 50%, #4A4A52 0%, #2E2C2A 100%),
+        linear-gradient(180deg, #222324 0%, #292623 50%, #3D3A37 100%);
+}
+
+/* WebGL background layer */
+#webgl-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none !important;
+    overflow: hidden;
+}
+
+#webgl-bg * {
+    pointer-events: none !important;
+}
+
+/* Overlay used to crossfade WebGL frames */
+#webgl-bg .fade-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* UI layer */
+.container,
+.header,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Grid & header ===== */
+.container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    flex: 1 0 auto;
+}
+
+@media (max-width: 390px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+    }
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0 24px;
+        gap: 24px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 96px;
+        gap: 32px;
+    }
+}
+
+.header {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* centered group */
+    align-items: flex-start;
+    padding-top: 16px;
+    padding-bottom: 0;
+    max-height: 32px;
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .header {
+        margin-top: 24px;
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .header {
+        margin-top: 40px;
+        padding: 0 !important;
+    }
+}
+
+/* ===== Theme buttons ===== */
+.theme-buttons {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    transition: background 0.3s, filter 0.2s;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    width: auto;
+    max-width: max-content;
+    backdrop-filter: blur(24px);
+}
+
+.btn:hover {
+    background: var(--color-btn-bg-hover);
+}
+
+.btn__label {
+    padding: 0 8px;
+    white-space: nowrap;
+}
+
+/* Make active preference button inert but readable */
+.theme-buttons .btn[disabled] {
+    opacity: 0.7;
+    cursor: default !important;
+    filter: none;
+}
+
+/* Pointer behavior */
+a[href],
+button,
+.btn,
+.btn * {
+    cursor: pointer !important;
+}
+
+button,
+.btn {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Theme tokens for text/buttons/base color ===== */
+:root[data-theme="morning"],
+:root[data-theme="noon"] {
+    --color-text: #2F2F2F;
+    --color-btn-bg: rgba(47, 47, 47, 0.85);
+    --color-btn-text: #F7F5F4;
+    --color-btn-bg-hover: rgba(47, 47, 47, 1);
+}
+
+:root[data-theme="evening"],
+:root[data-theme="night"] {
+    --color-text: #F7F5F4;
+    --color-btn-bg: rgba(247, 245, 244, 0.85);
+    --color-btn-text: #2F2F2F;
+    --color-btn-bg-hover: rgba(247, 245, 244, 1);
+}
+
+/* Base document background per theme (under gradients) */
+:root[data-theme="morning"] {
+    --color-bg-base: #F2EFEA;
+}
+
+:root[data-theme="noon"] {
+    --color-bg-base: #EDECEB;
+}
+
+:root[data-theme="evening"] {
+    --color-bg-base: #373330;
+}
+
+:root[data-theme="night"] {
+    --color-bg-base: #292623;
+}
+
+/* ===== Footer ===== */
+.footer {
+    flex: 0 0 auto;
+    background: transparent;
+    color: var(--color-text);
+    text-align: center;
+    padding: 16px 16px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@media (min-width: 391px) and (max-width: 768px) {
+    .footer {
+        padding: 24px 24px;
+    }
+}
+
+@media (min-width: 769px) {
+    .footer {
+        padding: 32px 96px;
+    }
+}

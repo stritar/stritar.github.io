@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" data-theme="noon">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Denis Stritar - Product Designer</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Theme colors for mobile UI -->
+    <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
+
+    <!-- Early set theme to avoid FOUC: default to system (time-of-day) -->
+    <script>
+        (function () {
+            var THEMES = ["morning", "noon", "evening", "night", "system"];
+            var saved = localStorage.getItem("themePref");
+            var pref = THEMES.indexOf(saved) !== -1 ? saved : "system";
+            function resolveByTime() {
+                var h = new Date().getHours();
+                if (h >= 6 && h < 11) return "morning";
+                if (h >= 11 && h < 16) return "noon";
+                if (h >= 16 && h < 20) return "evening";
+                return "night";
+            }
+            var effective = (pref === "system") ? resolveByTime() : pref;
+            document.documentElement.setAttribute("data-theme", effective);
+        })();
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Import map so GLTFLoader can resolve "three" -->
+    <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.161.0/build/three.module.js" } }
+  </script>
+</head>
+
+<body>
+    <!-- Background gradient crossfade stack (behind everything) -->
+    <div id="bg-stack" aria-hidden="true">
+        <div class="bg-layer bgA"></div>
+        <div class="bg-layer bgB"></div>
+    </div>
+
+    <!-- WebGL background (above gradients, below UI) -->
+    <div id="webgl-bg" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="header">
+            <div class="theme-buttons" role="group" aria-label="Theme">
+                <button id="theme-morning" class="btn" type="button" aria-pressed="false"><span
+                        class="btn__label">Morning</span></button>
+                <button id="theme-noon" class="btn" type="button" aria-pressed="false"><span
+                        class="btn__label">Noon</span></button>
+                <button id="theme-evening" class="btn" type="button" aria-pressed="false"><span
+                        class="btn__label">Evening</span></button>
+                <button id="theme-night" class="btn" type="button" aria-pressed="false"><span
+                        class="btn__label">Night</span></button>
+                <button id="theme-system" class="btn" type="button" aria-pressed="false"><span
+                        class="btn__label">System</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© <span id="year"></span> Denis Stritar</p>
+    </footer>
+
+    <!-- Always-on UI script (System = time-of-day) + gradient crossfade -->
+    <script>
+        (() => {
+            const root = document.documentElement;
+            const yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            const buttons = {
+                morning: document.getElementById("theme-morning"),
+                noon: document.getElementById("theme-noon"),
+                evening: document.getElementById("theme-evening"),
+                night: document.getElementById("theme-night"),
+                system: document.getElementById("theme-system"),
+            };
+            const THEMES = ["morning", "noon", "evening", "night", "system"];
+
+            // Gradient layers
+            const bgStack = document.getElementById("bg-stack");
+            const bgA = bgStack.querySelector(".bgA");
+            const bgB = bgStack.querySelector(".bgB");
+            let bgActive = bgA;    // the one currently visible
+            let bgIncoming = bgB;  // the one we fade in
+
+            // Time-of-day resolver
+            function resolveSystemTheme(now = new Date()) {
+                const h = now.getHours();
+                if (h >= 6 && h < 11) return "morning";
+                if (h >= 11 && h < 16) return "noon";
+                if (h >= 16 && h < 20) return "evening";
+                return "night";
+            }
+
+            // Next boundary timer for "system" mode
+            let systemTimer = null;
+            function msUntilNextBoundary(now = new Date()) {
+                const h = now.getHours();
+                const nextStart =
+                    h < 6 ? 6 :
+                        h < 11 ? 11 :
+                            h < 16 ? 16 :
+                                h < 20 ? 20 : 30; // 30 => sentinel for 06 next day
+                const next = new Date(now);
+                if (nextStart === 30) { next.setDate(next.getDate() + 1); next.setHours(6, 0, 0, 0); }
+                else { next.setHours(nextStart, 0, 0, 0); }
+                return next - now;
+            }
+            function scheduleSystemTick() {
+                if (systemTimer) clearTimeout(systemTimer);
+                systemTimer = setTimeout(() => {
+                    if (getSavedPreference() === "system") applyEffectiveTheme("system");
+                    scheduleSystemTick();
+                }, msUntilNextBoundary());
+            }
+
+            function getSavedPreference() {
+                const saved = localStorage.getItem("themePref");
+                return THEMES.includes(saved) ? saved : "system";
+            }
+            function savePreference(pref) { localStorage.setItem("themePref", pref); }
+
+            function applyEffectiveTheme(pref) {
+                const effective = (pref === "system") ? resolveSystemTheme() : pref;
+                // 1) Update DOM data-theme (used by text colors/buttons etc.)
+                root.setAttribute("data-theme", effective);
+
+                // 2) Crossfade gradient stack by swapping classes
+                crossfadeGradientTo(effective);
+
+                // 3) Update buttons + notify WebGL
+                updateButtons(pref, effective);
+                window.dispatchEvent(new CustomEvent("theme:changed", { detail: { pref, effective } }));
+            }
+
+            function updateButtons(pref, effective) {
+                for (const [name, el] of Object.entries(buttons)) {
+                    if (!el) continue;
+                    const isActive = (name === pref);
+                    el.setAttribute("aria-pressed", String(isActive));
+                    el.disabled = isActive;
+                    if (name === "system") el.title = `Follows time (${effective})`;
+                    else el.removeAttribute("title");
+                }
+            }
+
+            // Gradient crossfade handler
+            function setBgTheme(el, theme) {
+                el.classList.remove("theme-morning", "theme-noon", "theme-evening", "theme-night");
+                el.classList.add(`theme-${theme}`);
+            }
+            function crossfadeGradientTo(theme) {
+                if (!theme) return;
+
+                // Prepare incoming layer with the new theme
+                setBgTheme(bgIncoming, theme);
+                bgIncoming.style.transition = "none";
+                bgIncoming.style.opacity = "0";
+                // Stack order: incoming on top
+                bgIncoming.style.zIndex = "0";
+                bgActive.style.zIndex = "-1";
+
+                // Force style & then fade in
+                requestAnimationFrame(() => {
+                    bgIncoming.style.transition = "opacity 600ms ease";
+                    bgIncoming.style.opacity = "1";
+                    // When fade completes, swap roles
+                    bgIncoming.addEventListener("transitionend", () => {
+                        const tmp = bgActive;
+                        bgActive = bgIncoming;
+                        bgIncoming = tmp;
+                        // Ensure the now-hidden layer is fully transparent for the next swap
+                        bgIncoming.style.transition = "none";
+                        bgIncoming.style.opacity = "0";
+                    }, { once: true });
+                });
+            }
+
+            // Init
+            // Seed both layers so first switch is smooth
+            const initialPref = getSavedPreference(); // defaults to "system"
+            const initialEffective = (initialPref === "system") ? resolveSystemTheme() : initialPref;
+            setBgTheme(bgActive, initialEffective);
+            setBgTheme(bgIncoming, initialEffective);
+            bgActive.style.opacity = "1";
+            bgIncoming.style.opacity = "0";
+
+            applyEffectiveTheme(initialPref);
+            if (initialPref === "system") scheduleSystemTick();
+
+            // Button events
+            for (const [name, el] of Object.entries(buttons)) {
+                if (!el) continue;
+                el.addEventListener("click", () => {
+                    savePreference(name);
+                    applyEffectiveTheme(name);
+                    if (name === "system") scheduleSystemTick();
+                    else if (systemTimer) { clearTimeout(systemTimer); systemTimer = null; }
+                });
+            }
+
+            // Resync when tab reactivates
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden && getSavedPreference() === "system") {
+                    applyEffectiveTheme("system");
+                    scheduleSystemTick();
+                }
+            });
+        })();
+    </script>
+
+    <!-- WebGL module: per-theme HDRs & models with smooth crossfade -->
+    <script type="module">
+        import * as THREE from "three";
+        import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
+        import { RGBELoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/RGBELoader.js";
+
+        const container = document.getElementById("webgl-bg");
+
+        // Renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        renderer.shadowMap.enabled = false;
+        renderer.useLegacyLights = false;
+        container.appendChild(renderer.domElement);
+
+        // Scene & camera
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
+
+        // PMREM
+        const pmrem = new THREE.PMREMGenerator(renderer);
+        const rgbe = new RGBELoader();
+        const gltf = new GLTFLoader();
+
+        // Themes & assets
+        const THEMES = ["morning", "noon", "evening", "night"];
+        const HDRS = Object.fromEntries(THEMES.map(t => [t, new URL(`assets/hdr/${t}.hdr`, import.meta.url).href]));
+        const MODELS = Object.fromEntries(THEMES.map(t => [t, new URL(`assets/model-${t}.glb`, import.meta.url).href]));
+
+        const envs = {};    // theme -> Texture
+        const models = {};  // theme -> Object3D
+        let currentTheme = null;
+        let crossfadeRAF = null;
+
+        function loadEnv(url) {
+            return new Promise((resolve, reject) => {
+                rgbe.load(url, (tex) => {
+                    const env = pmrem.fromEquirectangular(tex).texture;
+                    tex.dispose();
+                    resolve(env);
+                }, undefined, reject);
+            });
+        }
+        function loadModel(url) {
+            return new Promise((resolve, reject) => {
+                gltf.load(url, (g) => {
+                    const m = g.scene;
+                    m.traverse((o) => {
+                        if (o.isMesh) {
+                            o.frustumCulled = false;
+                            o.castShadow = false;
+                            o.receiveShadow = false;
+                            if (o.material && o.material.isMeshStandardMaterial) {
+                                o.material.needsUpdate = true;
+                                o.material.transparent = true;   // enable opacity crossfade
+                                o.material.opacity = 0;          // start hidden
+                            }
+                        }
+                    });
+                    resolve(m);
+                }, undefined, reject);
+            });
+        }
+
+        // Preload all themes
+        Promise.all(
+            THEMES.flatMap(t => [
+                loadEnv(HDRS[t]).then(env => (envs[t] = env)),
+                loadModel(MODELS[t]).then(m => (models[t] = m)),
+            ])
+        ).then(() => {
+            // Add models to scene (hidden initially)
+            for (const t of THEMES) {
+                const m = models[t];
+                if (m && !m.parent) scene.add(m);
+                if (m) { m.visible = false; setModelOpacity(m, 0); }
+            }
+            resize();
+            const initial = getEffectiveTheme();
+            hardApplyTheme(initial);  // show immediately on first render
+            animate();
+        }).catch(err => console.error("Asset load failed:", err));
+
+        // Utilities
+        function setModelOpacity(model, value) {
+            model.traverse((o) => {
+                if (o.isMesh && o.material && o.material.isMeshStandardMaterial) {
+                    o.material.transparent = true;
+                    o.material.opacity = value;
+                }
+            });
+        }
+
+        function fitCameraTo(obj, padding = 1.3) {
+            if (!obj) return;
+            const box = new THREE.Box3().setFromObject(obj);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+            obj.position.sub(center);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fov = camera.fov * Math.PI / 180;
+            let dist = (maxDim / 2) / Math.tan(fov / 2);
+            dist *= padding;
+            camera.position.set(0, size.y * 0.15, dist);
+            camera.lookAt(0, 0, 0);
+            camera.near = Math.max(0.01, dist / 100);
+            camera.far = dist * 100;
+            camera.updateProjectionMatrix();
+        }
+
+        // Resize
+        function resize() {
+            const rect = container.getBoundingClientRect();
+            const w = Math.max(1, Math.floor(rect.width));
+            const h = Math.max(1, Math.floor(rect.height));
+            renderer.setSize(w, h, true);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        }
+        const ro = new ResizeObserver(resize);
+        ro.observe(container);
+        window.addEventListener("resize", resize, { passive: true });
+        window.addEventListener("orientationchange", resize, { passive: true });
+
+        // Theme helpers
+        function getEffectiveTheme() {
+            const t = document.documentElement.getAttribute("data-theme");
+            return THEMES.includes(t) ? t : "noon";
+        }
+
+        function hardApplyTheme(theme) {
+            // No animation (initial render)
+            if (envs[theme]) scene.environment = envs[theme];
+            for (const t of THEMES) {
+                const m = models[t];
+                if (!m) continue;
+                m.visible = (t === theme);
+                setModelOpacity(m, t === theme ? 1 : 0);
+            }
+            if (models[theme]) fitCameraTo(models[theme]);
+            currentTheme = theme;
+            renderer.render(scene, camera);
+        }
+
+        // Smooth crossfade between themes
+        function smoothApplyTheme(nextTheme, duration = 600) {
+            if (!envs[nextTheme] || !models[nextTheme]) {
+                return hardApplyTheme(nextTheme);
+            }
+
+            // Snapshot WebGL canvas to overlay <img> for environment crossfade
+            try {
+                const data = renderer.domElement.toDataURL("image/png");
+                const img = new Image();
+                img.className = "fade-overlay";
+                img.alt = "";
+                img.src = data;
+                container.appendChild(img);
+                requestAnimationFrame(() => {
+                    img.style.opacity = "0";
+                    img.addEventListener("transitionend", () => img.remove(), { once: true });
+                });
+            } catch (e) { }
+
+            // Swap environment immediately
+            scene.environment = envs[nextTheme];
+
+            // Crossfade models
+            const fromModel = currentTheme ? models[currentTheme] : null;
+            const toModel = models[nextTheme];
+
+            if (toModel && !toModel.visible) toModel.visible = true;
+            setModelOpacity(toModel, 0);
+
+            const start = performance.now();
+            const ease = (t) => t * t * (3 - 2 * t); // smoothstep
+            if (crossfadeRAF) cancelAnimationFrame(crossfadeRAF);
+
+            function step(now) {
+                const t = Math.min(1, (now - start) / duration);
+                const k = ease(t);
+                if (fromModel) setModelOpacity(fromModel, 1 - k);
+                if (toModel) setModelOpacity(toModel, k);
+                if (t < 1) {
+                    crossfadeRAF = requestAnimationFrame(step);
+                } else {
+                    if (fromModel) { setModelOpacity(fromModel, 0); fromModel.visible = false; }
+                    if (toModel) { setModelOpacity(toModel, 1); }
+                    currentTheme = nextTheme;
+                }
+            }
+            crossfadeRAF = requestAnimationFrame(step);
+        }
+
+        function applyTheme(theme) {
+            if (currentTheme === null) return hardApplyTheme(theme);
+            if (theme === currentTheme) return;
+            smoothApplyTheme(theme);
+        }
+
+        // React to UI theme changes
+        window.addEventListener("theme:changed", (e) => {
+            const effective = e.detail?.effective || getEffectiveTheme();
+            applyTheme(effective);
+        });
+
+        // Interaction (pointer on desktop, drift on phones)
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const likelyPhone = (() => {
+            const touch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            const narrow = Math.min(window.innerWidth, window.innerHeight) < 768;
+            return touch && narrow;
+        })();
+
+        const MAX_YAW = 0.8, MAX_PITCH = 0.45, MAX_SHIFT_X = 0.25, MAX_SHIFT_Y = 0.15, EASE = 0.02;
+        let targetYaw = 0, currYaw = 0;
+        let targetPitch = 0, currPitch = 0;
+        let targetShiftX = 0, currShiftX = 0;
+        let targetShiftY = 0, currShiftY = 0;
+
+        function updateFromPointer(clientX, clientY) {
+            const nx = (clientX / Math.max(1, window.innerWidth) - 0.5) * 2;
+            const ny = (clientY / Math.max(1, window.innerHeight) - 0.5) * 2;
+            targetYaw = nx * MAX_YAW;
+            targetPitch = ny * MAX_PITCH;
+            targetShiftX = -nx * MAX_SHIFT_X;
+            targetShiftY = ny * MAX_SHIFT_Y;
+        }
+        if (!likelyPhone) {
+            window.addEventListener('pointermove', (e) => updateFromPointer(e.clientX, e.clientY), { passive: true });
+            window.addEventListener('mouseleave', () => { targetYaw = targetPitch = 0; targetShiftX = targetShiftY = 0; }, { passive: true });
+        }
+
+        let driftTimer = null;
+        function randomizeTargets() {
+            targetYaw = (Math.random() * 2 - 1) * MAX_YAW;
+            targetPitch = (Math.random() * 2 - 1) * MAX_PITCH;
+            targetShiftX = (Math.random() * 2 - 1) * MAX_SHIFT_X;
+            targetShiftY = (Math.random() * 2 - 1) * MAX_SHIFT_Y;
+        }
+        function startDrift() {
+            if (prefersReduced) return;
+            randomizeTargets();
+            driftTimer = setInterval(() => randomizeTargets(), 3500 + Math.random() * 2000);
+        }
+        function stopDrift() {
+            if (driftTimer) { clearInterval(driftTimer); driftTimer = null; }
+            targetYaw = targetPitch = 0; targetShiftX = targetShiftY = 0;
+        }
+        if (likelyPhone) startDrift();
+
+        let running = true;
+        document.addEventListener('visibilitychange', () => {
+            running = !document.hidden;
+            if (!running) stopDrift();
+            else if (likelyPhone) startDrift(), animate();
+        });
+
+        function visibleModel() {
+            const t = getEffectiveTheme();
+            return models[t];
+        }
+        function applyTransforms(obj) {
+            obj.rotation.set(currPitch, currYaw, 0);
+            obj.position.x = currShiftX;
+            obj.position.y = currShiftY;
+        }
+
+        function animate() {
+            if (!running) return;
+            requestAnimationFrame(animate);
+            currYaw += (targetYaw - currYaw) * EASE;
+            currPitch += (targetPitch - currPitch) * EASE;
+            currShiftX += (targetShiftX - currShiftX) * EASE;
+            currShiftY += (targetShiftY - currShiftY) * EASE;
+            const m = visibleModel();
+            if (m) applyTransforms(m);
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+
+</html>
