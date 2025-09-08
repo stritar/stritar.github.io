@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#EDECEB" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#292623" media="(prefers-color-scheme: dark)">
 
-    <!-- Early set theme to avoid FOUC: default to system (time-of-day) -->
+    <!-- Early set theme to avoid FOUC: default to system (time-of-day fallback) -->
     <script>
         (function () {
             var THEMES = ["morning", "noon", "evening", "night", "system"];
@@ -73,7 +73,7 @@
         <p>© <span id="year"></span> Denis Stritar</p>
     </footer>
 
-    <!-- Always-on UI script (System = time-of-day) + gradient crossfade -->
+    <!-- Always-on UI script: system = geolocated sunrise/sunset (fallback to buckets) + gradient crossfade + public API -->
     <script>
         (() => {
             const root = document.documentElement;
@@ -89,61 +89,141 @@
             };
             const THEMES = ["morning", "noon", "evening", "night", "system"];
 
-            // Gradient layers
+            /* ---------- Gradient stack ---------- */
             const bgStack = document.getElementById("bg-stack");
             const bgA = bgStack.querySelector(".bgA");
             const bgB = bgStack.querySelector(".bgB");
-            let bgActive = bgA;    // the one currently visible
-            let bgIncoming = bgB;  // the one we fade in
+            let bgActive = bgA;
+            let bgIncoming = bgB;
 
-            // Time-of-day resolver
-            function resolveSystemTheme(now = new Date()) {
+            function setBgTheme(el, theme) {
+                el.classList.remove("theme-morning", "theme-noon", "theme-evening", "theme-night");
+                el.classList.add(`theme-${theme}`);
+            }
+            function crossfadeGradientTo(theme) {
+                if (!theme) return;
+                setBgTheme(bgIncoming, theme);
+                bgIncoming.style.transition = "none";
+                bgIncoming.style.opacity = "0";
+                bgIncoming.style.zIndex = "0";
+                bgActive.style.zIndex = "-1";
+                requestAnimationFrame(() => {
+                    bgIncoming.style.transition = "opacity 600ms ease";
+                    bgIncoming.style.opacity = "1";
+                    bgIncoming.addEventListener("transitionend", () => {
+                        const tmp = bgActive; bgActive = bgIncoming; bgIncoming = tmp;
+                        bgIncoming.style.transition = "none";
+                        bgIncoming.style.opacity = "0";
+                    }, { once: true });
+                });
+            }
+
+            /* ---------- Buckets (fallback) ---------- */
+            const BUCKETS = { morningStart: 6, noonStart: 11, eveningStart: 16, nightStart: 20 };
+            function resolveByBuckets(now = new Date()) {
                 const h = now.getHours();
-                if (h >= 6 && h < 11) return "morning";
-                if (h >= 11 && h < 16) return "noon";
-                if (h >= 16 && h < 20) return "evening";
+                if (h >= BUCKETS.morningStart && h < BUCKETS.noonStart) return "morning";
+                if (h >= BUCKETS.noonStart && h < BUCKETS.eveningStart) return "noon";
+                if (h >= BUCKETS.eveningStart && h < BUCKETS.nightStart) return "evening";
                 return "night";
             }
 
-            // Next boundary timer for "system" mode
-            let systemTimer = null;
-            function msUntilNextBoundary(now = new Date()) {
-                const h = now.getHours();
-                const nextStart =
-                    h < 6 ? 6 :
-                        h < 11 ? 11 :
-                            h < 16 ? 16 :
-                                h < 20 ? 20 : 30; // 30 => sentinel for 06 next day
-                const next = new Date(now);
-                if (nextStart === 30) { next.setDate(next.getDate() + 1); next.setHours(6, 0, 0, 0); }
-                else { next.setHours(nextStart, 0, 0, 0); }
-                return next - now;
+            /* ---------- Geolocation + Sun times ---------- */
+            const GEO_KEY = "themeGeoCache"; // {lat,lon,ts}
+            function getCachedGeo() {
+                try {
+                    const j = JSON.parse(localStorage.getItem(GEO_KEY) || "null");
+                    if (!j) return null;
+                    if (Date.now() - j.ts > 23 * 60 * 60 * 1000) return null; // ~24h staleness
+                    return j;
+                } catch { return null; }
             }
-            function scheduleSystemTick() {
-                if (systemTimer) clearTimeout(systemTimer);
-                systemTimer = setTimeout(() => {
-                    if (getSavedPreference() === "system") applyEffectiveTheme("system");
-                    scheduleSystemTick();
-                }, msUntilNextBoundary());
+            function saveGeo(lat, lon) {
+                try { localStorage.setItem(GEO_KEY, JSON.stringify({ lat, lon, ts: Date.now() })); } catch { }
+            }
+            function getGeoPosition(timeoutMs = 3000) {
+                return new Promise((resolve) => {
+                    const cached = getCachedGeo();
+                    if (cached) return resolve({ lat: cached.lat, lon: cached.lon, fromCache: true });
+                    if (!navigator.geolocation) return resolve(null);
+                    let settled = false;
+                    const done = (val) => { if (!settled) { settled = true; resolve(val); } };
+                    navigator.geolocation.getCurrentPosition(
+                        pos => { saveGeo(pos.coords.latitude, pos.coords.longitude); done({ lat: pos.coords.latitude, lon: pos.coords.longitude }); },
+                        _err => done(null),
+                        { enableHighAccuracy: false, maximumAge: 86400000, timeout: timeoutMs }
+                    );
+                    setTimeout(() => done(null), timeoutMs + 200);
+                });
             }
 
+            // minimal solar calc
+            function toRad(d) { return d * Math.PI / 180 } function toDeg(r) { return r * 180 / Math.PI }
+            function dayOfYear(d) { const s = new Date(d.getFullYear(), 0, 0); return Math.floor((d - s) / 86400000) }
+            function solarTimes(date, lat, lon) {
+                const n = dayOfYear(date), lngHour = lon / 15;
+                function calc(set) {
+                    const t = n + ((set ? 18 : 6) - lngHour) / 24;
+                    const M = (0.9856 * t) - 3.289;
+                    let L = M + (1.916 * Math.sin(toRad(M))) + (0.020 * Math.sin(toRad(2 * M))) + 282.634;
+                    L = (L + 360) % 360;
+                    const RA = (toDeg(Math.atan(0.91764 * Math.tan(toRad(L)))) + 360) % 360;
+                    const Lq = Math.floor(L / 90) * 90, RAq = Math.floor(RA / 90) * 90, RAc = (RA + (Lq - RAq)) / 15;
+                    const sinDec = 0.39782 * Math.sin(toRad(L)); const cosDec = Math.cos(Math.asin(sinDec));
+                    const cosH = (Math.cos(toRad(90.833)) - (sinDec * Math.sin(toRad(lat)))) / (cosDec * Math.cos(toRad(lat)));
+                    if (cosH < -1 || cosH > 1) return null;
+                    const H = (set ? toDeg(Math.acos(cosH)) : 360 - toDeg(Math.acos(cosH))) / 15;
+                    const T = H + RAc - (0.06571 * t) - 6.622, UT = (T - lngHour + 24) % 24;
+                    const local = new Date(date); local.setHours(0, 0, 0, 0); local.setUTCHours(UT, (UT % 1) * 60, 0, 0); return local;
+                }
+                const sunrise = calc(false), sunset = calc(true);
+                let solarNoon;
+                if (sunrise && sunset) solarNoon = new Date((sunrise.getTime() + sunset.getTime()) / 2);
+                else { solarNoon = new Date(date); solarNoon.setHours(12, 0, 0, 0); }
+                return { sunrise, solarNoon, sunset };
+            }
+
+            async function resolveSystemTheme() {
+                const now = new Date();
+                const geo = await getGeoPosition();
+                if (!geo) return resolveByBuckets(now);
+                const st = solarTimes(now, geo.lat, geo.lon) || {};
+                const { sunrise, solarNoon, sunset } = st;
+                if (!sunrise || !sunset || !solarNoon) return resolveByBuckets(now);
+                const t = now.getTime();
+                const morningEnd = new Date(solarNoon.getTime() - 60 * 60 * 1000); // -1h
+                const noonEnd = new Date(solarNoon.getTime() + 3 * 60 * 60 * 1000); // +3h
+                const eveningEnd = new Date(sunset.getTime() + 60 * 60 * 1000); // +1h
+                if (t >= sunrise.getTime() && t < morningEnd.getTime()) return "morning";
+                if (t >= morningEnd.getTime() && t < noonEnd.getTime()) return "noon";
+                if (t >= noonEnd.getTime() && t < eveningEnd.getTime()) return "evening";
+                return "night";
+            }
+
+            /* ---------- Prefs + apply ---------- */
             function getSavedPreference() {
                 const saved = localStorage.getItem("themePref");
                 return THEMES.includes(saved) ? saved : "system";
             }
             function savePreference(pref) { localStorage.setItem("themePref", pref); }
 
-            function applyEffectiveTheme(pref) {
-                const effective = (pref === "system") ? resolveSystemTheme() : pref;
-                // 1) Update DOM data-theme (used by text colors/buttons etc.)
+            let systemTimer = null;
+            function scheduleSystemTick() {
+                if (systemTimer) clearTimeout(systemTimer);
+                systemTimer = setTimeout(async () => {
+                    if (getSavedPreference() === "system") await applyEffectiveTheme("system");
+                    scheduleSystemTick(); // hourly check
+                }, 60 * 60 * 1000);
+            }
+
+            async function applyEffectiveTheme(pref) {
+                let effective = pref;
+                if (pref === "system") effective = await resolveSystemTheme();
                 root.setAttribute("data-theme", effective);
-
-                // 2) Crossfade gradient stack by swapping classes
                 crossfadeGradientTo(effective);
-
-                // 3) Update buttons + notify WebGL
                 updateButtons(pref, effective);
                 window.dispatchEvent(new CustomEvent("theme:changed", { detail: { pref, effective } }));
+                return effective;
             }
 
             function updateButtons(pref, effective) {
@@ -152,77 +232,54 @@
                     const isActive = (name === pref);
                     el.setAttribute("aria-pressed", String(isActive));
                     el.disabled = isActive;
-                    if (name === "system") el.title = `Follows time (${effective})`;
+                    if (name === "system") el.title = `Follows location/time (${effective})`;
                     else el.removeAttribute("title");
                 }
             }
 
-            // Gradient crossfade handler
-            function setBgTheme(el, theme) {
-                el.classList.remove("theme-morning", "theme-noon", "theme-evening", "theme-night");
-                el.classList.add(`theme-${theme}`);
-            }
-            function crossfadeGradientTo(theme) {
-                if (!theme) return;
-
-                // Prepare incoming layer with the new theme
-                setBgTheme(bgIncoming, theme);
-                bgIncoming.style.transition = "none";
+            // Seed gradient layers so first switch is smooth
+            (async () => {
+                const initialPref = getSavedPreference();
+                const initialEff = initialPref === "system" ? await resolveSystemTheme() : initialPref;
+                setBgTheme(bgActive, initialEff);
+                setBgTheme(bgIncoming, initialEff);
+                bgActive.style.opacity = "1";
                 bgIncoming.style.opacity = "0";
-                // Stack order: incoming on top
-                bgIncoming.style.zIndex = "0";
-                bgActive.style.zIndex = "-1";
-
-                // Force style & then fade in
-                requestAnimationFrame(() => {
-                    bgIncoming.style.transition = "opacity 600ms ease";
-                    bgIncoming.style.opacity = "1";
-                    // When fade completes, swap roles
-                    bgIncoming.addEventListener("transitionend", () => {
-                        const tmp = bgActive;
-                        bgActive = bgIncoming;
-                        bgIncoming = tmp;
-                        // Ensure the now-hidden layer is fully transparent for the next swap
-                        bgIncoming.style.transition = "none";
-                        bgIncoming.style.opacity = "0";
-                    }, { once: true });
-                });
-            }
-
-            // Init
-            // Seed both layers so first switch is smooth
-            const initialPref = getSavedPreference(); // defaults to "system"
-            const initialEffective = (initialPref === "system") ? resolveSystemTheme() : initialPref;
-            setBgTheme(bgActive, initialEffective);
-            setBgTheme(bgIncoming, initialEffective);
-            bgActive.style.opacity = "1";
-            bgIncoming.style.opacity = "0";
-
-            applyEffectiveTheme(initialPref);
-            if (initialPref === "system") scheduleSystemTick();
+                const eff = await applyEffectiveTheme(initialPref);
+                if (initialPref === "system") scheduleSystemTick();
+            })();
 
             // Button events
             for (const [name, el] of Object.entries(buttons)) {
                 if (!el) continue;
-                el.addEventListener("click", () => {
+                el.addEventListener("click", async () => {
                     savePreference(name);
-                    applyEffectiveTheme(name);
+                    await applyEffectiveTheme(name);
                     if (name === "system") scheduleSystemTick();
                     else if (systemTimer) { clearTimeout(systemTimer); systemTimer = null; }
                 });
             }
 
             // Resync when tab reactivates
-            document.addEventListener("visibilitychange", () => {
+            document.addEventListener("visibilitychange", async () => {
                 if (!document.hidden && getSavedPreference() === "system") {
-                    applyEffectiveTheme("system");
+                    await applyEffectiveTheme("system");
                     scheduleSystemTick();
                 }
             });
+
+            // Public API
+            window.setTheme = async (name) => {
+                if (!THEMES.includes(name)) throw new Error(`Unknown theme '${name}'`);
+                localStorage.setItem("themePref", name);
+                return applyEffectiveTheme(name);
+            };
+            window.getTheme = () => document.documentElement.getAttribute("data-theme");
+            window.setThemePref = async (name) => window.setTheme(name);
         })();
     </script>
 
-    <!-- WebGL module: per-theme HDRs & models with smooth crossfade -->
+    <!-- WebGL module: lazy-load + smooth crossfade -->
     <script type="module">
         import * as THREE from "three";
         import { GLTFLoader } from "https://unpkg.com/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
@@ -244,71 +301,25 @@
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
 
-        // PMREM
+        // PMREM & loaders
         const pmrem = new THREE.PMREMGenerator(renderer);
         const rgbe = new RGBELoader();
         const gltf = new GLTFLoader();
 
-        // Themes & assets
+        // Assets
         const THEMES = ["morning", "noon", "evening", "night"];
         const HDRS = Object.fromEntries(THEMES.map(t => [t, new URL(`assets/hdr/${t}.hdr`, import.meta.url).href]));
         const MODELS = Object.fromEntries(THEMES.map(t => [t, new URL(`assets/model-${t}.glb`, import.meta.url).href]));
 
-        const envs = {};    // theme -> Texture
-        const models = {};  // theme -> Object3D
+        // Stores
+        const envs = {};
+        const models = {};
+        const envPromises = {};
+        const modelPromises = {};
         let currentTheme = null;
         let crossfadeRAF = null;
 
-        function loadEnv(url) {
-            return new Promise((resolve, reject) => {
-                rgbe.load(url, (tex) => {
-                    const env = pmrem.fromEquirectangular(tex).texture;
-                    tex.dispose();
-                    resolve(env);
-                }, undefined, reject);
-            });
-        }
-        function loadModel(url) {
-            return new Promise((resolve, reject) => {
-                gltf.load(url, (g) => {
-                    const m = g.scene;
-                    m.traverse((o) => {
-                        if (o.isMesh) {
-                            o.frustumCulled = false;
-                            o.castShadow = false;
-                            o.receiveShadow = false;
-                            if (o.material && o.material.isMeshStandardMaterial) {
-                                o.material.needsUpdate = true;
-                                o.material.transparent = true;   // enable opacity crossfade
-                                o.material.opacity = 0;          // start hidden
-                            }
-                        }
-                    });
-                    resolve(m);
-                }, undefined, reject);
-            });
-        }
-
-        // Preload all themes
-        Promise.all(
-            THEMES.flatMap(t => [
-                loadEnv(HDRS[t]).then(env => (envs[t] = env)),
-                loadModel(MODELS[t]).then(m => (models[t] = m)),
-            ])
-        ).then(() => {
-            // Add models to scene (hidden initially)
-            for (const t of THEMES) {
-                const m = models[t];
-                if (m && !m.parent) scene.add(m);
-                if (m) { m.visible = false; setModelOpacity(m, 0); }
-            }
-            resize();
-            const initial = getEffectiveTheme();
-            hardApplyTheme(initial);  // show immediately on first render
-            animate();
-        }).catch(err => console.error("Asset load failed:", err));
-
-        // Utilities
+        // Helpers
         function setModelOpacity(model, value) {
             model.traverse((o) => {
                 if (o.isMesh && o.material && o.material.isMeshStandardMaterial) {
@@ -317,7 +328,6 @@
                 }
             });
         }
-
         function fitCameraTo(obj, padding = 1.3) {
             if (!obj) return;
             const box = new THREE.Box3().setFromObject(obj);
@@ -334,8 +344,6 @@
             camera.far = dist * 100;
             camera.updateProjectionMatrix();
         }
-
-        // Resize
         function resize() {
             const rect = container.getBoundingClientRect();
             const w = Math.max(1, Math.floor(rect.width));
@@ -349,15 +357,72 @@
         window.addEventListener("resize", resize, { passive: true });
         window.addEventListener("orientationchange", resize, { passive: true });
 
-        // Theme helpers
+        // Loaders (memoized)
+        function loadEnv(theme) {
+            if (envs[theme]) return Promise.resolve(envs[theme]);
+            if (envPromises[theme]) return envPromises[theme];
+            envPromises[theme] = new Promise((resolve, reject) => {
+                rgbe.load(HDRS[theme], (tex) => {
+                    const env = pmrem.fromEquirectangular(tex).texture;
+                    tex.dispose();
+                    envs[theme] = env;
+                    resolve(env);
+                }, undefined, reject);
+            });
+            return envPromises[theme];
+        }
+        function loadModel(theme) {
+            if (models[theme]) return Promise.resolve(models[theme]);
+            if (modelPromises[theme]) return modelPromises[theme];
+            modelPromises[theme] = new Promise((resolve, reject) => {
+                gltf.load(MODELS[theme], (g) => {
+                    const m = g.scene;
+                    m.traverse((o) => {
+                        if (o.isMesh) {
+                            o.frustumCulled = false;
+                            o.castShadow = false;
+                            o.receiveShadow = false;
+                            if (o.material && o.material.isMeshStandardMaterial) {
+                                o.material.needsUpdate = true;
+                                o.material.transparent = true;
+                                o.material.opacity = 0;
+                            }
+                        }
+                    });
+                    models[theme] = m;
+                    scene.add(m);
+                    m.visible = false;
+                    resolve(m);
+                }, undefined, reject);
+            });
+            return modelPromises[theme];
+        }
+
+        // Initial: load only effective theme
         function getEffectiveTheme() {
             const t = document.documentElement.getAttribute("data-theme");
             return THEMES.includes(t) ? t : "noon";
         }
+        (async () => {
+            const t = getEffectiveTheme();
+            await Promise.all([loadEnv(t), loadModel(t)]);
+            resize();
+            hardApplyTheme(t);
+            animate();
 
+            // Preload others when idle
+            const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 500));
+            idle(() => {
+                THEMES.filter(x => x !== t).forEach(other => {
+                    loadEnv(other);
+                    loadModel(other);
+                });
+            });
+        })();
+
+        // Apply (hard) – boot only
         function hardApplyTheme(theme) {
-            // No animation (initial render)
-            if (envs[theme]) scene.environment = envs[theme];
+            scene.environment = envs[theme] || null;
             for (const t of THEMES) {
                 const m = models[t];
                 if (!m) continue;
@@ -369,13 +434,9 @@
             renderer.render(scene, camera);
         }
 
-        // Smooth crossfade between themes
+        // Smooth crossfade
         function smoothApplyTheme(nextTheme, duration = 600) {
-            if (!envs[nextTheme] || !models[nextTheme]) {
-                return hardApplyTheme(nextTheme);
-            }
-
-            // Snapshot WebGL canvas to overlay <img> for environment crossfade
+            // Canvas snapshot overlay for env fade
             try {
                 const data = renderer.domElement.toDataURL("image/png");
                 const img = new Image();
@@ -389,15 +450,13 @@
                 });
             } catch (e) { }
 
-            // Swap environment immediately
-            scene.environment = envs[nextTheme];
+            scene.environment = envs[nextTheme] || null;
 
-            // Crossfade models
             const fromModel = currentTheme ? models[currentTheme] : null;
-            const toModel = models[nextTheme];
+            const toModel = models[nextTheme] || null;
 
             if (toModel && !toModel.visible) toModel.visible = true;
-            setModelOpacity(toModel, 0);
+            if (toModel) setModelOpacity(toModel, 0);
 
             const start = performance.now();
             const ease = (t) => t * t * (3 - 2 * t); // smoothstep
@@ -419,16 +478,17 @@
             crossfadeRAF = requestAnimationFrame(step);
         }
 
-        function applyTheme(theme) {
-            if (currentTheme === null) return hardApplyTheme(theme);
+        async function applyTheme(theme) {
+            if (currentTheme === null) return; // boot path used hardApplyTheme
             if (theme === currentTheme) return;
+            await Promise.all([loadEnv(theme), loadModel(theme)]);
             smoothApplyTheme(theme);
         }
 
         // React to UI theme changes
-        window.addEventListener("theme:changed", (e) => {
+        window.addEventListener("theme:changed", async (e) => {
             const effective = e.detail?.effective || getEffectiveTheme();
-            applyTheme(effective);
+            await applyTheme(effective);
         });
 
         // Interaction (pointer on desktop, drift on phones)
