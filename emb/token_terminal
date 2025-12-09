@@ -1,0 +1,12 @@
+curl -X POST \             
+  https://api.eu.embeddable.com/api/v1/security-token \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer 7fe218ef-a7b1-466b-a98b-57d4d02620ad" \
+  -d '{
+    "embeddableId": "241d8680-c9b2-4581-9495-86fc6d1782d8",
+    "savedVersion": "production",
+    "expiryInSeconds": 3600,
+    "securityContext": {},
+    "user": "demo@example.com"
+  }'
