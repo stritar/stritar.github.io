@@ -1,0 +1,18 @@
+# Denis Stritar
+
+> Product Designer. This site showcases selected product design work: case studies and project articles.
+
+Canonical URL: https://denisstritar.com
+Sitemap: https://denisstritar.com/sitemap-index.xml
+
+## Work
+
+<!-- TODO: list each case study as: - [Project title](/work/slug): one-sentence summary -->
+
+## About
+
+<!-- TODO: short bio, location, current focus, availability. -->
+
+## Contact
+
+<!-- TODO: email and primary professional profile links. -->

@@ -1,0 +1,10 @@
+/* TEAM */
+Designer: Denis Stritar
+Role: Product Designer
+Site: https://denisstritar.com
+
+/* SITE */
+Last update: 2026/04/18
+Standards: HTML5, CSS3
+Components: Astro, MDX
+Hosted on: GitHub Pages

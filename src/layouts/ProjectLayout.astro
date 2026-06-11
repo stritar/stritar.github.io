@@ -1,0 +1,107 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  summary: string;
+  role?: string;
+  client?: string;
+  year: number;
+  publishedDate: Date;
+  updatedDate?: Date;
+  cover?: string;
+  coverAlt?: string;
+  tags?: string[];
+  ogImage?: string;
+  canonicalUrl?: string;
+  headings?: Heading[];
+}
+
+const {
+  title,
+  summary,
+  role,
+  client,
+  year,
+  publishedDate,
+  updatedDate,
+  cover,
+  coverAlt,
+  tags,
+  ogImage,
+  canonicalUrl,
+} = Astro.props;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://denisstritar.com').href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: title,
+  description: summary,
+  url: pageUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Denis Stritar',
+    url: 'https://denisstritar.com',
+  },
+  datePublished: publishedDate.toISOString(),
+  ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+  ...(cover && { image: new URL(cover, Astro.site ?? 'https://denisstritar.com').href }),
+  ...(client && { sourceOrganization: { '@type': 'Organization', name: client } }),
+  ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
+};
+---
+
+<BaseLayout
+  title={`${title} — Denis Stritar`}
+  description={summary}
+  ogType="article"
+  ogImage={ogImage ?? cover}
+  canonicalUrl={canonicalUrl}
+  article={{
+    publishedTime: publishedDate.toISOString(),
+    modifiedTime: updatedDate?.toISOString(),
+    author: 'Denis Stritar',
+  }}
+>
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <article>
+    <header>
+      <p>
+        <a href="/">&larr; Back to work</a>
+      </p>
+      <h1>{title}</h1>
+      <p>{summary}</p>
+      <dl>
+        {role && (
+          <>
+            <dt>Role</dt>
+            <dd>{role}</dd>
+          </>
+        )}
+        {client && (
+          <>
+            <dt>Client</dt>
+            <dd>{client}</dd>
+          </>
+        )}
+        <dt>Year</dt>
+        <dd>{year}</dd>
+      </dl>
+    </header>
+
+    {cover && <img src={cover} alt={coverAlt ?? ''} />}
+
+    <div>
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
