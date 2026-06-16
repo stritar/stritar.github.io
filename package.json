@@ -1,13 +1,17 @@
 {
   "name": "stritar-portfolio",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "preview": "npx serve@latest out",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
