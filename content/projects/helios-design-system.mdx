@@ -1,0 +1,103 @@
+---
+title: "Helios — A Design System From Scratch"
+summary: "A typography-driven design system showcase exercising every article element — headings, code, tables, quotes and media."
+role: "Lead Product Designer"
+client: "Helios Labs"
+year: 2026
+publishedDate: "2026-06-01"
+tags: ["Design Systems", "Tokens", "Documentation"]
+---
+
+This case study doubles as a kitchen-sink for the article template — it
+deliberately uses every typographic element so the wireframe can be reviewed
+in one place. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+## Overview
+
+Helios needed a single source of truth for design and engineering. The brief
+was simple to state and hard to do: ship a token-driven system that **looks
+consistent**, reads clearly, and scales to a dozen squads without a styleguide
+police force.
+
+> A design system is a product whose customers are the people building the
+> product. Treat their experience with the same care.
+
+### The challenge
+
+Three problems showed up again and again across audits:
+
+- **Fragmentation** — every squad had reinvented buttons, spacing and color.
+- **Cognitive load** — no shared vocabulary, so reviews relitigated basics.
+- **Drift** — design files and shipped code told different stories.
+
+### Goals
+
+1. Define primitive tokens once and derive everything else.
+2. Make the happy path the easy path in code.
+3. Document inline, next to the thing being documented.
+
+#### A note on scope
+
+We scoped the first release to foundations only — color, type, spacing — and
+deferred components to a second phase. Smaller surface, faster feedback.
+
+##### Out of scope
+
+Marketing site theming and email templates were explicitly excluded.
+
+###### Status label
+
+Phase one shipped on schedule.
+
+## Approach
+
+We modeled tokens as a small, typed contract. Here is the core scale as it
+ships in the package — note the inline reference to the `--space-4` token and
+the full block below:
+
+```ts
+// tokens.ts — the primitive scale everything derives from
+export const space = {
+  0: "0px",
+  1: "4px",
+  2: "8px",
+  3: "12px",
+  4: "16px",
+  8: "32px",
+} as const;
+
+export type SpaceToken = keyof typeof space;
+
+export function pad(token: SpaceToken): string {
+  return space[token];
+}
+```
+
+The system is intentionally boring at the primitive layer so the layers above
+can be expressive. You reach for `pad(4)` instead of guessing a pixel value.
+
+<Figure alt="Token architecture diagram" caption="Figure 1 — Primitives flow up into semantic and component tokens." />
+
+### Token reference
+
+The semantic layer maps intent to primitives. A condensed slice:
+
+| Token            | Value        | Used for                 |
+| ---------------- | ------------ | ------------------------ |
+| `color.fg`       | `#111111`    | Body text, icons         |
+| `color.bg`       | `#ffffff`    | Page and card surfaces   |
+| `space.4`        | `16px`       | Default block rhythm     |
+| `radius.none`    | `0px`        | All corners (wireframe)  |
+
+---
+
+## Outcomes
+
+The first release landed with measurable wins:
+
+- **−60%** duplicated UI code across the three pilot squads.
+- **2 weeks** median time-to-adopt for a new team.
+- **One** vocabulary, finally shared between design and engineering.
+
+Want the longer version? [Read the foundations doc](#) or skim the
+[token changelog](#) for the gory details.

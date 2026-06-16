@@ -1,6 +1,25 @@
+# dependencies
 node_modules/
-dist/
-.astro/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# content-collections generated output
+.content-collections/
+
+# production
+build/
+
+# misc
 .DS_Store
+*.pem
 *.log
 *.code-workspace
+
+# debug
+npm-debug.log*
+
+# typescript
+*.tsbuildinfo
