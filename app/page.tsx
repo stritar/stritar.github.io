@@ -29,7 +29,7 @@ export default function HomePage() {
         <section id="work" className="mt-20 sm:mt-24">
           <div className="flex items-end justify-between border-b border-border pb-4">
             <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Selected work
+              Label text
             </h2>
             <span className="font-mono text-xs text-muted-foreground">
               {String(projects.length).padStart(2, "0")}
@@ -48,11 +48,7 @@ export default function HomePage() {
             </div>
           ) : (
             <p className="mt-8 border border-dashed border-border p-10 text-center text-muted-foreground">
-              No case studies yet. Add an MDX file under{" "}
-              <code className="font-mono text-foreground">
-                content/projects/
-              </code>{" "}
-              to populate this grid.
+              Body text
             </p>
           )}
         </section>

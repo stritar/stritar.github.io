@@ -1,4 +1,4 @@
-name: Deploy Astro site to Pages
+name: Deploy Next.js site to Pages
 
 on:
   push:
@@ -29,12 +29,12 @@ jobs:
         run: npm ci
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build Astro
+      - name: Build static export
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./out
 
   deploy:
     needs: build

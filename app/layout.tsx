@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
       <body className="font-sans antialiased">
         <a href="#main" className="skip-link">
-          Skip to content
+          Link text
         </a>
         <Header />
         <main id="main">{children}</main>

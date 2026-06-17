@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: Params) {
             href="/#work"
             className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground underline underline-offset-4 hover:text-foreground"
           >
-            &larr; All work
+            &larr; Link text
           </Link>
 
           <h1 className="mt-8 text-4xl font-bold tracking-tight sm:text-6xl">
@@ -83,7 +83,7 @@ export default async function ProjectPage({ params }: Params) {
             {project.role ? (
               <div>
                 <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Role
+                  Label text
                 </dt>
                 <dd className="mt-1 font-medium">{project.role}</dd>
               </div>
@@ -91,20 +91,20 @@ export default async function ProjectPage({ params }: Params) {
             {project.client ? (
               <div>
                 <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Client
+                  Label text
                 </dt>
                 <dd className="mt-1 font-medium">{project.client}</dd>
               </div>
             ) : null}
             <div>
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Year
+                Label text
               </dt>
               <dd className="mt-1 font-medium">{project.year}</dd>
             </div>
             <div>
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Published
+                Label text
               </dt>
               <dd className="mt-1 font-medium">
                 {formatDate(project.publishedDate)}

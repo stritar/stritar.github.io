@@ -10,7 +10,7 @@ export function Header() {
           className="flex items-center gap-2 text-sm font-bold tracking-tight"
         >
           <span className="grid size-7 place-items-center border border-border font-mono text-xs">
-            DS
+            Logo
           </span>
           <span className="hidden sm:inline">{site.name}</span>
         </Link>

@@ -1,21 +1,20 @@
 /** Single source of truth for site-wide identity, navigation, and social links. */
 export const site = {
-  name: "Denis Stritar",
-  role: "Product Designer",
+  name: "Heading 1",
+  role: "Label text",
   url: "https://denisstritar.com",
-  description:
-    "Denis Stritar is a product designer crafting interactive, end-to-end digital products — from systems thinking to pixel-level craft.",
+  description: "Body text",
   locale: "en_US",
-  email: "hello@denisstritar.com",
+  email: "link@example.com",
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/denisstritar/" },
-    { label: "Dribbble", href: "https://dribbble.com/denisstritar" },
-    { label: "GitHub", href: "https://github.com/stritar" },
+    { label: "Link text", href: "#" },
+    { label: "Link text", href: "#" },
+    { label: "Link text", href: "#" },
   ],
   nav: [
-    { label: "Work", href: "/#work" },
-    { label: "About", href: "/#about" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Nav link", href: "/#work" },
+    { label: "Nav link", href: "/#about" },
+    { label: "Nav link", href: "/#contact" },
   ],
 } as const;
 

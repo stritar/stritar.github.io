@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col gap-10">
         <div className="flex flex-col gap-4">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Get in touch
+            Label text
           </p>
           <a
             href={`mailto:${site.email}`}
