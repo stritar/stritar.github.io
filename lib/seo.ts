@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Project } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 /**
@@ -36,6 +37,15 @@ export const baseMetadata: Metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 /** Person JSON-LD for the home page. */
@@ -47,5 +57,20 @@ export function personJsonLd() {
     jobTitle: site.role,
     url: site.url,
     sameAs: site.socials.map((s) => s.href),
+  };
+}
+
+/** CreativeWork JSON-LD for a case-study page. */
+export function creativeWorkJsonLd(project: Project) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.summary,
+    url: `${site.url}${project.url}`,
+    datePublished: project.publishedDate,
+    dateModified: project.updatedDate ?? project.publishedDate,
+    author: { "@type": "Person", name: site.name, url: site.url },
+    keywords: project.tags?.join(", "),
   };
 }

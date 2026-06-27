@@ -1,10 +1,11 @@
 /* TEAM */
 Designer: Denis Stritar
 Role: Product Designer
+Location: Berlin, Germany
 Site: https://denisstritar.com
 
 /* SITE */
-Last update: 2026/04/18
+Last update: 2026/06/27
 Standards: HTML5, CSS3
-Components: Astro, MDX
+Components: Next.js, React, Tailwind CSS, React Three Fiber, MDX
 Hosted on: GitHub Pages

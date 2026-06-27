@@ -1,0 +1,35 @@
+---
+title: "Colophon — How this site is built"
+summary: "A short look under the hood: a time-of-day WebGL experience, a four-mood design system, and a statically-exported Next.js stack."
+role: "Design & Build"
+year: 2026
+publishedDate: "2026-06-27"
+tags: ["WebGL", "Design System", "Next.js"]
+accent: "#b28b7c"
+# This is a starter case study so the /work route ships with real content.
+# Set `draft: true` (or delete this file) once your own work is published.
+---
+
+## A site that knows the time of day
+
+The backdrop is a real-time 3D scene built with React Three Fiber. A sculpted
+form, lit entirely by HDR environment maps, follows your cursor with a gentle
+easing — and the whole mood shifts across **morning, noon, evening, and night**.
+Left on "Auto", it reads your local sunrise and sunset to match the light
+outside your window, falling back to a simple clock when location isn't shared.
+
+## One source of truth for the look
+
+Every colour, type style, radius, and the frosted-glass treatment lives as a set
+of design tokens. The four moods are expressed as a single palette that re-points
+its variables when the theme changes, so flipping the time of day re-themes the
+entire surface in one move. Those same tokens are mirrored into a Figma library,
+keeping design and code in step.
+
+## Built to last, cheap to host
+
+The site is a statically-exported Next.js app — pre-rendered to plain HTML and
+served from GitHub Pages. The interactive 3D is a single isolated client island,
+so everything else stays fast, server-rendered, and accessible: it respects
+reduced-motion, pauses when the tab is hidden, and drifts gently on touch
+devices instead of chasing a cursor that isn't there.

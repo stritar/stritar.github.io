@@ -9,9 +9,13 @@ import {
   getProjectBySlug,
   getPublishedProjects,
 } from "@/lib/projects";
+import { creativeWorkJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 type Params = { params: Promise<{ slug: string }> };
+
+// Only the slugs produced here are emitted (required by output: export).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getPublishedProjects().map((project) => ({ slug: project.slug }));
@@ -44,76 +48,51 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
+function MetaItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="font-mono text-xs uppercase tracking-wider text-fg/55">
+        {label}
+      </dt>
+      <dd className="mt-1 font-medium text-fg">{value}</dd>
+    </div>
+  );
+}
+
 export default async function ProjectPage({ params }: Params) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project || project.draft) notFound();
 
-  const creativeWork = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    description: project.summary,
-    url: `${site.url}${project.url}`,
-    datePublished: project.publishedDate,
-    dateModified: project.updatedDate ?? project.publishedDate,
-    author: { "@type": "Person", name: site.name, url: site.url },
-    keywords: project.tags?.join(", "),
-  };
-
   return (
     <>
-      <JsonLd data={creativeWork} />
+      <JsonLd data={creativeWorkJsonLd(project)} />
 
-      <article className="px-6 pb-24 pt-32 sm:pt-40">
-        <header className="mx-auto max-w-3xl">
+      <article className="grid-page py-16 sm:py-24">
+        <header className="col-span-full mx-auto w-full max-w-3xl">
           <Link
             href="/#work"
-            className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground underline underline-offset-4 hover:text-foreground"
+            className="text-xs font-medium uppercase tracking-[0.2em] text-fg/60 transition-colors hover:text-fg"
           >
-            &larr; Link text
+            ← Work
           </Link>
 
-          <h1 className="mt-8 text-4xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="mt-8 font-heading text-4xl font-bold leading-[1.05] tracking-tight text-fg sm:text-6xl">
             {project.title}
           </h1>
-          <p className="mt-5 text-lg text-muted-foreground">{project.summary}</p>
+          <p className="mt-5 text-lg text-fg/75">{project.summary}</p>
 
-          <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 text-sm sm:grid-cols-4">
-            {project.role ? (
-              <div>
-                <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Label text
-                </dt>
-                <dd className="mt-1 font-medium">{project.role}</dd>
-              </div>
-            ) : null}
+          <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8 text-sm sm:grid-cols-4">
+            {project.role ? <MetaItem label="Role" value={project.role} /> : null}
             {project.client ? (
-              <div>
-                <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Label text
-                </dt>
-                <dd className="mt-1 font-medium">{project.client}</dd>
-              </div>
+              <MetaItem label="Client" value={project.client} />
             ) : null}
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Label text
-              </dt>
-              <dd className="mt-1 font-medium">{project.year}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Label text
-              </dt>
-              <dd className="mt-1 font-medium">
-                {formatDate(project.publishedDate)}
-              </dd>
-            </div>
+            <MetaItem label="Year" value={String(project.year)} />
+            <MetaItem label="Published" value={formatDate(project.publishedDate)} />
           </dl>
         </header>
 
-        <div className="mx-auto mt-14 max-w-2xl">
+        <div className="col-span-full mx-auto mt-14 w-full max-w-2xl">
           <MDXContent code={project.mdx} components={mdxComponents} />
         </div>
       </article>

@@ -1,27 +1,38 @@
 ---
-title: "Heading 1"
-summary: "Body text"
-role: "Label text"
-client: "Label text"
+title: "Project title"
+summary: "One-sentence summary of the project (≤160 chars) — shown on cards and in metadata."
+role: "Lead Product Designer"
+client: "Company"
 year: 2026
 publishedDate: "2026-01-01"
-tags: ["Label text", "Label text"]
+tags: ["Product Design", "Design Systems"]
 accent: "#7c6cf0"
+# Remove `draft: true` to publish. Then add this project to the ## Work
+# list in public/llms.txt. See .claude/skills/add-a-case-study.
 draft: true
 ---
 
-## Heading 2
+## Overview
 
-Body text. Body text start your headings at `##`.
+Body copy starts at `##` — the `<h1>` is rendered from the `title` frontmatter.
+Describe the problem, your role, and the outcome up top.
 
-<Reveal>
-  Body text.
-</Reveal>
+<Figure src="/work/example/cover.jpg" alt="Describe the image" caption="Optional caption" />
 
-<Figure src="/images/example.jpg" alt="Image alt text" caption="Caption text" />
+## The challenge
 
-## Heading 2
+What needed solving, and the constraints you designed within.
 
-1. List item text
-2. List item text
-3. List item text
+## What I did
+
+- A key decision and why
+- Another, with the trade-off you weighed
+
+<ImageGrid>
+  <Figure src="/work/example/a.jpg" alt="Describe A" />
+  <Figure src="/work/example/b.jpg" alt="Describe B" />
+</ImageGrid>
+
+## Outcome
+
+The result — ideally with a number or a concrete shipped change.

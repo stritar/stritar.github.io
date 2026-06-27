@@ -1,18 +1,19 @@
 # Denis Stritar
 
-> Product Designer. This site showcases selected product design work: case studies and project articles.
+> Berlin-based product designer. This site showcases selected product design work as case studies, with an interactive time-of-day WebGL experience.
 
 Canonical URL: https://denisstritar.com
-Sitemap: https://denisstritar.com/sitemap-index.xml
+Sitemap: https://denisstritar.com/sitemap.xml
 
 ## Work
 
-<!-- TODO: list each case study as: - [Project title](/work/slug): one-sentence summary -->
+- [Colophon — How this site is built](/work/colophon/): a look under the hood at the time-of-day WebGL experience, the four-mood design system, and the Next.js stack.
+<!-- Add each published case study here: - [Project title](/work/slug/): one-sentence summary -->
 
 ## About
 
-<!-- TODO: short bio, location, current focus, availability. -->
+Denis Stritar is a Berlin-based product designer crafting intuitive, customer-facing analytics experiences. Currently designing at Embeddable.
 
 ## Contact
 
-<!-- TODO: email and primary professional profile links. -->
+- LinkedIn: https://www.linkedin.com/in/denisstritar/

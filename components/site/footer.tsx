@@ -5,32 +5,20 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="border-t border-border px-6 py-16 sm:py-24">
-      <div className="mx-auto flex max-w-5xl flex-col gap-10">
-        <div className="flex flex-col gap-4">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Label text
-          </p>
-          <a
-            href={`mailto:${site.email}`}
-            className="text-3xl font-bold tracking-tight underline underline-offset-4 hover:opacity-60 sm:text-5xl"
-          >
-            {site.email}
-          </a>
-        </div>
-
-        <div className="flex flex-col items-start justify-between gap-6 border-t border-border pt-8 sm:flex-row sm:items-center">
-          <p className="font-mono text-xs text-muted-foreground">
+    <footer id="contact" className="relative z-10 mt-24 sm:mt-32">
+      <div className="grid-page py-12 sm:py-16">
+        <div className="col-span-full flex flex-col items-start justify-between gap-6 border-t border-hairline pt-8 sm:flex-row sm:items-center">
+          <p className="text-xs text-fg/60">
             © {year} {site.name}
           </p>
-          <ul className="flex flex-wrap gap-5">
+          <ul className="flex flex-wrap gap-4">
             {site.socials.map((social) => (
               <li key={social.href}>
                 <Link
                   href={social.href}
                   target="_blank"
                   rel="me noreferrer"
-                  className="font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground"
+                  className="text-xs font-medium text-fg/70 transition-colors hover:text-fg"
                 >
                   {social.label}
                 </Link>

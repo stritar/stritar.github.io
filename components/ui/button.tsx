@@ -4,15 +4,15 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-fg/40 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        primary:
-          "bg-accent text-accent-foreground hover:opacity-90 active:scale-[0.98]",
-        outline:
-          "border border-border bg-transparent hover:bg-muted active:scale-[0.98]",
-        ghost: "bg-transparent hover:bg-muted",
+        // Solid, mood-aware button.
+        primary: "bg-btn text-btn-fg hover:bg-btn-hover active:scale-[0.98]",
+        // Frosted glass — sits over the WebGL hero.
+        glass: "glass text-fg hover:bg-glass-hover active:scale-[0.98]",
+        ghost: "bg-transparent text-fg/80 hover:text-fg",
       },
       size: {
         default: "h-11 px-6",
